@@ -1,0 +1,534 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>asposehtmlcloud.api package &#8212; asposehtmlcloud 1 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="asposehtmlcloud package" href="asposehtmlcloud.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="asposehtmlcloud.html" title="asposehtmlcloud package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">asposehtmlcloud 1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="asposehtmlcloud.html" accesskey="U">asposehtmlcloud package</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="asposehtmlcloud-api-package">
+<h1>asposehtmlcloud.api package<a class="headerlink" href="#asposehtmlcloud-api-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-asposehtmlcloud.api.conversion_api">
+<span id="asposehtmlcloud-api-conversion-api-module"></span><h2>asposehtmlcloud.api.conversion_api module<a class="headerlink" href="#module-asposehtmlcloud.api.conversion_api" title="Permalink to this headline">¶</a></h2>
+<p>Conversion API for html documents</p>
+<dl class="class">
+<dt id="asposehtmlcloud.api.conversion_api.ConversionApi">
+<em class="property">class </em><code class="descclassname">asposehtmlcloud.api.conversion_api.</code><code class="descname">ConversionApi</code><span class="sig-paren">(</span><em>api_client=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/conversion_api.html#ConversionApi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.conversion_api.ConversionApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_image">
+<code class="descname">conversion_get_convert_document_to_image</code><span class="sig-paren">(</span><em>name</em>, <em>out_format</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/conversion_api.html#ConversionApi.conversion_get_convert_document_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the HTML document from the storage by its name to the specified image format.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
+<li><strong>out_format</strong> (<em>str</em>) – Resulting image format. (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting image width.</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting image height.</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting image margin.</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting image margin.</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting image margin.</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting image margin.</li>
+<li><strong>x_resolution</strong> (<em>int</em>) – Horizontal resolution of resulting image.</li>
+<li><strong>y_resolution</strong> (<em>int</em>) – Vertical resolution of resulting image.</li>
+<li><strong>folder</strong> (<em>str</em>) – The source document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The source document storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_image_by_url">
+<code class="descname">conversion_get_convert_document_to_image_by_url</code><span class="sig-paren">(</span><em>source_url</em>, <em>out_format</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/conversion_api.html#ConversionApi.conversion_get_convert_document_to_image_by_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_image_by_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the HTML page from the web by its URL to the specified image format.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>source_url</strong> (<em>str</em>) – Source page URL. (required)</li>
+<li><strong>out_format</strong> (<em>str</em>) – Resulting image format. (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting image width.</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting image height.</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting image margin.</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting image margin.</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting image margin.</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting image margin.</li>
+<li><strong>x_resolution</strong> (<em>int</em>) – Horizontal resolution of resulting image.</li>
+<li><strong>y_resolution</strong> (<em>int</em>) – Vertical resolution of resulting image.</li>
+<li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The document storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_pdf">
+<code class="descname">conversion_get_convert_document_to_pdf</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/conversion_api.html#ConversionApi.conversion_get_convert_document_to_pdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the HTML document from the storage by its name to PDF.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting image width.</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting image height.</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting image margin.</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting image margin.</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting image margin.</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting image margin.</li>
+<li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The document storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_pdf_by_url">
+<code class="descname">conversion_get_convert_document_to_pdf_by_url</code><span class="sig-paren">(</span><em>source_url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/conversion_api.html#ConversionApi.conversion_get_convert_document_to_pdf_by_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_pdf_by_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the HTML page from the web by its URL to PDF.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>source_url</strong> (<em>str</em>) – Source page URL. (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting image width.</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting image height.</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting image margin.</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting image margin.</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting image margin.</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting image margin.</li>
+<li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The document storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_xps">
+<code class="descname">conversion_get_convert_document_to_xps</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/conversion_api.html#ConversionApi.conversion_get_convert_document_to_xps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_xps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the HTML document from the storage by its name to XPS.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting image width.</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting image height.</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting image margin.</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting image margin.</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting image margin.</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting image margin.</li>
+<li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The document storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_xps_by_url">
+<code class="descname">conversion_get_convert_document_to_xps_by_url</code><span class="sig-paren">(</span><em>source_url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/conversion_api.html#ConversionApi.conversion_get_convert_document_to_xps_by_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.conversion_api.ConversionApi.conversion_get_convert_document_to_xps_by_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the HTML page from the web by its URL to XPS.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>source_url</strong> (<em>str</em>) – Source page URL. (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting image width.</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting image height.</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting image margin.</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting image margin.</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting image margin.</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting image margin.</li>
+<li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The document storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-asposehtmlcloud.api.document_api">
+<span id="asposehtmlcloud-api-document-api-module"></span><h2>asposehtmlcloud.api.document_api module<a class="headerlink" href="#module-asposehtmlcloud.api.document_api" title="Permalink to this headline">¶</a></h2>
+<p>Document API for html documents</p>
+<dl class="class">
+<dt id="asposehtmlcloud.api.document_api.DocumentApi">
+<em class="property">class </em><code class="descclassname">asposehtmlcloud.api.document_api.</code><code class="descname">DocumentApi</code><span class="sig-paren">(</span><em>api_client=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/document_api.html#DocumentApi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.document_api.DocumentApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="asposehtmlcloud.api.document_api.DocumentApi.document_get_document">
+<code class="descname">document_get_document</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/document_api.html#DocumentApi.document_get_document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.document_api.DocumentApi.document_get_document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the HTML document by the name from default or specified storage.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – The document name. (required)</li>
+<li><strong>storage</strong> (<em>str</em>) – The document folder</li>
+<li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.document_api.DocumentApi.document_get_document_fragment_by_x_path">
+<code class="descname">document_get_document_fragment_by_x_path</code><span class="sig-paren">(</span><em>name</em>, <em>x_path</em>, <em>out_format</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/document_api.html#DocumentApi.document_get_document_fragment_by_x_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.document_api.DocumentApi.document_get_document_fragment_by_x_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of HTML fragments matching the specified XPath query.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – The document name. (required)</li>
+<li><strong>x_path</strong> (<em>str</em>) – XPath query string. (required)</li>
+<li><strong>out_format</strong> (<em>str</em>) – Output format. Possible values: ‘plain’ and ‘json’. (required)</li>
+<li><strong>storage</strong> (<em>str</em>) – The document storage.</li>
+<li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.document_api.DocumentApi.document_get_document_images">
+<code class="descname">document_get_document_images</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/document_api.html#DocumentApi.document_get_document_images"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.document_api.DocumentApi.document_get_document_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all HTML document images packaged as a ZIP archive.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – The document name. (required)</li>
+<li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The document storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-asposehtmlcloud.api.ocr_api">
+<span id="asposehtmlcloud-api-ocr-api-module"></span><h2>asposehtmlcloud.api.ocr_api module<a class="headerlink" href="#module-asposehtmlcloud.api.ocr_api" title="Permalink to this headline">¶</a></h2>
+<p>OCR API for html documents</p>
+<dl class="class">
+<dt id="asposehtmlcloud.api.ocr_api.OcrApi">
+<em class="property">class </em><code class="descclassname">asposehtmlcloud.api.ocr_api.</code><code class="descname">OcrApi</code><span class="sig-paren">(</span><em>api_client=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/ocr_api.html#OcrApi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.ocr_api.OcrApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="asposehtmlcloud.api.ocr_api.OcrApi.ocr_get_recognize_and_import_to_html">
+<code class="descname">ocr_get_recognize_and_import_to_html</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/ocr_api.html#OcrApi.ocr_get_recognize_and_import_to_html"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.ocr_api.OcrApi.ocr_get_recognize_and_import_to_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recognize text from the image file in the storage and import it to HTML format.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – The image file name. (required)</li>
+<li><strong>ocr_engine_lang</strong> (<em>str</em>) – OCR engine language - language</li>
+<li><strong>folder</strong> (<em>str</em>) – The source image folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The source image storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.ocr_api.OcrApi.ocr_get_recognize_and_translate_to_html">
+<code class="descname">ocr_get_recognize_and_translate_to_html</code><span class="sig-paren">(</span><em>name</em>, <em>src_lang</em>, <em>res_lang</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/ocr_api.html#OcrApi.ocr_get_recognize_and_translate_to_html"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.ocr_api.OcrApi.ocr_get_recognize_and_translate_to_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recognize text from the image file in the storage, import it to HTML format and translate to specified language.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – The image file name. (required)</li>
+<li><strong>src_lang</strong> (<em>str</em>) – Source language - also supposed as the OCR engine language. (required)</li>
+<li><strong>res_lang</strong> (<em>str</em>) – Result language. (required)</li>
+<li><strong>folder</strong> (<em>str</em>) – The source image folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The source image storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-asposehtmlcloud.api.translation_api">
+<span id="asposehtmlcloud-api-translation-api-module"></span><h2>asposehtmlcloud.api.translation_api module<a class="headerlink" href="#module-asposehtmlcloud.api.translation_api" title="Permalink to this headline">¶</a></h2>
+<p>Translation API for html documents</p>
+<dl class="class">
+<dt id="asposehtmlcloud.api.translation_api.TranslationApi">
+<em class="property">class </em><code class="descclassname">asposehtmlcloud.api.translation_api.</code><code class="descname">TranslationApi</code><span class="sig-paren">(</span><em>api_client=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/translation_api.html#TranslationApi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.translation_api.TranslationApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="asposehtmlcloud.api.translation_api.TranslationApi.translation_get_translate_document">
+<code class="descname">translation_get_translate_document</code><span class="sig-paren">(</span><em>name</em>, <em>src_lang</em>, <em>res_lang</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/translation_api.html#TranslationApi.translation_get_translate_document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.translation_api.TranslationApi.translation_get_translate_document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate the HTML document specified by the name from default or specified storage.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
+<li><strong>src_lang</strong> (<em>str</em>) – Source language. (required)</li>
+<li><strong>res_lang</strong> (<em>str</em>) – Result language. (required)</li>
+<li><strong>storage</strong> (<em>str</em>) – The source document storage.</li>
+<li><strong>folder</strong> (<em>str</em>) – The source document folder.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.translation_api.TranslationApi.translation_get_translate_document_by_url">
+<code class="descname">translation_get_translate_document_by_url</code><span class="sig-paren">(</span><em>source_url</em>, <em>src_lang</em>, <em>res_lang</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/translation_api.html#TranslationApi.translation_get_translate_document_by_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.translation_api.TranslationApi.translation_get_translate_document_by_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate the HTML document from Web specified by its URL.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>source_url</strong> (<em>str</em>) – Source document URL. (required)</li>
+<li><strong>src_lang</strong> (<em>str</em>) – Source language. (required)</li>
+<li><strong>res_lang</strong> (<em>str</em>) – Result language. (required)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-asposehtmlcloud.api">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-asposehtmlcloud.api" title="Permalink to this headline">¶</a></h2>
+<p>Aspose.HTML for Cloud API Reference</p>
+<p>OpenAPI spec version: 1.1</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">asposehtmlcloud.api package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-asposehtmlcloud.api.conversion_api">asposehtmlcloud.api.conversion_api module</a></li>
+<li><a class="reference internal" href="#module-asposehtmlcloud.api.document_api">asposehtmlcloud.api.document_api module</a></li>
+<li><a class="reference internal" href="#module-asposehtmlcloud.api.ocr_api">asposehtmlcloud.api.ocr_api module</a></li>
+<li><a class="reference internal" href="#module-asposehtmlcloud.api.translation_api">asposehtmlcloud.api.translation_api module</a></li>
+<li><a class="reference internal" href="#module-asposehtmlcloud.api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="asposehtmlcloud.html"
+                        title="previous chapter">asposehtmlcloud package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/asposehtmlcloud.api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="asposehtmlcloud.html" title="asposehtmlcloud package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">asposehtmlcloud 1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="asposehtmlcloud.html" >asposehtmlcloud package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Aspose.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+    </div>
+  </body>
+</html>

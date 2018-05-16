@@ -1,0 +1,909 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>storageapi package &#8212; storageapi 1 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="storageapi.models package" href="storageapi.models.html" />
+    <link rel="prev" title="Welcome to storageapi’s documentation!" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="storageapi.models.html" title="storageapi.models package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to storageapi’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">storageapi 1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="storageapi-package">
+<h1>storageapi package<a class="headerlink" href="#storageapi-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-storageapi">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-storageapi" title="Permalink to this headline">¶</a></h2>
+<p>Aspose.Storage Cloud SDK for Python source code. This SDK allows you to work with
+Aspose.Storage Cloud REST APIs in your Python applications quickly and easily.</p>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-storageapi.storage_api">
+<span id="storageapi-storage-api-module"></span><h2>storageapi.storage_api module<a class="headerlink" href="#module-storageapi.storage_api" title="Permalink to this headline">¶</a></h2>
+<p>Storage API for Aspose HTML Clouds SDK</p>
+<dl class="exception">
+<dt id="storageapi.storage_api.ApiException">
+<em class="property">exception </em><code class="descclassname">storageapi.storage_api.</code><code class="descname">ApiException</code><span class="sig-paren">(</span><em>code</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#ApiException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.ApiException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.Exception</span></code></p>
+<dl class="method">
+<dt id="storageapi.storage_api.ApiException.get_code">
+<code class="descname">get_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#ApiException.get_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.ApiException.get_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.ApiException.get_message">
+<code class="descname">get_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#ApiException.get_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.ApiException.get_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.ApiException.set_code">
+<code class="descname">set_code</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#ApiException.set_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.ApiException.set_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.ApiException.set_message">
+<code class="descname">set_message</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#ApiException.set_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.ApiException.set_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="storageapi.storage_api.StorageApi">
+<em class="property">class </em><code class="descclassname">storageapi.storage_api.</code><code class="descname">StorageApi</code><span class="sig-paren">(</span><em>api_client</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.DeleteFile">
+<code class="descname">DeleteFile</code><span class="sig-paren">(</span><em>Path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.DeleteFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.DeleteFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a specific file. Parameters: path - file path e.g. /file.ext,
+versionID - file’s version, storage - user’s storage name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Path</strong> (<em>str</em>) – File path e.g. /file.ext. (required)</li>
+<li><strong>versionId</strong> (<em>str</em>) – File version. (optional)</li>
+<li><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">RemoveFileResponse</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.DeleteFolder">
+<code class="descname">DeleteFolder</code><span class="sig-paren">(</span><em>Path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.DeleteFolder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.DeleteFolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a specific folder.
+Parameters: path - folder path e.g. /Folder1, storage - user’s storage name,
+recursive - is subfolders and files must be deleted for specified path.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Path</strong> (<em>str</em>) – File path e.g. /file.ext. (required)</li>
+<li><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</li>
+<li><strong>recursive</strong> (<em>bool</em>) – Delete recursive (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">RemoveFolderResponse</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.GetDiscUsage">
+<code class="descname">GetDiscUsage</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.GetDiscUsage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.GetDiscUsage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the disk usage of the current account.
+Parameters: storage - user’s storage name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">DiscUsageResponse</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.GetDownload">
+<code class="descname">GetDownload</code><span class="sig-paren">(</span><em>Path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.GetDownload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.GetDownload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download a specific file.
+Parameters: path - file path e.g. /file.ext, versionID - file’s version,
+storage - user’s storage name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Path</strong> (<em>str</em>) – File path e.g. /file.ext. (required)</li>
+<li><strong>versionId</strong> (<em>str</em>) – File version (optional)</li>
+<li><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">ResponseMessage</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.GetIsExist">
+<code class="descname">GetIsExist</code><span class="sig-paren">(</span><em>Path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.GetIsExist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.GetIsExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a specific file or folder exists.
+Parameters: path - ,
+versionID - file’s version,
+storage - user’s storage name.
+:param str Path: File path e.g. /file.ext. (required)
+:param versionId (str):  (optional)
+:param str Path: File or folder path e.g. /file.ext or /Folder1
+:param str storage: Remote storage. (optional)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">FileExistResponse</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.GetIsStorageExist">
+<code class="descname">GetIsStorageExist</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.GetIsStorageExist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.GetIsStorageExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a specific storage exists.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>storage</strong> (<em>str</em>) – Storage name (required)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">StorageExistResponse</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.GetListFileVersions">
+<code class="descname">GetListFileVersions</code><span class="sig-paren">(</span><em>Path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.GetListFileVersions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.GetListFileVersions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the file’s versions list.
+Parameters: path - file path e.g. /file.ext or /Folder1/file.ext,
+storage - user’s storage name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Path</strong> (<em>str</em>) – File path e.g. /file.ext. (required)</li>
+<li><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">FileVersionsResponse</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.GetListFiles">
+<code class="descname">GetListFiles</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.GetListFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.GetListFiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the file listing of a specific folder.
+Parametres: path - start with name of storage e.g. root folder ‘/’or some folder ‘/folder1/..’,
+storage - user’s storage name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Path</strong> (<em>str</em>) – File path e.g. /file.ext. (required)</li>
+<li><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">FilesResponse</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.PostMoveFile">
+<code class="descname">PostMoveFile</code><span class="sig-paren">(</span><em>src</em>, <em>dest</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.PostMoveFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.PostMoveFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move a specific file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>src</strong> (<em>str</em>) – Source file path e.g. /file.ext (required)</li>
+<li><strong>dest</strong> (<em>str</em>) – Destination (required)</li>
+<li><strong>versionId</strong> (<em>str</em>) – Source file’s version, (optional)</li>
+<li><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</li>
+<li><strong>destStorage</strong> (<em>str</em>) – User’s destination storage name (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">MoveFileResponse</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.PostMoveFolder">
+<code class="descname">PostMoveFolder</code><span class="sig-paren">(</span><em>src</em>, <em>dest</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.PostMoveFolder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.PostMoveFolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move a specific folder. Parameters: src - source folder path e.g. /Folder1,
+storage - user’s source storage name,
+dest - destination folder path e.g. /Folder2,
+destStorage - user’s destination storage name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>src</strong> (<em>str</em>) – Source folder (required)</li>
+<li><strong>dest</strong> (<em>str</em>) – Target folder (required)</li>
+<li><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</li>
+<li><strong>destStorage</strong> (<em>str</em>) – Storage (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">MoveFolderResponse</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.PutCopy">
+<code class="descname">PutCopy</code><span class="sig-paren">(</span><em>Path</em>, <em>newdest</em>, <em>file</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.PutCopy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.PutCopy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy a specific file.
+Parameters: path - source file path e.g. /file.ext,
+versionID - source file’s version,
+storage - user’s source storage name,
+newdest - destination file path, destStorage - user’s destination storage name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Path</strong> (<em>str</em>) – File path e.g. /file.ext. (required)</li>
+<li><strong>newdest</strong> (<em>str</em>) – New file path (required)</li>
+<li><strong>versionId</strong> (<em>str</em>) – File version(optional)</li>
+<li><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</li>
+<li><strong>destStorage</strong> (<em>str</em>) – (optional)</li>
+<li><strong>file</strong> (<em>str</em>) – File path e.g. /file.ext (required)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">ResponseMessage</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.PutCopyFolder">
+<code class="descname">PutCopyFolder</code><span class="sig-paren">(</span><em>Path</em>, <em>newdest</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.PutCopyFolder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.PutCopyFolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy a folder. Parameters: path - source folder path e.g. /Folder1,
+storage - user’s source storage name, newdest - destination folder path e.g. /Folder2,
+destStorage - user’s destination storage name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Path</strong> (<em>str</em>) – File path e.g. /file.ext. (required)</li>
+<li><strong>newdest</strong> (<em>str</em>) – (required)</li>
+<li><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</li>
+<li><strong>destStorage</strong> (<em>str</em>) – (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">ResponseMessage</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.PutCreate">
+<code class="descname">PutCreate</code><span class="sig-paren">(</span><em>Path</em>, <em>file</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.PutCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.PutCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload a specific file.
+Parameters: path - source file path e.g. /file.ext,
+versionID - source file’s version,
+storage - user’s source storage name,
+newdest - destination file path,
+destStorage - user’s destination storage name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Path</strong> (<em>str</em>) – Remote file path e.g. /file.ext. (required)</li>
+<li><strong>versionId</strong> (<em>str</em>) – (optional)</li>
+<li><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</li>
+<li><strong>file</strong> (<em>str</em>) – Local File name with full path (required)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">ResponseMessage</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.PutCreateFolder">
+<code class="descname">PutCreateFolder</code><span class="sig-paren">(</span><em>Path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.PutCreateFolder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.PutCreateFolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the folder. Parameters: path - source folder path e.g.
+/Folder1, storage - user’s source storage name,
+newdest - destination folder path e.g. /Folder2,
+destStorage - user’s destination storage name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Path</strong> (<em>str</em>) – File path e.g. /file.ext. (required)</li>
+<li><strong>storage</strong> (<em>str</em>) – Remote storage. (optional)</li>
+<li><strong>destStorage</strong> (<em>str</em>) – (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">ResponseMessage</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.deserialize">
+<code class="descname">deserialize</code><span class="sig-paren">(</span><em>obj</em>, <em>objClass</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.deserialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.deserialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Derialize a JSON string into an object.
+:param obj obj: String or object to be deserialized
+:param str objClass: Class literal for deserialzied object, or string of class name
+:return: object – deserialized object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.storage_api.StorageApi.pre_deserialize">
+<code class="descname">pre_deserialize</code><span class="sig-paren">(</span><em>obj</em>, <em>objClass</em>, <em>contentType=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/storage_api.html#StorageApi.pre_deserialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.storage_api.StorageApi.pre_deserialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-storageapi.alias">
+<span id="storageapi-alias-module"></span><h2>storageapi.alias module<a class="headerlink" href="#module-storageapi.alias" title="Permalink to this headline">¶</a></h2>
+<p>Class for create alias for methods by decorator</p>
+<dl class="class">
+<dt id="storageapi.alias.alias">
+<em class="property">class </em><code class="descclassname">storageapi.alias.</code><code class="descname">alias</code><span class="sig-paren">(</span><em>*aliases</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/alias.html#alias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.alias.alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Alias class that can be used as a decorator for making methods callable
+through other names (or “aliases”).
+Note: This decorator must be used inside an &#64;aliased -decorated class.
+For example, if you want to make the method shout() be also callable as
+yell() and scream(), you can use alias like this:</p>
+<blockquote>
+<div>&#64;alias(‘yell’, ‘scream’)
+def shout(message):
+# ….</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="storageapi.alias.aliased">
+<code class="descclassname">storageapi.alias.</code><code class="descname">aliased</code><span class="sig-paren">(</span><em>aliased_class</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/alias.html#aliased"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.alias.aliased" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator function that <em>must</em> be used in combination with &#64;alias
+decorator. This class will make the magic happen!
+&#64;aliased classes will have their aliased method (via &#64;alias) actually
+aliased.
+This method simply iterates over the member attributes of ‘aliased_class’
+seeking for those which have an ‘_aliases’ attribute and then defines new
+members in the class using those aliases as mere pointer functions to the
+original ones.</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd><p class="first">&#64;aliased
+class MyClass(object):</p>
+<blockquote>
+<div>&#64;alias(‘coolMethod’, ‘myKinkyMethod’)
+def boring_method():
+# …</div></blockquote>
+<p class="last">i = MyClass()
+i.coolMethod() # equivalent to i.myKinkyMethod() and i.boring_method()</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-storageapi.client">
+<span id="storageapi-client-module"></span><h2>storageapi.client module<a class="headerlink" href="#module-storageapi.client" title="Permalink to this headline">¶</a></h2>
+<p>Http client for REST API</p>
+<p>OpenAPI spec version: 1.0.0</p>
+<dl class="class">
+<dt id="storageapi.client.ApiClient">
+<em class="property">class </em><code class="descclassname">storageapi.client.</code><code class="descname">ApiClient</code><span class="sig-paren">(</span><em>configuration</em>, <em>header_name=None</em>, <em>header_value=None</em>, <em>cookie=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Generic API client for client library builds.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>configuration</strong> – .Configuration object for this client</li>
+<li><strong>header_name</strong> – a header to pass when making calls to the API.</li>
+<li><strong>header_value</strong> – a header value to pass when making calls to the API.</li>
+<li><strong>cookie</strong> – a cookie to include in the header when making calls to the API</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="storageapi.client.ApiClient.NATIVE_TYPES_MAPPING">
+<code class="descname">NATIVE_TYPES_MAPPING</code><em class="property"> = {'bool': &lt;type 'bool'&gt;, 'date': &lt;type 'datetime.date'&gt;, 'datetime': &lt;type 'datetime.datetime'&gt;, 'float': &lt;type 'float'&gt;, 'int': &lt;type 'int'&gt;, 'long': &lt;type 'long'&gt;, 'object': &lt;type 'object'&gt;, 'str': &lt;type 'str'&gt;}</em><a class="headerlink" href="#storageapi.client.ApiClient.NATIVE_TYPES_MAPPING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="storageapi.client.ApiClient.PRIMITIVE_TYPES">
+<code class="descname">PRIMITIVE_TYPES</code><em class="property"> = (&lt;type 'float'&gt;, &lt;type 'bool'&gt;, &lt;type 'str'&gt;, &lt;type 'unicode'&gt;, &lt;type 'int'&gt;, &lt;type 'long'&gt;)</em><a class="headerlink" href="#storageapi.client.ApiClient.PRIMITIVE_TYPES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="storageapi.client.ApiClient.buildMultipartFormData">
+<code class="descname">buildMultipartFormData</code><span class="sig-paren">(</span><em>post_data</em>, <em>files</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiClient.buildMultipartFormData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiClient.buildMultipartFormData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="storageapi.client.ApiClient.build_uri">
+<em class="property">static </em><code class="descname">build_uri</code><span class="sig-paren">(</span><em>qry_data=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiClient.build_uri"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiClient.build_uri" title="Permalink to this definition">¶</a></dt>
+<dd><p>URI Builder - Accept path and query string to generate a URI.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>path</strong> – e.g <a class="reference external" href="http://api-qa.aspose.com/v1/testurl">http://api-qa.aspose.com/v1/testurl</a></li>
+<li><strong>qry_data</strong> – a dictionary which holds query string data e.g {‘param1’: ‘value1’, ‘param2’: ‘value2’}</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">returns a uri with query string e.g <a class="reference external" href="http://api-qa.aspose.com/v1/testurl?param1=value1&amp;param2=value2">http://api-qa.aspose.com/v1/testurl?param1=value1&amp;param2=value2</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.client.ApiClient.call_api">
+<code class="descname">call_api</code><span class="sig-paren">(</span><em>resource_path</em>, <em>method</em>, <em>query_params</em>, <em>post_data</em>, <em>header_params=None</em>, <em>files=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiClient.call_api"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiClient.call_api" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="storageapi.client.ApiClient.deserialize">
+<code class="descname">deserialize</code><span class="sig-paren">(</span><em>obj</em>, <em>objClass</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiClient.deserialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiClient.deserialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Derialize a JSON string into an object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>obj</strong> – String or object to be deserialized</li>
+<li><strong>objClass</strong> – Class literal for deserialzied object, or string of class name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">bject – deserialized object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.client.ApiClient.pre_deserialize">
+<code class="descname">pre_deserialize</code><span class="sig-paren">(</span><em>obj</em>, <em>objClass</em>, <em>contentType=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiClient.pre_deserialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiClient.pre_deserialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="storageapi.client.ApiClient.sanitizeForSerialization">
+<em class="property">static </em><code class="descname">sanitizeForSerialization</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiClient.sanitizeForSerialization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiClient.sanitizeForSerialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sanitize an object for Request.
+If obj is None, return None.
+If obj is str, int, long, float, bool, return directly.
+If obj is datetime.datetime, datetime.date convert to string in iso8601 format.
+If obj is list, santize each element in the list.
+If obj is dict, return the dict.
+If obj is model, return the properties dict.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.client.ApiClient.select_header_accept">
+<code class="descname">select_header_accept</code><span class="sig-paren">(</span><em>accepts</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiClient.select_header_accept"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiClient.select_header_accept" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <cite>Accept</cite> based on an array of accepts provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>accepts</strong> – List of headers.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Accept (e.g. application/json).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.client.ApiClient.select_header_content_type">
+<code class="descname">select_header_content_type</code><span class="sig-paren">(</span><em>content_types</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiClient.select_header_content_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiClient.select_header_content_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <cite>Content-Type</cite> based on an array of content_types provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>content_types</strong> – List of content-types.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Content-Type (e.g. application/json).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.client.ApiClient.set_default_header">
+<code class="descname">set_default_header</code><span class="sig-paren">(</span><em>header_name</em>, <em>header_value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiClient.set_default_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiClient.set_default_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="storageapi.client.ApiClient.toPathValue">
+<code class="descname">toPathValue</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiClient.toPathValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiClient.toPathValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a string or object to a path-friendly value
+Args:
+:param obj obj: Object or string value
+:return: string – quoted value</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="storageapi.client.ApiClient.user_agent">
+<code class="descname">user_agent</code><a class="headerlink" href="#storageapi.client.ApiClient.user_agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>User agent for this API client</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="storageapi.client.ApiException">
+<em class="property">exception </em><code class="descclassname">storageapi.client.</code><code class="descname">ApiException</code><span class="sig-paren">(</span><em>code</em>, <em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.Exception</span></code></p>
+<dl class="method">
+<dt id="storageapi.client.ApiException.get_code">
+<code class="descname">get_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiException.get_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiException.get_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="storageapi.client.ApiException.get_message">
+<code class="descname">get_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiException.get_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiException.get_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="storageapi.client.ApiException.set_code">
+<code class="descname">set_code</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiException.set_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiException.set_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="storageapi.client.ApiException.set_message">
+<code class="descname">set_message</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#ApiException.set_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.ApiException.set_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="storageapi.client.MethodRequest">
+<em class="property">class </em><code class="descclassname">storageapi.client.</code><code class="descname">MethodRequest</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#MethodRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.MethodRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">urllib2.Request</span></code></p>
+<dl class="method">
+<dt id="storageapi.client.MethodRequest.get_method">
+<code class="descname">get_method</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/client.html#MethodRequest.get_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.client.MethodRequest.get_method" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-storageapi.configuration">
+<span id="storageapi-configuration-module"></span><h2>storageapi.configuration module<a class="headerlink" href="#module-storageapi.configuration" title="Permalink to this headline">¶</a></h2>
+<p>Configuration class for Aspose.Storage Cloud REST APIs</p>
+<p>OpenAPI spec version: 1.1</p>
+<dl class="class">
+<dt id="storageapi.configuration.Configuration">
+<em class="property">class </em><code class="descclassname">storageapi.configuration.</code><code class="descname">Configuration</code><a class="reference internal" href="_modules/storageapi/configuration.html#Configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.configuration.Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="storageapi.configuration.Configuration.auth_settings">
+<code class="descname">auth_settings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/configuration.html#Configuration.auth_settings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.configuration.Configuration.auth_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets Auth Settings dict for api client.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The Auth Settings information dict.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="storageapi.configuration.Configuration.debug">
+<code class="descname">debug</code><a class="headerlink" href="#storageapi.configuration.Configuration.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debug status</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> – The debug status, True or False.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.configuration.Configuration.get_api_key_with_prefix">
+<code class="descname">get_api_key_with_prefix</code><span class="sig-paren">(</span><em>identifier</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/configuration.html#Configuration.get_api_key_with_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.configuration.Configuration.get_api_key_with_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets API key (with prefix if set).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>identifier</strong> – The identifier of apiKey.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The token for api key authentication.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.configuration.Configuration.get_basic_auth_token">
+<code class="descname">get_basic_auth_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/configuration.html#Configuration.get_basic_auth_token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.configuration.Configuration.get_basic_auth_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets HTTP basic authentication header (string).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The token for basic HTTP authentication.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.configuration.Configuration.get_token">
+<code class="descname">get_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/configuration.html#Configuration.get_token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.configuration.Configuration.get_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="storageapi.configuration.Configuration.logger_file">
+<code class="descname">logger_file</code><a class="headerlink" href="#storageapi.configuration.Configuration.logger_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>The logger file.</p>
+<p>If the logger_file is None, then add stream handler and remove file
+handler. Otherwise, add file handler and remove stream handler.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> – The logger_file path.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="storageapi.configuration.Configuration.logger_format">
+<code class="descname">logger_format</code><a class="headerlink" href="#storageapi.configuration.Configuration.logger_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>The logger format.</p>
+<p>The logger_formatter will be updated when sets logger_format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> – The format string.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="storageapi.configuration.Configuration.to_debug_report">
+<code class="descname">to_debug_report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/configuration.html#Configuration.to_debug_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.configuration.Configuration.to_debug_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the essential information for debugging.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The report for debugging.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="storageapi.configuration.TypeWithDefault">
+<em class="property">class </em><code class="descclassname">storageapi.configuration.</code><code class="descname">TypeWithDefault</code><span class="sig-paren">(</span><em>name</em>, <em>bases</em>, <em>dct</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/configuration.html#TypeWithDefault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.configuration.TypeWithDefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<dl class="method">
+<dt id="storageapi.configuration.TypeWithDefault.set_default">
+<code class="descname">set_default</code><span class="sig-paren">(</span><em>default</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/storageapi/configuration.html#TypeWithDefault.set_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#storageapi.configuration.TypeWithDefault.set_default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="storageapi.models.html">storageapi.models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.BaseModel">storageapi.models.BaseModel module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.DateTime">storageapi.models.DateTime module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.DiscUsage">storageapi.models.DiscUsage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.DiscUsageResponse">storageapi.models.DiscUsageResponse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.FileDetail">storageapi.models.FileDetail module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.FileExist">storageapi.models.FileExist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.FileExistResponse">storageapi.models.FileExistResponse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.FileVersion">storageapi.models.FileVersion module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.FileVersionsResponse">storageapi.models.FileVersionsResponse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.FilesResponse">storageapi.models.FilesResponse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.MoveFileResponse">storageapi.models.MoveFileResponse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.MoveFolderResponse">storageapi.models.MoveFolderResponse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.RemoveFileResponse">storageapi.models.RemoveFileResponse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.RemoveFolderResponse">storageapi.models.RemoveFolderResponse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.ResponseMessage">storageapi.models.ResponseMessage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storageapi.models.html#module-storageapi.models.StorageExistResponse">storageapi.models.StorageExistResponse module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">storageapi package</a><ul>
+<li><a class="reference internal" href="#module-storageapi">Module contents</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-storageapi.storage_api">storageapi.storage_api module</a></li>
+<li><a class="reference internal" href="#module-storageapi.alias">storageapi.alias module</a></li>
+<li><a class="reference internal" href="#module-storageapi.client">storageapi.client module</a></li>
+<li><a class="reference internal" href="#module-storageapi.configuration">storageapi.configuration module</a></li>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to storageapi’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="storageapi.models.html"
+                        title="next chapter">storageapi.models package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/storageapi.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="storageapi.models.html" title="storageapi.models package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to storageapi’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">storageapi 1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Aspose.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+    </div>
+  </body>
+</html>
