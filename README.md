@@ -18,35 +18,25 @@ From the command line:
 	python setup.py install
 ```
 
-### Sample usage
-
-Before fill all fields in /setting/config.json   
-
-Example:   
-```json
-{
-    "basePath":"https://api.aspose.cloud/v1.1",
-    "authPath":"https://api.aspose.cloud/oauth2/token",
-    "apiKey":"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-    "appSID":"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-    "testResult":"/testresult/",
-    "testData":"/testdata/",
-    "remoteFolder":"HtmlTestDoc/",
-    "defaultUserAgent":"Webkit",
-    "debugFile":"debug.log",
-    "debug":false
-}
+#### From maven
+```code
+pip install asposehtmlcloud
 ```
 
 
 The examples below show how your application have to initiate and convert url to image using Aspose.HTML Cloud library:
 ```python
 import os
-from asposehtmlcloud.api.conversion_api import ConversionApi
+from asposehtmlcloud.configuration import Configuration
+from asposehtmlcloud.api.html_api import HtmlApi
 from asposehtmlcloud.rest import ApiException
 from shutil import copy2
-
-api = ConversionApi()
+configuration = Configuration(apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                              appSid="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+                              basePath="https://api.aspose.cloud/v1.1",
+                              authPath="https://api.aspose.cloud/oauth2/token",
+                              debug=True)
+api = HtmlApi(configuration)
 
 source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
 try:
@@ -55,7 +45,7 @@ try:
     res = api.conversion_get_convert_document_to_image_by_url(
         source_url, out_format="jpeg", width=800, height=1000, left_margin=50, right_margin=100,
         top_margin=150, bottom_margin=200, x_resolution=300, y_resolution=300,
-        folder=TestHelper.folder, storage=""
+        folder="MY_REMOTE_FOLDER", storage=""
     )
 
     src = str(res)

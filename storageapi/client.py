@@ -156,7 +156,7 @@ class ApiClient(object):
 
         resource_path = re.sub("\\{\\w*\\}", "", resource_path)
 
-        url = self.configuration.config['basePath'] + resource_path
+        url = self.configuration.host + resource_path
         logging.debug(url)
 
         mergedHeaderParams = self.default_headers.copy()

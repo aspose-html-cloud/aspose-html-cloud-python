@@ -38,24 +38,28 @@ from storageapi.storage_api import StorageApi
 class TestHelper(object):
 
     # Load config from external file
-    configuration = Configuration()
+    configuration = Configuration(
+        apiKey="",
+        appSid="",
+        basePath="https://api-qa.aspose.cloud/v1.1",
+        authPath="https://api-qa.aspose.cloud/oauth2/token",
+        debug=True)
+
     client = Client(configuration)
     storage = StorageApi(client)
-    test_src = os.path.dirname(__file__) + '/..' + configuration.config['testData']
-    test_dst = os.path.dirname(__file__) + '/..' + configuration.config['testResult']
-    folder = configuration.config['remoteFolder']
+    test_src = os.path.dirname(__file__) + '/../testdata/'
+    test_dst = os.path.dirname(__file__) + '/../testresult/'
+    folder = 'HtmlTestDoc'
 
     @classmethod
     def upload_file(cls, file_name, upload_folder=None):
         folder = cls.folder if upload_folder is None else upload_folder
 
-        response = cls.storage.PutCreate(folder + file_name, cls.test_src + file_name)
+        response = cls.storage.PutCreate(folder + "/" + file_name, cls.test_src + file_name)
         return response
 
     @classmethod
     def get_file_size(cls, file_name):
-        print type(file_name)
-        print (cls.test_src + file_name)
         return os.path.getsize(cls.test_src + file_name)
 
     @classmethod

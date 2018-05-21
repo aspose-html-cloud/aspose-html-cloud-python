@@ -1,7 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
-
 """
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="__init__.py">
@@ -32,10 +30,6 @@
 
 from __future__ import absolute_import
 
-# import apis into sdk package
-from asposehtmlcloud.api.document_api import DocumentApi
-
 # import ApiClient
 from asposehtmlcloud.api_client import ApiClient
 from asposehtmlcloud.configuration import Configuration
-# import models into sdk package

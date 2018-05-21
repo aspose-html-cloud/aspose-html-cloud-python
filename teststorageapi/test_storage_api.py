@@ -38,8 +38,9 @@ from storageapi.client import ApiClient
 
 class TestStorageApi(unittest.TestCase):
 
-    def setUp(self):
-        self.api = TestHelper.storage
+    @classmethod
+    def setUpClass(cls):
+        cls.api = TestHelper.storage
 
     # **************************************************
     #                  Test storage Api

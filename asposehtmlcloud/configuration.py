@@ -43,15 +43,14 @@ import certifi
 
 urllib3.contrib.pyopenssl.inject_into_urllib3()
 
-
 class TypeWithDefault(type):
     def __init__(cls, name, bases, dct):
         super(TypeWithDefault, cls).__init__(name, bases, dct)
         cls._default = None
 
-    def __call__(cls):
+    def __call__(cls, *args, **kwargs):
         if cls._default is None:
-            cls._default = type.__call__(cls)
+            cls._default = type.__call__(cls, *args, **kwargs)
         return copy.copy(cls._default)
 
     def set_default(cls, default):
@@ -60,30 +59,56 @@ class TypeWithDefault(type):
 
 class Configuration(six.with_metaclass(TypeWithDefault, object)):
 
-    def __init__(self):
+    def __init__(self, apiKey=None, appSid=None, basePath="https://api.aspose.cloud/v1.1",
+                 authPath = "https://api.aspose.cloud/oauth2/token", debug=False):
+
         """Constructor"""
+        # Get configuration from external file
+        if apiKey == None or appSid == None :
 
-        # Load config from external file
-        with open(os.path.dirname(__file__) + '/../setting/config.json', 'r') as f:
-            self.config = json.load(f)
+            # Load config from external file
+            with open(os.path.dirname(__file__) + '/../setting/config.json', 'r') as f:
+                self.config = json.load(f)
 
-        # Default Base url
-        self.host = self.config['basePath']
-        self.auth_host = self.config['authPath']
+            # Authentication Settings
+            self.api_key = self.config['apiKey']
+            self.app_sid = self.config['appSID']
+
+            # Default Base url
+            self.host = self.config['basePath']
+            self.auth_host = self.config['authPath']
+            self.test_result = os.path.dirname(__file__) + '/..' + self.config['testResult']
+            self.test_data = os.path.dirname(__file__) + '/..' + self.config['testData']
+            self.remote_folder = self.config['remoteFolder']
+
+            # Default client
+            self.default_user_agent = self.config['defaultUserAgent']
+
+            # Debug file location
+            log_file = os.pardir + '/' + self.config['debugFile']
+            # Debug switch
+            dbg = self.config['debug']
+        # Configuration in parameters
+        else:
+            # Authentication Settings
+            self.api_key = apiKey
+            self.app_sid = appSid
+
+            # Default Base url
+            self.host = basePath
+            self.auth_host = authPath
+
+            # Default client
+            self.default_user_agent = "Aspose_SDK"
+
+            # Debug file location
+            log_file = os.pardir + '/debug.log'
+            # Debug switch
+            dbg = debug
 
         # Temp file folder for downloading files
         self.temp_folder_path = gettempdir()
 
-        self.test_result = os.path.dirname(__file__) + '/..' + self.config['testResult']
-        self.test_data = os.path.dirname(__file__) + '/..' + self.config['testData']
-        self.remote_folder = self.config['remoteFolder']
-
-        # Authentication Settings
-        self.api_key = self.config['apiKey']
-        self.app_sid = self.config['appSID']
-
-        # Default client
-        self.default_user_agent = self.config['defaultUserAgent']
         # dict to store API prefix (e.g. Bearer)
         self.api_key_prefix = {}
 
@@ -100,10 +125,10 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         self.logger_stream_handler = None
         # Log file handler
         self.logger_file_handler = None
-        # Debug file location
-        self.logger_file = os.pardir + '/' + self.config['debugFile']
-        # Debug switch
-        self.debug = self.config['debug']
+
+        self.logger_file = log_file
+
+        self.debug= dbg
 
         # SSL/TLS verification
         # Set this to false to skip verifying SSL certificate when calling API
@@ -296,7 +321,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: 1.1\n"\
-               "SDK Package Version: 1.0.0".\
+               "Version of the API: 18.04\n"\
+               "SDK Package Version: 1.0.1".\
                format(env=sys.platform, pyversion=sys.version)
 

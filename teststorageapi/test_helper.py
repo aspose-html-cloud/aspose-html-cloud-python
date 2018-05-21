@@ -32,19 +32,25 @@ import os
 from shutil import copy2
 from storageapi.storage_api import StorageApi
 
-from storageapi.client import ApiClient
+from storageapi.client import ApiClient as Client
 from asposehtmlcloud.configuration import Configuration
 
 
 class TestHelper(object):
 
-    configuration = Configuration()
-    client = ApiClient(configuration)
+    configuration = Configuration(
+        apiKey="",
+        appSid="",
+        basePath="https://api-qa.aspose.cloud/v1.1",
+        authPath="https://api-qa.aspose.cloud/oauth2/token",
+        debug=True)
+
+    client = Client(configuration)
     storage = StorageApi(client)
 
-    test_src = os.path.dirname(__file__) + '/..' + configuration.config['testData']
-    test_dst = os.path.dirname(__file__) + '/..' + configuration.config['testResult']
-    folder = configuration.config['remoteFolder']
+    test_src = os.path.dirname(__file__) + '/../testdata/'
+    test_dst = os.path.dirname(__file__) + '/../testresult/'
+    folder = 'HtmlDoc/'
 
     @classmethod
     def get_folder(cls):

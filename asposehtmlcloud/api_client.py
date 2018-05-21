@@ -41,10 +41,12 @@ import six
 from six.moves.urllib.parse import quote
 
 from asposehtmlcloud.configuration import Configuration
+from asposehtmlcloud.configuration import TypeWithDefault # create singleton
+
 from asposehtmlcloud import rest
 
 
-class ApiClient(object):
+class ApiClient(six.with_metaclass(TypeWithDefault, object)):
     """Generic API client for client library builds.
 
     :param configuration: .Configuration object for this client

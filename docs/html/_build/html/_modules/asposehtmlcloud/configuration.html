@@ -39,9 +39,31 @@
 <span></span><span class="c1"># coding: utf-8</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Configuration class</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">--------------------------------------------------------------------------------------------------------------------</span>
+<span class="sd"> &lt;copyright company=&quot;Aspose&quot; file=&quot;configuration.py&quot;&gt;</span>
+<span class="sd">   Copyright (c) 2018 Aspose.HTML for Cloud</span>
+<span class="sd"> &lt;/copyright&gt;</span>
+<span class="sd"> &lt;summary&gt;</span>
+<span class="sd">  Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="sd"> of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="sd"> in the Software without restriction, including without limitation the rights</span>
+<span class="sd"> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="sd"> copies of the Software, and to permit persons to whom the Software is</span>
+<span class="sd"> furnished to do so, subject to the following conditions:</span>
 
+<span class="sd"> The above copyright notice and this permission notice shall be included in all</span>
+<span class="sd"> copies or substantial portions of the Software.</span>
+
+<span class="sd"> THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="sd"> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="sd"> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="sd"> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="sd"> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="sd"> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="sd"> SOFTWARE.</span>
+<span class="sd">&lt;/summary&gt;</span>
+<span class="sd">--------------------------------------------------------------------------------------------------------------------</span>
+<span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -59,15 +81,14 @@
 
 <span class="n">urllib3</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">pyopenssl</span><span class="o">.</span><span class="n">inject_into_urllib3</span><span class="p">()</span>
 
-
 <div class="viewcode-block" id="TypeWithDefault"><a class="viewcode-back" href="../../asposehtmlcloud.html#asposehtmlcloud.configuration.TypeWithDefault">[docs]</a><span class="k">class</span> <span class="nc">TypeWithDefault</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dct</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">TypeWithDefault</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dct</span><span class="p">)</span>
         <span class="bp">cls</span><span class="o">.</span><span class="n">_default</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_default</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">cls</span><span class="o">.</span><span class="n">_default</span> <span class="o">=</span> <span class="nb">type</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">_default</span> <span class="o">=</span> <span class="nb">type</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_default</span><span class="p">)</span>
 
 <div class="viewcode-block" id="TypeWithDefault.set_default"><a class="viewcode-back" href="../../asposehtmlcloud.html#asposehtmlcloud.configuration.TypeWithDefault.set_default">[docs]</a>    <span class="k">def</span> <span class="nf">set_default</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">default</span><span class="p">):</span>
@@ -76,30 +97,56 @@
 
 <div class="viewcode-block" id="Configuration"><a class="viewcode-back" href="../../asposehtmlcloud.html#asposehtmlcloud.configuration.Configuration">[docs]</a><span class="k">class</span> <span class="nc">Configuration</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">TypeWithDefault</span><span class="p">,</span> <span class="nb">object</span><span class="p">)):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apiKey</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">appSid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">basePath</span><span class="o">=</span><span class="s2">&quot;https://api.aspose.cloud/v1.1&quot;</span><span class="p">,</span>
+                 <span class="n">authPath</span> <span class="o">=</span> <span class="s2">&quot;https://api.aspose.cloud/oauth2/token&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
         <span class="sd">&quot;&quot;&quot;Constructor&quot;&quot;&quot;</span>
+        <span class="c1"># Get configuration from external file</span>
+        <span class="k">if</span> <span class="n">apiKey</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">appSid</span> <span class="o">==</span> <span class="kc">None</span> <span class="p">:</span>
 
-        <span class="c1"># Load config from external file</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/../setting/config.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="c1"># Load config from external file</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/../setting/config.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
-        <span class="c1"># Default Base url</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;basePath&#39;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">auth_host</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;authPath&#39;</span><span class="p">]</span>
+            <span class="c1"># Authentication Settings</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;apiKey&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">app_sid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;appSID&#39;</span><span class="p">]</span>
+
+            <span class="c1"># Default Base url</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;basePath&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">auth_host</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;authPath&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test_result</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/..&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;testResult&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test_data</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/..&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;testData&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remote_folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;remoteFolder&#39;</span><span class="p">]</span>
+
+            <span class="c1"># Default client</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">default_user_agent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;defaultUserAgent&#39;</span><span class="p">]</span>
+
+            <span class="c1"># Debug file location</span>
+            <span class="n">log_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">pardir</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;debugFile&#39;</span><span class="p">]</span>
+            <span class="c1"># Debug switch</span>
+            <span class="n">dbg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;debug&#39;</span><span class="p">]</span>
+        <span class="c1"># Configuration in parameters</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Authentication Settings</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">apiKey</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">app_sid</span> <span class="o">=</span> <span class="n">appSid</span>
+
+            <span class="c1"># Default Base url</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="n">basePath</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">auth_host</span> <span class="o">=</span> <span class="n">authPath</span>
+
+            <span class="c1"># Default client</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">default_user_agent</span> <span class="o">=</span> <span class="s2">&quot;Aspose_SDK&quot;</span>
+
+            <span class="c1"># Debug file location</span>
+            <span class="n">log_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">pardir</span> <span class="o">+</span> <span class="s1">&#39;/debug.log&#39;</span>
+            <span class="c1"># Debug switch</span>
+            <span class="n">dbg</span> <span class="o">=</span> <span class="n">debug</span>
 
         <span class="c1"># Temp file folder for downloading files</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">temp_folder_path</span> <span class="o">=</span> <span class="n">gettempdir</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">test_result</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/..&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;testResult&#39;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">test_data</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/..&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;testData&#39;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">remote_folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;remoteFolder&#39;</span><span class="p">]</span>
-
-        <span class="c1"># Authentication Settings</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;apiKey&#39;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">app_sid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;appSID&#39;</span><span class="p">]</span>
-
-        <span class="c1"># Default client</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">default_user_agent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;defaultUserAgent&#39;</span><span class="p">]</span>
         <span class="c1"># dict to store API prefix (e.g. Bearer)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_key_prefix</span> <span class="o">=</span> <span class="p">{}</span>
 
@@ -116,10 +163,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">logger_stream_handler</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="c1"># Log file handler</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger_file_handler</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="c1"># Debug file location</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">logger_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">pardir</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;debugFile&#39;</span><span class="p">]</span>
-        <span class="c1"># Debug switch</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;debug&#39;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger_file</span> <span class="o">=</span> <span class="n">log_file</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="o">=</span> <span class="n">dbg</span>
 
         <span class="c1"># SSL/TLS verification</span>
         <span class="c1"># Set this to false to skip verifying SSL certificate when calling API</span>
@@ -312,8 +359,8 @@
         <span class="k">return</span> <span class="s2">&quot;Python SDK Debug Report:</span><span class="se">\n</span><span class="s2">&quot;</span>\
                <span class="s2">&quot;OS: </span><span class="si">{env}</span><span class="se">\n</span><span class="s2">&quot;</span>\
                <span class="s2">&quot;Python Version: </span><span class="si">{pyversion}</span><span class="se">\n</span><span class="s2">&quot;</span>\
-               <span class="s2">&quot;Version of the API: 1.1</span><span class="se">\n</span><span class="s2">&quot;</span>\
-               <span class="s2">&quot;SDK Package Version: 1.0.0&quot;</span><span class="o">.</span>\
+               <span class="s2">&quot;Version of the API: 18.04</span><span class="se">\n</span><span class="s2">&quot;</span>\
+               <span class="s2">&quot;SDK Package Version: 1.0.1&quot;</span><span class="o">.</span>\
                <span class="nb">format</span><span class="p">(</span><span class="n">env</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">,</span> <span class="n">pyversion</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span></div></div>
 
 </pre></div>
