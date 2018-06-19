@@ -54,8 +54,8 @@ class TestDocumentApi(unittest.TestCase):
 ###############################################################
 
     #    @unittest.skip("skipping")
-    def test_conversion_get_convert_document_to_image(self):
-        """Test case for conversion_get_convert_document_to_image
+    def test_get_convert_document_to_image(self):
+        """Test case for get_convert_document_to_image
 
         Convert the HTML document from the storage by its name to the specified image format.
 
@@ -84,7 +84,7 @@ class TestDocumentApi(unittest.TestCase):
             self.assertEqual(res.Code, 200, "Error upload file to server")
 
             # Convert document to image
-            res = self.api.conversion_get_convert_document_to_image(
+            res = self.api.get_convert_document_to_image(
                 name, out_format="png", width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200, x_resolution=300, y_resolution=300,
                 folder=TestHelper.folder, storage=""
@@ -99,8 +99,8 @@ class TestDocumentApi(unittest.TestCase):
             raise ex
 
     #    @unittest.skip("skipping")
-    def test_conversion_get_convert_document_to_image_by_url(self):
-        """Test case for conversion_get_convert_document_to_image_by_url
+    def test_get_convert_document_to_image_by_url(self):
+        """Test case for get_convert_document_to_image_by_url
 
         Convert the HTML page from the web by its URL to the specified image format.
 
@@ -126,7 +126,7 @@ class TestDocumentApi(unittest.TestCase):
         try:
 
             # Convert url to image
-            res = self.api.conversion_get_convert_document_to_image_by_url(
+            res = self.api.get_convert_document_to_image_by_url(
                 source_url, out_format="jpeg", width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200, x_resolution=300, y_resolution=300,
                 folder=TestHelper.folder, storage=""
@@ -141,8 +141,8 @@ class TestDocumentApi(unittest.TestCase):
             raise ex
 
     #    @unittest.skip("skipping")
-    def test_conversion_get_convert_document_to_pdf(self):
-        """Test case for conversion_get_convert_document_to_pdf
+    def test_get_convert_document_to_pdf(self):
+        """Test case for get_convert_document_to_pdf
 
         Convert the HTML document from the storage by its name to PDF.
 
@@ -168,7 +168,7 @@ class TestDocumentApi(unittest.TestCase):
             self.assertEqual(res.Code, 200, "Error upload file to server")
 
             # Convert document to pdf
-            res = self.api.conversion_get_convert_document_to_pdf(
+            res = self.api.get_convert_document_to_pdf(
                 name, width=800, height=1000, left_margin=50, right_margin=100, top_margin=150, bottom_margin=200,
                 folder=TestHelper.folder, storage=""
             )
@@ -182,8 +182,8 @@ class TestDocumentApi(unittest.TestCase):
             raise ex
 
     #    @unittest.skip("skipping")
-    def test_conversion_get_convert_document_to_pdf_by_url(self):
-        """Test case for conversion_get_convert_document_to_pdf_by_url
+    def test_get_convert_document_to_pdf_by_url(self):
+        """Test case for get_convert_document_to_pdf_by_url
 
         Convert the HTML page from the web by its URL to PDF.
 
@@ -206,7 +206,7 @@ class TestDocumentApi(unittest.TestCase):
         try:
 
             # Convert url to pdf
-            res = self.api.conversion_get_convert_document_to_pdf_by_url(
+            res = self.api.get_convert_document_to_pdf_by_url(
                 source_url, width=800, height=1000, left_margin=50, right_margin=100, top_margin=150,
                 bottom_margin=200,
                 folder=TestHelper.folder, storage=""
@@ -221,8 +221,8 @@ class TestDocumentApi(unittest.TestCase):
             raise ex
 
     #    @unittest.skip("skipping")
-    def test_conversion_get_convert_document_to_xps(self):
-        """Test case for conversion_get_convert_document_to_xps
+    def test_get_convert_document_to_xps(self):
+        """Test case for get_convert_document_to_xps
 
         Convert the HTML document from the storage by its name to XPS.
 
@@ -248,7 +248,7 @@ class TestDocumentApi(unittest.TestCase):
             self.assertEqual(res.Code, 200, "Error upload file to server")
 
             # Convert document to xps
-            res = self.api.conversion_get_convert_document_to_xps(
+            res = self.api.get_convert_document_to_xps(
                 name, width=800, height=1000, left_margin=50, right_margin=100, top_margin=150, bottom_margin=200,
                 folder=TestHelper.folder, storage=""
             )
@@ -262,8 +262,8 @@ class TestDocumentApi(unittest.TestCase):
             raise ex
 
     #    @unittest.skip("skipping")
-    def test_conversion_get_convert_document_to_xps_by_url(self):
-        """Test case for conversion_get_convert_document_to_xps_by_url
+    def test_get_convert_document_to_xps_by_url(self):
+        """Test case for get_convert_document_to_xps_by_url
 
         Convert the HTML page from the web by its URL to XPS.
 
@@ -286,7 +286,7 @@ class TestDocumentApi(unittest.TestCase):
         try:
 
             # Convert url to xps
-            res = self.api.conversion_get_convert_document_to_xps_by_url(
+            res = self.api.get_convert_document_to_xps_by_url(
                 source_url, width=800, height=1000, left_margin=50, right_margin=100, top_margin=150,
                 bottom_margin=200,
                 folder=TestHelper.folder, storage=""
@@ -305,8 +305,8 @@ class TestDocumentApi(unittest.TestCase):
 ###############################################################
 
     #    @unittest.skip("skipping")
-    def test_document_get_document(self):
-        """Test case for document_get_document
+    def test_get_document(self):
+        """Test case for get_document
 
         Return the HTML document by the name from default or specified  storage.
 
@@ -325,7 +325,7 @@ class TestDocumentApi(unittest.TestCase):
             self.assertEqual(res.Code, 200, "Error upload file to server")
 
             # Get document from remote storage
-            res = self.api.document_get_document(name=name, storage="", folder=TestHelper.folder)
+            res = self.api.get_document(name=name, storage="", folder=TestHelper.folder)
             self.assertTrue(isinstance(res, str), "Error get document from remote storage")
 
             # Move to test folder
@@ -336,9 +336,9 @@ class TestDocumentApi(unittest.TestCase):
             raise ex
 
 #    @unittest.skip("skipping")
-    def test_document_get_document_fragment_by_x_path(self):
+    def test_get_document_fragment_by_x_path(self):
 
-        """Test case for document_get_document_fragment_by_x_path
+        """Test case for get_document_fragment_by_x_path
 
         Return list of HTML fragments matching the specified XPath query.
 
@@ -362,7 +362,7 @@ class TestDocumentApi(unittest.TestCase):
             self.assertEqual(res.Code, 200, "Error upload file to server")
 
             # Get fragment document from remote storage
-            res = self.api.document_get_document_fragment_by_x_path(name=name, x_path=x_path, out_format=out_format,
+            res = self.api.get_document_fragment_by_x_path(name=name, x_path=x_path, out_format=out_format,
                                                                     storage="", folder=TestHelper.folder)
             self.assertTrue(isinstance(res, str), "Error get fragment document from remote storage")
 
@@ -374,8 +374,8 @@ class TestDocumentApi(unittest.TestCase):
             raise ex
 
 #    @unittest.skip("skipping")
-    def test_document_get_document_images(self):
-        """Test case for document_get_document_images
+    def test_get_document_images(self):
+        """Test case for get_document_images
 
         Return all HTML document images packaged as a ZIP archive.
 
@@ -395,7 +395,7 @@ class TestDocumentApi(unittest.TestCase):
             self.assertEqual(res.Code, 200, "Error upload file to server")
 
             # Get images from document on remote storage
-            res = self.api.document_get_document_images(name=name, storage="", folder=TestHelper.folder)
+            res = self.api.get_document_images(name=name, storage="", folder=TestHelper.folder)
             self.assertTrue(isinstance(res, str), "Error get images from document")
 
             # Move to test folder
@@ -409,8 +409,8 @@ class TestDocumentApi(unittest.TestCase):
 #                       OCR test
 ###############################################################
 
-    def test_ocr_get_recognize_and_import_to_html(self):
-        """Test case for ocr_get_recognize_and_import_to_html
+    def test_get_recognize_and_import_to_html(self):
+        """Test case for get_recognize_and_import_to_html
 
         Recognize text from the image file in the storage and import it to HTML format.
 
@@ -432,7 +432,7 @@ class TestDocumentApi(unittest.TestCase):
             self.assertEqual(res.Code, 200, "Error upload file to server")
 
             # Recognize image
-            res = self.api.ocr_get_recognize_and_import_to_html(
+            res = self.api.get_recognize_and_import_to_html(
                 file_name, ocr_engine_lang=lang, folder=TestHelper.folder)
             self.assertTrue(isinstance(res, str), "Error OCR test")
 
@@ -443,8 +443,8 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_ocr_get_recognize_and_translate_to_html(self):
-        """Test case for ocr_get_recognize_and_translate_to_html
+    def test_get_recognize_and_translate_to_html(self):
+        """Test case for get_recognize_and_translate_to_html
 
         Recognize text from the image file in the storage, import it to HTML format and translate to specified language.
 
@@ -468,7 +468,7 @@ class TestDocumentApi(unittest.TestCase):
             self.assertEqual(res.Code, 200, "Error upload file to server")
 
             # Recognize and translate image
-            res = self.api.ocr_get_recognize_and_translate_to_html(file_name, src_lang, res_lang, folder=TestHelper.folder)
+            res = self.api.get_recognize_and_translate_to_html(file_name, src_lang, res_lang, folder=TestHelper.folder)
             self.assertTrue(isinstance(res, str), "Error OCR and translate test")
 
             # Move to test folder
@@ -482,8 +482,8 @@ class TestDocumentApi(unittest.TestCase):
 #                  Translation test
 ###############################################################
 
-    def test_translation_get_translate_document(self):
-        """Test case for translation_get_translate_document
+    def test_get_translate_document(self):
+        """Test case for get_translate_document
 
         Translate the HTML document specified by the name from default or specified storage.
 
@@ -507,7 +507,7 @@ class TestDocumentApi(unittest.TestCase):
             self.assertEqual(res.Code, 200, "Error upload file to server")
 
             # Translate document
-            res = self.api.translation_get_translate_document(file_name, src_lang, res_lang,
+            res = self.api.get_translate_document(file_name, src_lang, res_lang,
                                                               folder=TestHelper.folder)
             self.assertTrue(isinstance(res, str), "Error translate html document")
 
@@ -518,8 +518,8 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_translation_get_translate_document_by_url(self):
-        """Test case for translation_get_translate_document_by_url
+    def test_get_translate_document_by_url(self):
+        """Test case for get_translate_document_by_url
 
         Translate the HTML document from Web specified by its URL.
 
@@ -537,7 +537,7 @@ class TestDocumentApi(unittest.TestCase):
         res_lang = "fr"
         try:
             # Translate url
-            res = self.api.translation_get_translate_document_by_url(source_url, src_lang, res_lang)
+            res = self.api.get_translate_document_by_url(source_url, src_lang, res_lang)
             self.assertTrue(isinstance(res, str), "Error translate document from url")
 
             # Move to test folder
@@ -546,6 +546,68 @@ class TestDocumentApi(unittest.TestCase):
             print("Exception")
             print("Info: " + str(ex))
             raise ex
+
+###############################################################
+#                  Summarization test
+###############################################################
+
+    def test_get_detect_html_keywords(self):
+        """Get the HTML document keywords using the keyword detection service.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param async bool
+        :param str name: Document name. (required)
+        :param str folder: Document folder.
+        :param str storage: Document storage.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        file_name = "test_en.html"
+        try:
+            # Upload file to storage
+            res = TestHelper.upload_file(file_name)
+            self.assertEqual(res.Code, 200, "Error upload file to server")
+
+            # Get keywords from document
+            res = self.api.get_detect_html_keywords(file_name, folder=TestHelper.folder)
+            self.assertTrue(isinstance(res, str), "Error get keywords from html document")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst + 'keywordsDoc.json')
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_get_detect_html_keywords_by_url(self):
+        """Get the keywords from HTML document from Web specified by its URL using the keyword detection service
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param async bool
+        :param str source_url: Source document URL. (required)
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        source_url = "https://www.le.ac.uk/oerresources/bdra/html/page_02.htm"
+        try:
+            # Get keyword from url
+            res = self.api.get_detect_html_keywords_by_url(source_url)
+            self.assertTrue(isinstance(res, str), "Error get keyword from url")
+
+            # Move to test folder
+            TestHelper.move_file(res, TestHelper.test_dst + 'keywordsUrl.json')
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+y
 
 if __name__ == '__main__':
     unittest.main()

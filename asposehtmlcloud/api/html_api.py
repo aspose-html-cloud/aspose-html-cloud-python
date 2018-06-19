@@ -1,11 +1,11 @@
 # coding: utf-8
-
-"""
+"""Copyright
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="html_api.py">
    Copyright (c) 2018 Aspose.HTML for Cloud
  </copyright>
  <summary>
+
   Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
@@ -49,7 +49,7 @@ class HtmlApi(object):
 #                  Conversion API
 ##########################################################
 
-    def conversion_get_convert_document_to_image(self, name, out_format, **kwargs):
+    def get_convert_document_to_image(self, name, out_format, **kwargs):
         """Convert the HTML document from the storage by its name to the specified image format.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -72,12 +72,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__conversion_get_convert_document_to_image_with_http_info(name, out_format, **kwargs)
+            return self.__get_convert_document_to_image_with_http_info(name, out_format, **kwargs)
         else:
-            (data) = self.__conversion_get_convert_document_to_image_with_http_info(name, out_format, **kwargs)
+            (data) = self.__get_convert_document_to_image_with_http_info(name, out_format, **kwargs)
             return data
 
-    def __conversion_get_convert_document_to_image_with_http_info(self, name, out_format, **kwargs):
+    def __get_convert_document_to_image_with_http_info(self, name, out_format, **kwargs):
         """Convert the HTML document from the storage by its name to the specified image format.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -110,18 +110,18 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method conversion_get_convert_document_to_image" % key
+                    " to method get_convert_document_to_image" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `conversion_get_convert_document_to_image`")
+            raise ValueError("Missing the required parameter `name` when calling `get_convert_document_to_image`")
         # verify the required parameter 'out_format' is set
         if ('out_format' not in params or
                 params['out_format'] is None):
-            raise ValueError("Missing the required parameter `out_format` when calling `conversion_get_convert_document_to_image`")
+            raise ValueError("Missing the required parameter `out_format` when calling `get_convert_document_to_image`")
 
         collection_formats = {}
 
@@ -186,7 +186,7 @@ class HtmlApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def conversion_get_convert_document_to_image_by_url(self, source_url, out_format, **kwargs):
+    def get_convert_document_to_image_by_url(self, source_url, out_format, **kwargs):
         """Convert the HTML page from the web by its URL to the specified image format.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -209,12 +209,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__conversion_get_convert_document_to_image_by_url_with_http_info(source_url, out_format, **kwargs)
+            return self.__get_convert_document_to_image_by_url_with_http_info(source_url, out_format, **kwargs)
         else:
-            (data) = self.__conversion_get_convert_document_to_image_by_url_with_http_info(source_url, out_format, **kwargs)
+            (data) = self.__get_convert_document_to_image_by_url_with_http_info(source_url, out_format, **kwargs)
             return data
 
-    def __conversion_get_convert_document_to_image_by_url_with_http_info(self, source_url, out_format, **kwargs):
+    def __get_convert_document_to_image_by_url_with_http_info(self, source_url, out_format, **kwargs):
         """Convert the HTML page from the web by its URL to the specified image format.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -247,18 +247,18 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method conversion_get_convert_document_to_image_by_url" % key
+                    " to method get_convert_document_to_image_by_url" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
-            raise ValueError("Missing the required parameter `source_url` when calling `conversion_get_convert_document_to_image_by_url`")
+            raise ValueError("Missing the required parameter `source_url` when calling `get_convert_document_to_image_by_url`")
         # verify the required parameter 'out_format' is set
         if ('out_format' not in params or
                 params['out_format'] is None):
-            raise ValueError("Missing the required parameter `out_format` when calling `conversion_get_convert_document_to_image_by_url`")
+            raise ValueError("Missing the required parameter `out_format` when calling `get_convert_document_to_image_by_url`")
 
         collection_formats = {}
 
@@ -323,7 +323,7 @@ class HtmlApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def conversion_get_convert_document_to_pdf(self, name, **kwargs):
+    def get_convert_document_to_pdf(self, name, **kwargs):
         """Convert the HTML document from the storage by its name to PDF.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -343,12 +343,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__conversion_get_convert_document_to_pdf_with_http_info(name, **kwargs)
+            return self.__get_convert_document_to_pdf_with_http_info(name, **kwargs)
         else:
-            (data) = self.__conversion_get_convert_document_to_pdf_with_http_info(name, **kwargs)
+            (data) = self.__get_convert_document_to_pdf_with_http_info(name, **kwargs)
             return data
 
-    def __conversion_get_convert_document_to_pdf_with_http_info(self, name, **kwargs):
+    def __get_convert_document_to_pdf_with_http_info(self, name, **kwargs):
         """Convert the HTML document from the storage by its name to PDF.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -378,14 +378,14 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method conversion_get_convert_document_to_pdf" % key
+                    " to method get_convert_document_to_pdf" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `conversion_get_convert_document_to_pdf`")
+            raise ValueError("Missing the required parameter `name` when calling `get_convert_document_to_pdf`")
 
         collection_formats = {}
 
@@ -444,7 +444,7 @@ class HtmlApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def conversion_get_convert_document_to_pdf_by_url(self, source_url, **kwargs):
+    def get_convert_document_to_pdf_by_url(self, source_url, **kwargs):
         """Convert the HTML page from the web by its URL to PDF.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -464,12 +464,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__conversion_get_convert_document_to_pdf_by_url_with_http_info(source_url, **kwargs)
+            return self.__get_convert_document_to_pdf_by_url_with_http_info(source_url, **kwargs)
         else:
-            (data) = self.__conversion_get_convert_document_to_pdf_by_url_with_http_info(source_url, **kwargs)
+            (data) = self.__get_convert_document_to_pdf_by_url_with_http_info(source_url, **kwargs)
             return data
 
-    def __conversion_get_convert_document_to_pdf_by_url_with_http_info(self, source_url, **kwargs):
+    def __get_convert_document_to_pdf_by_url_with_http_info(self, source_url, **kwargs):
         """Convert the HTML page from the web by its URL to PDF.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -499,14 +499,14 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method conversion_get_convert_document_to_pdf_by_url" % key
+                    " to method get_convert_document_to_pdf_by_url" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
-            raise ValueError("Missing the required parameter `source_url` when calling `conversion_get_convert_document_to_pdf_by_url`")
+            raise ValueError("Missing the required parameter `source_url` when calling `get_convert_document_to_pdf_by_url`")
 
         collection_formats = {}
 
@@ -565,7 +565,7 @@ class HtmlApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def conversion_get_convert_document_to_xps(self, name, **kwargs):
+    def get_convert_document_to_xps(self, name, **kwargs):
         """Convert the HTML document from the storage by its name to XPS.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -585,12 +585,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__conversion_get_convert_document_to_xps_with_http_info(name, **kwargs)
+            return self.__get_convert_document_to_xps_with_http_info(name, **kwargs)
         else:
-            (data) = self.__conversion_get_convert_document_to_xps_with_http_info(name, **kwargs)
+            (data) = self.__get_convert_document_to_xps_with_http_info(name, **kwargs)
             return data
 
-    def __conversion_get_convert_document_to_xps_with_http_info(self, name, **kwargs):
+    def __get_convert_document_to_xps_with_http_info(self, name, **kwargs):
         """Convert the HTML document from the storage by its name to XPS.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -620,14 +620,14 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method conversion_get_convert_document_to_xps" % key
+                    " to method get_convert_document_to_xps" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `conversion_get_convert_document_to_xps`")
+            raise ValueError("Missing the required parameter `name` when calling `get_convert_document_to_xps`")
 
         collection_formats = {}
 
@@ -686,7 +686,7 @@ class HtmlApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def conversion_get_convert_document_to_xps_by_url(self, source_url, **kwargs):
+    def get_convert_document_to_xps_by_url(self, source_url, **kwargs):
         """Convert the HTML page from the web by its URL to XPS.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -706,12 +706,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__conversion_get_convert_document_to_xps_by_url_with_http_info(source_url, **kwargs)
+            return self.__get_convert_document_to_xps_by_url_with_http_info(source_url, **kwargs)
         else:
-            (data) = self.__conversion_get_convert_document_to_xps_by_url_with_http_info(source_url, **kwargs)
+            (data) = self.__get_convert_document_to_xps_by_url_with_http_info(source_url, **kwargs)
             return data
 
-    def __conversion_get_convert_document_to_xps_by_url_with_http_info(self, source_url, **kwargs):
+    def __get_convert_document_to_xps_by_url_with_http_info(self, source_url, **kwargs):
         """Convert the HTML page from the web by its URL to XPS.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -741,14 +741,14 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method conversion_get_convert_document_to_xps_by_url" % key
+                    " to method get_convert_document_to_xps_by_url" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
-            raise ValueError("Missing the required parameter `source_url` when calling `conversion_get_convert_document_to_xps_by_url`")
+            raise ValueError("Missing the required parameter `source_url` when calling `get_convert_document_to_xps_by_url`")
 
         collection_formats = {}
 
@@ -811,7 +811,7 @@ class HtmlApi(object):
 #                 Document API
 ##########################################################
 
-    def document_get_document(self, name, **kwargs):
+    def get_document(self, name, **kwargs):
         """Return the HTML document by the name from default or specified storage.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -825,12 +825,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__document_get_document_with_http_info(name, **kwargs)
+            return self.__get_document_with_http_info(name, **kwargs)
         else:
-            (data) = self.__document_get_document_with_http_info(name, **kwargs)
+            (data) = self.__get_document_with_http_info(name, **kwargs)
             return data
 
-    def __document_get_document_with_http_info(self, name, **kwargs):
+    def __get_document_with_http_info(self, name, **kwargs):
         """Return the HTML document by the name from default or specified storage.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -854,14 +854,14 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method document_get_document" % key
+                    " to method get_document" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `document_get_document`")
+            raise ValueError("Missing the required parameter `name` when calling `get_document`")
 
         collection_formats = {}
 
@@ -908,7 +908,7 @@ class HtmlApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def document_get_document_fragment_by_x_path(self, name, x_path, out_format, **kwargs):
+    def get_document_fragment_by_x_path(self, name, x_path, out_format, **kwargs):
         """Return list of HTML fragments matching the specified XPath query.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -924,12 +924,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__document_get_document_fragment_by_x_path_with_http_info(name, x_path, out_format, **kwargs)
+            return self.__get_document_fragment_by_x_path_with_http_info(name, x_path, out_format, **kwargs)
         else:
-            (data) = self.__document_get_document_fragment_by_x_path_with_http_info(name, x_path, out_format, **kwargs)
+            (data) = self.__get_document_fragment_by_x_path_with_http_info(name, x_path, out_format, **kwargs)
             return data
 
-    def __document_get_document_fragment_by_x_path_with_http_info(self, name, x_path, out_format, **kwargs):
+    def __get_document_fragment_by_x_path_with_http_info(self, name, x_path, out_format, **kwargs):
         """Return list of HTML fragments matching the specified XPath query.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -955,22 +955,22 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method document_get_document_fragment_by_x_path" % key
+                    " to method get_document_fragment_by_x_path" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `document_get_document_fragment_by_x_path`")
+            raise ValueError("Missing the required parameter `name` when calling `get_document_fragment_by_x_path`")
         # verify the required parameter 'x_path' is set
         if ('x_path' not in params or
                 params['x_path'] is None):
-            raise ValueError("Missing the required parameter `x_path` when calling `document_get_document_fragment_by_x_path`")
+            raise ValueError("Missing the required parameter `x_path` when calling `get_document_fragment_by_x_path`")
         # verify the required parameter 'out_format' is set
         if ('out_format' not in params or
                 params['out_format'] is None):
-            raise ValueError("Missing the required parameter `out_format` when calling `document_get_document_fragment_by_x_path`")
+            raise ValueError("Missing the required parameter `out_format` when calling `get_document_fragment_by_x_path`")
 
         collection_formats = {}
 
@@ -1021,7 +1021,7 @@ class HtmlApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def document_get_document_images(self, name, **kwargs):
+    def get_document_images(self, name, **kwargs):
         """Return all HTML document images packaged as a ZIP archive.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1035,12 +1035,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__document_get_document_images_with_http_info(name, **kwargs)
+            return self.__get_document_images_with_http_info(name, **kwargs)
         else:
-            (data) = self.__document_get_document_images_with_http_info(name, **kwargs)
+            (data) = self.__get_document_images_with_http_info(name, **kwargs)
             return data
 
-    def __document_get_document_images_with_http_info(self, name, **kwargs):
+    def __get_document_images_with_http_info(self, name, **kwargs):
         """Return all HTML document images packaged as a ZIP archive.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1064,14 +1064,14 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method document_get_document_images" % key
+                    " to method get_document_images" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `document_get_document_images`")
+            raise ValueError("Missing the required parameter `name` when calling `get_document_images`")
 
         collection_formats = {}
 
@@ -1122,7 +1122,7 @@ class HtmlApi(object):
 #                     OCR API
 ##########################################################
 
-    def ocr_get_recognize_and_import_to_html(self, name, **kwargs):
+    def get_recognize_and_import_to_html(self, name, **kwargs):
         """Recognize text from the image file in the storage and import it to HTML format.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1137,12 +1137,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__ocr_get_recognize_and_import_to_html_with_http_info(name, **kwargs)
+            return self.__get_recognize_and_import_to_html_with_http_info(name, **kwargs)
         else:
-            (data) = self.__ocr_get_recognize_and_import_to_html_with_http_info(name, **kwargs)
+            (data) = self.__get_recognize_and_import_to_html_with_http_info(name, **kwargs)
             return data
 
-    def __ocr_get_recognize_and_import_to_html_with_http_info(self, name, **kwargs):
+    def __get_recognize_and_import_to_html_with_http_info(self, name, **kwargs):
         """Recognize text from the image file in the storage and import it to HTML format.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1167,14 +1167,14 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method ocr_get_recognize_and_import_to_html" % key
+                    " to method get_recognize_and_import_to_html" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `ocr_get_recognize_and_import_to_html`")
+            raise ValueError("Missing the required parameter `name` when calling `get_recognize_and_import_to_html`")
 
         collection_formats = {}
 
@@ -1223,7 +1223,7 @@ class HtmlApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def ocr_get_recognize_and_translate_to_html(self, name, src_lang, res_lang, **kwargs):
+    def get_recognize_and_translate_to_html(self, name, src_lang, res_lang, **kwargs):
         """Recognize text from the image file in the storage, import it to HTML format and translate to specified language.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1239,12 +1239,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__ocr_get_recognize_and_translate_to_html_with_http_info(name, src_lang, res_lang, **kwargs)
+            return self.__get_recognize_and_translate_to_html_with_http_info(name, src_lang, res_lang, **kwargs)
         else:
-            (data) = self.__ocr_get_recognize_and_translate_to_html_with_http_info(name, src_lang, res_lang, **kwargs)
+            (data) = self.__get_recognize_and_translate_to_html_with_http_info(name, src_lang, res_lang, **kwargs)
             return data
 
-    def __ocr_get_recognize_and_translate_to_html_with_http_info(self, name, src_lang, res_lang, **kwargs):
+    def __get_recognize_and_translate_to_html_with_http_info(self, name, src_lang, res_lang, **kwargs):
         """Recognize text from the image file in the storage, import it to HTML format and translate to specified language.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1270,22 +1270,22 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method ocr_get_recognize_and_translate_to_html" % key
+                    " to method get_recognize_and_translate_to_html" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `ocr_get_recognize_and_translate_to_html`")
+            raise ValueError("Missing the required parameter `name` when calling `get_recognize_and_translate_to_html`")
         # verify the required parameter 'src_lang' is set
         if ('src_lang' not in params or
                 params['src_lang'] is None):
-            raise ValueError("Missing the required parameter `src_lang` when calling `ocr_get_recognize_and_translate_to_html`")
+            raise ValueError("Missing the required parameter `src_lang` when calling `get_recognize_and_translate_to_html`")
         # verify the required parameter 'res_lang' is set
         if ('res_lang' not in params or
                 params['res_lang'] is None):
-            raise ValueError("Missing the required parameter `res_lang` when calling `ocr_get_recognize_and_translate_to_html`")
+            raise ValueError("Missing the required parameter `res_lang` when calling `get_recognize_and_translate_to_html`")
 
         collection_formats = {}
 
@@ -1340,7 +1340,7 @@ class HtmlApi(object):
 #                 Translation API
 ##########################################################
 
-    def translation_get_translate_document(self, name, src_lang, res_lang, **kwargs):
+    def get_translate_document(self, name, src_lang, res_lang, **kwargs):
         """Translate the HTML document specified by the name from default or specified storage.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1356,12 +1356,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__translation_get_translate_document_with_http_info(name, src_lang, res_lang, **kwargs)
+            return self.__get_translate_document_with_http_info(name, src_lang, res_lang, **kwargs)
         else:
-            (data) = self.__translation_get_translate_document_with_http_info(name, src_lang, res_lang, **kwargs)
+            (data) = self.__get_translate_document_with_http_info(name, src_lang, res_lang, **kwargs)
             return data
 
-    def __translation_get_translate_document_with_http_info(self, name, src_lang, res_lang, **kwargs):
+    def __get_translate_document_with_http_info(self, name, src_lang, res_lang, **kwargs):
         """Translate the HTML document specified by the name from default or specified storage.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1387,22 +1387,22 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method translation_get_translate_document" % key
+                    " to method get_translate_document" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `translation_get_translate_document`")
+            raise ValueError("Missing the required parameter `name` when calling `get_translate_document`")
         # verify the required parameter 'src_lang' is set
         if ('src_lang' not in params or
                 params['src_lang'] is None):
-            raise ValueError("Missing the required parameter `src_lang` when calling `translation_get_translate_document`")
+            raise ValueError("Missing the required parameter `src_lang` when calling `get_translate_document`")
         # verify the required parameter 'res_lang' is set
         if ('res_lang' not in params or
                 params['res_lang'] is None):
-            raise ValueError("Missing the required parameter `res_lang` when calling `translation_get_translate_document`")
+            raise ValueError("Missing the required parameter `res_lang` when calling `get_translate_document`")
 
         collection_formats = {}
 
@@ -1453,7 +1453,7 @@ class HtmlApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def translation_get_translate_document_by_url(self, source_url, src_lang, res_lang, **kwargs):
+    def get_translate_document_by_url(self, source_url, src_lang, res_lang, **kwargs):
         """Translate the HTML document from Web specified by its URL.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1467,12 +1467,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.__translation_get_translate_document_by_url_with_http_info(source_url, src_lang, res_lang, **kwargs)
+            return self.__get_translate_document_by_url_with_http_info(source_url, src_lang, res_lang, **kwargs)
         else:
-            (data) = self.__translation_get_translate_document_by_url_with_http_info(source_url, src_lang, res_lang, **kwargs)
+            (data) = self.__get_translate_document_by_url_with_http_info(source_url, src_lang, res_lang, **kwargs)
             return data
 
-    def __translation_get_translate_document_by_url_with_http_info(self, source_url, src_lang, res_lang, **kwargs):
+    def __get_translate_document_by_url_with_http_info(self, source_url, src_lang, res_lang, **kwargs):
         """Translate the HTML document from Web specified by its URL.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1496,22 +1496,22 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method translation_get_translate_document_by_url" % key
+                    " to method get_translate_document_by_url" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
-            raise ValueError("Missing the required parameter `source_url` when calling `translation_get_translate_document_by_url`")
+            raise ValueError("Missing the required parameter `source_url` when calling `get_translate_document_by_url`")
         # verify the required parameter 'src_lang' is set
         if ('src_lang' not in params or
                 params['src_lang'] is None):
-            raise ValueError("Missing the required parameter `src_lang` when calling `translation_get_translate_document_by_url`")
+            raise ValueError("Missing the required parameter `src_lang` when calling `get_translate_document_by_url`")
         # verify the required parameter 'res_lang' is set
         if ('res_lang' not in params or
                 params['res_lang'] is None):
-            raise ValueError("Missing the required parameter `res_lang` when calling `translation_get_translate_document_by_url`")
+            raise ValueError("Missing the required parameter `res_lang` when calling `get_translate_document_by_url`")
 
         collection_formats = {}
 
@@ -1544,6 +1544,196 @@ class HtmlApi(object):
 
         return self.api_client.call_api(
             '/html/translate/{srcLang}/{resLang}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+##########################################################
+#                  Summarization API
+##########################################################
+
+    def get_detect_html_keywords(self, name, **kwargs):
+        """Get the HTML document keywords using the keyword detection service.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str name: Document name. (required)
+        :param str folder: Document folder.
+        :param str storage: Document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.__get_detect_html_keywords_with_http_info(name, **kwargs)
+        else:
+            (data) = self.__get_detect_html_keywords_with_http_info(name, **kwargs)
+            return data
+
+    def __get_detect_html_keywords_with_http_info(self, name, **kwargs):
+        """Get the HTML document keywords using the keyword detection service.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str name: Document name. (required)
+        :param str folder: Document folder.
+        :param str storage: Document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['name', 'folder', 'storage']
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_detect_html_keywords" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `get_detect_html_keywords`")
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = []
+        if 'folder' in params:
+            query_params.append(('folder', params['folder']))
+        if 'storage' in params:
+            query_params.append(('storage', params['storage']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/html/{name}/summ/keywords', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_detect_html_keywords_by_url(self, source_url, **kwargs):
+        """Get the keywords from HTML document from Web specified by its URL using the keyword detection service
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str source_url: Source document URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.__get_detect_html_keywords_by_url_with_http_info(source_url, **kwargs)
+        else:
+            (data) = self.__get_detect_html_keywords_by_url_with_http_info(source_url, **kwargs)
+            return data
+
+    def __get_detect_html_keywords_by_url_with_http_info(self, source_url, **kwargs):
+        """Get the keywords from HTML document from Web specified by its URL using the keyword detection service
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str source_url: Source document URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['source_url']
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_detect_html_keywords_by_url" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'source_url' is set
+        if ('source_url' not in params or
+                params['source_url'] is None):
+            raise ValueError("Missing the required parameter `source_url` when calling `get_detect_html_keywords_by_url`")
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'source_url' in params:
+            query_params.append(('sourceUrl', params['source_url']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/html/summ/keywords', 'GET',
             path_params,
             query_params,
             header_params,

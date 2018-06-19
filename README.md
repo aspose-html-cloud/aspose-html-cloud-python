@@ -42,7 +42,7 @@ source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
 try:
 
     # Convert url to image
-    res = api.conversion_get_convert_document_to_image_by_url(
+    res = api.get_convert_document_to_image_by_url(
         source_url, out_format="jpeg", width=800, height=1000, left_margin=50, right_margin=100,
         top_margin=150, bottom_margin=200, x_resolution=300, y_resolution=300,
         folder="MY_REMOTE_FOLDER", storage=""
