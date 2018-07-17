@@ -300,6 +300,272 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
+    #    @unittest.skip("skipping")
+    def test_put_convert_document_in_request_to_image(self):
+        """Test case for put_convert_document_in_request_to_image
+
+        :param async bool
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
+        :param str out_format: (required)
+        :param file file: A file to be converted. (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param int resolution: Resolution of resulting image. Default is 96 dpi.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        name = "putConvertToImage.png"
+        test_out_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "test1.html"
+
+        try:
+            # Convert document to image
+            self.api.put_convert_document_in_request_to_image(
+                out_path=test_out_path, out_format="png", file=test_file, width=800, height=1000, left_margin=50,
+                right_margin=100, top_margin=150, bottom_margin=200, resolution=300)
+
+            # Download result
+            res = TestHelper.download_file(name)
+
+            save_file = TestHelper.test_dst + name
+
+            # Save to test folder
+            with open(save_file, "wb") as file:
+                file.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    #    @unittest.skip("skipping")
+    def test_put_convert_document_in_request_to_pdf(self):
+        """Test case for put_convert_document_in_request_to_pdf
+
+        :param async bool
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
+        :param file file: A file to be converted. (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        name = "putConvertToPdf.pdf"
+        test_out_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "test1.html"
+        try:
+
+            # Upload and convert document to pdf
+            self.api.put_convert_document_in_request_to_pdf(
+                out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200)
+
+            # Download result
+            res = TestHelper.download_file(name)
+
+            save_file = TestHelper.test_dst + name
+
+            # Save to test folder
+            with open(save_file, "wb") as file:
+                file.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    #    @unittest.skip("skipping")
+    def test_put_convert_document_in_request_to_xps(self):
+        """Test case for put_convert_document_in_request_to_xps
+
+        :param async bool
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
+        :param file file: A file to be converted. (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        name = "putConvertToXps.xps"
+        test_out_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "test1.html"
+        try:
+
+            # Upload and convert document to xps
+            self.api.put_convert_document_in_request_to_xps(
+                out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200)
+
+            # Download result
+            res = TestHelper.download_file(name)
+
+            save_file = TestHelper.test_dst + name
+
+            # Save to test folder
+            with open(save_file, "wb") as file:
+                file.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    #    @unittest.skip("skipping")
+    def test_put_convert_document_to_image(self):
+        """Test case for put_convert_document_to_image
+
+        :param async bool
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
+        :param str out_format: (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param int resolution: Resolution of resulting image. Default is 96 dpi.
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        # Already in storage
+        name = "test1.html"
+        result_name = "putConvertDocToImg.tiff"
+        test_folder = "HtmlTestDoc"
+        test_out_path = test_folder + "/" + result_name
+
+        try:
+
+            # Convert document to image in storage
+            self.api.put_convert_document_to_image(
+                name, out_path=test_out_path, out_format="tiff", width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200, resolution=300, folder=test_folder, storage="")
+
+            # Download result
+            res = TestHelper.download_file(result_name)
+
+            save_file = TestHelper.test_dst + result_name
+
+            # Save to test folder
+            with open(save_file, "wb") as f:
+                f.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    #    @unittest.skip("skipping")
+    def test_put_convert_document_to_pdf(self):
+        """Test case for put_convert_document_to_pdf
+
+        :param async bool
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        # Already in storage
+        name = "test1.html"
+        result_name = "putConvertDocToPdf.pdf"
+        test_folder = "HtmlTestDoc"
+        test_out_path = test_folder + "/" + result_name
+
+        try:
+
+            # Convert document to pdf in storage
+            self.api.put_convert_document_to_pdf(
+                name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200, folder=test_folder, storage="")
+
+            # Download result
+            res = TestHelper.download_file(result_name)
+
+            save_file = TestHelper.test_dst + result_name
+
+            # Save to test folder
+            with open(save_file, "wb") as f:
+                f.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    #    @unittest.skip("skipping")
+    def test_put_convert_document_to_xps(self):
+        """Test case for put_convert_document_to_xps
+
+        :param async bool
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        # Already in storage
+        name = "test1.html"
+        result_name = "putConvertDocToXps.xps"
+        test_folder = "HtmlTestDoc"
+        test_out_path = test_folder + "/" + result_name
+
+        try:
+
+            # Convert document to pdf in storage
+            self.api.put_convert_document_to_xps(
+                name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200, folder=test_folder, storage="")
+
+            # Download result
+            res = TestHelper.download_file(result_name)
+
+            save_file = TestHelper.test_dst + result_name
+
+            # Save to test folder
+            with open(save_file, "wb") as f:
+                f.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+
 ###############################################################
 #                    Document test
 ###############################################################
@@ -607,7 +873,7 @@ class TestDocumentApi(unittest.TestCase):
             print("Exception")
             print("Info: " + str(ex))
             raise ex
-y
+
 
 if __name__ == '__main__':
     unittest.main()

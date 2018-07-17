@@ -1,5 +1,5 @@
 .. asposehtmlcloud documentation master file, created by
-   sphinx-quickstart on Thu May 31 15:27:09 2018.
+   sphinx-quickstart on Mon Jul 16 09:19:28 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 

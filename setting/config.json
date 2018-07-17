@@ -8,5 +8,5 @@
     "remoteFolder":"HtmlTestDoc/",
     "defaultUserAgent":"Webkit",
     "debugFile":"debug.log",
-    "debug":true
+    "debug":false
 }

@@ -472,6 +472,196 @@ asynchronous HTTP request, please pass async=True</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_image">
+<code class="descname">put_convert_document_in_request_to_image</code><span class="sig-paren">(</span><em>out_path</em>, <em>out_format</em>, <em>file</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_in_request_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the HTML document (in request content) to the specified image format and uploads resulting file to storage.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>out_path</strong> (<em>str</em>) – Full resulting filename (ex. /folder1/folder2/result.jpg) (required)</li>
+<li><strong>out_format</strong> (<em>str</em>) – (required)</li>
+<li><strong>file</strong> (<em>file</em>) – A file to be converted. (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting document page width in points (1/96 inch).</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting document page height in points (1/96 inch).</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting document page margin in points (1/96 inch).</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting document page margin in points (1/96 inch).</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting document page margin in points (1/96 inch).</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting document page margin in points (1/96 inch).</li>
+<li><strong>resolution</strong> (<em>int</em>) – Resolution of resulting image. Default is 96 dpi.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously,   returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_pdf">
+<code class="descname">put_convert_document_in_request_to_pdf</code><span class="sig-paren">(</span><em>out_path</em>, <em>file</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_in_request_to_pdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the HTML document (in request content) to PDF and uploads resulting file to storage.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>out_path</strong> (<em>str</em>) – Full resulting filename (ex. /folder1/folder2/result.pdf) (required)</li>
+<li><strong>file</strong> (<em>file</em>) – A file to be converted. (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting document page width in points (1/96 inch).</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting document page height in points (1/96 inch).</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting document page margin in points (1/96 inch).</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting document page margin in points (1/96 inch).</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting document page margin in points (1/96 inch).</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting document page margin in points (1/96 inch).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_xps">
+<code class="descname">put_convert_document_in_request_to_xps</code><span class="sig-paren">(</span><em>out_path</em>, <em>file</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_in_request_to_xps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_xps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the HTML document (in request content) to XPS and uploads resulting file to storage.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>out_path</strong> (<em>str</em>) – Full resulting filename (ex. /folder1/folder2/result.xps) (required)</li>
+<li><strong>file</strong> (<em>file</em>) – A file to be converted. (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting document page width in points (1/96 inch).</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting document page height in points (1/96 inch).</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting document page margin in points (1/96 inch).</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting document page margin in points (1/96 inch).</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting document page margin in points (1/96 inch).</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting document page margin in points (1/96 inch).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_image">
+<code class="descname">put_convert_document_to_image</code><span class="sig-paren">(</span><em>name</em>, <em>out_path</em>, <em>out_format</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the HTML document (located on storage) to the specified image format and uploads resulting file to storage.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
+<li><strong>out_path</strong> (<em>str</em>) – Full resulting filename (ex. /folder1/folder2/result.jpg) (required)</li>
+<li><strong>out_format</strong> (<em>str</em>) – (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting document page width in points (1/96 inch).</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting document page height in points (1/96 inch).</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting document page margin in points (1/96 inch).</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting document page margin in points (1/96 inch).</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting document page margin in points (1/96 inch).</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting document page margin in points (1/96 inch).</li>
+<li><strong>resolution</strong> (<em>int</em>) – Resolution of resulting image. Default is 96 dpi.</li>
+<li><strong>folder</strong> (<em>str</em>) – The source document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The source and resulting document storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_pdf">
+<code class="descname">put_convert_document_to_pdf</code><span class="sig-paren">(</span><em>name</em>, <em>out_path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_to_pdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the HTML document (located on storage) to PDF and uploads resulting file to storage.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
+<li><strong>out_path</strong> (<em>str</em>) – Full resulting filename (ex. /folder1/folder2/result.pdf) (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting document page width in points (1/96 inch).</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting document page height in points (1/96 inch).</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting document page margin in points (1/96 inch).</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting document page margin in points (1/96 inch).</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting document page margin in points (1/96 inch).</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting document page margin in points (1/96 inch).</li>
+<li><strong>folder</strong> (<em>str</em>) – The source document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The source and resulting document storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_xps">
+<code class="descname">put_convert_document_to_xps</code><span class="sig-paren">(</span><em>name</em>, <em>out_path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_to_xps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_xps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the HTML document (located on storage) to XPS and uploads resulting file to storage.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
+<li><strong>out_path</strong> (<em>str</em>) – Full resulting filename (ex. /folder1/folder2/result.xps) (required)</li>
+<li><strong>width</strong> (<em>int</em>) – Resulting document page width in points (1/96 inch).</li>
+<li><strong>height</strong> (<em>int</em>) – Resulting document page height in points (1/96 inch).</li>
+<li><strong>left_margin</strong> (<em>int</em>) – Left resulting document page margin in points (1/96 inch).</li>
+<li><strong>right_margin</strong> (<em>int</em>) – Right resulting document page margin in points (1/96 inch).</li>
+<li><strong>top_margin</strong> (<em>int</em>) – Top resulting document page margin in points (1/96 inch).</li>
+<li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting document page margin in points (1/96 inch).</li>
+<li><strong>folder</strong> (<em>str</em>) – The source document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The source and resulting document storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 </div>

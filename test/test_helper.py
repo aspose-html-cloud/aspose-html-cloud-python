@@ -67,3 +67,10 @@ class TestHelper(object):
         if os.path.isfile(src_file):
             copy2(src_file, dst_file)
             os.remove(src_file)
+
+    @classmethod
+    def download_file(cls, file_name, download_folder=None, save_folder=None):
+
+        folder = cls.folder if download_folder is None else download_folder
+
+        return cls.storage.GetDownload(folder + "/" + file_name, versionId="", storage="")
