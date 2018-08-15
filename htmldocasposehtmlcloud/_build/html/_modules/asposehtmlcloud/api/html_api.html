@@ -845,13 +845,13 @@
             <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
             <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
 
-<div class="viewcode-block" id="HtmlApi.put_convert_document_in_request_to_image"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_image">[docs]</a>    <span class="k">def</span> <span class="nf">put_convert_document_in_request_to_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_path</span><span class="p">,</span> <span class="n">out_format</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># noqa: E501</span>
+<div class="viewcode-block" id="HtmlApi.put_convert_document_in_request_to_image"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_image">[docs]</a>    <span class="k">def</span> <span class="nf">put_convert_document_in_request_to_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_path</span><span class="p">,</span> <span class="n">out_format</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Converts the HTML document (in request content) to the specified image format and uploads resulting file to storage.</span>
 
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)</span>
 <span class="sd">        :param str out_format: (required)</span>
 <span class="sd">        :param file file: A file to be converted. (required)</span>
@@ -862,9 +862,7 @@
 <span class="sd">        :param int top_margin: Top resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int resolution: Resolution of resulting image. Default is 96 dpi.</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously,   returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">):</span>
@@ -879,7 +877,7 @@
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)</span>
 <span class="sd">        :param str out_format: (required)</span>
 <span class="sd">        :param file file: A file to be converted. (required)</span>
@@ -890,9 +888,7 @@
 <span class="sd">        :param int top_margin: Top resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int resolution: Resolution of resulting image. Default is 96 dpi.</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;out_path&#39;</span><span class="p">,</span> <span class="s1">&#39;out_format&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;left_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;right_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;top_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;resolution&#39;</span><span class="p">]</span>
@@ -992,7 +988,7 @@
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)</span>
 <span class="sd">        :param file file: A file to be converted. (required)</span>
 <span class="sd">        :param int width: Resulting document page width in points (1/96 inch).</span>
@@ -1001,9 +997,7 @@
 <span class="sd">        :param int right_margin: Right resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int top_margin: Top resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">):</span>
@@ -1018,7 +1012,7 @@
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)</span>
 <span class="sd">        :param file file: A file to be converted. (required)</span>
 <span class="sd">        :param int width: Resulting document page width in points (1/96 inch).</span>
@@ -1027,9 +1021,7 @@
 <span class="sd">        :param int right_margin: Right resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int top_margin: Top resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;out_path&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;left_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;right_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;top_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom_margin&#39;</span><span class="p">]</span>
@@ -1118,7 +1110,7 @@
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)</span>
 <span class="sd">        :param file file: A file to be converted. (required)</span>
 <span class="sd">        :param int width: Resulting document page width in points (1/96 inch).</span>
@@ -1127,9 +1119,7 @@
 <span class="sd">        :param int right_margin: Right resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int top_margin: Top resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">):</span>
@@ -1144,7 +1134,7 @@
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)</span>
 <span class="sd">        :param file file: A file to be converted. (required)</span>
 <span class="sd">        :param int width: Resulting document page width in points (1/96 inch).</span>
@@ -1153,9 +1143,7 @@
 <span class="sd">        :param int right_margin: Right resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int top_margin: Top resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;out_path&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;left_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;right_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;top_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom_margin&#39;</span><span class="p">]</span>
@@ -1244,7 +1232,7 @@
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: Document name. (required)</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)</span>
 <span class="sd">        :param str out_format: (required)</span>
@@ -1257,9 +1245,7 @@
 <span class="sd">        :param int resolution: Resolution of resulting image. Default is 96 dpi.</span>
 <span class="sd">        :param str folder: The source document folder.</span>
 <span class="sd">        :param str storage: The source and resulting document storage.</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">):</span>
@@ -1274,7 +1260,7 @@
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: Document name. (required)</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)</span>
 <span class="sd">        :param str out_format: (required)</span>
@@ -1287,9 +1273,7 @@
 <span class="sd">        :param int resolution: Resolution of resulting image. Default is 96 dpi.</span>
 <span class="sd">        :param str folder: The source document folder.</span>
 <span class="sd">        :param str storage: The source and resulting document storage.</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;out_path&#39;</span><span class="p">,</span> <span class="s1">&#39;out_format&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;left_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;right_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;top_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;resolution&#39;</span><span class="p">,</span> <span class="s1">&#39;folder&#39;</span><span class="p">,</span> <span class="s1">&#39;storage&#39;</span><span class="p">]</span>
@@ -1389,7 +1373,7 @@
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: Document name. (required)</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)</span>
 <span class="sd">        :param int width: Resulting document page width in points (1/96 inch).</span>
@@ -1400,9 +1384,7 @@
 <span class="sd">        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param str folder: The source document folder.</span>
 <span class="sd">        :param str storage: The source and resulting document storage.</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">):</span>
@@ -1417,7 +1399,7 @@
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: Document name. (required)</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)</span>
 <span class="sd">        :param int width: Resulting document page width in points (1/96 inch).</span>
@@ -1428,9 +1410,7 @@
 <span class="sd">        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param str folder: The source document folder.</span>
 <span class="sd">        :param str storage: The source and resulting document storage.</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;out_path&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;left_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;right_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;top_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;folder&#39;</span><span class="p">,</span> <span class="s1">&#39;storage&#39;</span><span class="p">]</span>
@@ -1522,7 +1502,7 @@
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: Document name. (required)</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)</span>
 <span class="sd">        :param int width: Resulting document page width in points (1/96 inch).</span>
@@ -1533,9 +1513,7 @@
 <span class="sd">        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param str folder: The source document folder.</span>
 <span class="sd">        :param str storage: The source and resulting document storage.</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">):</span>
@@ -1550,7 +1528,7 @@
 <span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
 <span class="sd">        asynchronous HTTP request, please pass async=True</span>
 
-<span class="sd">        :param async bool</span>
+<span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: Document name. (required)</span>
 <span class="sd">        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)</span>
 <span class="sd">        :param int width: Resulting document page width in points (1/96 inch).</span>
@@ -1561,9 +1539,7 @@
 <span class="sd">        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).</span>
 <span class="sd">        :param str folder: The source document folder.</span>
 <span class="sd">        :param str storage: The source and resulting document storage.</span>
-<span class="sd">        :return: file</span>
-<span class="sd">                 If the method is called asynchronously,</span>
-<span class="sd">                 returns the request thread.</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;out_path&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;left_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;right_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;top_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom_margin&#39;</span><span class="p">,</span> <span class="s1">&#39;folder&#39;</span><span class="p">,</span> <span class="s1">&#39;storage&#39;</span><span class="p">]</span>
@@ -1863,6 +1839,113 @@
             <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
             <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
 
+
+<div class="viewcode-block" id="HtmlApi.get_document_fragment_by_x_path_by_url"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.html_api.HtmlApi.get_document_fragment_by_x_path_by_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_document_fragment_by_x_path_by_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_url</span><span class="p">,</span> <span class="n">x_path</span><span class="p">,</span> <span class="n">out_format</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return list of HTML fragments matching the specified XPath query by the source page URL.</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async=True</span>
+
+<span class="sd">        :param bool async: Asynchronous request</span>
+<span class="sd">        :param str source_url: Source page URL. (required)</span>
+<span class="sd">        :param str x_path: XPath query string. (required)</span>
+<span class="sd">        :param str out_format: Output format. Possible values: &#39;plain&#39; and &#39;json&#39;. (required)</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_document_fragment_by_x_path_by_url_with_http_info</span><span class="p">(</span><span class="n">source_url</span><span class="p">,</span> <span class="n">x_path</span><span class="p">,</span> <span class="n">out_format</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_document_fragment_by_x_path_by_url_with_http_info</span><span class="p">(</span><span class="n">source_url</span><span class="p">,</span> <span class="n">x_path</span><span class="p">,</span> <span class="n">out_format</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__get_document_fragment_by_x_path_by_url_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_url</span><span class="p">,</span> <span class="n">x_path</span><span class="p">,</span> <span class="n">out_format</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return list of HTML fragments matching the specified XPath query by the source page URL.</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async=True</span>
+
+<span class="sd">        :param bool async: Asynchronous request</span>
+<span class="sd">        :param str source_url: Source page URL. (required)</span>
+<span class="sd">        :param str x_path: XPath query string. (required)</span>
+<span class="sd">        :param str out_format: Output format. Possible values: &#39;plain&#39; and &#39;json&#39;. (required)</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;source_url&#39;</span><span class="p">,</span> <span class="s1">&#39;x_path&#39;</span><span class="p">,</span> <span class="s1">&#39;out_format&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method get_document_fragment_by_x_path_by_url&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;source_url&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;source_url&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;source_url&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `source_url` when calling `get_document_fragment_by_x_path_by_url`&quot;</span><span class="p">)</span>
+        <span class="c1"># verify the required parameter &#39;x_path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;x_path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;x_path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `x_path` when calling `get_document_fragment_by_x_path_by_url`&quot;</span><span class="p">)</span>
+        <span class="c1"># verify the required parameter &#39;out_format&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;out_format&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;out_format&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `out_format` when calling `get_document_fragment_by_x_path_by_url`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;out_format&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;outFormat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;out_format&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;source_url&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;sourceUrl&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;source_url&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;x_path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;xPath&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;x_path&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/zip&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># Authentication setting</span>
+        <span class="n">auth_settings</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/fragments/</span><span class="si">{outFormat}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="s1">&#39;file&#39;</span><span class="p">,</span>
+            <span class="n">auth_settings</span><span class="o">=</span><span class="n">auth_settings</span><span class="p">,</span>
+            <span class="k">async</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+
 <div class="viewcode-block" id="HtmlApi.get_document_images"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.html_api.HtmlApi.get_document_images">[docs]</a>    <span class="k">def</span> <span class="nf">get_document_images</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return all HTML document images packaged as a ZIP archive.</span>
 
@@ -1946,6 +2029,95 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
             <span class="s1">&#39;/html/</span><span class="si">{name}</span><span class="s1">/images/all&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="s1">&#39;file&#39;</span><span class="p">,</span>
+            <span class="n">auth_settings</span><span class="o">=</span><span class="n">auth_settings</span><span class="p">,</span>
+            <span class="k">async</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HtmlApi.get_document_images_by_url"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.html_api.HtmlApi.get_document_images_by_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_document_images_by_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return all HTML page images packaged as a ZIP archive by the source page URL.</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async=True</span>
+
+<span class="sd">        :param bool async: Asynchronous request</span>
+<span class="sd">        :param str source_url: Source page URL. (required)</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_document_images_by_url_with_http_info</span><span class="p">(</span><span class="n">source_url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_document_images_by_url_with_http_info</span><span class="p">(</span><span class="n">source_url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__get_document_images_by_url_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return all HTML page images packaged as a ZIP archive by the source page URL.</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async=True</span>
+
+<span class="sd">        :param bool async: Asynchronous request</span>
+<span class="sd">        :param str source_url: Source page URL. (required)</span>
+<span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;source_url&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method get_document_images_by_url&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;source_url&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;source_url&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;source_url&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `source_url` when calling `get_document_images_by_url`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;source_url&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;sourceUrl&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;source_url&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/zip&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># Authentication setting</span>
+        <span class="n">auth_settings</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/images/all&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
             <span class="n">path_params</span><span class="p">,</span>
             <span class="n">query_params</span><span class="p">,</span>
             <span class="n">header_params</span><span class="p">,</span>
@@ -2589,6 +2761,7 @@
             <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
             <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
             <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span></div>
+
 </pre></div>
 
           </div>

@@ -343,6 +343,31 @@ asynchronous HTTP request, please pass async=True</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="asposehtmlcloud.api.html_api.HtmlApi.get_document_fragment_by_x_path_by_url">
+<code class="descname">get_document_fragment_by_x_path_by_url</code><span class="sig-paren">(</span><em>source_url</em>, <em>x_path</em>, <em>out_format</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_document_fragment_by_x_path_by_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_document_fragment_by_x_path_by_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of HTML fragments matching the specified XPath query by the source page URL.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>source_url</strong> (<em>str</em>) – Source page URL. (required)</li>
+<li><strong>x_path</strong> (<em>str</em>) – XPath query string. (required)</li>
+<li><strong>out_format</strong> (<em>str</em>) – Output format. Possible values: ‘plain’ and ‘json’. (required)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.get_document_images">
 <code class="descname">get_document_images</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_document_images"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_document_images" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all HTML document images packaged as a ZIP archive.</p>
@@ -357,6 +382,29 @@ asynchronous HTTP request, please pass async=True</p>
 <li><strong>name</strong> (<em>str</em>) – The document name. (required)</li>
 <li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
 <li><strong>storage</strong> (<em>str</em>) – The document storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="asposehtmlcloud.api.html_api.HtmlApi.get_document_images_by_url">
+<code class="descname">get_document_images_by_url</code><span class="sig-paren">(</span><em>source_url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_document_images_by_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_document_images_by_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all HTML page images packaged as a ZIP archive by the source page URL.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>source_url</strong> (<em>str</em>) – Source page URL. (required)</li>
 </ul>
 </td>
 </tr>

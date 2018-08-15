@@ -42,10 +42,10 @@ class TestDocumentApi(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        configuration = Configuration(apiKey="",
-                                      appSid="",
-                                      basePath="https://api.aspose.cloud/v1.1",
-                                      authPath="https://api.aspose.cloud/oauth2/token",
+        configuration = Configuration(apiKey="60487a72d6325241191177e37ae52146",
+                                      appSid="80e32ca5-a828-46a4-9d54-7199dfd3764a",
+                                      basePath="https://api-qa.aspose.cloud/v1.1",
+                                      authPath="https://api-qa.aspose.cloud/oauth2/token",
                                       debug=True)
         cls.api = HtmlApi(configuration)
 
@@ -639,7 +639,38 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-#    @unittest.skip("skipping")
+    #    @unittest.skip("skipping")
+    def test_get_document_fragment_by_x_path_by_url(self):
+
+        """Return list of HTML fragments matching the specified XPath query by the source page URL.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str source_url: Source page URL. (required)
+        :param str x_path: XPath query string. (required)
+        :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
+        x_path = ".//p"
+        out_format = "plain"
+        try:
+
+            # Get fragment document from remote storage by url
+            res = self.api.get_document_fragment_by_x_path_by_url(source_url=source_url, x_path=x_path, out_format=out_format)
+            self.assertTrue(isinstance(res, str), "Error get fragment document from remote storage by url")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    #    @unittest.skip("skipping")
     def test_get_document_images(self):
         """Test case for get_document_images
 
@@ -663,6 +694,35 @@ class TestDocumentApi(unittest.TestCase):
             # Get images from document on remote storage
             res = self.api.get_document_images(name=name, storage="", folder=TestHelper.folder)
             self.assertTrue(isinstance(res, str), "Error get images from document")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    #    @unittest.skip("skipping")
+    def test_get_document_images_by_url(self):
+        """Test case for get_document_images
+
+        Return all HTML document images packaged as a ZIP archive.
+
+        param async bool
+        param str name: The document name. (required)
+        param str folder: The document folder.
+        param str storage: The document storage.
+        return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+
+        """
+        source_url = "https://www.google.com/"
+        try:
+
+            # Get images from document by url
+            res = self.api.get_document_images_by_url(source_url=source_url)
+            self.assertTrue(isinstance(res, str), "Error get images from url")
 
             # Move to test folder
             TestHelper.move_file(str(res), TestHelper.test_dst)

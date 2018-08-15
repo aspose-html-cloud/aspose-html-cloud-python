@@ -1801,6 +1801,113 @@ class HtmlApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+
+    def get_document_fragment_by_x_path_by_url(self, source_url, x_path, out_format, **kwargs):
+        """Return list of HTML fragments matching the specified XPath query by the source page URL.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str source_url: Source page URL. (required)
+        :param str x_path: XPath query string. (required)
+        :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.__get_document_fragment_by_x_path_by_url_with_http_info(source_url, x_path, out_format, **kwargs)
+        else:
+            (data) = self.__get_document_fragment_by_x_path_by_url_with_http_info(source_url, x_path, out_format, **kwargs)
+            return data
+
+    def __get_document_fragment_by_x_path_by_url_with_http_info(self, source_url, x_path, out_format, **kwargs):
+        """Return list of HTML fragments matching the specified XPath query by the source page URL.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str source_url: Source page URL. (required)
+        :param str x_path: XPath query string. (required)
+        :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['source_url', 'x_path', 'out_format']
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_fragment_by_x_path_by_url" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'source_url' is set
+        if ('source_url' not in params or
+                params['source_url'] is None):
+            raise ValueError("Missing the required parameter `source_url` when calling `get_document_fragment_by_x_path_by_url`")
+        # verify the required parameter 'x_path' is set
+        if ('x_path' not in params or
+                params['x_path'] is None):
+            raise ValueError("Missing the required parameter `x_path` when calling `get_document_fragment_by_x_path_by_url`")
+        # verify the required parameter 'out_format' is set
+        if ('out_format' not in params or
+                params['out_format'] is None):
+            raise ValueError("Missing the required parameter `out_format` when calling `get_document_fragment_by_x_path_by_url`")
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'out_format' in params:
+            path_params['outFormat'] = params['out_format']
+
+        query_params = []
+        if 'source_url' in params:
+            query_params.append(('sourceUrl', params['source_url']))
+        if 'x_path' in params:
+            query_params.append(('xPath', params['x_path']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/zip'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/html/fragments/{outFormat}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+
     def get_document_images(self, name, **kwargs):
         """Return all HTML document images packaged as a ZIP archive.
 
@@ -1884,6 +1991,95 @@ class HtmlApi(object):
 
         return self.api_client.call_api(
             '/html/{name}/images/all', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_document_images_by_url(self, source_url, **kwargs):
+        """Return all HTML page images packaged as a ZIP archive by the source page URL.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str source_url: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.__get_document_images_by_url_with_http_info(source_url, **kwargs)
+        else:
+            (data) = self.__get_document_images_by_url_with_http_info(source_url, **kwargs)
+            return data
+
+    def __get_document_images_by_url_with_http_info(self, source_url, **kwargs):
+        """Return all HTML page images packaged as a ZIP archive by the source page URL.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str source_url: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['source_url']
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_images_by_url" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'source_url' is set
+        if ('source_url' not in params or
+                params['source_url'] is None):
+            raise ValueError("Missing the required parameter `source_url` when calling `get_document_images_by_url`")
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'source_url' in params:
+            query_params.append(('sourceUrl', params['source_url']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/zip'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/html/images/all', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2527,3 +2723,4 @@ class HtmlApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
