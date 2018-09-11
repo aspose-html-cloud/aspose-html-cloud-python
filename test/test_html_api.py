@@ -671,6 +671,74 @@ class TestDocumentApi(unittest.TestCase):
             raise ex
 
     #    @unittest.skip("skipping")
+    def test_get_document_fragments_by_css_selector(self):
+
+        """Return list of HTML fragments matching the specified CSS selector.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str name: The document name. (required)
+        :param str selector: CSS selector string. (required)
+        :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
+        :param str folder: The document folder.
+        :param str storage: The document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        name = "test2.html.zip"
+        selector = "div p"
+        out_format = "plain"
+        try:
+            # Upload file to storage
+            res = TestHelper.upload_file(name)
+            self.assertEqual(res.Code, 200, "Error upload file to server")
+
+            # Get fragment document from remote storage by css
+            res = self.api.get_document_fragments_by_css_selector(name=name, selector=selector, out_format=out_format,
+                                                           storage="", folder=TestHelper.folder)
+            self.assertTrue(isinstance(res, str), "Error get fragment document from remote storage")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    #    @unittest.skip("skipping")
+    def test_get_document_fragments_by_css_selector_by_url(self):
+
+        """Return list of HTML fragments matching the specified CSS selector by the source page URL.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str source_url: Source page URL. (required)
+        :param str selector: CSS selector string. (required)
+        :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        source_url = "https://www.w3schools.com/cssref/css_selectors.asp"
+        selector = 'a[href$=".asp"]' # Get all asp links
+        out_format = "plain"
+        try:
+
+            # Get fragment matching the specified CSS selector by url
+            res = self.api.get_document_fragments_by_css_selector_by_url(source_url=source_url, selector=selector, out_format=out_format)
+            self.assertTrue(isinstance(res, str), "Error get fragment matching the specified CSS selector by url")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    #    @unittest.skip("skipping")
     def test_get_document_images(self):
         """Test case for get_document_images
 

@@ -39,10 +39,10 @@ class TestHelper(object):
 
     # Load config from external file
     configuration = Configuration(
-        apiKey="60487a72d6325241191177e37ae52146",
-        appSid="80e32ca5-a828-46a4-9d54-7199dfd3764a",
-        basePath="https://api-qa.aspose.cloud/v1.1",
-        authPath="https://api-qa.aspose.cloud/oauth2/token",
+        apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        appSid="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+        basePath="http://api.aspose.cloud/v1.1",
+        authPath="http://api.aspose.cloud/oauth2/token",
         debug=True)
 
     client = Client(configuration)
