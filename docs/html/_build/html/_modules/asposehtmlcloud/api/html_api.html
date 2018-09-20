@@ -2334,7 +2334,7 @@
 
 <span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: The image file name. (required)</span>
-<span class="sd">        :param str ocr_engine_lang: OCR engine language - language</span>
+<span class="sd">        :param str ocr_engine_lang: OCR engine language - language.  Allowed values is &quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;ru&quot;.</span>
 <span class="sd">        :param str folder: The source image folder.</span>
 <span class="sd">        :param str storage: The source image storage.</span>
 <span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
@@ -2354,7 +2354,7 @@
 
 <span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: The image file name. (required)</span>
-<span class="sd">        :param str ocr_engine_lang: OCR engine language - language</span>
+<span class="sd">        :param str ocr_engine_lang: OCR engine language - language. Allowed values is &quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;ru&quot;.</span>
 <span class="sd">        :param str folder: The source image folder.</span>
 <span class="sd">        :param str storage: The source image storage.</span>
 <span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
@@ -2435,8 +2435,8 @@
 
 <span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: The image file name. (required)</span>
-<span class="sd">        :param str src_lang: Source language - also supposed as the OCR engine language. (required)</span>
-<span class="sd">        :param str res_lang: Result language. (required)</span>
+<span class="sd">        :param str src_lang: Source language - also supposed as the OCR engine language (required).  Allowed values is &quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;ru&quot;.</span>
+<span class="sd">        :param str res_lang: Result language (required).  Allowed values is &quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;ru&quot;.</span>
 <span class="sd">        :param str folder: The source image folder.</span>
 <span class="sd">        :param str storage: The source image storage.</span>
 <span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
@@ -2456,8 +2456,8 @@
 
 <span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: The image file name. (required)</span>
-<span class="sd">        :param str src_lang: Source language - also supposed as the OCR engine language. (required)</span>
-<span class="sd">        :param str res_lang: Result language. (required)</span>
+<span class="sd">        :param str src_lang: Source language - also supposed as the OCR engine language (required).  Allowed values is &quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;ru&quot;.</span>
+<span class="sd">        :param str res_lang: Result language (required). Allowed values is &quot;en&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;ru&quot;.</span>
 <span class="sd">        :param str folder: The source image folder.</span>
 <span class="sd">        :param str storage: The source image storage.</span>
 <span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
@@ -2552,8 +2552,8 @@
 
 <span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: Document name. (required)</span>
-<span class="sd">        :param str src_lang: Source language. (required)</span>
-<span class="sd">        :param str res_lang: Result language. (required)</span>
+<span class="sd">        :param str src_lang: Source language (required).  Allowed values is &quot;en&quot; (alias &quot;eng&quot;, &quot;english&quot;), &quot;de&quot; (alias &quot;deu&quot;, &quot;deutsch&quot;, &quot;german&quot;), &quot;fr&quot; (alias &quot;fra&quot;, &quot;french&quot;), &quot;ru&quot; (alias &quot;rus&quot;, &quot;russian&quot;), &quot;zh&quot;, alias (&quot;chinese&quot;).</span>
+<span class="sd">        :param str res_lang: Result language (required).  Allowed values is &quot;en&quot; (alias &quot;eng&quot;, &quot;english&quot;), &quot;de&quot; (alias &quot;deu&quot;, &quot;deutsch&quot;, &quot;german&quot;), &quot;fr&quot; (alias &quot;fra&quot;, &quot;french&quot;), &quot;ru&quot; (alias &quot;rus&quot;, &quot;russian&quot;), &quot;zh&quot;, alias (&quot;chinese&quot;).</span>
 <span class="sd">        :param str storage: The source document storage.</span>
 <span class="sd">        :param str folder: The source document folder.</span>
 <span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
@@ -2573,8 +2573,8 @@
 
 <span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str name: Document name. (required)</span>
-<span class="sd">        :param str src_lang: Source language. (required)</span>
-<span class="sd">        :param str res_lang: Result language. (required)</span>
+<span class="sd">        :param str src_lang: Source language (required). Allowed values is &quot;en&quot; (alias &quot;eng&quot;, &quot;english&quot;), &quot;de&quot; (alias &quot;deu&quot;, &quot;deutsch&quot;, &quot;german&quot;), &quot;fr&quot; (alias &quot;fra&quot;, &quot;french&quot;), &quot;ru&quot; (alias &quot;rus&quot;, &quot;russian&quot;), &quot;zh&quot;, alias (&quot;chinese&quot;).</span>
+<span class="sd">        :param str res_lang: Result language (required). Allowed values is &quot;en&quot; (alias &quot;eng&quot;, &quot;english&quot;), &quot;de&quot; (alias &quot;deu&quot;, &quot;deutsch&quot;, &quot;german&quot;), &quot;fr&quot; (alias &quot;fra&quot;, &quot;french&quot;), &quot;ru&quot; (alias &quot;rus&quot;, &quot;russian&quot;), &quot;zh&quot;, alias (&quot;chinese&quot;).</span>
 <span class="sd">        :param str storage: The source document storage.</span>
 <span class="sd">        :param str folder: The source document folder.</span>
 <span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
@@ -2665,8 +2665,8 @@
 
 <span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str source_url: Source document URL. (required)</span>
-<span class="sd">        :param str src_lang: Source language. (required)</span>
-<span class="sd">        :param str res_lang: Result language. (required)</span>
+<span class="sd">        :param str src_lang: Source language (required). Allowed values is &quot;en&quot; (alias &quot;eng&quot;, &quot;english&quot;), &quot;de&quot; (alias &quot;deu&quot;, &quot;deutsch&quot;, &quot;german&quot;), &quot;fr&quot; (alias &quot;fra&quot;, &quot;french&quot;), &quot;ru&quot; (alias &quot;rus&quot;, &quot;russian&quot;), &quot;zh&quot;, alias (&quot;chinese&quot;).</span>
+<span class="sd">        :param str res_lang: Result language (required). Allowed values is &quot;en&quot; (alias &quot;eng&quot;, &quot;english&quot;), &quot;de&quot; (alias &quot;deu&quot;, &quot;deutsch&quot;, &quot;german&quot;), &quot;fr&quot; (alias &quot;fra&quot;, &quot;french&quot;), &quot;ru&quot; (alias &quot;rus&quot;, &quot;russian&quot;), &quot;zh&quot;, alias (&quot;chinese&quot;).</span>
 <span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
@@ -2684,8 +2684,8 @@
 
 <span class="sd">        :param bool async: Asynchronous request</span>
 <span class="sd">        :param str source_url: Source document URL. (required)</span>
-<span class="sd">        :param str src_lang: Source language. (required)</span>
-<span class="sd">        :param str res_lang: Result language. (required)</span>
+<span class="sd">        :param str src_lang: Source language (required). Allowed values is &quot;en&quot; (alias &quot;eng&quot;, &quot;english&quot;), &quot;de&quot; (alias &quot;deu&quot;, &quot;deutsch&quot;, &quot;german&quot;), &quot;fr&quot; (alias &quot;fra&quot;, &quot;french&quot;), &quot;ru&quot; (alias &quot;rus&quot;, &quot;russian&quot;), &quot;zh&quot;, alias (&quot;chinese&quot;).</span>
+<span class="sd">        :param str res_lang: Result language (required). Allowed values is &quot;en&quot; (alias &quot;eng&quot;, &quot;english&quot;), &quot;de&quot; (alias &quot;deu&quot;, &quot;deutsch&quot;, &quot;german&quot;), &quot;fr&quot; (alias &quot;fra&quot;, &quot;french&quot;), &quot;ru&quot; (alias &quot;rus&quot;, &quot;russian&quot;), &quot;zh&quot;, alias (&quot;chinese&quot;).</span>
 <span class="sd">        :return: File. If the method is called asynchronously, returns the request thread.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 

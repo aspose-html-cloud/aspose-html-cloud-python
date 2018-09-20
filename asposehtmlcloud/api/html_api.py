@@ -2323,7 +2323,7 @@ class HtmlApi(object):
 
         :param bool async: Asynchronous request
         :param str name: The image file name. (required)
-        :param str ocr_engine_lang: OCR engine language - language
+        :param str ocr_engine_lang: OCR engine language - language.  Allowed values is "en", "de", "fr", "ru".
         :param str folder: The source image folder.
         :param str storage: The source image storage.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -2343,7 +2343,7 @@ class HtmlApi(object):
 
         :param bool async: Asynchronous request
         :param str name: The image file name. (required)
-        :param str ocr_engine_lang: OCR engine language - language
+        :param str ocr_engine_lang: OCR engine language - language. Allowed values is "en", "de", "fr", "ru".
         :param str folder: The source image folder.
         :param str storage: The source image storage.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -2424,8 +2424,8 @@ class HtmlApi(object):
 
         :param bool async: Asynchronous request
         :param str name: The image file name. (required)
-        :param str src_lang: Source language - also supposed as the OCR engine language. (required)
-        :param str res_lang: Result language. (required)
+        :param str src_lang: Source language - also supposed as the OCR engine language (required).  Allowed values is "en", "de", "fr", "ru".
+        :param str res_lang: Result language (required).  Allowed values is "en", "de", "fr", "ru".
         :param str folder: The source image folder.
         :param str storage: The source image storage.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -2445,8 +2445,8 @@ class HtmlApi(object):
 
         :param bool async: Asynchronous request
         :param str name: The image file name. (required)
-        :param str src_lang: Source language - also supposed as the OCR engine language. (required)
-        :param str res_lang: Result language. (required)
+        :param str src_lang: Source language - also supposed as the OCR engine language (required).  Allowed values is "en", "de", "fr", "ru".
+        :param str res_lang: Result language (required). Allowed values is "en", "de", "fr", "ru".
         :param str folder: The source image folder.
         :param str storage: The source image storage.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -2541,8 +2541,8 @@ class HtmlApi(object):
 
         :param bool async: Asynchronous request
         :param str name: Document name. (required)
-        :param str src_lang: Source language. (required)
-        :param str res_lang: Result language. (required)
+        :param str src_lang: Source language (required).  Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
+        :param str res_lang: Result language (required).  Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :param str storage: The source document storage.
         :param str folder: The source document folder.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -2562,8 +2562,8 @@ class HtmlApi(object):
 
         :param bool async: Asynchronous request
         :param str name: Document name. (required)
-        :param str src_lang: Source language. (required)
-        :param str res_lang: Result language. (required)
+        :param str src_lang: Source language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
+        :param str res_lang: Result language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :param str storage: The source document storage.
         :param str folder: The source document folder.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -2654,8 +2654,8 @@ class HtmlApi(object):
 
         :param bool async: Asynchronous request
         :param str source_url: Source document URL. (required)
-        :param str src_lang: Source language. (required)
-        :param str res_lang: Result language. (required)
+        :param str src_lang: Source language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
+        :param str res_lang: Result language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -2673,8 +2673,8 @@ class HtmlApi(object):
 
         :param bool async: Asynchronous request
         :param str source_url: Source document URL. (required)
-        :param str src_lang: Source language. (required)
-        :param str res_lang: Result language. (required)
+        :param str src_lang: Source language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
+        :param str res_lang: Result language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 

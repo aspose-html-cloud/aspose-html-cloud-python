@@ -480,7 +480,7 @@ asynchronous HTTP request, please pass async=True</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
 <li><strong>name</strong> (<em>str</em>) – The image file name. (required)</li>
-<li><strong>ocr_engine_lang</strong> (<em>str</em>) – OCR engine language - language</li>
+<li><strong>ocr_engine_lang</strong> (<em>str</em>) – OCR engine language - language.  Allowed values is “en”, “de”, “fr”, “ru”.</li>
 <li><strong>folder</strong> (<em>str</em>) – The source image folder.</li>
 <li><strong>storage</strong> (<em>str</em>) – The source image storage.</li>
 </ul>
@@ -506,8 +506,8 @@ asynchronous HTTP request, please pass async=True</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
 <li><strong>name</strong> (<em>str</em>) – The image file name. (required)</li>
-<li><strong>src_lang</strong> (<em>str</em>) – Source language - also supposed as the OCR engine language. (required)</li>
-<li><strong>res_lang</strong> (<em>str</em>) – Result language. (required)</li>
+<li><strong>src_lang</strong> (<em>str</em>) – Source language - also supposed as the OCR engine language (required).  Allowed values is “en”, “de”, “fr”, “ru”.</li>
+<li><strong>res_lang</strong> (<em>str</em>) – Result language (required).  Allowed values is “en”, “de”, “fr”, “ru”.</li>
 <li><strong>folder</strong> (<em>str</em>) – The source image folder.</li>
 <li><strong>storage</strong> (<em>str</em>) – The source image storage.</li>
 </ul>
@@ -533,8 +533,8 @@ asynchronous HTTP request, please pass async=True</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
 <li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
-<li><strong>src_lang</strong> (<em>str</em>) – Source language. (required)</li>
-<li><strong>res_lang</strong> (<em>str</em>) – Result language. (required)</li>
+<li><strong>src_lang</strong> (<em>str</em>) – Source language (required).  Allowed values is “en” (alias “eng”, “english”), “de” (alias “deu”, “deutsch”, “german”), “fr” (alias “fra”, “french”), “ru” (alias “rus”, “russian”), “zh”, alias (“chinese”).</li>
+<li><strong>res_lang</strong> (<em>str</em>) – Result language (required).  Allowed values is “en” (alias “eng”, “english”), “de” (alias “deu”, “deutsch”, “german”), “fr” (alias “fra”, “french”), “ru” (alias “rus”, “russian”), “zh”, alias (“chinese”).</li>
 <li><strong>storage</strong> (<em>str</em>) – The source document storage.</li>
 <li><strong>folder</strong> (<em>str</em>) – The source document folder.</li>
 </ul>
@@ -560,8 +560,8 @@ asynchronous HTTP request, please pass async=True</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
 <li><strong>source_url</strong> (<em>str</em>) – Source document URL. (required)</li>
-<li><strong>src_lang</strong> (<em>str</em>) – Source language. (required)</li>
-<li><strong>res_lang</strong> (<em>str</em>) – Result language. (required)</li>
+<li><strong>src_lang</strong> (<em>str</em>) – Source language (required). Allowed values is “en” (alias “eng”, “english”), “de” (alias “deu”, “deutsch”, “german”), “fr” (alias “fra”, “french”), “ru” (alias “rus”, “russian”), “zh”, alias (“chinese”).</li>
+<li><strong>res_lang</strong> (<em>str</em>) – Result language (required). Allowed values is “en” (alias “eng”, “english”), “de” (alias “deu”, “deutsch”, “german”), “fr” (alias “fra”, “french”), “ru” (alias “rus”, “russian”), “zh”, alias (“chinese”).</li>
 </ul>
 </td>
 </tr>
