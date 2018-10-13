@@ -20,13 +20,13 @@ sys.path.insert(0, u'..')
 # -- Project information -----------------------------------------------------
 
 project = u'asposehtmlcloud'
-copyright = u'2018, Author'
-author = u'Author'
+copyright = u'2018, Aspose'
+author = u'Aspose'
 
 # The short X.Y version
-version = u''
+version = u'1.0.6'
 # The full version, including alpha/beta/rc tags
-release = u''
+release = u'beta'
 
 
 # -- General configuration ---------------------------------------------------

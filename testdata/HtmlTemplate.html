@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>{{Title}}</title>
+	<meta charset="utf-8" />
+	<style>
+	table, th, td {
+		border: 1px solid black;
+		border-spacing: 0px
+	}
+	</style>
+</head>
+	<body>
+
+		<br>
+		<table data_merge="{{#foreach Person}}">
+			<caption>TABLE 1</caption>
+			<tr>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>City</th>
+				<th>Street</th>
+				<th>Number</th>
+			</tr>
+			<tr>
+				<td>{{Name}}</td>
+				<td>{{Surname}}</td>
+				<td>{{Address.City}}</td>
+				<td>{{Address.Street}}</td>
+				<td>{{Address.Number}}</td>
+			</tr>
+		</table>
+		<br>
+		<table data_merge="{{#foreach Person}}">
+			<caption>TABLE 2</caption>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Surname</th>
+					<th>City</th>
+					<th>Street</th>
+					<th>Number</th>
+				</tr>			
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{Name}}</td>
+					<td>{{Surname}}</td>
+					<td>{{Address.City}}</td>
+					<td>{{Address.Street}}</td>
+					<td>{{Address.Number}}</td>
+				</tr>			
+			</tbody>
+		</table>		
+	</body>
+</html>

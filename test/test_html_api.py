@@ -38,7 +38,7 @@ from asposehtmlcloud.rest import ApiException
 from test.test_helper import TestHelper
 
 
-class TestDocumentApi(unittest.TestCase):
+class TestHtmlApi(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
@@ -53,7 +53,6 @@ class TestDocumentApi(unittest.TestCase):
 #                    Conversion test
 ###############################################################
 
-    #    @unittest.skip("skipping")
     def test_get_convert_document_to_image(self):
         """Test case for get_convert_document_to_image
 
@@ -98,7 +97,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_get_convert_document_to_image_by_url(self):
         """Test case for get_convert_document_to_image_by_url
 
@@ -140,7 +138,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_get_convert_document_to_pdf(self):
         """Test case for get_convert_document_to_pdf
 
@@ -181,7 +178,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_get_convert_document_to_pdf_by_url(self):
         """Test case for get_convert_document_to_pdf_by_url
 
@@ -220,7 +216,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_get_convert_document_to_xps(self):
         """Test case for get_convert_document_to_xps
 
@@ -261,7 +256,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_get_convert_document_to_xps_by_url(self):
         """Test case for get_convert_document_to_xps_by_url
 
@@ -300,7 +294,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_put_convert_document_in_request_to_image(self):
         """Test case for put_convert_document_in_request_to_image
 
@@ -343,7 +336,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_put_convert_document_in_request_to_pdf(self):
         """Test case for put_convert_document_in_request_to_pdf
 
@@ -384,7 +376,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_put_convert_document_in_request_to_xps(self):
         """Test case for put_convert_document_in_request_to_xps
 
@@ -425,7 +416,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_put_convert_document_to_image(self):
         """Test case for put_convert_document_to_image
 
@@ -473,7 +463,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_put_convert_document_to_pdf(self):
         """Test case for put_convert_document_to_pdf
 
@@ -519,7 +508,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_put_convert_document_to_xps(self):
         """Test case for put_convert_document_to_xps
 
@@ -570,38 +558,6 @@ class TestDocumentApi(unittest.TestCase):
 #                    Document test
 ###############################################################
 
-    #    @unittest.skip("skipping")
-    def test_get_document(self):
-        """Test case for get_document
-
-        Return the HTML document by the name from default or specified  storage.
-
-        param async bool
-        param str name: The document name. (required)
-        param str storage: The document folder
-        param str folder: The document folder.
-        return: file
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        name = "test_get_doc.zip"
-        try:
-            # Upload file to storage
-            res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
-
-            # Get document from remote storage
-            res = self.api.get_document(name=name, storage="", folder=TestHelper.folder)
-            self.assertTrue(isinstance(res, str), "Error get document from remote storage")
-
-            # Move to test folder
-            TestHelper.move_file(str(res), TestHelper.test_dst)
-        except ApiException as ex:
-            print("Exception")
-            print("Info: " + str(ex))
-            raise ex
-
-#    @unittest.skip("skipping")
     def test_get_document_fragment_by_x_path(self):
 
         """Test case for get_document_fragment_by_x_path
@@ -639,7 +595,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_get_document_fragment_by_x_path_by_url(self):
 
         """Return list of HTML fragments matching the specified XPath query by the source page URL.
@@ -670,7 +625,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_get_document_fragments_by_css_selector(self):
 
         """Return list of HTML fragments matching the specified CSS selector.
@@ -707,7 +661,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_get_document_fragments_by_css_selector_by_url(self):
 
         """Return list of HTML fragments matching the specified CSS selector by the source page URL.
@@ -738,7 +691,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_get_document_images(self):
         """Test case for get_document_images
 
@@ -770,7 +722,6 @@ class TestDocumentApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    #    @unittest.skip("skipping")
     def test_get_document_images_by_url(self):
         """Test case for get_document_images
 
@@ -997,6 +948,98 @@ class TestDocumentApi(unittest.TestCase):
 
             # Move to test folder
             TestHelper.move_file(res, TestHelper.test_dst + 'keywordsUrl.json')
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+###############################################################
+#               TemplateMerge test
+###############################################################
+    #    @unittest.skip("skipping")
+
+    def test_get_merge_html_template(self):
+        """Test case for put_convert_document_in_request_to_image
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
+        :param str data_path: Data source file path in the storage. Supported data format: XML (required)
+        :param str options: Template merge options: reserved for further implementation.
+        :param str folder: The template document folder.
+        :param str storage: The template document and data source storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+
+        template_name = "HtmlTemplate.html"
+        template_data = "XmlSourceData.xml"
+        result_name = "GetTemplateMergePython.html"
+        options = ""
+        folder = "HtmlTestDoc"
+        storage = ""
+        data_path = folder + "/" + template_data
+
+        try:
+            res = TestHelper.upload_file(template_name)
+            self.assertEqual(res.Code, 200, "Error upload file to server")
+
+            res = TestHelper.upload_file(template_data)
+            self.assertEqual(res.Code, 200, "Error upload file to server")
+
+            # Get result file from storage
+            res = self.api.get_merge_html_template(template_name=template_name,data_path=data_path,options=options,
+                                                   folder=folder, storage=storage)
+            self.assertTrue(isinstance(res, str), "Error merge template")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst + result_name)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_merge_html_template(self):
+        """Test case for put_convert_document_in_request_to_image
+
+         This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
+        :param str out_path: Result document path. (required)
+        :param file file: A data file to populate template. (required)
+        :param str options: Template merge options: reserved for further implementation.
+        :param str folder: The template document folder.
+        :param str storage: The template document and data source storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+       """
+        template_name = "HtmlTemplate.html"
+        template_data = "XmlSourceData.xml"
+        result_name = "PutMergeHtmlTemplatePython.html"
+        options = ""
+        folder = "HtmlTestDoc"
+        storage = ""
+        data_file = TestHelper.test_src + template_data
+        out_path = folder + "/" + result_name
+
+        try:
+            # Convert document to image
+            self.api.put_merge_html_template(template_name=template_name, out_path=out_path, file=data_file,
+                                             options=options, folder=folder, storage=storage)
+
+            # Download result
+            res = TestHelper.download_file(result_name)
+
+            save_file = TestHelper.test_dst + result_name
+
+            # Save to test folder
+            with open(save_file, "wb") as file:
+                file.write(res.InputStream)
+
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))

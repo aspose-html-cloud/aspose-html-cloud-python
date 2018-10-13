@@ -23,6 +23,69 @@ From the command line:
 pip install asposehtmlcloud
 ```
 
+# Documentation for API Endpoints
+
+All URIs are relative to *https://api.aspose.cloud/v1.1*
+
+## ConversionApi
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+**get_convert_document_to_image** | **GET** html/{name}/convert/image/{outFormat} | Convert the HTML document from the storage by its name to the specified image format.
+**get_convert_document_to_image_by_url** | **GET** html/convert/image/{outFormat} | Convert the HTML page from the web by its URL to the specified image format.
+**get_convert_document_to_pdf** | **GET** html/{name}/convert/pdf | Convert the HTML document from the storage by its name to PDF.
+**get_convert_document_to_pdf_by_url** | **GET** html/convert/pdf | Convert the HTML page from the web by its URL to PDF.
+**get_convert_document_to_xps** | **GET** html/{name}/convert/xps | Convert the HTML document from the storage by its name to XPS.
+**get_convert_document_to_xps_by_url** | **GET** html/convert/xps | Convert the HTML page from the web by its URL to XPS.
+**put_convert_document_in_request_to_image** | **PUT** html/convert/image/{outFormat} | Converts the HTML document (in request content) to the specified image format and uploads resulting file to storage.
+**put_convert_document_in_request_to_pdf** | **PUT** html/convert/pdf | Converts the HTML document (in request content) to PDF and uploads resulting file to storage.
+**put_convert_document_in_request_to_xps** | **PUT** html/convert/xps | Converts the HTML document (in request content) to XPS and uploads resulting file to storage.
+**put_convert_document_to_image** | **PUT** html/{name}/convert/image/{outFormat} | Converts the HTML document (located on storage) to the specified image format and uploads resulting file to storage.
+**put_convert_document_to_pdf** | **PUT** html/{name}/convert/pdf | Converts the HTML document (located on storage) to PDF and uploads resulting file to storage.
+**put_convert_document_to_xps** | **PUT** html/{name}/convert/xps | Converts the HTML document (located on storage) to XPS and uploads resulting file to storage.
+
+## DocumentApi
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+**get_document_fragment_by_x_path** | **GET** html/{name}/fragments/{outFormat} | Return list of HTML fragments matching the specified XPath query.
+**get_document_fragment_by_x_path_by_url** | **GET** html/fragments/{outFormat} | Return list of HTML fragments matching the specified XPath query by the source page URL.
+**get_document_fragments_by_css_selector** | **GET** /html/{name}/fragments/css/{outFormat} | Return list of HTML fragments matching the specified CSS selector.
+**get_document_fragments_by_css_selector_by_url** | **GET** /html/fragments/css/{outFormat} | Return list of HTML fragments matching the specified CSS selector by the source page URL.
+**get_document_images** | **GET** html/{name}/images/all | Return all HTML document images packaged as a ZIP archive.
+**get_document_images_by_url** | **GET** html/images/all | Return all HTML page images packaged as a ZIP archive by the source page URL.
+
+## OcrApi
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+**get_recognize_and_import_to_html** | **GET** html/{name}/ocr/import | Recognize text from the image file in the storage and import it to HTML format.
+**get_recognize_and_translate_to_html** | **GET** html/{name}/ocr/translate/{srcLang}/{resLang} | Recognize text from the image file in the storage, import it to HTML format and translate to specified language.
+
+## TranslationApi
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+**get_translate_document** | **GET** html/{name}/translate/{srcLang}/{resLang} | Translate the HTML document specified by the name from default or specified storage. 
+**get_translate_document_by_url** | **GET** html/translate/{srcLang}/{resLang} | Translate the HTML document from Web specified by its URL.
+
+## SummarizationApi
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+**get_detect_html_keywords** | **GET** html/{name}/summ/keywords | Get the HTML document keywords using the keyword detection service.
+**get_detect_html_keywords_by_url** | **GET** html/summ/keywords | Get the keywords from HTML document from Web specified by its URL using the keyword detection service
+
+## TemplateMergeApi    
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+**get_merge_html_template** | **GET** /html/{templateName}/merge | Populate HTML document template with data located as a file in the storage.
+**put_merge_html_template** | **PUT** /html/{templateName}/merge | Populate HTML document template with data from the request body. Result document will be saved to storage.
+
+
+
+
 
 The examples below show how your application have to initiate and convert url to image using Aspose.HTML Cloud library:
 ```python

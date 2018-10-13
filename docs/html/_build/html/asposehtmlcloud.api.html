@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>asposehtmlcloud.api package &#8212; asposehtmlcloud  documentation</title>
+    <title>asposehtmlcloud.api package &#8212; asposehtmlcloud beta documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
@@ -29,7 +29,7 @@
         <li class="right" >
           <a href="asposehtmlcloud.html" title="asposehtmlcloud package"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">asposehtmlcloud  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">asposehtmlcloud beta documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="asposehtmlcloud.html" accesskey="U">asposehtmlcloud package</a> &#187;</li> 
       </ul>
     </div>  
@@ -254,7 +254,7 @@ asynchronous HTTP request, please pass async=True</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
-<li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
+<li><strong>name</strong> (<em>str</em>) – Document name (required). Html file in the storage.</li>
 <li><strong>folder</strong> (<em>str</em>) – Document folder.</li>
 <li><strong>storage</strong> (<em>str</em>) – Document storage.</li>
 </ul>
@@ -291,31 +291,6 @@ asynchronous HTTP request, please pass async=True</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="asposehtmlcloud.api.html_api.HtmlApi.get_document">
-<code class="descname">get_document</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_document" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the HTML document by the name from default or specified storage.</p>
-<p>This method makes a synchronous HTTP request by default. To make an
-asynchronous HTTP request, please pass async=True</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
-<li><strong>name</strong> (<em>str</em>) – The document name. (required)</li>
-<li><strong>storage</strong> (<em>str</em>) – The document folder</li>
-<li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.get_document_fragment_by_x_path">
 <code class="descname">get_document_fragment_by_x_path</code><span class="sig-paren">(</span><em>name</em>, <em>x_path</em>, <em>out_format</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_document_fragment_by_x_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_document_fragment_by_x_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return list of HTML fragments matching the specified XPath query.</p>
@@ -327,7 +302,7 @@ asynchronous HTTP request, please pass async=True</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
-<li><strong>name</strong> (<em>str</em>) – The document name. (required)</li>
+<li><strong>name</strong> (<em>str</em>) – The document name (required). Presented as zip archive with one html file in the root or html file.</li>
 <li><strong>x_path</strong> (<em>str</em>) – XPath query string. (required)</li>
 <li><strong>out_format</strong> (<em>str</em>) – Output format. Possible values: ‘plain’ and ‘json’. (required)</li>
 <li><strong>storage</strong> (<em>str</em>) – The document storage.</li>
@@ -379,7 +354,7 @@ asynchronous HTTP request, please pass async=True</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
-<li><strong>name</strong> (<em>str</em>) – The document name. (required)</li>
+<li><strong>name</strong> (<em>str</em>) – The document name (required). Presented as zip archive with one html file in the root or html file.</li>
 <li><strong>selector</strong> (<em>str</em>) – CSS selector string. (required)</li>
 <li><strong>out_format</strong> (<em>str</em>) – Output format. Possible values: ‘plain’ and ‘json’. (required)</li>
 <li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
@@ -431,7 +406,7 @@ asynchronous HTTP request, please pass async=True</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
-<li><strong>name</strong> (<em>str</em>) – The document name. (required)</li>
+<li><strong>name</strong> (<em>str</em>) – The document name (required). Presented as zip archive with one html file in the root.</li>
 <li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
 <li><strong>storage</strong> (<em>str</em>) – The document storage.</li>
 </ul>
@@ -468,9 +443,37 @@ asynchronous HTTP request, please pass async=True</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="asposehtmlcloud.api.html_api.HtmlApi.get_merge_html_template">
+<code class="descname">get_merge_html_template</code><span class="sig-paren">(</span><em>template_name</em>, <em>data_path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_merge_html_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_merge_html_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Populate HTML document template with data located as a file in the storage.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>template_name</strong> (<em>str</em>) – Template document name. Template document is HTML or zipped HTML. (required)</li>
+<li><strong>data_path</strong> (<em>str</em>) – Data source file path in the storage. Supported data format: XML (required)</li>
+<li><strong>options</strong> (<em>str</em>) – Template merge options: reserved for further implementation.</li>
+<li><strong>folder</strong> (<em>str</em>) – The template document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The template document and data source storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.get_recognize_and_import_to_html">
 <code class="descname">get_recognize_and_import_to_html</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_recognize_and_import_to_html"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_recognize_and_import_to_html" title="Permalink to this definition">¶</a></dt>
-<dd><p>Recognize text from the image file in the storage and import it to HTML format.</p>
+<dd><p>Recognize text from the image file in the storage and import it to HTML format.
+Acceptable image formats is jpg, gif, png, bmp, tiff.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -496,7 +499,8 @@ asynchronous HTTP request, please pass async=True</p>
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.get_recognize_and_translate_to_html">
 <code class="descname">get_recognize_and_translate_to_html</code><span class="sig-paren">(</span><em>name</em>, <em>src_lang</em>, <em>res_lang</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_recognize_and_translate_to_html"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_recognize_and_translate_to_html" title="Permalink to this definition">¶</a></dt>
-<dd><p>Recognize text from the image file in the storage, import it to HTML format and translate to specified language.</p>
+<dd><p>Recognize text from the image file in the storage, import it to HTML format and translate to specified language.
+Acceptable image formats is jpg, gif, png, bmp, tiff.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -523,7 +527,8 @@ asynchronous HTTP request, please pass async=True</p>
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.get_translate_document">
 <code class="descname">get_translate_document</code><span class="sig-paren">(</span><em>name</em>, <em>src_lang</em>, <em>res_lang</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_translate_document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_translate_document" title="Permalink to this definition">¶</a></dt>
-<dd><p>Translate the HTML document specified by the name from default or specified storage.</p>
+<dd><p>Translate the HTML document specified by the name from default or specified storage.
+Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -532,7 +537,7 @@ asynchronous HTTP request, please pass async=True</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
-<li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
+<li><strong>name</strong> (<em>str</em>) – Document name (required). Html file in the storage.</li>
 <li><strong>src_lang</strong> (<em>str</em>) – Source language (required).  Allowed values is “en” (alias “eng”, “english”), “de” (alias “deu”, “deutsch”, “german”), “fr” (alias “fra”, “french”), “ru” (alias “rus”, “russian”), “zh”, alias (“chinese”).</li>
 <li><strong>res_lang</strong> (<em>str</em>) – Result language (required).  Allowed values is “en” (alias “eng”, “english”), “de” (alias “deu”, “deutsch”, “german”), “fr” (alias “fra”, “french”), “ru” (alias “rus”, “russian”), “zh”, alias (“chinese”).</li>
 <li><strong>storage</strong> (<em>str</em>) – The source document storage.</li>
@@ -550,7 +555,8 @@ asynchronous HTTP request, please pass async=True</p>
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.get_translate_document_by_url">
 <code class="descname">get_translate_document_by_url</code><span class="sig-paren">(</span><em>source_url</em>, <em>src_lang</em>, <em>res_lang</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_translate_document_by_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_translate_document_by_url" title="Permalink to this definition">¶</a></dt>
-<dd><p>Translate the HTML document from Web specified by its URL.</p>
+<dd><p>Translate the HTML document from Web specified by its URL.
+Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -762,6 +768,34 @@ asynchronous HTTP request, please pass async=True</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="asposehtmlcloud.api.html_api.HtmlApi.put_merge_html_template">
+<code class="descname">put_merge_html_template</code><span class="sig-paren">(</span><em>template_name</em>, <em>out_path</em>, <em>file</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_merge_html_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_merge_html_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Populate HTML document template with data from the request body. Result document will be saved to storage.</p>
+<p>This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async=True</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>async</strong> (<em>bool</em>) – Asynchronous request</li>
+<li><strong>template_name</strong> (<em>str</em>) – Template document name. Template document is HTML or zipped HTML. (required)</li>
+<li><strong>out_path</strong> (<em>str</em>) – Result document path. (required)</li>
+<li><strong>file</strong> (<em>file</em>) – A data file to populate template. (required)</li>
+<li><strong>options</strong> (<em>str</em>) – Template merge options: reserved for further implementation.</li>
+<li><strong>folder</strong> (<em>str</em>) – The template document folder.</li>
+<li><strong>storage</strong> (<em>str</em>) – The template document and data source storage.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">File. If the method is called asynchronously, returns the request thread.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -824,12 +858,12 @@ asynchronous HTTP request, please pass async=True</p>
         <li class="right" >
           <a href="asposehtmlcloud.html" title="asposehtmlcloud package"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">asposehtmlcloud  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">asposehtmlcloud beta documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="asposehtmlcloud.html" >asposehtmlcloud package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2018, Author.
+        &#169; Copyright 2018, Aspose.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
     </div>
   </body>

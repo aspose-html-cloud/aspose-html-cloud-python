@@ -1591,103 +1591,6 @@ class HtmlApi(object):
 #                 Document API
 ##########################################################
 
-    def get_document(self, name, **kwargs):
-        """Return the HTML document by the name from default or specified storage.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-
-        :param bool async: Asynchronous request
-        :param str name: The document name. (required)
-        :param str storage: The document folder
-        :param str folder: The document folder.
-        :return: File. If the method is called asynchronously, returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
-            return self.__get_document_with_http_info(name, **kwargs)
-        else:
-            (data) = self.__get_document_with_http_info(name, **kwargs)
-            return data
-
-    def __get_document_with_http_info(self, name, **kwargs):
-        """Return the HTML document by the name from default or specified storage.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-
-        :param bool async: Asynchronous request
-        :param str name: The document name. (required)
-        :param str storage: The document folder
-        :param str folder: The document folder.
-        :return: File. If the method is called asynchronously, returns the request thread.
-        """
-
-        all_params = ['name', 'storage', 'folder']
-        all_params.append('async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_document" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `get_document`")
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']
-
-        query_params = []
-        if 'storage' in params:
-            query_params.append(('storage', params['storage']))
-        if 'folder' in params:
-            query_params.append(('folder', params['folder']))
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['multipart/form-data', 'application/zip'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
-
-        return self.api_client.call_api(
-            '/html/{name}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='file',
-            auth_settings=auth_settings,
-            async=params.get('async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def get_document_fragment_by_x_path(self, name, x_path, out_format, **kwargs):
         """Return list of HTML fragments matching the specified XPath query.
 
@@ -1695,7 +1598,7 @@ class HtmlApi(object):
         asynchronous HTTP request, please pass async=True
 
         :param bool async: Asynchronous request
-        :param str name: The document name. (required)
+        :param str name: The document name (required). Presented as zip archive with one html file in the root or html file.
         :param str x_path: XPath query string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
         :param str storage: The document storage.
@@ -1716,7 +1619,7 @@ class HtmlApi(object):
         asynchronous HTTP request, please pass async=True
 
         :param bool async: Asynchronous request
-        :param str name: The document name. (required)
+        :param str name: The document name (required). Presented as zip archive with one html file in the root or html file.
         :param str x_path: XPath query string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
         :param str storage: The document storage.
@@ -1800,7 +1703,6 @@ class HtmlApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
-
 
     def get_document_fragment_by_x_path_by_url(self, source_url, x_path, out_format, **kwargs):
         """Return list of HTML fragments matching the specified XPath query by the source page URL.
@@ -1914,7 +1816,7 @@ class HtmlApi(object):
         asynchronous HTTP request, please pass async=True
 
         :param bool async: Asynchronous request
-        :param str name: The document name. (required)
+        :param str name: The document name (required). Presented as zip archive with one html file in the root or html file.
         :param str selector: CSS selector string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
         :param str folder: The document folder.
@@ -1935,7 +1837,7 @@ class HtmlApi(object):
         asynchronous HTTP request, please pass async=True
 
         :param bool async: Asynchronous request
-        :param str name: The document name. (required)
+        :param str name: The document name (required). Presented as zip archive with one html file in the root or html file.
         :param str selector: CSS selector string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
         :param str folder: The document folder.
@@ -2132,7 +2034,7 @@ class HtmlApi(object):
         asynchronous HTTP request, please pass async=True
 
         :param bool async: Asynchronous request
-        :param str name: The document name. (required)
+        :param str name: The document name (required). Presented as zip archive with one html file in the root.
         :param str folder: The document folder.
         :param str storage: The document storage.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -2151,7 +2053,7 @@ class HtmlApi(object):
         asynchronous HTTP request, please pass async=True
 
         :param bool async: Asynchronous request
-        :param str name: The document name. (required)
+        :param str name: The document name (required). Presented as zip archive with one html file in the root.
         :param str folder: The document folder.
         :param str storage: The document storage.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -2317,7 +2219,8 @@ class HtmlApi(object):
 
     def get_recognize_and_import_to_html(self, name, **kwargs):
         """Recognize text from the image file in the storage and import it to HTML format.
-
+        Acceptable image formats is jpg, gif, png, bmp, tiff.
+        
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
 
@@ -2337,7 +2240,8 @@ class HtmlApi(object):
 
     def __get_recognize_and_import_to_html_with_http_info(self, name, **kwargs):
         """Recognize text from the image file in the storage and import it to HTML format.
-
+        Acceptable image formats is jpg, gif, png, bmp, tiff.
+        
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
 
@@ -2418,7 +2322,8 @@ class HtmlApi(object):
 
     def get_recognize_and_translate_to_html(self, name, src_lang, res_lang, **kwargs):
         """Recognize text from the image file in the storage, import it to HTML format and translate to specified language.
-
+        Acceptable image formats is jpg, gif, png, bmp, tiff.
+        
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
 
@@ -2439,6 +2344,7 @@ class HtmlApi(object):
 
     def __get_recognize_and_translate_to_html_with_http_info(self, name, src_lang, res_lang, **kwargs):
         """Recognize text from the image file in the storage, import it to HTML format and translate to specified language.
+        Acceptable image formats is jpg, gif, png, bmp, tiff.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -2535,12 +2441,13 @@ class HtmlApi(object):
 
     def get_translate_document(self, name, src_lang, res_lang, **kwargs):
         """Translate the HTML document specified by the name from default or specified storage.
-
+        Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.
+        
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
 
         :param bool async: Asynchronous request
-        :param str name: Document name. (required)
+        :param str name: Document name (required). Html file in the storage.
         :param str src_lang: Source language (required).  Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :param str res_lang: Result language (required).  Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :param str storage: The source document storage.
@@ -2556,12 +2463,13 @@ class HtmlApi(object):
 
     def __get_translate_document_with_http_info(self, name, src_lang, res_lang, **kwargs):
         """Translate the HTML document specified by the name from default or specified storage.
+        Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
 
         :param bool async: Asynchronous request
-        :param str name: Document name. (required)
+        :param str name: Document name (required). Html file in the storage.
         :param str src_lang: Source language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :param str res_lang: Result language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :param str storage: The source document storage.
@@ -2648,6 +2556,7 @@ class HtmlApi(object):
 
     def get_translate_document_by_url(self, source_url, src_lang, res_lang, **kwargs):
         """Translate the HTML document from Web specified by its URL.
+        Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -2667,6 +2576,7 @@ class HtmlApi(object):
 
     def __get_translate_document_by_url_with_http_info(self, source_url, src_lang, res_lang, **kwargs):
         """Translate the HTML document from Web specified by its URL.
+        Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -2762,7 +2672,7 @@ class HtmlApi(object):
         asynchronous HTTP request, please pass async=True
 
         :param bool async: Asynchronous request
-        :param str name: Document name. (required)
+        :param str name: Document name (required). Html file in the storage.
         :param str folder: Document folder.
         :param str storage: Document storage.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -2781,7 +2691,7 @@ class HtmlApi(object):
         asynchronous HTTP request, please pass async=True
 
         :param bool async: Asynchronous request
-        :param str name: Document name. (required)
+        :param str name: Document name (required). Html file in the storage.
         :param str folder: Document folder.
         :param str storage: Document storage.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -2941,3 +2851,233 @@ class HtmlApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+##########################################################
+#                  TemplateMerge API
+##########################################################
+
+    def get_merge_html_template(self, template_name, data_path, **kwargs):
+        """Populate HTML document template with data located as a file in the storage.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
+        :param str data_path: Data source file path in the storage. Supported data format: XML (required)
+        :param str options: Template merge options: reserved for further implementation.
+        :param str folder: The template document folder.
+        :param str storage: The template document and data source storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.__get_merge_html_template_with_http_info(template_name, data_path, **kwargs)
+        else:
+            (data) = self.__get_merge_html_template_with_http_info(template_name, data_path, **kwargs)
+            return data
+
+    def __get_merge_html_template_with_http_info(self, template_name, data_path, **kwargs):
+        """Populate HTML document template with data located as a file in the storage.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
+        :param str data_path: Data source file path in the storage. Supported data format: XML (required)
+        :param str options: Template merge options: reserved for further implementation.
+        :param str folder: The template document folder.
+        :param str storage: The template document and data source storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['template_name', 'data_path', 'options', 'folder', 'storage']
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_merge_html_template" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'template_name' is set
+        if ('template_name' not in params or
+                params['template_name'] is None):
+            raise ValueError("Missing the required parameter `template_name` when calling `get_merge_html_template`")
+        # verify the required parameter 'data_path' is set
+        if ('data_path' not in params or
+                params['data_path'] is None):
+            raise ValueError("Missing the required parameter `data_path` when calling `get_merge_html_template`")
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'template_name' in params:
+            path_params['templateName'] = params['template_name']
+
+        query_params = []
+        if 'data_path' in params:
+            query_params.append(('dataPath', params['data_path']))
+        if 'options' in params:
+            query_params.append(('options', params['options']))
+        if 'folder' in params:
+            query_params.append(('folder', params['folder']))
+        if 'storage' in params:
+            query_params.append(('storage', params['storage']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['multipart/form-data'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/html/{templateName}/merge', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_merge_html_template(self, template_name, out_path, file, **kwargs):
+        """Populate HTML document template with data from the request body. Result document will be saved to storage.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
+        :param str out_path: Result document path. (required)
+        :param file file: A data file to populate template. (required)
+        :param str options: Template merge options: reserved for further implementation.
+        :param str folder: The template document folder.
+        :param str storage: The template document and data source storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.__put_merge_html_template_with_http_info(template_name, out_path, file, **kwargs)
+        else:
+            (data) = self.__put_merge_html_template_with_http_info(template_name, out_path, file, **kwargs)
+            return data
+
+    def __put_merge_html_template_with_http_info(self, template_name, out_path, file, **kwargs):
+        """Populate HTML document template with data from the request body. Result document will be saved to storage.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+
+        :param bool async: Asynchronous request
+        :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
+        :param str out_path: Result document path. (required)
+        :param file file: A data file to populate template. (required)
+        :param str options: Template merge options: reserved for further implementation.
+        :param str folder: The template document folder.
+        :param str storage: The template document and data source storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['template_name', 'out_path', 'file', 'options', 'folder', 'storage']
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_merge_html_template" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'template_name' is set
+        if ('template_name' not in params or
+                params['template_name'] is None):
+            raise ValueError("Missing the required parameter `template_name` when calling `put_merge_html_template`")
+        # verify the required parameter 'out_path' is set
+        if ('out_path' not in params or
+                params['out_path'] is None):
+            raise ValueError("Missing the required parameter `out_path` when calling `put_merge_html_template`")
+        # verify the required parameter 'file' is set
+        if ('file' not in params or
+                params['file'] is None):
+            raise ValueError("Missing the required parameter `file` when calling `put_merge_html_template`")
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'template_name' in params:
+            path_params['templateName'] = params['template_name']
+
+        query_params = []
+        if 'out_path' in params:
+            query_params.append(('outPath', params['out_path']))
+        if 'options' in params:
+            query_params.append(('options', params['options']))
+        if 'folder' in params:
+            query_params.append(('folder', params['folder']))
+        if 'storage' in params:
+            query_params.append(('storage', params['storage']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        f = open(file,"rb")
+        body_params = f.read()
+        f.close()
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/octet-stream'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/html/{templateName}/merge', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
