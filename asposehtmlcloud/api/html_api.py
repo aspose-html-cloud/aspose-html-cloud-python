@@ -53,9 +53,9 @@ class HtmlApi(object):
         """Convert the HTML document from the storage by its name to the specified image format.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_format: Resulting image format. (required)
         :param int width: Resulting image width.
@@ -71,7 +71,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_convert_document_to_image_with_http_info(name, out_format, **kwargs)
         else:
             (data) = self.__get_convert_document_to_image_with_http_info(name, out_format, **kwargs)
@@ -81,9 +81,9 @@ class HtmlApi(object):
         """Convert the HTML document from the storage by its name to the specified image format.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_format: Resulting image format. (required)
         :param int width: Resulting image width.
@@ -100,7 +100,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'x_resolution', 'y_resolution', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -180,7 +180,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -190,9 +190,9 @@ class HtmlApi(object):
         """Convert the HTML page from the web by its URL to the specified image format.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param str out_format: Resulting image format. (required)
         :param int width: Resulting image width.
@@ -208,7 +208,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_convert_document_to_image_by_url_with_http_info(source_url, out_format, **kwargs)
         else:
             (data) = self.__get_convert_document_to_image_by_url_with_http_info(source_url, out_format, **kwargs)
@@ -218,9 +218,9 @@ class HtmlApi(object):
         """Convert the HTML page from the web by its URL to the specified image format.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param str out_format: Resulting image format. (required)
         :param int width: Resulting image width.
@@ -237,7 +237,7 @@ class HtmlApi(object):
         """
 
         all_params = ['source_url', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'x_resolution', 'y_resolution', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -317,7 +317,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -327,9 +327,9 @@ class HtmlApi(object):
         """Convert the HTML document from the storage by its name to PDF.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
@@ -342,7 +342,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_convert_document_to_pdf_with_http_info(name, **kwargs)
         else:
             (data) = self.__get_convert_document_to_pdf_with_http_info(name, **kwargs)
@@ -352,9 +352,9 @@ class HtmlApi(object):
         """Convert the HTML document from the storage by its name to PDF.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
@@ -368,7 +368,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -438,7 +438,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -448,9 +448,9 @@ class HtmlApi(object):
         """Convert the HTML page from the web by its URL to PDF.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
@@ -463,7 +463,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_convert_document_to_pdf_by_url_with_http_info(source_url, **kwargs)
         else:
             (data) = self.__get_convert_document_to_pdf_by_url_with_http_info(source_url, **kwargs)
@@ -473,9 +473,9 @@ class HtmlApi(object):
         """Convert the HTML page from the web by its URL to PDF.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
@@ -489,7 +489,7 @@ class HtmlApi(object):
         """
 
         all_params = ['source_url', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -559,7 +559,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -569,9 +569,9 @@ class HtmlApi(object):
         """Convert the HTML document from the storage by its name to XPS.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
@@ -584,7 +584,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_convert_document_to_xps_with_http_info(name, **kwargs)
         else:
             (data) = self.__get_convert_document_to_xps_with_http_info(name, **kwargs)
@@ -594,9 +594,9 @@ class HtmlApi(object):
         """Convert the HTML document from the storage by its name to XPS.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
@@ -610,7 +610,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -680,7 +680,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -690,9 +690,9 @@ class HtmlApi(object):
         """Convert the HTML page from the web by its URL to XPS.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
@@ -705,7 +705,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_convert_document_to_xps_by_url_with_http_info(source_url, **kwargs)
         else:
             (data) = self.__get_convert_document_to_xps_by_url_with_http_info(source_url, **kwargs)
@@ -715,9 +715,9 @@ class HtmlApi(object):
         """Convert the HTML page from the web by its URL to XPS.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
@@ -731,7 +731,7 @@ class HtmlApi(object):
         """
 
         all_params = ['source_url', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -801,7 +801,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -811,9 +811,9 @@ class HtmlApi(object):
         """Converts the HTML document (in request content) to the specified image format and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
         :param str out_format: (required)
         :param file file: A file to be converted. (required)
@@ -827,7 +827,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously,   returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__put_convert_document_in_request_to_image_with_http_info(out_path, out_format, file, **kwargs)
         else:
             (data) = self.__put_convert_document_in_request_to_image_with_http_info(out_path, out_format, file, **kwargs)
@@ -837,9 +837,9 @@ class HtmlApi(object):
         """Converts the HTML document (in request content) to the specified image format and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
         :param str out_format: (required)
         :param file file: A file to be converted. (required)
@@ -854,7 +854,7 @@ class HtmlApi(object):
         """
 
         all_params = ['out_path', 'out_format', 'file', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'resolution']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -938,7 +938,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -948,9 +948,9 @@ class HtmlApi(object):
         """Converts the HTML document (in request content) to PDF and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
         :param file file: A file to be converted. (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -962,7 +962,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__put_convert_document_in_request_to_pdf_with_http_info(out_path, file, **kwargs)
         else:
             (data) = self.__put_convert_document_in_request_to_pdf_with_http_info(out_path, file, **kwargs)
@@ -972,9 +972,9 @@ class HtmlApi(object):
         """Converts the HTML document (in request content) to PDF and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
         :param file file: A file to be converted. (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -987,7 +987,7 @@ class HtmlApi(object):
         """
 
         all_params = ['out_path', 'file', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1060,7 +1060,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1070,9 +1070,9 @@ class HtmlApi(object):
         """Converts the HTML document (in request content) to XPS and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
         :param file file: A file to be converted. (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -1084,7 +1084,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__put_convert_document_in_request_to_xps_with_http_info(out_path, file, **kwargs)
         else:
             (data) = self.__put_convert_document_in_request_to_xps_with_http_info(out_path, file, **kwargs)
@@ -1094,9 +1094,9 @@ class HtmlApi(object):
         """Converts the HTML document (in request content) to XPS and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
         :param file file: A file to be converted. (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -1109,7 +1109,7 @@ class HtmlApi(object):
         """
 
         all_params = ['out_path', 'file', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1182,7 +1182,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1192,9 +1192,9 @@ class HtmlApi(object):
         """Converts the HTML document (located on storage) to the specified image format and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
         :param str out_format: (required)
@@ -1210,7 +1210,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__put_convert_document_to_image_with_http_info(name, out_path, out_format, **kwargs)
         else:
             (data) = self.__put_convert_document_to_image_with_http_info(name, out_path, out_format, **kwargs)
@@ -1220,9 +1220,9 @@ class HtmlApi(object):
         """Converts the HTML document (located on storage) to the specified image format and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
         :param str out_format: (required)
@@ -1239,7 +1239,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'out_path', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'resolution', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1323,7 +1323,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1333,9 +1333,9 @@ class HtmlApi(object):
         """Converts the HTML document (located on storage) to PDF and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -1349,7 +1349,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__put_convert_document_to_pdf_with_http_info(name, out_path, **kwargs)
         else:
             (data) = self.__put_convert_document_to_pdf_with_http_info(name, out_path, **kwargs)
@@ -1359,9 +1359,9 @@ class HtmlApi(object):
         """Converts the HTML document (located on storage) to PDF and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -1376,7 +1376,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'out_path', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1452,7 +1452,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1462,9 +1462,9 @@ class HtmlApi(object):
         """Converts the HTML document (located on storage) to XPS and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -1478,7 +1478,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__put_convert_document_to_xps_with_http_info(name, out_path, **kwargs)
         else:
             (data) = self.__put_convert_document_to_xps_with_http_info(name, out_path, **kwargs)
@@ -1488,9 +1488,9 @@ class HtmlApi(object):
         """Converts the HTML document (located on storage) to XPS and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -1505,7 +1505,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'out_path', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1581,7 +1581,410 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_convert_document_to_mhtml_by_url(self, source_url, **kwargs):
+        """Converts the HTML page from Web by its URL to MHTML returns resulting file in response content.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str source_url: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_convert_document_to_mhtml_by_url_with_http_info(source_url, **kwargs)
+        else:
+            (data) = self.__get_convert_document_to_mhtml_by_url_with_http_info(source_url, **kwargs)
+            return data
+
+    def __get_convert_document_to_mhtml_by_url_with_http_info(self, source_url, **kwargs):
+        """Converts the HTML page from Web by its URL to MHTML returns resulting file in response content.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param async_req bool
+        :param str source_url: Source page URL. (required)
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_url']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method conversion_get_convert_document_to_mhtml_by_url" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'source_url' is set
+        if ('source_url' not in params or
+                params['source_url'] is None):
+            raise ValueError("Missing the required parameter `source_url` when calling `get_convert_document_to_mhtml_by_url`")
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'source_url' in params:
+            query_params.append(('sourceUrl', params['source_url']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['multipart/form-data'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/html/convert/mhtml', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_convert_document_to_markdown(self, name, **kwargs):
+        """Converts the HTML document (located on storage) to Markdown and returns resulting file in response content.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str use_git: Use Git Markdown flavor to save ("true" or "false").
+        :param str folder: Source document folder.
+        :param str storage: Source document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_convert_document_to_markdown_with_http_info(name, **kwargs)
+        else:
+            (data) = self.__get_convert_document_to_markdown_with_http_info(name, **kwargs)
+            return data
+
+    def __get_convert_document_to_markdown_with_http_info(self, name, **kwargs):
+        """Converts the HTML document (located on storage) to Markdown and returns resulting file in response content.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str use_git: Use Git Markdown flavor to save ("true" or "false").
+        :param str folder: Source document folder.
+        :param str storage: Source document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['name', 'use_git', 'folder', 'storage']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_convert_document_to_markdown" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `get_convert_document_to_markdown`")
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = []
+        if 'use_git' in params:
+            query_params.append(('useGit', params['use_git']))
+        if 'folder' in params:
+            query_params.append(('folder', params['folder']))
+        if 'storage' in params:
+            query_params.append(('storage', params['storage']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['multipart/form-data'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/html/{name}/convert/md', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_convert_document_in_request_to_markdown(self, out_path, file, **kwargs):
+        """Converts the HTML document (in request content) to Markdown and uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.md) (required)
+        :param file file: A file to be converted. (required)
+        :param str use_git: Use Git Markdown flavor to save ("true" or "false").
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__put_convert_document_in_request_to_markdown_with_http_info(out_path, file, **kwargs)
+        else:
+            (data) = self.__put_convert_document_in_request_to_markdown_with_http_info(out_path, file, **kwargs)
+            return data
+
+    def __put_convert_document_in_request_to_markdown_with_http_info(self, out_path, file, **kwargs):
+        """Converts the HTML document (in request content) to Markdown and uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.md) (required)
+        :param file file: A file to be converted. (required)
+        :param str use_git: Use Git Markdown flavor to save ("true" or "false").
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['out_path', 'file', 'use_git']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_convert_document_in_request_to_markdown" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'out_path' is set
+        if ('out_path' not in params or
+                params['out_path'] is None):
+            raise ValueError("Missing the required parameter `out_path` when calling `put_convert_document_in_request_to_markdown`")
+        # verify the required parameter 'file' is set
+        if ('file' not in params or
+                params['file'] is None):
+            raise ValueError("Missing the required parameter `file` when calling `put_convert_document_in_request_to_markdown`")
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'out_path' in params:
+            query_params.append(('outPath', params['out_path']))
+        if 'use_git' in params:
+            query_params.append(('useGit', params['use_git']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        f = open(file,"rb")
+        body_params = f.read()
+        f.close()
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/octet-stream'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/html/convert/md', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def put_convert_document_to_markdown(self, name, out_path, **kwargs):
+        """Converts the HTML document (located on storage) to Markdown and uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.md) (required)
+        :param str use_git: Use Git Markdown flavor to save ("true" or "false").
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__put_convert_document_to_markdown_with_http_info(name, out_path, **kwargs)
+        else:
+            (data) = self.__put_convert_document_to_markdown_with_http_info(name, out_path, **kwargs)
+            return data
+
+    def __put_convert_document_to_markdown_with_http_info(self, name, out_path, **kwargs):
+        """Converts the HTML document (located on storage) to Markdown and uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.md) (required)
+        :param str use_git: Use Git Markdown flavor to save ("true" or "false").
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['name', 'out_path', 'use_git', 'folder', 'storage']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_convert_document_to_markdown" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `put_convert_document_to_markdown`")
+        # verify the required parameter 'out_path' is set
+        if ('out_path' not in params or
+                params['out_path'] is None):
+            raise ValueError("Missing the required parameter `out_path` when calling `put_convert_document_to_markdown`")
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']
+
+        query_params = []
+        if 'out_path' in params:
+            query_params.append(('outPath', params['out_path']))
+        if 'use_git' in params:
+            query_params.append(('useGit', params['use_git']))
+        if 'folder' in params:
+            query_params.append(('folder', params['folder']))
+        if 'storage' in params:
+            query_params.append(('storage', params['storage']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/html/{name}/convert/md', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1591,13 +1994,102 @@ class HtmlApi(object):
 #                 Document API
 ##########################################################
 
+    def get_document_by_url(self, source_url, **kwargs):
+        """Return all HTML page with linked resources packaged as a ZIP archive by the source page URL.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str source_url: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_document_by_url_with_http_info(source_url, **kwargs)
+        else:
+            (data) = self.__get_document_by_url_with_http_info(source_url, **kwargs)
+            return data
+
+    def __get_document_by_url_with_http_info(self, source_url, **kwargs):
+        """Return all HTML page with linked resources packaged as a ZIP archive by the source page URL.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str source_url: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['source_url']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_by_url" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'source_url' is set
+        if ('source_url' not in params or
+                params['source_url'] is None):
+            raise ValueError("Missing the required parameter `source_url` when calling `get_document_by_url`")
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'source_url' in params:
+            query_params.append(('sourceUrl', params['source_url']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/zip'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/html/download', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_document_fragment_by_x_path(self, name, x_path, out_format, **kwargs):
         """Return list of HTML fragments matching the specified XPath query.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: The document name (required). Presented as zip archive with one html file in the root or html file.
         :param str x_path: XPath query string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
@@ -1606,7 +2098,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_document_fragment_by_x_path_with_http_info(name, x_path, out_format, **kwargs)
         else:
             (data) = self.__get_document_fragment_by_x_path_with_http_info(name, x_path, out_format, **kwargs)
@@ -1616,9 +2108,9 @@ class HtmlApi(object):
         """Return list of HTML fragments matching the specified XPath query.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: The document name (required). Presented as zip archive with one html file in the root or html file.
         :param str x_path: XPath query string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
@@ -1628,7 +2120,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'x_path', 'out_format', 'storage', 'folder']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1698,7 +2190,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1708,16 +2200,16 @@ class HtmlApi(object):
         """Return list of HTML fragments matching the specified XPath query by the source page URL.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param str x_path: XPath query string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_document_fragment_by_x_path_by_url_with_http_info(source_url, x_path, out_format, **kwargs)
         else:
             (data) = self.__get_document_fragment_by_x_path_by_url_with_http_info(source_url, x_path, out_format, **kwargs)
@@ -1727,9 +2219,9 @@ class HtmlApi(object):
         """Return list of HTML fragments matching the specified XPath query by the source page URL.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param str x_path: XPath query string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
@@ -1737,7 +2229,7 @@ class HtmlApi(object):
         """
 
         all_params = ['source_url', 'x_path', 'out_format']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1803,7 +2295,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1813,9 +2305,9 @@ class HtmlApi(object):
         """Return list of HTML fragments matching the specified CSS selector.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: The document name (required). Presented as zip archive with one html file in the root or html file.
         :param str selector: CSS selector string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
@@ -1824,7 +2316,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_document_fragments_by_css_selector_with_http_info(name, selector, out_format, **kwargs)
         else:
             (data) = self.__get_document_fragments_by_css_selector_with_http_info(name, selector, out_format, **kwargs)
@@ -1834,9 +2326,9 @@ class HtmlApi(object):
         """Return list of HTML fragments matching the specified CSS selector.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: The document name (required). Presented as zip archive with one html file in the root or html file.
         :param str selector: CSS selector string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
@@ -1846,7 +2338,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'selector', 'out_format', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1916,7 +2408,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1926,16 +2418,16 @@ class HtmlApi(object):
         """Return list of HTML fragments matching the specified CSS selector by the source page URL.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param str selector: CSS selector string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_document_fragments_by_css_selector_by_url_with_http_info(source_url, selector, out_format, **kwargs)
         else:
             (data) = self.__get_document_fragments_by_css_selector_by_url_with_http_info(source_url, selector, out_format, **kwargs)
@@ -1945,9 +2437,9 @@ class HtmlApi(object):
         """Return list of HTML fragments matching the specified CSS selector by the source page URL.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param str selector: CSS selector string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
@@ -1955,7 +2447,7 @@ class HtmlApi(object):
         """
 
         all_params = ['source_url', 'selector', 'out_format']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2021,7 +2513,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2031,16 +2523,16 @@ class HtmlApi(object):
         """Return all HTML document images packaged as a ZIP archive.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: The document name (required). Presented as zip archive with one html file in the root.
         :param str folder: The document folder.
         :param str storage: The document storage.
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_document_images_with_http_info(name, **kwargs)
         else:
             (data) = self.__get_document_images_with_http_info(name, **kwargs)
@@ -2050,9 +2542,9 @@ class HtmlApi(object):
         """Return all HTML document images packaged as a ZIP archive.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: The document name (required). Presented as zip archive with one html file in the root.
         :param str folder: The document folder.
         :param str storage: The document storage.
@@ -2060,7 +2552,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2118,7 +2610,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2128,14 +2620,14 @@ class HtmlApi(object):
         """Return all HTML page images packaged as a ZIP archive by the source page URL.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_document_images_by_url_with_http_info(source_url, **kwargs)
         else:
             (data) = self.__get_document_images_by_url_with_http_info(source_url, **kwargs)
@@ -2145,15 +2637,15 @@ class HtmlApi(object):
         """Return all HTML page images packaged as a ZIP archive by the source page URL.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
         all_params = ['source_url']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2207,7 +2699,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2222,9 +2714,9 @@ class HtmlApi(object):
         Acceptable image formats is jpg, gif, png, bmp, tiff.
         
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: The image file name. (required)
         :param str ocr_engine_lang: OCR engine language - language.  Allowed values is "en", "de", "fr", "ru".
         :param str folder: The source image folder.
@@ -2232,7 +2724,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_recognize_and_import_to_html_with_http_info(name, **kwargs)
         else:
             (data) = self.__get_recognize_and_import_to_html_with_http_info(name, **kwargs)
@@ -2243,9 +2735,9 @@ class HtmlApi(object):
         Acceptable image formats is jpg, gif, png, bmp, tiff.
         
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: The image file name. (required)
         :param str ocr_engine_lang: OCR engine language - language. Allowed values is "en", "de", "fr", "ru".
         :param str folder: The source image folder.
@@ -2254,7 +2746,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'ocr_engine_lang', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2314,7 +2806,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2325,9 +2817,9 @@ class HtmlApi(object):
         Acceptable image formats is jpg, gif, png, bmp, tiff.
         
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: The image file name. (required)
         :param str src_lang: Source language - also supposed as the OCR engine language (required).  Allowed values is "en", "de", "fr", "ru".
         :param str res_lang: Result language (required).  Allowed values is "en", "de", "fr", "ru".
@@ -2336,7 +2828,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_recognize_and_translate_to_html_with_http_info(name, src_lang, res_lang, **kwargs)
         else:
             (data) = self.__get_recognize_and_translate_to_html_with_http_info(name, src_lang, res_lang, **kwargs)
@@ -2347,9 +2839,9 @@ class HtmlApi(object):
         Acceptable image formats is jpg, gif, png, bmp, tiff.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: The image file name. (required)
         :param str src_lang: Source language - also supposed as the OCR engine language (required).  Allowed values is "en", "de", "fr", "ru".
         :param str res_lang: Result language (required). Allowed values is "en", "de", "fr", "ru".
@@ -2359,7 +2851,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'src_lang', 'res_lang', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2429,7 +2921,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2444,9 +2936,9 @@ class HtmlApi(object):
         Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.
         
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name (required). Html file in the storage.
         :param str src_lang: Source language (required).  Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :param str res_lang: Result language (required).  Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
@@ -2455,7 +2947,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_translate_document_with_http_info(name, src_lang, res_lang, **kwargs)
         else:
             (data) = self.__get_translate_document_with_http_info(name, src_lang, res_lang, **kwargs)
@@ -2466,9 +2958,9 @@ class HtmlApi(object):
         Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name (required). Html file in the storage.
         :param str src_lang: Source language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :param str res_lang: Result language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
@@ -2478,7 +2970,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'src_lang', 'res_lang', 'storage', 'folder']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2548,7 +3040,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2559,16 +3051,16 @@ class HtmlApi(object):
         Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source document URL. (required)
         :param str src_lang: Source language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :param str res_lang: Result language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_translate_document_by_url_with_http_info(source_url, src_lang, res_lang, **kwargs)
         else:
             (data) = self.__get_translate_document_by_url_with_http_info(source_url, src_lang, res_lang, **kwargs)
@@ -2579,9 +3071,9 @@ class HtmlApi(object):
         Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source document URL. (required)
         :param str src_lang: Source language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
         :param str res_lang: Result language (required). Allowed values is "en" (alias "eng", "english"), "de" (alias "deu", "deutsch", "german"), "fr" (alias "fra", "french"), "ru" (alias "rus", "russian"), "zh", alias ("chinese").
@@ -2589,7 +3081,7 @@ class HtmlApi(object):
         """
 
         all_params = ['source_url', 'src_lang', 'res_lang']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2655,7 +3147,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2669,16 +3161,16 @@ class HtmlApi(object):
         """Get the HTML document keywords using the keyword detection service.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name (required). Html file in the storage.
         :param str folder: Document folder.
         :param str storage: Document storage.
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_detect_html_keywords_with_http_info(name, **kwargs)
         else:
             (data) = self.__get_detect_html_keywords_with_http_info(name, **kwargs)
@@ -2688,9 +3180,9 @@ class HtmlApi(object):
         """Get the HTML document keywords using the keyword detection service.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: Document name (required). Html file in the storage.
         :param str folder: Document folder.
         :param str storage: Document storage.
@@ -2698,7 +3190,7 @@ class HtmlApi(object):
         """
 
         all_params = ['name', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2756,7 +3248,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2766,14 +3258,14 @@ class HtmlApi(object):
         """Get the keywords from HTML document from Web specified by its URL using the keyword detection service
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source document URL. (required)
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_detect_html_keywords_by_url_with_http_info(source_url, **kwargs)
         else:
             (data) = self.__get_detect_html_keywords_by_url_with_http_info(source_url, **kwargs)
@@ -2783,15 +3275,15 @@ class HtmlApi(object):
         """Get the keywords from HTML document from Web specified by its URL using the keyword detection service
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source document URL. (required)
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
         all_params = ['source_url']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2845,7 +3337,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2859,9 +3351,9 @@ class HtmlApi(object):
         """Populate HTML document template with data located as a file in the storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
         :param str data_path: Data source file path in the storage. Supported data format: XML (required)
         :param str options: Template merge options: reserved for further implementation.
@@ -2870,7 +3362,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__get_merge_html_template_with_http_info(template_name, data_path, **kwargs)
         else:
             (data) = self.__get_merge_html_template_with_http_info(template_name, data_path, **kwargs)
@@ -2880,9 +3372,9 @@ class HtmlApi(object):
         """Populate HTML document template with data located as a file in the storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
         :param str data_path: Data source file path in the storage. Supported data format: XML (required)
         :param str options: Template merge options: reserved for further implementation.
@@ -2892,7 +3384,7 @@ class HtmlApi(object):
         """
 
         all_params = ['template_name', 'data_path', 'options', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2958,7 +3450,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2968,9 +3460,9 @@ class HtmlApi(object):
         """Populate HTML document template with data from the request body. Result document will be saved to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
         :param str out_path: Result document path. (required)
         :param file file: A data file to populate template. (required)
@@ -2980,7 +3472,7 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.__put_merge_html_template_with_http_info(template_name, out_path, file, **kwargs)
         else:
             (data) = self.__put_merge_html_template_with_http_info(template_name, out_path, file, **kwargs)
@@ -2990,9 +3482,9 @@ class HtmlApi(object):
         """Populate HTML document template with data from the request body. Result document will be saved to storage.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
         :param str out_path: Result document path. (required)
         :param file file: A data file to populate template. (required)
@@ -3003,7 +3495,7 @@ class HtmlApi(object):
         """
 
         all_params = ['template_name', 'out_path', 'file', 'options', 'folder', 'storage']
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -3076,7 +3568,7 @@ class HtmlApi(object):
             files=local_var_files,
             response_type='file',
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

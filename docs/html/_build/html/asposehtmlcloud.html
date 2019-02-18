@@ -9,10 +9,13 @@
     <title>asposehtmlcloud package &#8212; asposehtmlcloud beta documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="asposehtmlcloud.api package" href="asposehtmlcloud.api.html" />
@@ -85,19 +88,19 @@ to the API</li>
 </table>
 <dl class="attribute">
 <dt id="asposehtmlcloud.api_client.ApiClient.NATIVE_TYPES_MAPPING">
-<code class="descname">NATIVE_TYPES_MAPPING</code><em class="property"> = {'bool': &lt;type 'bool'&gt;, 'date': &lt;type 'datetime.date'&gt;, 'datetime': &lt;type 'datetime.datetime'&gt;, 'float': &lt;type 'float'&gt;, 'int': &lt;type 'int'&gt;, 'long': &lt;type 'long'&gt;, 'object': &lt;type 'object'&gt;, 'str': &lt;type 'str'&gt;}</em><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.NATIVE_TYPES_MAPPING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">NATIVE_TYPES_MAPPING</code><em class="property"> = {'bool': &lt;class 'bool'&gt;, 'date': &lt;class 'datetime.date'&gt;, 'datetime': &lt;class 'datetime.datetime'&gt;, 'float': &lt;class 'float'&gt;, 'int': &lt;class 'int'&gt;, 'long': &lt;class 'int'&gt;, 'object': &lt;class 'object'&gt;, 'str': &lt;class 'str'&gt;}</em><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.NATIVE_TYPES_MAPPING" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="asposehtmlcloud.api_client.ApiClient.PRIMITIVE_TYPES">
-<code class="descname">PRIMITIVE_TYPES</code><em class="property"> = (&lt;type 'float'&gt;, &lt;type 'bool'&gt;, &lt;type 'str'&gt;, &lt;type 'unicode'&gt;, &lt;type 'int'&gt;, &lt;type 'long'&gt;)</em><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.PRIMITIVE_TYPES" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PRIMITIVE_TYPES</code><em class="property"> = (&lt;class 'float'&gt;, &lt;class 'bool'&gt;, &lt;class 'bytes'&gt;, &lt;class 'str'&gt;, &lt;class 'int'&gt;)</em><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.PRIMITIVE_TYPES" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="asposehtmlcloud.api_client.ApiClient.call_api">
-<code class="descname">call_api</code><span class="sig-paren">(</span><em>resource_path</em>, <em>method</em>, <em>path_params=None</em>, <em>query_params=None</em>, <em>header_params=None</em>, <em>body=None</em>, <em>post_params=None</em>, <em>files=None</em>, <em>response_type=None</em>, <em>auth_settings=None</em>, <em>async=None</em>, <em>_return_http_data_only=None</em>, <em>collection_formats=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.call_api"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.call_api" title="Permalink to this definition">¶</a></dt>
+<code class="descname">call_api</code><span class="sig-paren">(</span><em>resource_path</em>, <em>method</em>, <em>path_params=None</em>, <em>query_params=None</em>, <em>header_params=None</em>, <em>body=None</em>, <em>post_params=None</em>, <em>files=None</em>, <em>response_type=None</em>, <em>auth_settings=None</em>, <em>async_req=None</em>, <em>_return_http_data_only=None</em>, <em>collection_formats=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.call_api"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.call_api" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes the HTTP request (synchronous) and returns deserialized data.</p>
-<p>To make an async request, set the async parameter.</p>
+<p>To make an async_req request, set the async_req parameter.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -116,7 +119,7 @@ for <cite>application/x-www-form-urlencoded</cite>, <cite>multipart/form-data</c
 <li><strong>response</strong> – Response data type.</li>
 <li><strong>dict</strong> – key -&gt; filename, value -&gt; filepath,
 for <cite>multipart/form-data</cite>.</li>
-<li><strong>bool</strong> (<em>async</em>) – execute request asynchronously</li>
+<li><strong>bool</strong> (<em>async_req</em>) – execute request asynchronously</li>
 <li><strong>_return_http_data_only</strong> – response data without head status code
 and headers</li>
 <li><strong>collection_formats</strong> – dict of collection formats for path, query,
@@ -131,10 +134,10 @@ timeout. It can also be a pair (tuple) of
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">If async parameter is True,
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">If async_req parameter is True,
 the request will be called asynchronously.
 The method will return the request thread.
-If parameter async is False or missing,
+If parameter async_req is False or missing,
 then the method will return the response directly.</p>
 </td>
 </tr>
@@ -436,7 +439,7 @@ handler. Otherwise, add file handler and remove stream handler.</p>
 <dl class="exception">
 <dt id="asposehtmlcloud.rest.ApiException">
 <em class="property">exception </em><code class="descclassname">asposehtmlcloud.rest.</code><code class="descname">ApiException</code><span class="sig-paren">(</span><em>status=None</em>, <em>reason=None</em>, <em>http_resp=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#ApiException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.ApiException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 <dl class="class">
@@ -541,7 +544,7 @@ timeout. It can also be a pair (tuple) of
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">asposehtmlcloud package</a><ul>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
@@ -603,7 +606,7 @@ timeout. It can also be a pair (tuple) of
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Aspose.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
     </div>
   </body>
 </html>

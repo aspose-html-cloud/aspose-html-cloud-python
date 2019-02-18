@@ -43,11 +43,16 @@ Method | HTTP request | Description
 **put_convert_document_to_image** | **PUT** html/{name}/convert/image/{outFormat} | Converts the HTML document (located on storage) to the specified image format and uploads resulting file to storage.
 **put_convert_document_to_pdf** | **PUT** html/{name}/convert/pdf | Converts the HTML document (located on storage) to PDF and uploads resulting file to storage.
 **put_convert_document_to_xps** | **PUT** html/{name}/convert/xps | Converts the HTML document (located on storage) to XPS and uploads resulting file to storage.
+**get_convert_document_to_mhtml_by_url** | **GET** /html/convert/mhtml | Converts the HTML page from Web by its URL to MHTML returns resulting file in response content.
+**get_convert_document_to_markdown** | **GET** /html/{name}/convert/md | Converts the HTML document (located on storage) to Markdown and returns resulting file in response content.
+**put_convert_document_in_request_to_markdown** | **PUT** /html/convert/md | Converts the HTML document (in request content) to Markdown and uploads resulting file to storage by specified path.
+**put_convert_document_to_markdown** | **PUT** /html/{name}/convert/md | Converts the HTML document (located on storage) to Markdown and uploads resulting file to storage by specified path.
 
 ## DocumentApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+**get_document_by_url** | **GET** /html/download | Return all HTML page with linked resources packaged as a ZIP archive by the source page URL.
 **get_document_fragment_by_x_path** | **GET** html/{name}/fragments/{outFormat} | Return list of HTML fragments matching the specified XPath query.
 **get_document_fragment_by_x_path_by_url** | **GET** html/fragments/{outFormat} | Return list of HTML fragments matching the specified XPath query by the source page URL.
 **get_document_fragments_by_css_selector** | **GET** /html/{name}/fragments/css/{outFormat} | Return list of HTML fragments matching the specified CSS selector.
@@ -82,9 +87,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 **get_merge_html_template** | **GET** /html/{templateName}/merge | Populate HTML document template with data located as a file in the storage.
 **put_merge_html_template** | **PUT** /html/{templateName}/merge | Populate HTML document template with data from the request body. Result document will be saved to storage.
-
-
-
 
 
 The examples below show how your application have to initiate and convert url to image using Aspose.HTML Cloud library:

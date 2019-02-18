@@ -58,7 +58,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Convert the HTML document from the storage by its name to the specified image format.
 
-        param async bool
+        param async_req bool
         param str name: Document name. (required)
         param str out_format: Resulting image format. (required)
         param int width: Resulting image width.
@@ -102,7 +102,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Convert the HTML page from the web by its URL to the specified image format.
 
-        param async bool
+        param async_req bool
         param str source_url: Source page URL. (required)
         param str out_format: Resulting image format. (required)
         param int width: Resulting image width.
@@ -143,7 +143,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Convert the HTML document from the storage by its name to PDF.
 
-        param async bool
+        param async_req bool
         param str name: Document name. (required)
         param int width: Resulting image width.
         param int height: Resulting image height.
@@ -183,7 +183,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Convert the HTML page from the web by its URL to PDF.
 
-        param async bool
+        param async_req bool
         param str source_url: Source page URL. (required)
         param int width: Resulting image width.
         param int height: Resulting image height.
@@ -221,7 +221,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Convert the HTML document from the storage by its name to XPS.
 
-        param async bool
+        param async_req bool
         param str name: Document name. (required)
         param int width: Resulting image width.
         param int height: Resulting image height.
@@ -261,7 +261,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Convert the HTML page from the web by its URL to XPS.
 
-        param async bool
+        param async_req bool
         param str source_url: Source page URL. (required)
         param int width: Resulting image width.
         param int height: Resulting image height.
@@ -297,7 +297,7 @@ class TestHtmlApi(unittest.TestCase):
     def test_put_convert_document_in_request_to_image(self):
         """Test case for put_convert_document_in_request_to_image
 
-        :param async bool
+        :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
         :param str out_format: (required)
         :param file file: A file to be converted. (required)
@@ -339,7 +339,7 @@ class TestHtmlApi(unittest.TestCase):
     def test_put_convert_document_in_request_to_pdf(self):
         """Test case for put_convert_document_in_request_to_pdf
 
-        :param async bool
+        :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
         :param file file: A file to be converted. (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -379,7 +379,7 @@ class TestHtmlApi(unittest.TestCase):
     def test_put_convert_document_in_request_to_xps(self):
         """Test case for put_convert_document_in_request_to_xps
 
-        :param async bool
+        :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
         :param file file: A file to be converted. (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -419,7 +419,7 @@ class TestHtmlApi(unittest.TestCase):
     def test_put_convert_document_to_image(self):
         """Test case for put_convert_document_to_image
 
-        :param async bool
+        :param async_req bool
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
         :param str out_format: (required)
@@ -466,7 +466,7 @@ class TestHtmlApi(unittest.TestCase):
     def test_put_convert_document_to_pdf(self):
         """Test case for put_convert_document_to_pdf
 
-        :param async bool
+        :param async_req bool
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -511,7 +511,7 @@ class TestHtmlApi(unittest.TestCase):
     def test_put_convert_document_to_xps(self):
         """Test case for put_convert_document_to_xps
 
-        :param async bool
+        :param async_req bool
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
         :param int width: Resulting document page width in points (1/96 inch).
@@ -553,10 +553,174 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
+    def test_get_convert_document_to_mhtml_by_url(self):
+        """Test case for get_convert_document_to_mhtml_by_url
+
+        Converts the HTML page from Web by its URL to MHTML returns resulting file in response content.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str source_url: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        source_url = "https://www.yahoo.com/"
+        try:
+
+            # Get document by url and convert to mhtml
+            res = self.api.get_convert_document_to_mhtml_by_url(source_url=source_url)
+            self.assertTrue(isinstance(res, str), "Error get site")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_get_convert_document_to_markdown(self):
+        """Test case for get_convert_document_to_markdown
+
+        Converts the HTML document (located on storage) to Markdown and returns resulting file in response content.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str use_git: Use Git Markdown flavor to save ("true" or "false").
+        :param str folder: Source document folder.
+        :param str storage: Source document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        name = "test_md.html"
+        try:
+            # Upload file to storage
+            res = TestHelper.upload_file(name)
+            self.assertEqual(res.Code, 200, "Error upload file to server")
+
+            # Convert document to markdown
+            res = self.api.get_convert_document_to_markdown(name,
+                                                            use_git="true",
+                                                            folder=TestHelper.folder,
+                                                            storage="")
+            self.assertTrue(isinstance(res, str), "Error convert document to markdown")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_document_in_request_to_markdown(self):
+        """Test case for put_convert_document_in_request_to_markdown
+
+        Converts the HTML document (in request content) to Markdown and uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.md) (required)
+        :param file file: A file to be converted. (required)
+        :param str use_git: Use Git Markdown flavor to save ("true" or "false").
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        name = "putConvertToMarkdownInReqPy.md"
+        test_out_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "test_md.html"
+        try:
+
+            # Upload and convert document to markdown
+            self.api.put_convert_document_in_request_to_markdown(
+                out_path=test_out_path, file=test_file, use_git="true")
+
+            # Download result
+            res = TestHelper.download_file(name)
+
+            save_file = TestHelper.test_dst + name
+
+            # Save to test folder
+            with open(save_file, "wb") as file:
+                file.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_document_to_markdown(self):
+        """Test case for put_convert_document_to_markdown
+
+        Converts the HTML document (located on storage) to Markdown and uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.md) (required)
+        :param str use_git: Use Git Markdown flavor to save ("true" or "false").
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        # Already in storage
+        name = "test_md.html"
+        result_name = "putConvertToMarkdownPy.md"
+        test_folder = "HtmlTestDoc"
+        test_out_path = test_folder + "/" + result_name
+
+        try:
+
+            # Convert document to markdown in storage
+            self.api.put_convert_document_to_markdown(
+                name, out_path=test_out_path, use_git="false", folder=test_folder, storage="")
+
+            # Download result
+            res = TestHelper.download_file(result_name)
+
+            save_file = TestHelper.test_dst + result_name
+
+            # Save to test folder
+            with open(save_file, "wb") as f:
+                f.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
 
 ###############################################################
 #                    Document test
 ###############################################################
+
+    def test_get_document_by_url(self):
+        """Test case for get_document_by_url
+
+        Return all HTML page with linked resources packaged as a ZIP archive by the source page URL.
+
+        :param bool async_req: Asynchronous request
+        :param str source_url: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        source_url = "https://lenta.ru/"
+        try:
+
+            # Get site by url
+            res = self.api.get_document_by_url(source_url=source_url)
+            self.assertTrue(isinstance(res, str), "Error get site")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
 
     def test_get_document_fragment_by_x_path(self):
 
@@ -564,7 +728,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Return list of HTML fragments matching the specified XPath query.
 
-        param async bool
+        param async_req bool
         param str name: The document name. (required)
         param str x_path: XPath query string. (required)
         param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
@@ -600,9 +764,9 @@ class TestHtmlApi(unittest.TestCase):
         """Return list of HTML fragments matching the specified XPath query by the source page URL.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param str x_path: XPath query string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
@@ -630,9 +794,9 @@ class TestHtmlApi(unittest.TestCase):
         """Return list of HTML fragments matching the specified CSS selector.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str name: The document name. (required)
         :param str selector: CSS selector string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
@@ -666,9 +830,9 @@ class TestHtmlApi(unittest.TestCase):
         """Return list of HTML fragments matching the specified CSS selector by the source page URL.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
         :param str selector: CSS selector string. (required)
         :param str out_format: Output format. Possible values: 'plain' and 'json'. (required)
@@ -696,7 +860,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Return all HTML document images packaged as a ZIP archive.
 
-        param async bool
+        param async_req bool
         param str name: The document name. (required)
         param str folder: The document folder.
         param str storage: The document storage.
@@ -727,7 +891,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Return all HTML document images packaged as a ZIP archive.
 
-        param async bool
+        param async_req bool
         param str name: The document name. (required)
         param str folder: The document folder.
         param str storage: The document storage.
@@ -759,7 +923,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Recognize text from the image file in the storage and import it to HTML format.
 
-        param async bool
+        param async_req bool
         param str name: The image file name. (required)
         param str ocr_engine_lang: OCR engine language - language
         param str folder: The source image folder.
@@ -793,7 +957,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Recognize text from the image file in the storage, import it to HTML format and translate to specified language.
 
-        param async bool
+        param async_req bool
         param str name: The image file name. (required)
         param str src_lang: Source language - also supposed as the OCR engine language. (required)
         param str res_lang: Result language. (required)
@@ -832,7 +996,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Translate the HTML document specified by the name from default or specified storage.
 
-        param async bool
+        param async_req bool
         param str name: Document name. (required)
         param str src_lang: Source language. (required)
         param str res_lang: Result language. (required)
@@ -868,7 +1032,7 @@ class TestHtmlApi(unittest.TestCase):
 
         Translate the HTML document from Web specified by its URL.
 
-        param async bool
+        param async_req bool
         param str source_url: Source document URL. (required)
         param str src_lang: Source language. (required)
         param str res_lang: Result language. (required)
@@ -900,9 +1064,9 @@ class TestHtmlApi(unittest.TestCase):
         """Get the HTML document keywords using the keyword detection service.
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param async bool
+        :param async_req bool
         :param str name: Document name. (required)
         :param str folder: Document folder.
         :param str storage: Document storage.
@@ -932,9 +1096,9 @@ class TestHtmlApi(unittest.TestCase):
         """Get the keywords from HTML document from Web specified by its URL using the keyword detection service
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param async bool
+        :param async_req bool
         :param str source_url: Source document URL. (required)
         :return: file
                  If the method is called asynchronously,
@@ -962,9 +1126,9 @@ class TestHtmlApi(unittest.TestCase):
         """Test case for put_convert_document_in_request_to_image
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
         :param str data_path: Data source file path in the storage. Supported data format: XML (required)
         :param str options: Template merge options: reserved for further implementation.
@@ -1006,9 +1170,9 @@ class TestHtmlApi(unittest.TestCase):
         """Test case for put_convert_document_in_request_to_image
 
          This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
+        asynchronous HTTP request, please pass async_req=True
 
-        :param bool async: Asynchronous request
+        :param bool async_req: Asynchronous request
         :param str template_name: Template document name. Template document is HTML or zipped HTML. (required)
         :param str out_path: Result document path. (required)
         :param file file: A data file to populate template. (required)

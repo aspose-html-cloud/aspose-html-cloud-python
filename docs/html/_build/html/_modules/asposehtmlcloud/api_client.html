@@ -9,10 +9,13 @@
     <title>asposehtmlcloud.api_client &#8212; asposehtmlcloud beta documentation</title>
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
   </head><body>
@@ -297,12 +300,12 @@
 <div class="viewcode-block" id="ApiClient.call_api"><a class="viewcode-back" href="../../asposehtmlcloud.html#asposehtmlcloud.api_client.ApiClient.call_api">[docs]</a>    <span class="k">def</span> <span class="nf">call_api</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource_path</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span>
                  <span class="n">path_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">query_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">body</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">post_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                 <span class="n">response_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auth_settings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="k">async</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">response_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">auth_settings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">async_req</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">_return_http_data_only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">collection_formats</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">_preload_content</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">_request_timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Makes the HTTP request (synchronous) and returns deserialized data.</span>
 
-<span class="sd">        To make an async request, set the async parameter.</span>
+<span class="sd">        To make an async_req request, set the async_req parameter.</span>
 
 <span class="sd">        :param resource_path: Path to method endpoint.</span>
 <span class="sd">        :param method: Method to call.</span>
@@ -317,7 +320,7 @@
 <span class="sd">        :param response: Response data type.</span>
 <span class="sd">        :param files dict: key -&gt; filename, value -&gt; filepath,</span>
 <span class="sd">            for `multipart/form-data`.</span>
-<span class="sd">        :param async bool: execute request asynchronously</span>
+<span class="sd">        :param async_req bool: execute request asynchronously</span>
 <span class="sd">        :param _return_http_data_only: response data without head status code</span>
 <span class="sd">                                       and headers</span>
 <span class="sd">        :param collection_formats: dict of collection formats for path, query,</span>
@@ -330,13 +333,13 @@
 <span class="sd">                                 timeout. It can also be a pair (tuple) of</span>
 <span class="sd">                                 (connection, read) timeouts.</span>
 <span class="sd">        :return:</span>
-<span class="sd">            If async parameter is True,</span>
+<span class="sd">            If async_req parameter is True,</span>
 <span class="sd">            the request will be called asynchronously.</span>
 <span class="sd">            The method will return the request thread.</span>
-<span class="sd">            If parameter async is False or missing,</span>
+<span class="sd">            If parameter async_req is False or missing,</span>
 <span class="sd">            then the method will return the response directly.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="k">async</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">async_req</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__call_api</span><span class="p">(</span><span class="n">resource_path</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span>
                                    <span class="n">path_params</span><span class="p">,</span> <span class="n">query_params</span><span class="p">,</span> <span class="n">header_params</span><span class="p">,</span>
                                    <span class="n">body</span><span class="p">,</span> <span class="n">post_params</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span>
@@ -680,7 +683,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Aspose.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
     </div>
   </body>
 </html>

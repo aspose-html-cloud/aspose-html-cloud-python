@@ -43,8 +43,10 @@ class TestHelper(object):
 #        apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
         appSid="80e32ca5-a828-46a4-9d54-7199dfd3764a",
 #        appSid="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-        basePath="http://api-qa.aspose.cloud/v1.1",
-        authPath="http://api-qa.aspose.cloud/oauth2/token",
+#        basePath="http://api-qa.aspose.cloud/v1.1",
+        basePath="http://sikorsky-js3.dynabic.com:9083/v1.1",
+#        authPath="http://api-qa.aspose.cloud/oauth2/token",
+        authPath="http://sikorsky-js3.dynabic.com:9083/oauth2/token",
         debug=True)
 
     client = Client(configuration)
