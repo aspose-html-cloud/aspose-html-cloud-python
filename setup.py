@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 NAME = "asposehtmlcloud"
-VERSION = "1.0.8"
+VERSION = "1.0.10"
 # To install the library, run the following
 #
 # python setup.py install
@@ -26,7 +26,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',

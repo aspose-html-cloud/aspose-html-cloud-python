@@ -27,7 +27,9 @@ pip install asposehtmlcloud
 
 All URIs are relative to *https://api.aspose.cloud/v1.1*
 
-## ConversionApi
+## ConversionApi 
+
+- For conversion to images allowed formats is jpeg, png, bmp, tiff. Input formats are html, epub, svg.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -109,8 +111,7 @@ try:
     # Convert url to image
     res = api.get_convert_document_to_image_by_url(
         source_url, out_format="jpeg", width=800, height=1000, left_margin=50, right_margin=100,
-        top_margin=150, bottom_margin=200, x_resolution=300, y_resolution=300,
-        folder="MY_REMOTE_FOLDER", storage=""
+        top_margin=150, bottom_margin=200, resolution=300, folder="MY_REMOTE_FOLDER", storage=""
     )
 
     src = str(res)

@@ -53,8 +53,8 @@ class TestHtmlApi(unittest.TestCase):
 #                    Conversion test
 ###############################################################
 
-    def test_get_convert_document_to_image(self):
-        """Test case for get_convert_document_to_image
+    def test_get_convert_html_to_image(self):
+        """Test case for get_convert_document_to_image from html format
 
         Convert the HTML document from the storage by its name to the specified image format.
 
@@ -67,8 +67,7 @@ class TestHtmlApi(unittest.TestCase):
         param int right_margin: Right resulting image margin.
         param int top_margin: Top resulting image margin.
         param int bottom_margin: Bottom resulting image margin.
-        param int x_resolution: Horizontal resolution of resulting image.
-        param int y_resolution: Vertical resolution of resulting image.
+        param int resolution: Resolution of resulting image.
         param str folder: The source document folder.
         param str storage: The source document storage.
         return: file
@@ -85,8 +84,7 @@ class TestHtmlApi(unittest.TestCase):
             # Convert document to image
             res = self.api.get_convert_document_to_image(
                 name, out_format="png", width=800, height=1000, left_margin=50, right_margin=100,
-                top_margin=150, bottom_margin=200, x_resolution=300, y_resolution=300,
-                folder=TestHelper.folder, storage=""
+                top_margin=150, bottom_margin=200, resolution=300, folder=TestHelper.folder, storage=""
             )
             self.assertTrue(isinstance(res, str), "Error convert document to image")
 
@@ -97,7 +95,91 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_get_convert_document_to_image_by_url(self):
+    def test_get_convert_epub_to_image(self):
+        """Test case for get_convert_document_to_image from epub format
+
+        Convert the EPUB document from the storage by its name to the specified image format.
+
+        param async_req bool
+        param str name: Document name. (required)
+        param str out_format: Resulting image format. (required)
+        param int width: Resulting image width.
+        param int height: Resulting image height.
+        param int left_margin: Left resulting image margin.
+        param int right_margin: Right resulting image margin.
+        param int top_margin: Top resulting image margin.
+        param int bottom_margin: Bottom resulting image margin.
+        param int resolution: Resolution of resulting image.
+        param str folder: The source document folder.
+        param str storage: The source document storage.
+        return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+
+        """
+        name = "georgia.epub"
+        try:
+            # Upload file to storage
+            res = TestHelper.upload_file(name)
+            self.assertEqual(res.Code, 200, "Error upload file to server")
+
+            # Convert document to image
+            res = self.api.get_convert_document_to_image(
+                name, out_format="jpeg", width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200, resolution=300, folder=TestHelper.folder, storage=""
+            )
+            self.assertTrue(isinstance(res, str), "Error convert epub to jpeg")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_get_convert_svg_to_image(self):
+        """Test case for get_convert_document_to_image from svg format
+
+        Convert the SVG document from the storage by its name to the specified image format.
+
+        param async_req bool
+        param str name: Document name. (required)
+        param str out_format: Resulting image format. (required)
+        param int width: Resulting image width.
+        param int height: Resulting image height.
+        param int left_margin: Left resulting image margin.
+        param int right_margin: Right resulting image margin.
+        param int top_margin: Top resulting image margin.
+        param int bottom_margin: Bottom resulting image margin.
+        param int resolution: Resolution of resulting image.
+        param str folder: The source document folder.
+        param str storage: The source document storage.
+        return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+
+        """
+        name = "Map-World.svg"
+        try:
+            # Upload file to storage
+            res = TestHelper.upload_file(name)
+            self.assertEqual(res.Code, 200, "Error upload file to server")
+
+            # Convert document to image
+            res = self.api.get_convert_document_to_image(
+                name, out_format="bmp", width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200, resolution=300, folder=TestHelper.folder, storage=""
+            )
+            self.assertTrue(isinstance(res, str), "Error convert svg to bmp")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_get_convert_html_to_image_by_url(self):
         """Test case for get_convert_document_to_image_by_url
 
         Convert the HTML page from the web by its URL to the specified image format.
@@ -111,8 +193,7 @@ class TestHtmlApi(unittest.TestCase):
         param int right_margin: Right resulting image margin.
         param int top_margin: Top resulting image margin.
         param int bottom_margin: Bottom resulting image margin.
-        param int x_resolution: Horizontal resolution of resulting image.
-        param int y_resolution: Vertical resolution of resulting image.
+        param int resolution: Resolution of resulting image.
         param str folder: The document folder.
         param str storage: The document storage.
         return: file
@@ -126,8 +207,7 @@ class TestHtmlApi(unittest.TestCase):
             # Convert url to image
             res = self.api.get_convert_document_to_image_by_url(
                 source_url, out_format="jpeg", width=800, height=1000, left_margin=50, right_margin=100,
-                top_margin=150, bottom_margin=200, x_resolution=300, y_resolution=300,
-                folder=TestHelper.folder, storage=""
+                top_margin=150, bottom_margin=200, resolution=300, folder=TestHelper.folder, storage=""
             )
             self.assertTrue(isinstance(res, str), "Error convert url to image")
 
@@ -138,8 +218,8 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_get_convert_document_to_pdf(self):
-        """Test case for get_convert_document_to_pdf
+    def test_get_convert_html_to_pdf(self):
+        """Test case for get_convert_document_to_pdf from html format
 
         Convert the HTML document from the storage by its name to PDF.
 
@@ -169,7 +249,7 @@ class TestHtmlApi(unittest.TestCase):
                 name, width=800, height=1000, left_margin=50, right_margin=100, top_margin=150, bottom_margin=200,
                 folder=TestHelper.folder, storage=""
             )
-            self.assertTrue(isinstance(res, str), "Error convert document to pdf")
+            self.assertTrue(isinstance(res, str), "Error convert html to pdf")
 
             # Move to test folder
             TestHelper.move_file(str(res), TestHelper.test_dst)
@@ -178,7 +258,87 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_get_convert_document_to_pdf_by_url(self):
+    def test_get_convert_epub_to_pdf(self):
+        """Test case for get_convert_document_to_pdf from epub format
+
+        Convert the EPUB document from the storage by its name to PDF.
+
+        param async_req bool
+        param str name: Document name. (required)
+        param int width: Resulting image width.
+        param int height: Resulting image height.
+        param int left_margin: Left resulting image margin.
+        param int right_margin: Right resulting image margin.
+        param int top_margin: Top resulting image margin.
+        param int bottom_margin: Bottom resulting image margin.
+        param str folder: The document folder.
+        param str storage: The document storage.
+        return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+
+        """
+        name = "georgia.epub"
+        try:
+            # Upload file to storage
+            res = TestHelper.upload_file(name)
+            self.assertEqual(res.Code, 200, "Error upload file to server")
+
+            # Convert document to pdf
+            res = self.api.get_convert_document_to_pdf(
+                name, width=800, height=1000, left_margin=50, right_margin=100, top_margin=150, bottom_margin=200,
+                folder=TestHelper.folder, storage=""
+            )
+            self.assertTrue(isinstance(res, str), "Error convert epub to pdf")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_get_convert_svg_to_pdf(self):
+        """Test case for get_convert_document_to_pdf from svg format
+
+        Convert the SVG document from the storage by its name to PDF.
+
+        param async_req bool
+        param str name: Document name. (required)
+        param int width: Resulting image width.
+        param int height: Resulting image height.
+        param int left_margin: Left resulting image margin.
+        param int right_margin: Right resulting image margin.
+        param int top_margin: Top resulting image margin.
+        param int bottom_margin: Bottom resulting image margin.
+        param str folder: The document folder.
+        param str storage: The document storage.
+        return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+
+        """
+        name = "Map-World.svg"
+        try:
+            # Upload file to storage
+            res = TestHelper.upload_file(name)
+            self.assertEqual(res.Code, 200, "Error upload file to server")
+
+            # Convert document to pdf
+            res = self.api.get_convert_document_to_pdf(
+                name, width=800, height=1000, left_margin=50, right_margin=100, top_margin=150, bottom_margin=200,
+                folder=TestHelper.folder, storage=""
+            )
+            self.assertTrue(isinstance(res, str), "Error convert svg to pdf")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_get_convert_html_to_pdf_by_url(self):
         """Test case for get_convert_document_to_pdf_by_url
 
         Convert the HTML page from the web by its URL to PDF.
@@ -216,8 +376,8 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_get_convert_document_to_xps(self):
-        """Test case for get_convert_document_to_xps
+    def test_get_convert_html_to_xps(self):
+        """Test case for get_convert_document_to_xps from html format
 
         Convert the HTML document from the storage by its name to XPS.
 
@@ -247,7 +407,7 @@ class TestHtmlApi(unittest.TestCase):
                 name, width=800, height=1000, left_margin=50, right_margin=100, top_margin=150, bottom_margin=200,
                 folder=TestHelper.folder, storage=""
             )
-            self.assertTrue(isinstance(res, str), "Error convert document to xps")
+            self.assertTrue(isinstance(res, str), "Error convert html to xps")
 
             # Move to test folder
             TestHelper.move_file(str(res), TestHelper.test_dst)
@@ -256,7 +416,87 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_get_convert_document_to_xps_by_url(self):
+    def test_get_convert_epub_to_xps(self):
+        """Test case for get_convert_document_to_xps from epub format
+
+        Convert the EPUB document from the storage by its name to XPS.
+
+        param async_req bool
+        param str name: Document name. (required)
+        param int width: Resulting image width.
+        param int height: Resulting image height.
+        param int left_margin: Left resulting image margin.
+        param int right_margin: Right resulting image margin.
+        param int top_margin: Top resulting image margin.
+        param int bottom_margin: Bottom resulting image margin.
+        param str folder: The document folder.
+        param str storage: The document storage.
+        return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+
+        """
+        name = "georgia.epub"
+        try:
+            # Upload file to storage
+            res = TestHelper.upload_file(name)
+            self.assertEqual(res.Code, 200, "Error upload file to server")
+
+            # Convert document to xps
+            res = self.api.get_convert_document_to_xps(
+                name, width=800, height=1000, left_margin=50, right_margin=100, top_margin=150, bottom_margin=200,
+                folder=TestHelper.folder, storage=""
+            )
+            self.assertTrue(isinstance(res, str), "Error convert epub to xps")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_get_convert_svg_to_xps(self):
+        """Test case for get_convert_document_to_xps from svg format
+
+        Convert the SVG document from the storage by its name to XPS.
+
+        param async_req bool
+        param str name: Document name. (required)
+        param int width: Resulting image width.
+        param int height: Resulting image height.
+        param int left_margin: Left resulting image margin.
+        param int right_margin: Right resulting image margin.
+        param int top_margin: Top resulting image margin.
+        param int bottom_margin: Bottom resulting image margin.
+        param str folder: The document folder.
+        param str storage: The document storage.
+        return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+
+        """
+        name = "Map-World.svg"
+        try:
+            # Upload file to storage
+            res = TestHelper.upload_file(name)
+            self.assertEqual(res.Code, 200, "Error upload file to server")
+
+            # Convert document to xps
+            res = self.api.get_convert_document_to_xps(
+                name, width=800, height=1000, left_margin=50, right_margin=100, top_margin=150, bottom_margin=200,
+                folder=TestHelper.folder, storage=""
+            )
+            self.assertTrue(isinstance(res, str), "Error convert svg to xps")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_get_convert_html_to_xps_by_url(self):
         """Test case for get_convert_document_to_xps_by_url
 
         Convert the HTML page from the web by its URL to XPS.
@@ -294,8 +534,8 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_document_in_request_to_image(self):
-        """Test case for put_convert_document_in_request_to_image
+    def test_put_convert_html_in_request_to_image(self):
+        """Test case for put_convert_document_in_request_to_image from html format
 
         :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
@@ -312,7 +552,7 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "putConvertToImage.png"
+        name = "putHtmlToImageInReq.png"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "test1.html"
 
@@ -336,8 +576,92 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_document_in_request_to_pdf(self):
-        """Test case for put_convert_document_in_request_to_pdf
+    def test_put_convert_epub_in_request_to_image(self):
+        """Test case for put_convert_document_in_request_to_image from epub format
+
+        :param async_req bool
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
+        :param str out_format: (required)
+        :param file file: A file to be converted. (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param int resolution: Resolution of resulting image. Default is 96 dpi.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        name = "putEpubToImageInReq.jpg"
+        test_out_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "georgia.epub"
+
+        try:
+            # Convert document to image
+            self.api.put_convert_document_in_request_to_image(
+                out_path=test_out_path, out_format="jpeg", file=test_file, width=800, height=1000, left_margin=50,
+                right_margin=100, top_margin=150, bottom_margin=200, resolution=300)
+
+            # Download result
+            res = TestHelper.download_file(name)
+
+            save_file = TestHelper.test_dst + name
+
+            # Save to test folder
+            with open(save_file, "wb") as file:
+                file.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_svg_in_request_to_image(self):
+        """Test case for put_convert_document_in_request_to_image from svg format
+
+        :param async_req bool
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
+        :param str out_format: (required)
+        :param file file: A file to be converted. (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param int resolution: Resolution of resulting image. Default is 96 dpi.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        name = "putSvgToImageInReq.jpg"
+        test_out_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "Map-World.svg"
+
+        try:
+            # Convert document to image
+            self.api.put_convert_document_in_request_to_image(
+                out_path=test_out_path, out_format="jpeg", file=test_file, width=800, height=1000, left_margin=50,
+                right_margin=100, top_margin=150, bottom_margin=200, resolution=300)
+
+            # Download result
+            res = TestHelper.download_file(name)
+
+            save_file = TestHelper.test_dst + name
+
+            # Save to test folder
+            with open(save_file, "wb") as file:
+                file.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_html_in_request_to_pdf(self):
+        """Test case for put_convert_document_in_request_to_pdf from html format
 
         :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
@@ -352,7 +676,7 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "putConvertToPdf.pdf"
+        name = "putHtmlToPdfInReq.pdf"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "test1.html"
         try:
@@ -376,8 +700,88 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_document_in_request_to_xps(self):
-        """Test case for put_convert_document_in_request_to_xps
+    def test_put_convert_epub_in_request_to_pdf(self):
+        """Test case for put_convert_document_in_request_to_pdf from epub format
+
+        :param async_req bool
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
+        :param file file: A file to be converted. (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        name = "putEpubToPdfInReq.pdf"
+        test_out_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "georgia.epub"
+        try:
+
+            # Upload and convert document to pdf
+            self.api.put_convert_document_in_request_to_pdf(
+                out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200)
+
+            # Download result
+            res = TestHelper.download_file(name)
+
+            save_file = TestHelper.test_dst + name
+
+            # Save to test folder
+            with open(save_file, "wb") as file:
+                file.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_svg_in_request_to_pdf(self):
+        """Test case for put_convert_document_in_request_to_pdf from svg format
+
+        :param async_req bool
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
+        :param file file: A file to be converted. (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        name = "putSvgToPdfInReq.pdf"
+        test_out_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "Map-World.svg"
+        try:
+
+            # Upload and convert document to pdf
+            self.api.put_convert_document_in_request_to_pdf(
+                out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200)
+
+            # Download result
+            res = TestHelper.download_file(name)
+
+            save_file = TestHelper.test_dst + name
+
+            # Save to test folder
+            with open(save_file, "wb") as file:
+                file.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_html_in_request_to_xps(self):
+        """Test case for put_convert_document_in_request_to_xps from html format
 
         :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
@@ -392,7 +796,7 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "putConvertToXps.xps"
+        name = "putHtmlToXpsInReq.xps"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "test1.html"
         try:
@@ -416,8 +820,88 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_document_to_image(self):
-        """Test case for put_convert_document_to_image
+    def test_put_convert_epub_in_request_to_xps(self):
+        """Test case for put_convert_document_in_request_to_xps from epub format
+
+        :param async_req bool
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
+        :param file file: A file to be converted. (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        name = "putEpubToXpsInReq.xps"
+        test_out_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "georgia.epub"
+        try:
+
+            # Upload and convert document to xps
+            self.api.put_convert_document_in_request_to_xps(
+                out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200)
+
+            # Download result
+            res = TestHelper.download_file(name)
+
+            save_file = TestHelper.test_dst + name
+
+            # Save to test folder
+            with open(save_file, "wb") as file:
+                file.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_svg_in_request_to_xps(self):
+        """Test case for put_convert_document_in_request_to_xps from svg format
+
+        :param async_req bool
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
+        :param file file: A file to be converted. (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        name = "putSvgToXpsInReq.xps"
+        test_out_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "Map-World.svg"
+        try:
+
+            # Upload and convert document to xps
+            self.api.put_convert_document_in_request_to_xps(
+                out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200)
+
+            # Download result
+            res = TestHelper.download_file(name)
+
+            save_file = TestHelper.test_dst + name
+
+            # Save to test folder
+            with open(save_file, "wb") as file:
+                file.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_html_to_image(self):
+        """Test case for put_convert_document_to_image from html format
 
         :param async_req bool
         :param str name: Document name. (required)
@@ -438,7 +922,7 @@ class TestHtmlApi(unittest.TestCase):
         """
         # Already in storage
         name = "test1.html"
-        result_name = "putConvertDocToImg.tiff"
+        result_name = "putHtmlToImg.tiff"
         test_folder = "HtmlTestDoc"
         test_out_path = test_folder + "/" + result_name
 
@@ -463,8 +947,102 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_document_to_pdf(self):
-        """Test case for put_convert_document_to_pdf
+    def test_put_convert_epub_to_image(self):
+        """Test case for put_convert_document_to_image from epub format
+
+        :param async_req bool
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
+        :param str out_format: (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param int resolution: Resolution of resulting image. Default is 96 dpi.
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        # Already in storage
+        name = "georgia.epub"
+        result_name = "putEpubToImg.tiff"
+        test_folder = "HtmlTestDoc"
+        test_out_path = test_folder + "/" + result_name
+
+        try:
+
+            # Convert document to image in storage
+            self.api.put_convert_document_to_image(
+                name, out_path=test_out_path, out_format="tiff", width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200, resolution=300, folder=test_folder, storage="")
+
+            # Download result
+            res = TestHelper.download_file(result_name)
+
+            save_file = TestHelper.test_dst + result_name
+
+            # Save to test folder
+            with open(save_file, "wb") as f:
+                f.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_svg_to_image(self):
+        """Test case for put_convert_document_to_image from svg format
+
+        :param async_req bool
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
+        :param str out_format: (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param int resolution: Resolution of resulting image. Default is 96 dpi.
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        # Already in storage
+        name = "Map-World.svg"
+        result_name = "putSvgToImg.tiff"
+        test_folder = "HtmlTestDoc"
+        test_out_path = test_folder + "/" + result_name
+
+        try:
+
+            # Convert document to image in storage
+            self.api.put_convert_document_to_image(
+                name, out_path=test_out_path, out_format="tiff", width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200, resolution=300, folder=test_folder, storage="")
+
+            # Download result
+            res = TestHelper.download_file(result_name)
+
+            save_file = TestHelper.test_dst + result_name
+
+            # Save to test folder
+            with open(save_file, "wb") as f:
+                f.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_html_to_pdf(self):
+        """Test case for put_convert_document_to_pdf from html format
 
         :param async_req bool
         :param str name: Document name. (required)
@@ -483,7 +1061,7 @@ class TestHtmlApi(unittest.TestCase):
         """
         # Already in storage
         name = "test1.html"
-        result_name = "putConvertDocToPdf.pdf"
+        result_name = "putHtmlToPdf.pdf"
         test_folder = "HtmlTestDoc"
         test_out_path = test_folder + "/" + result_name
 
@@ -508,8 +1086,98 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_document_to_xps(self):
-        """Test case for put_convert_document_to_xps
+    def test_put_convert_epub_to_pdf(self):
+        """Test case for put_convert_document_to_pdf from epub format
+
+        :param async_req bool
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        # Already in storage
+        name = "georgia.epub"
+        result_name = "putEpubToPdf.pdf"
+        test_folder = "HtmlTestDoc"
+        test_out_path = test_folder + "/" + result_name
+
+        try:
+
+            # Convert document to pdf in storage
+            self.api.put_convert_document_to_pdf(
+                name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200, folder=test_folder, storage="")
+
+            # Download result
+            res = TestHelper.download_file(result_name)
+
+            save_file = TestHelper.test_dst + result_name
+
+            # Save to test folder
+            with open(save_file, "wb") as f:
+                f.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_svg_to_pdf(self):
+        """Test case for put_convert_document_to_pdf from svg format
+
+        :param async_req bool
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        # Already in storage
+        name = "Map-World.svg"
+        result_name = "putSvgToPdf.pdf"
+        test_folder = "HtmlTestDoc"
+        test_out_path = test_folder + "/" + result_name
+
+        try:
+
+            # Convert document to pdf in storage
+            self.api.put_convert_document_to_pdf(
+                name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200, folder=test_folder, storage="")
+
+            # Download result
+            res = TestHelper.download_file(result_name)
+
+            save_file = TestHelper.test_dst + result_name
+
+            # Save to test folder
+            with open(save_file, "wb") as f:
+                f.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_html_to_xps(self):
+        """Test case for put_convert_document_to_xps from html format
 
         :param async_req bool
         :param str name: Document name. (required)
@@ -528,7 +1196,7 @@ class TestHtmlApi(unittest.TestCase):
         """
         # Already in storage
         name = "test1.html"
-        result_name = "putConvertDocToXps.xps"
+        result_name = "putHtmlToXps.xps"
         test_folder = "HtmlTestDoc"
         test_out_path = test_folder + "/" + result_name
 
@@ -553,7 +1221,97 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_get_convert_document_to_mhtml_by_url(self):
+    def test_put_convert_epub_to_xps(self):
+        """Test case for put_convert_document_to_xps from epub format
+
+        :param async_req bool
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        # Already in storage
+        name = "georgia.epub"
+        result_name = "putEpubToXps.xps"
+        test_folder = "HtmlTestDoc"
+        test_out_path = test_folder + "/" + result_name
+
+        try:
+
+            # Convert document to pdf in storage
+            self.api.put_convert_document_to_xps(
+                name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200, folder=test_folder, storage="")
+
+            # Download result
+            res = TestHelper.download_file(result_name)
+
+            save_file = TestHelper.test_dst + result_name
+
+            # Save to test folder
+            with open(save_file, "wb") as f:
+                f.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_svg_to_xps(self):
+        """Test case for put_convert_document_to_xps from svg format
+
+        :param async_req bool
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        # Already in storage
+        name = "Map-World.svg"
+        result_name = "putSvgToXps.xps"
+        test_folder = "HtmlTestDoc"
+        test_out_path = test_folder + "/" + result_name
+
+        try:
+
+            # Convert document to pdf in storage
+            self.api.put_convert_document_to_xps(
+                name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
+                top_margin=150, bottom_margin=200, folder=test_folder, storage="")
+
+            # Download result
+            res = TestHelper.download_file(result_name)
+
+            save_file = TestHelper.test_dst + result_name
+
+            # Save to test folder
+            with open(save_file, "wb") as f:
+                f.write(res.InputStream)
+
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_get_convert_html_to_mhtml_by_url(self):
         """Test case for get_convert_document_to_mhtml_by_url
 
         Converts the HTML page from Web by its URL to MHTML returns resulting file in response content.
@@ -579,7 +1337,7 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_get_convert_document_to_markdown(self):
+    def test_get_convert_html_to_markdown(self):
         """Test case for get_convert_document_to_markdown
 
         Converts the HTML document (located on storage) to Markdown and returns resulting file in response content.
@@ -615,7 +1373,7 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_document_in_request_to_markdown(self):
+    def test_put_convert_html_in_request_to_markdown(self):
         """Test case for put_convert_document_in_request_to_markdown
 
         Converts the HTML document (in request content) to Markdown and uploads resulting file to storage by specified path.
@@ -652,7 +1410,7 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_document_to_markdown(self):
+    def test_put_convert_html_to_markdown(self):
         """Test case for put_convert_document_to_markdown
 
         Converts the HTML document (located on storage) to Markdown and uploads resulting file to storage by specified path.

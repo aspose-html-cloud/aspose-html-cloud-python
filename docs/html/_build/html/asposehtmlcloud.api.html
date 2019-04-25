@@ -56,7 +56,7 @@
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.get_convert_document_to_image">
 <code class="descname">get_convert_document_to_image</code><span class="sig-paren">(</span><em>name</em>, <em>out_format</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_convert_document_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_convert_document_to_image" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert the HTML document from the storage by its name to the specified image format.</p>
+<dd><p>Convert the HTML, EPUB, SVG documents from the storage by its name to the specified image format.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -65,16 +65,15 @@ asynchronous HTTP request, please pass async_req=True</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async_req</strong> (<em>bool</em>) – Asynchronous request</li>
-<li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
-<li><strong>out_format</strong> (<em>str</em>) – Resulting image format. (required)</li>
+<li><strong>name</strong> (<em>str</em>) – Document name (html, epub, svg formats). (required)</li>
+<li><strong>out_format</strong> (<em>str</em>) – Resulting image format (jpeg, png, bmp, tiff). (required)</li>
 <li><strong>width</strong> (<em>int</em>) – Resulting image width.</li>
 <li><strong>height</strong> (<em>int</em>) – Resulting image height.</li>
 <li><strong>left_margin</strong> (<em>int</em>) – Left resulting image margin.</li>
 <li><strong>right_margin</strong> (<em>int</em>) – Right resulting image margin.</li>
 <li><strong>top_margin</strong> (<em>int</em>) – Top resulting image margin.</li>
 <li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting image margin.</li>
-<li><strong>x_resolution</strong> (<em>int</em>) – Horizontal resolution of resulting image.</li>
-<li><strong>y_resolution</strong> (<em>int</em>) – Vertical resolution of resulting image.</li>
+<li><strong>resolution</strong> (<em>int</em>) – Resolution of resulting image.</li>
 <li><strong>folder</strong> (<em>str</em>) – The source document folder.</li>
 <li><strong>storage</strong> (<em>str</em>) – The source document storage.</li>
 </ul>
@@ -100,15 +99,14 @@ asynchronous HTTP request, please pass async_req=True</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async_req</strong> (<em>bool</em>) – Asynchronous request</li>
 <li><strong>source_url</strong> (<em>str</em>) – Source page URL. (required)</li>
-<li><strong>out_format</strong> (<em>str</em>) – Resulting image format. (required)</li>
+<li><strong>out_format</strong> (<em>str</em>) – Resulting image format(jpeg, png, bmp, tiff). (required)</li>
 <li><strong>width</strong> (<em>int</em>) – Resulting image width.</li>
 <li><strong>height</strong> (<em>int</em>) – Resulting image height.</li>
 <li><strong>left_margin</strong> (<em>int</em>) – Left resulting image margin.</li>
 <li><strong>right_margin</strong> (<em>int</em>) – Right resulting image margin.</li>
 <li><strong>top_margin</strong> (<em>int</em>) – Top resulting image margin.</li>
 <li><strong>bottom_margin</strong> (<em>int</em>) – Bottom resulting image margin.</li>
-<li><strong>x_resolution</strong> (<em>int</em>) – Horizontal resolution of resulting image.</li>
-<li><strong>y_resolution</strong> (<em>int</em>) – Vertical resolution of resulting image.</li>
+<li><strong>resolution</strong> (<em>int</em>) – Resolution of resulting image.</li>
 <li><strong>folder</strong> (<em>str</em>) – The document folder.</li>
 <li><strong>storage</strong> (<em>str</em>) – The document storage.</li>
 </ul>
@@ -173,7 +171,7 @@ asynchronous HTTP request, please pass async_req=True</p>
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.get_convert_document_to_pdf">
 <code class="descname">get_convert_document_to_pdf</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_convert_document_to_pdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_convert_document_to_pdf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert the HTML document from the storage by its name to PDF.</p>
+<dd><p>Convert the HTML, EPUB, SVG document from the storage by its name to PDF.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -235,7 +233,7 @@ asynchronous HTTP request, please pass async_req=True</p>
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.get_convert_document_to_xps">
 <code class="descname">get_convert_document_to_xps</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.get_convert_document_to_xps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.get_convert_document_to_xps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert the HTML document from the storage by its name to XPS.</p>
+<dd><p>Convert the HTML, EPUB, SVG document from the storage by its name to XPS.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -656,7 +654,8 @@ asynchronous HTTP request, please pass async_req=True</p>
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_image">
 <code class="descname">put_convert_document_in_request_to_image</code><span class="sig-paren">(</span><em>out_path</em>, <em>out_format</em>, <em>file</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_in_request_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_image" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts the HTML document (in request content) to the specified image format and uploads resulting file to storage.</p>
+<dd><p>Converts the HTML, EPUB, SVG document (in request content) to the specified image format
+and uploads resulting file to storage.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -666,7 +665,7 @@ asynchronous HTTP request, please pass async_req=True</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>async_req</strong> (<em>bool</em>) – Asynchronous request</li>
 <li><strong>out_path</strong> (<em>str</em>) – Full resulting filename (ex. /folder1/folder2/result.jpg) (required)</li>
-<li><strong>out_format</strong> (<em>str</em>) – (required)</li>
+<li><strong>out_format</strong> (<em>str</em>) – (jpeg, png, bmp, tiff)(required)</li>
 <li><strong>file</strong> (<em>file</em>) – A file to be converted. (required)</li>
 <li><strong>width</strong> (<em>int</em>) – Resulting document page width in points (1/96 inch).</li>
 <li><strong>height</strong> (<em>int</em>) – Resulting document page height in points (1/96 inch).</li>
@@ -713,7 +712,7 @@ asynchronous HTTP request, please pass async_req=True</p>
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_pdf">
 <code class="descname">put_convert_document_in_request_to_pdf</code><span class="sig-paren">(</span><em>out_path</em>, <em>file</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_in_request_to_pdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_pdf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts the HTML document (in request content) to PDF and uploads resulting file to storage.</p>
+<dd><p>Converts the HTML, EPUB, SVG document (in request content) to PDF and uploads resulting file to storage.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -743,7 +742,7 @@ asynchronous HTTP request, please pass async_req=True</p>
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_xps">
 <code class="descname">put_convert_document_in_request_to_xps</code><span class="sig-paren">(</span><em>out_path</em>, <em>file</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_in_request_to_xps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_in_request_to_xps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts the HTML document (in request content) to XPS and uploads resulting file to storage.</p>
+<dd><p>Converts the HTML, EPUB, SVG document (in request content) to XPS and uploads resulting file to storage.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -773,7 +772,7 @@ asynchronous HTTP request, please pass async_req=True</p>
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_image">
 <code class="descname">put_convert_document_to_image</code><span class="sig-paren">(</span><em>name</em>, <em>out_path</em>, <em>out_format</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_image" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts the HTML document (located on storage) to the specified image format and uploads resulting file to storage.</p>
+<dd><p>Converts the HTML, EPUB, SVG document (located on storage) to the specified image format and uploads resulting file to storage.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -784,7 +783,7 @@ asynchronous HTTP request, please pass async_req=True</p>
 <li><strong>async_req</strong> (<em>bool</em>) – Asynchronous request</li>
 <li><strong>name</strong> (<em>str</em>) – Document name. (required)</li>
 <li><strong>out_path</strong> (<em>str</em>) – Full resulting filename (ex. /folder1/folder2/result.jpg) (required)</li>
-<li><strong>out_format</strong> (<em>str</em>) – (required)</li>
+<li><strong>out_format</strong> (<em>str</em>) – (jpeg, png, bmp, tiff)(required)</li>
 <li><strong>width</strong> (<em>int</em>) – Resulting document page width in points (1/96 inch).</li>
 <li><strong>height</strong> (<em>int</em>) – Resulting document page height in points (1/96 inch).</li>
 <li><strong>left_margin</strong> (<em>int</em>) – Left resulting document page margin in points (1/96 inch).</li>
@@ -834,7 +833,7 @@ asynchronous HTTP request, please pass async_req=True</p>
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_pdf">
 <code class="descname">put_convert_document_to_pdf</code><span class="sig-paren">(</span><em>name</em>, <em>out_path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_to_pdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_pdf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts the HTML document (located on storage) to PDF and uploads resulting file to storage.</p>
+<dd><p>Converts the HTML, EPUB, SVG document (located on storage) to PDF and uploads resulting file to storage.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -866,7 +865,7 @@ asynchronous HTTP request, please pass async_req=True</p>
 <dl class="method">
 <dt id="asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_xps">
 <code class="descname">put_convert_document_to_xps</code><span class="sig-paren">(</span><em>name</em>, <em>out_path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api/html_api.html#HtmlApi.put_convert_document_to_xps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api.html_api.HtmlApi.put_convert_document_to_xps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts the HTML document (located on storage) to XPS and uploads resulting file to storage.</p>
+<dd><p>Converts the HTML, EPUB, SVG document (located on storage) to XPS and uploads resulting file to storage.</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -990,7 +989,7 @@ asynchronous HTTP request, please pass async_req=True</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2018, Aspose.
+        &#169; Copyright 2019, Aspose.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
     </div>
   </body>

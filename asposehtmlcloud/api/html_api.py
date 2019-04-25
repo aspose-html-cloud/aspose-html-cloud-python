@@ -2,7 +2,7 @@
 """Copyright
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="html_api.py">
-   Copyright (c) 2018 Aspose.HTML for Cloud
+   Copyright (c) 2019 Aspose.HTML for Cloud
  </copyright>
  <summary>
 
@@ -50,22 +50,21 @@ class HtmlApi(object):
 ##########################################################
 
     def get_convert_document_to_image(self, name, out_format, **kwargs):
-        """Convert the HTML document from the storage by its name to the specified image format.
+        """Convert the HTML, EPUB, SVG documents from the storage by its name to the specified image format.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         :param bool async_req: Asynchronous request
-        :param str name: Document name. (required)
-        :param str out_format: Resulting image format. (required)
+        :param str name: Document name (html, epub, svg formats). (required)
+        :param str out_format: Resulting image format (jpeg, png, bmp, tiff). (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
         :param int left_margin: Left resulting image margin.
         :param int right_margin: Right resulting image margin.
         :param int top_margin: Top resulting image margin.
         :param int bottom_margin: Bottom resulting image margin.
-        :param int x_resolution: Horizontal resolution of resulting image.
-        :param int y_resolution: Vertical resolution of resulting image.
+        :param int resolution: Resolution of resulting image.
         :param str folder: The source document folder.
         :param str storage: The source document storage.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -78,28 +77,27 @@ class HtmlApi(object):
             return data
 
     def __get_convert_document_to_image_with_http_info(self, name, out_format, **kwargs):
-        """Convert the HTML document from the storage by its name to the specified image format.
+        """Convert the HTML, EPUB, SVG documents from the storage by its name to the specified image format.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         :param bool async_req: Asynchronous request
-        :param str name: Document name. (required)
-        :param str out_format: Resulting image format. (required)
+        :param str name: Document name (html, epub, svg formats). (required)
+        :param str out_format: Resulting image format (jpeg, png, bmp, tiff). (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
         :param int left_margin: Left resulting image margin.
         :param int right_margin: Right resulting image margin.
         :param int top_margin: Top resulting image margin.
         :param int bottom_margin: Bottom resulting image margin.
-        :param int x_resolution: Horizontal resolution of resulting image.
-        :param int y_resolution: Vertical resolution of resulting image.
+        :param int resolution: Resolution of resulting image.
         :param str folder: The source document folder.
         :param str storage: The source document storage.
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['name', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'x_resolution', 'y_resolution', 'folder', 'storage']
+        all_params = ['name', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'resolution', 'folder', 'storage']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -144,10 +142,8 @@ class HtmlApi(object):
             query_params.append(('topMargin', params['top_margin']))
         if 'bottom_margin' in params:
             query_params.append(('bottomMargin', params['bottom_margin']))
-        if 'x_resolution' in params:
-            query_params.append(('xResolution', params['x_resolution']))
-        if 'y_resolution' in params:
-            query_params.append(('yResolution', params['y_resolution']))
+        if 'resolution' in params:
+            query_params.append(('resolution', params['resolution']))
         if 'folder' in params:
             query_params.append(('folder', params['folder']))
         if 'storage' in params:
@@ -194,15 +190,14 @@ class HtmlApi(object):
 
         :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
-        :param str out_format: Resulting image format. (required)
+        :param str out_format: Resulting image format(jpeg, png, bmp, tiff). (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
         :param int left_margin: Left resulting image margin.
         :param int right_margin: Right resulting image margin.
         :param int top_margin: Top resulting image margin.
         :param int bottom_margin: Bottom resulting image margin.
-        :param int x_resolution: Horizontal resolution of resulting image.
-        :param int y_resolution: Vertical resolution of resulting image.
+        :param int resolution: Resolution of resulting image.
         :param str folder: The document folder.
         :param str storage: The document storage.
         :return: File. If the method is called asynchronously, returns the request thread.
@@ -222,21 +217,20 @@ class HtmlApi(object):
 
         :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
-        :param str out_format: Resulting image format. (required)
+        :param str out_format: Resulting image format(jpeg, png, bmp, tiff). (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
         :param int left_margin: Left resulting image margin.
         :param int right_margin: Right resulting image margin.
         :param int top_margin: Top resulting image margin.
         :param int bottom_margin: Bottom resulting image margin.
-        :param int x_resolution: Horizontal resolution of resulting image.
-        :param int y_resolution: Vertical resolution of resulting image.
+        :param int resolution: Resolution of resulting image.
         :param str folder: The document folder.
         :param str storage: The document storage.
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['source_url', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'x_resolution', 'y_resolution', 'folder', 'storage']
+        all_params = ['source_url', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'resolution', 'folder', 'storage']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -281,10 +275,8 @@ class HtmlApi(object):
             query_params.append(('topMargin', params['top_margin']))
         if 'bottom_margin' in params:
             query_params.append(('bottomMargin', params['bottom_margin']))
-        if 'x_resolution' in params:
-            query_params.append(('xResolution', params['x_resolution']))
-        if 'y_resolution' in params:
-            query_params.append(('yResolution', params['y_resolution']))
+        if 'resolution' in params:
+            query_params.append(('resolution', params['resolution']))
         if 'folder' in params:
             query_params.append(('folder', params['folder']))
         if 'storage' in params:
@@ -324,7 +316,7 @@ class HtmlApi(object):
             collection_formats=collection_formats)
 
     def get_convert_document_to_pdf(self, name, **kwargs):
-        """Convert the HTML document from the storage by its name to PDF.
+        """Convert the HTML, EPUB, SVG document from the storage by its name to PDF.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -349,7 +341,7 @@ class HtmlApi(object):
             return data
 
     def __get_convert_document_to_pdf_with_http_info(self, name, **kwargs):
-        """Convert the HTML document from the storage by its name to PDF.
+        """Convert the HTML, EPUB, SVG document from the storage by its name to PDF.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -566,7 +558,7 @@ class HtmlApi(object):
             collection_formats=collection_formats)
 
     def get_convert_document_to_xps(self, name, **kwargs):
-        """Convert the HTML document from the storage by its name to XPS.
+        """Convert the HTML, EPUB, SVG document from the storage by its name to XPS.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -591,7 +583,7 @@ class HtmlApi(object):
             return data
 
     def __get_convert_document_to_xps_with_http_info(self, name, **kwargs):
-        """Convert the HTML document from the storage by its name to XPS.
+        """Convert the HTML, EPUB, SVG document from the storage by its name to XPS.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -808,14 +800,15 @@ class HtmlApi(object):
             collection_formats=collection_formats)
 
     def put_convert_document_in_request_to_image(self, out_path, out_format, file, **kwargs):
-        """Converts the HTML document (in request content) to the specified image format and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (in request content) to the specified image format
+        and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         :param bool async_req: Asynchronous request
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
-        :param str out_format: (required)
+        :param str out_format: (jpeg, png, bmp, tiff)(required)
         :param file file: A file to be converted. (required)
         :param int width: Resulting document page width in points (1/96 inch).
         :param int height: Resulting document page height in points (1/96 inch).
@@ -834,14 +827,14 @@ class HtmlApi(object):
             return data
 
     def __put_convert_document_in_request_to_image_with_http_info(self, out_path, out_format, file, **kwargs):
-        """Converts the HTML document (in request content) to the specified image format and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (in request content) to the specified image format and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         :param bool async_req: Asynchronous request
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
-        :param str out_format: (required)
+        :param str out_format: (jpeg, png, bmp, tiff)(required)
         :param file file: A file to be converted. (required)
         :param int width: Resulting document page width in points (1/96 inch).
         :param int height: Resulting document page height in points (1/96 inch).
@@ -945,7 +938,7 @@ class HtmlApi(object):
             collection_formats=collection_formats)
 
     def put_convert_document_in_request_to_pdf(self, out_path, file, **kwargs):
-        """Converts the HTML document (in request content) to PDF and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (in request content) to PDF and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -969,7 +962,7 @@ class HtmlApi(object):
             return data
 
     def __put_convert_document_in_request_to_pdf_with_http_info(self, out_path, file, **kwargs):
-        """Converts the HTML document (in request content) to PDF and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (in request content) to PDF and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1067,7 +1060,7 @@ class HtmlApi(object):
             collection_formats=collection_formats)
 
     def put_convert_document_in_request_to_xps(self, out_path, file, **kwargs):
-        """Converts the HTML document (in request content) to XPS and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (in request content) to XPS and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1091,7 +1084,7 @@ class HtmlApi(object):
             return data
 
     def __put_convert_document_in_request_to_xps_with_http_info(self, out_path, file, **kwargs):
-        """Converts the HTML document (in request content) to XPS and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (in request content) to XPS and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1189,7 +1182,7 @@ class HtmlApi(object):
             collection_formats=collection_formats)
 
     def put_convert_document_to_image(self, name, out_path, out_format, **kwargs):
-        """Converts the HTML document (located on storage) to the specified image format and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (located on storage) to the specified image format and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1197,7 +1190,7 @@ class HtmlApi(object):
         :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
-        :param str out_format: (required)
+        :param str out_format: (jpeg, png, bmp, tiff)(required)
         :param int width: Resulting document page width in points (1/96 inch).
         :param int height: Resulting document page height in points (1/96 inch).
         :param int left_margin: Left resulting document page margin in points (1/96 inch).
@@ -1217,7 +1210,7 @@ class HtmlApi(object):
             return data
 
     def __put_convert_document_to_image_with_http_info(self, name, out_path, out_format, **kwargs):
-        """Converts the HTML document (located on storage) to the specified image format and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (located on storage) to the specified image format and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1225,7 +1218,7 @@ class HtmlApi(object):
         :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
-        :param str out_format: (required)
+        :param str out_format: (jpeg, png, bmp, tiff)(required)
         :param int width: Resulting document page width in points (1/96 inch).
         :param int height: Resulting document page height in points (1/96 inch).
         :param int left_margin: Left resulting document page margin in points (1/96 inch).
@@ -1330,7 +1323,7 @@ class HtmlApi(object):
             collection_formats=collection_formats)
 
     def put_convert_document_to_pdf(self, name, out_path, **kwargs):
-        """Converts the HTML document (located on storage) to PDF and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (located on storage) to PDF and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1356,7 +1349,7 @@ class HtmlApi(object):
             return data
 
     def __put_convert_document_to_pdf_with_http_info(self, name, out_path, **kwargs):
-        """Converts the HTML document (located on storage) to PDF and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (located on storage) to PDF and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1459,7 +1452,7 @@ class HtmlApi(object):
             collection_formats=collection_formats)
 
     def put_convert_document_to_xps(self, name, out_path, **kwargs):
-        """Converts the HTML document (located on storage) to XPS and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (located on storage) to XPS and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1485,7 +1478,7 @@ class HtmlApi(object):
             return data
 
     def __put_convert_document_to_xps_with_http_info(self, name, out_path, **kwargs):
-        """Converts the HTML document (located on storage) to XPS and uploads resulting file to storage.
+        """Converts the HTML, EPUB, SVG document (located on storage) to XPS and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
