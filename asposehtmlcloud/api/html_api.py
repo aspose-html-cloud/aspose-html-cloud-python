@@ -29,13 +29,15 @@
 
 from __future__ import absolute_import
 
+from asposehtmlcloud.alias import aliased
+from asposehtmlcloud.alias import alias
 from asposehtmlcloud.api_client import ApiClient
-
 
 # python 2 and python 3 compatibility library
 import six
 
 
+@aliased
 class HtmlApi(object):
 
     def __init__(self, config=None):
@@ -45,10 +47,11 @@ class HtmlApi(object):
             api_client = ApiClient(config)
         self.api_client = api_client
 
-##########################################################
-#                  Conversion API
-##########################################################
+    ##########################################################
+    #                  Conversion API
+    ##########################################################
 
+    @alias('getConvertDocumentToImage', 'GetConvertDocumentToImage')
     def get_convert_document_to_image(self, name, out_format, **kwargs):
         """Convert the HTML, EPUB, SVG documents from the storage by its name to the specified image format.
 
@@ -57,7 +60,7 @@ class HtmlApi(object):
 
         :param bool async_req: Asynchronous request
         :param str name: Document name (html, epub, svg formats). (required)
-        :param str out_format: Resulting image format (jpeg, png, bmp, tiff). (required)
+        :param str out_format: Resulting image format (jpeg, png, bmp, tiff, gif). (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
         :param int left_margin: Left resulting image margin.
@@ -84,7 +87,7 @@ class HtmlApi(object):
 
         :param bool async_req: Asynchronous request
         :param str name: Document name (html, epub, svg formats). (required)
-        :param str out_format: Resulting image format (jpeg, png, bmp, tiff). (required)
+        :param str out_format: Resulting image format (jpeg, png, bmp, tiff, gif). (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
         :param int left_margin: Left resulting image margin.
@@ -97,7 +100,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['name', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'resolution', 'folder', 'storage']
+        all_params = ['name', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin',
+                      'bottom_margin', 'resolution', 'folder', 'storage']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -150,11 +154,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -162,9 +165,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/convert/image/{outFormat}', 'GET',
@@ -175,13 +175,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getConvertDocumentToImageByUrl', 'GetConvertDocumentToImageByUrl')
     def get_convert_document_to_image_by_url(self, source_url, out_format, **kwargs):
         """Convert the HTML page from the web by its URL to the specified image format.
 
@@ -190,7 +190,7 @@ class HtmlApi(object):
 
         :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
-        :param str out_format: Resulting image format(jpeg, png, bmp, tiff). (required)
+        :param str out_format: Resulting image format(jpeg, png, bmp, tiff, gif). (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
         :param int left_margin: Left resulting image margin.
@@ -217,7 +217,7 @@ class HtmlApi(object):
 
         :param bool async_req: Asynchronous request
         :param str source_url: Source page URL. (required)
-        :param str out_format: Resulting image format(jpeg, png, bmp, tiff). (required)
+        :param str out_format: Resulting image format(jpeg, png, bmp, tiff, gif). (required)
         :param int width: Resulting image width.
         :param int height: Resulting image height.
         :param int left_margin: Left resulting image margin.
@@ -230,7 +230,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['source_url', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'resolution', 'folder', 'storage']
+        all_params = ['source_url', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin',
+                      'bottom_margin', 'resolution', 'folder', 'storage']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -245,18 +246,22 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
-            raise ValueError("Missing the required parameter `source_url` when calling `get_convert_document_to_image_by_url`")
+            raise ValueError(
+                "Missing the required parameter `source_url` when calling `get_convert_document_to_image_by_url`")
+
         # verify the required parameter 'out_format' is set
         if ('out_format' not in params or
                 params['out_format'] is None):
-            raise ValueError("Missing the required parameter `out_format` when calling `get_convert_document_to_image_by_url`")
+            raise ValueError(
+                "Missing the required parameter `out_format` when calling `get_convert_document_to_image_by_url`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'out_format' in params:
             path_params['outFormat'] = params['out_format']
 
@@ -283,11 +288,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -295,9 +299,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/convert/image/{outFormat}', 'GET',
@@ -308,13 +309,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getConvertDocumentToPdf', 'GetConvertDocumentToPdf')
     def get_convert_document_to_pdf(self, name, **kwargs):
         """Convert the HTML, EPUB, SVG document from the storage by its name to PDF.
 
@@ -359,7 +360,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['name', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
+        all_params = ['name', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder',
+                      'storage']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -380,8 +382,8 @@ class HtmlApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_convert_document_to_pdf`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
 
@@ -404,11 +406,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -416,9 +417,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/convert/pdf', 'GET',
@@ -429,13 +427,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getConvertDocumentToPdfByUrl', 'GetConvertDocumentToPdfByUrl')
     def get_convert_document_to_pdf_by_url(self, source_url, **kwargs):
         """Convert the HTML page from the web by its URL to PDF.
 
@@ -480,7 +478,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['source_url', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
+        all_params = ['source_url', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin',
+                      'folder', 'storage']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -498,10 +497,10 @@ class HtmlApi(object):
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
-            raise ValueError("Missing the required parameter `source_url` when calling `get_convert_document_to_pdf_by_url`")
+            raise ValueError(
+                "Missing the required parameter `source_url` when calling `get_convert_document_to_pdf_by_url`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -525,11 +524,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -537,9 +535,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/convert/pdf', 'GET',
@@ -550,13 +545,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getConvertDocumentToXps', 'GetConvertDocumentToXps')
     def get_convert_document_to_xps(self, name, **kwargs):
         """Convert the HTML, EPUB, SVG document from the storage by its name to XPS.
 
@@ -601,7 +596,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['name', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
+        all_params = ['name', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder',
+                      'storage']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -616,14 +612,15 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `get_convert_document_to_xps`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
 
@@ -646,11 +643,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -658,9 +654,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/convert/xps', 'GET',
@@ -671,13 +664,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getConvertDocumentToXpsByUrl', 'GetConvertDocumentToXpsByUrl')
     def get_convert_document_to_xps_by_url(self, source_url, **kwargs):
         """Convert the HTML page from the web by its URL to XPS.
 
@@ -722,7 +715,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['source_url', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
+        all_params = ['source_url', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin',
+                      'folder', 'storage']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -737,13 +731,14 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
-            raise ValueError("Missing the required parameter `source_url` when calling `get_convert_document_to_xps_by_url`")
+            raise ValueError(
+                "Missing the required parameter `source_url` when calling `get_convert_document_to_xps_by_url`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -767,11 +762,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -779,9 +773,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/convert/xps', 'GET',
@@ -792,14 +783,14 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_convert_document_in_request_to_image(self, out_path, out_format, file, **kwargs):
+    @alias('postConvertDocumentInRequestToImage', 'PostConvertDocumentInRequestToImage')
+    def post_convert_document_in_request_to_image(self, out_path, out_format, file, **kwargs):
         """Converts the HTML, EPUB, SVG document (in request content) to the specified image format
         and uploads resulting file to storage.
 
@@ -808,7 +799,7 @@ class HtmlApi(object):
 
         :param bool async_req: Asynchronous request
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
-        :param str out_format: (jpeg, png, bmp, tiff)(required)
+        :param str out_format: (jpeg, png, bmp, tiff, gif)(required)
         :param file file: A file to be converted. (required)
         :param int width: Resulting document page width in points (1/96 inch).
         :param int height: Resulting document page height in points (1/96 inch).
@@ -821,12 +812,13 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__put_convert_document_in_request_to_image_with_http_info(out_path, out_format, file, **kwargs)
+            return self.__post_convert_document_in_request_to_image_with_http_info(out_path, out_format, file, **kwargs)
         else:
-            (data) = self.__put_convert_document_in_request_to_image_with_http_info(out_path, out_format, file, **kwargs)
+            (data) = self.__post_convert_document_in_request_to_image_with_http_info(out_path, out_format, file,
+                                                                                     **kwargs)
             return data
 
-    def __put_convert_document_in_request_to_image_with_http_info(self, out_path, out_format, file, **kwargs):
+    def __post_convert_document_in_request_to_image_with_http_info(self, out_path, out_format, file, **kwargs):
         """Converts the HTML, EPUB, SVG document (in request content) to the specified image format and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -834,7 +826,7 @@ class HtmlApi(object):
 
         :param bool async_req: Asynchronous request
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
-        :param str out_format: (jpeg, png, bmp, tiff)(required)
+        :param str out_format: (jpeg, png, bmp, tiff, gif)(required)
         :param file file: A file to be converted. (required)
         :param int width: Resulting document page width in points (1/96 inch).
         :param int height: Resulting document page height in points (1/96 inch).
@@ -846,7 +838,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['out_path', 'out_format', 'file', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'resolution']
+        all_params = ['out_path', 'out_format', 'file', 'width', 'height', 'left_margin', 'right_margin', 'top_margin',
+                      'bottom_margin', 'resolution']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -857,26 +850,32 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method put_convert_document_in_request_to_image" % key
+                    " to method post_convert_document_in_request_to_image" % key
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'out_path' is set
         if ('out_path' not in params or
                 params['out_path'] is None):
-            raise ValueError("Missing the required parameter `out_path` when calling `put_convert_document_in_request_to_image`")
+            raise ValueError(
+                "Missing the required parameter `out_path` when calling `post_convert_document_in_request_to_image`")
+
         # verify the required parameter 'out_format' is set
         if ('out_format' not in params or
                 params['out_format'] is None):
-            raise ValueError("Missing the required parameter `out_format` when calling `put_convert_document_in_request_to_image`")
+            raise ValueError(
+                "Missing the required parameter `out_format` when calling `post_convert_document_in_request_to_image`")
+
         # verify the required parameter 'file' is set
         if ('file' not in params or
                 params['file'] is None):
-            raise ValueError("Missing the required parameter `file` when calling `put_convert_document_in_request_to_image`")
+            raise ValueError(
+                "Missing the required parameter `file` when calling `post_convert_document_in_request_to_image`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'out_format' in params:
             path_params['outFormat'] = params['out_format']
 
@@ -899,16 +898,12 @@ class HtmlApi(object):
             query_params.append(('resolution', params['resolution']))
 
         header_params = {}
-
-
         form_params = []
         local_var_files = {}
-        # if 'file' in params:
-        #     local_var_files['file'] = params['file']
+        body_params = None
 
-        f = open(file,"rb")
-        body_params = f.read()
-        f.close()
+        if 'file' in params:
+            local_var_files['file'] = params['file']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
@@ -916,13 +911,10 @@ class HtmlApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/octet-stream'])
-
-        # Authentication setting
-        auth_settings = []
+            ['multipart/form-data'])
 
         return self.api_client.call_api(
-            '/html/convert/image/{outFormat}', 'PUT',
+            '/html/convert/image/{outFormat}', 'POST',
             path_params,
             query_params,
             header_params,
@@ -930,14 +922,14 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_convert_document_in_request_to_pdf(self, out_path, file, **kwargs):
+    @alias('postConvertDocumentInRequestToPdf', 'PostConvertDocumentInRequestToPdf')
+    def post_convert_document_in_request_to_pdf(self, out_path, file, **kwargs):
         """Converts the HTML, EPUB, SVG document (in request content) to PDF and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -956,12 +948,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__put_convert_document_in_request_to_pdf_with_http_info(out_path, file, **kwargs)
+            return self.__post_convert_document_in_request_to_pdf_with_http_info(out_path, file, **kwargs)
         else:
-            (data) = self.__put_convert_document_in_request_to_pdf_with_http_info(out_path, file, **kwargs)
+            (data) = self.__post_convert_document_in_request_to_pdf_with_http_info(out_path, file, **kwargs)
             return data
 
-    def __put_convert_document_in_request_to_pdf_with_http_info(self, out_path, file, **kwargs):
+    def __post_convert_document_in_request_to_pdf_with_http_info(self, out_path, file, **kwargs):
         """Converts the HTML, EPUB, SVG document (in request content) to PDF and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -979,7 +971,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['out_path', 'file', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin']
+        all_params = ['out_path', 'file', 'width', 'height', 'left_margin', 'right_margin', 'top_margin',
+                      'bottom_margin']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -990,21 +983,24 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method put_convert_document_in_request_to_pdf" % key
+                    " to method post_convert_document_in_request_to_pdf" % key
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'out_path' is set
         if ('out_path' not in params or
                 params['out_path'] is None):
-            raise ValueError("Missing the required parameter `out_path` when calling `put_convert_document_in_request_to_pdf`")
+            raise ValueError(
+                "Missing the required parameter `out_path` when calling `post_convert_document_in_request_to_pdf`")
+
         # verify the required parameter 'file' is set
         if ('file' not in params or
                 params['file'] is None):
-            raise ValueError("Missing the required parameter `file` when calling `put_convert_document_in_request_to_pdf`")
+            raise ValueError(
+                "Missing the required parameter `file` when calling `post_convert_document_in_request_to_pdf`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -1024,13 +1020,12 @@ class HtmlApi(object):
             query_params.append(('bottomMargin', params['bottom_margin']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
+        body_params = None
 
-        f = open(file,"rb")
-        body_params = f.read()
-        f.close()
+        if 'file' in params:
+            local_var_files['file'] = params['file']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
@@ -1038,13 +1033,10 @@ class HtmlApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/octet-stream'])
-
-        # Authentication setting
-        auth_settings = []
+            ['multipart/form-data'])
 
         return self.api_client.call_api(
-            '/html/convert/pdf', 'PUT',
+            '/html/convert/pdf', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1052,14 +1044,14 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_convert_document_in_request_to_xps(self, out_path, file, **kwargs):
+    @alias('postConvertDocumentInRequestToXps', 'PostConvertDocumentInRequestToXps')
+    def post_convert_document_in_request_to_xps(self, out_path, file, **kwargs):
         """Converts the HTML, EPUB, SVG document (in request content) to XPS and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1078,12 +1070,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__put_convert_document_in_request_to_xps_with_http_info(out_path, file, **kwargs)
+            return self.__post_convert_document_in_request_to_xps_with_http_info(out_path, file, **kwargs)
         else:
-            (data) = self.__put_convert_document_in_request_to_xps_with_http_info(out_path, file, **kwargs)
+            (data) = self.__post_convert_document_in_request_to_xps_with_http_info(out_path, file, **kwargs)
             return data
 
-    def __put_convert_document_in_request_to_xps_with_http_info(self, out_path, file, **kwargs):
+    def __post_convert_document_in_request_to_xps_with_http_info(self, out_path, file, **kwargs):
         """Converts the HTML, EPUB, SVG document (in request content) to XPS and uploads resulting file to storage.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1101,7 +1093,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['out_path', 'file', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin']
+        all_params = ['out_path', 'file', 'width', 'height', 'left_margin', 'right_margin', 'top_margin',
+                      'bottom_margin']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1112,21 +1105,24 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method put_convert_document_in_request_to_xps" % key
+                    " to method post_convert_document_in_request_to_xps" % key
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'out_path' is set
         if ('out_path' not in params or
                 params['out_path'] is None):
-            raise ValueError("Missing the required parameter `out_path` when calling `put_convert_document_in_request_to_xps`")
+            raise ValueError(
+                "Missing the required parameter `out_path` when calling `post_convert_document_in_request_to_xps`")
+
         # verify the required parameter 'file' is set
         if ('file' not in params or
                 params['file'] is None):
-            raise ValueError("Missing the required parameter `file` when calling `put_convert_document_in_request_to_xps`")
+            raise ValueError(
+                "Missing the required parameter `file` when calling `post_convert_document_in_request_to_xps`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -1146,13 +1142,12 @@ class HtmlApi(object):
             query_params.append(('bottomMargin', params['bottom_margin']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
+        body_params = None
 
-        f = open(file,"rb")
-        body_params = f.read()
-        f.close()
+        if 'file' in params:
+            local_var_files['file'] = params['file']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
@@ -1160,13 +1155,10 @@ class HtmlApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/octet-stream'])
-
-        # Authentication setting
-        auth_settings = []
+            ['multipart/form-data'])
 
         return self.api_client.call_api(
-            '/html/convert/xps', 'PUT',
+            '/html/convert/xps', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1174,13 +1166,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('putConvertDocumentToImage', 'PutConvertDocumentToImage')
     def put_convert_document_to_image(self, name, out_path, out_format, **kwargs):
         """Converts the HTML, EPUB, SVG document (located on storage) to the specified image format and uploads resulting file to storage.
 
@@ -1190,7 +1182,7 @@ class HtmlApi(object):
         :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
-        :param str out_format: (jpeg, png, bmp, tiff)(required)
+        :param str out_format: (jpeg, png, bmp, tiff, gif)(required)
         :param int width: Resulting document page width in points (1/96 inch).
         :param int height: Resulting document page height in points (1/96 inch).
         :param int left_margin: Left resulting document page margin in points (1/96 inch).
@@ -1218,7 +1210,7 @@ class HtmlApi(object):
         :param bool async_req: Asynchronous request
         :param str name: Document name. (required)
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
-        :param str out_format: (jpeg, png, bmp, tiff)(required)
+        :param str out_format: (jpeg, png, bmp, tiff, gif)(required)
         :param int width: Resulting document page width in points (1/96 inch).
         :param int height: Resulting document page height in points (1/96 inch).
         :param int left_margin: Left resulting document page margin in points (1/96 inch).
@@ -1231,7 +1223,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['name', 'out_path', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'resolution', 'folder', 'storage']
+        all_params = ['name', 'out_path', 'out_format', 'width', 'height', 'left_margin', 'right_margin', 'top_margin',
+                      'bottom_margin', 'resolution', 'folder', 'storage']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1246,22 +1239,25 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `put_convert_document_to_image`")
+
         # verify the required parameter 'out_path' is set
         if ('out_path' not in params or
                 params['out_path'] is None):
             raise ValueError("Missing the required parameter `out_path` when calling `put_convert_document_to_image`")
+
         # verify the required parameter 'out_format' is set
         if ('out_format' not in params or
                 params['out_format'] is None):
             raise ValueError("Missing the required parameter `out_format` when calling `put_convert_document_to_image`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
         if 'out_format' in params:
@@ -1290,11 +1286,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])
@@ -1302,9 +1297,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/convert/image/{outFormat}', 'PUT',
@@ -1315,13 +1307,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('putConvertDocumentToPdf', 'PutConvertDocumentToPdf')
     def put_convert_document_to_pdf(self, name, out_path, **kwargs):
         """Converts the HTML, EPUB, SVG document (located on storage) to PDF and uploads resulting file to storage.
 
@@ -1368,7 +1360,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['name', 'out_path', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
+        all_params = ['name', 'out_path', 'width', 'height', 'left_margin', 'right_margin', 'top_margin',
+                      'bottom_margin', 'folder', 'storage']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1383,18 +1376,20 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `put_convert_document_to_pdf`")
+
         # verify the required parameter 'out_path' is set
         if ('out_path' not in params or
                 params['out_path'] is None):
             raise ValueError("Missing the required parameter `out_path` when calling `put_convert_document_to_pdf`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
 
@@ -1419,11 +1414,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])
@@ -1431,9 +1425,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/convert/pdf', 'PUT',
@@ -1444,13 +1435,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('putConvertDocumentToXps', 'PutConvertDocumentToXps')
     def put_convert_document_to_xps(self, name, out_path, **kwargs):
         """Converts the HTML, EPUB, SVG document (located on storage) to XPS and uploads resulting file to storage.
 
@@ -1497,7 +1488,8 @@ class HtmlApi(object):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-        all_params = ['name', 'out_path', 'width', 'height', 'left_margin', 'right_margin', 'top_margin', 'bottom_margin', 'folder', 'storage']
+        all_params = ['name', 'out_path', 'width', 'height', 'left_margin', 'right_margin', 'top_margin',
+                      'bottom_margin', 'folder', 'storage']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1512,18 +1504,20 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `put_convert_document_to_xps`")
+
         # verify the required parameter 'out_path' is set
         if ('out_path' not in params or
                 params['out_path'] is None):
             raise ValueError("Missing the required parameter `out_path` when calling `put_convert_document_to_xps`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
 
@@ -1548,11 +1542,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])
@@ -1560,9 +1553,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/convert/xps', 'PUT',
@@ -1573,13 +1563,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getConvertDocumentToMhtmlByUrl', 'GetConvertDocumentToMhtmlByUrl')
     def get_convert_document_to_mhtml_by_url(self, source_url, **kwargs):
         """Converts the HTML page from Web by its URL to MHTML returns resulting file in response content.
 
@@ -1625,13 +1615,14 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
-            raise ValueError("Missing the required parameter `source_url` when calling `get_convert_document_to_mhtml_by_url`")
+            raise ValueError(
+                "Missing the required parameter `source_url` when calling `get_convert_document_to_mhtml_by_url`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -1639,11 +1630,10 @@ class HtmlApi(object):
             query_params.append(('sourceUrl', params['source_url']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -1651,9 +1641,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/convert/mhtml', 'GET',
@@ -1664,13 +1651,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getConvertDocumentToMarkdown', 'GetConvertDocumentToMarkdown')
     def get_convert_document_to_markdown(self, name, **kwargs):
         """Converts the HTML document (located on storage) to Markdown and returns resulting file in response content.
 
@@ -1720,14 +1707,15 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `get_convert_document_to_markdown`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
 
@@ -1740,11 +1728,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -1752,9 +1739,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/convert/md', 'GET',
@@ -1765,14 +1749,14 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_convert_document_in_request_to_markdown(self, out_path, file, **kwargs):
+    @alias('postConvertDocumentInRequestToMarkdown', 'PostConvertDocumentInRequestToMarkdown')
+    def post_convert_document_in_request_to_markdown(self, out_path, file, **kwargs):
         """Converts the HTML document (in request content) to Markdown and uploads resulting file to storage by specified path.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1786,12 +1770,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__put_convert_document_in_request_to_markdown_with_http_info(out_path, file, **kwargs)
+            return self.__post_convert_document_in_request_to_markdown_with_http_info(out_path, file, **kwargs)
         else:
-            (data) = self.__put_convert_document_in_request_to_markdown_with_http_info(out_path, file, **kwargs)
+            (data) = self.__post_convert_document_in_request_to_markdown_with_http_info(out_path, file, **kwargs)
             return data
 
-    def __put_convert_document_in_request_to_markdown_with_http_info(self, out_path, file, **kwargs):
+    def __post_convert_document_in_request_to_markdown_with_http_info(self, out_path, file, **kwargs):
         """Converts the HTML document (in request content) to Markdown and uploads resulting file to storage by specified path.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1815,21 +1799,24 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method put_convert_document_in_request_to_markdown" % key
+                    " to method post_convert_document_in_request_to_markdown" % key
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'out_path' is set
         if ('out_path' not in params or
                 params['out_path'] is None):
-            raise ValueError("Missing the required parameter `out_path` when calling `put_convert_document_in_request_to_markdown`")
+            raise ValueError(
+                "Missing the required parameter `out_path` when calling `post_convert_document_in_request_to_markdown`")
+
         # verify the required parameter 'file' is set
         if ('file' not in params or
                 params['file'] is None):
-            raise ValueError("Missing the required parameter `file` when calling `put_convert_document_in_request_to_markdown`")
+            raise ValueError(
+                "Missing the required parameter `file` when calling `post_convert_document_in_request_to_markdown`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -1839,13 +1826,12 @@ class HtmlApi(object):
             query_params.append(('useGit', params['use_git']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
+        body_params = None
 
-        f = open(file,"rb")
-        body_params = f.read()
-        f.close()
+        if 'file' in params:
+            local_var_files['file'] = params['file']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
@@ -1853,13 +1839,10 @@ class HtmlApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/octet-stream'])
-
-        # Authentication setting
-        auth_settings = []
+            ['multipart/form-data'])
 
         return self.api_client.call_api(
-            '/html/convert/md', 'PUT',
+            '/html/convert/md', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1867,13 +1850,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('putConvertDocumentToMarkdown', 'PutConvertDocumentToMarkdown')
     def put_convert_document_to_markdown(self, name, out_path, **kwargs):
         """Converts the HTML document (located on storage) to Markdown and uploads resulting file to storage by specified path.
 
@@ -1925,18 +1908,21 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `put_convert_document_to_markdown`")
+
         # verify the required parameter 'out_path' is set
         if ('out_path' not in params or
                 params['out_path'] is None):
-            raise ValueError("Missing the required parameter `out_path` when calling `put_convert_document_to_markdown`")
+            raise ValueError(
+                "Missing the required parameter `out_path` when calling `put_convert_document_to_markdown`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
 
@@ -1951,11 +1937,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])
@@ -1963,9 +1948,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/convert/md', 'PUT',
@@ -1976,17 +1958,317 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-##########################################################
-#                 Document API
-##########################################################
+    ##########################################################
+    #                 Import API
+    ##########################################################
 
+    @alias('getConvertMarkdownToHtml', 'GetConvertMarkdownToHtml')
+    def get_convert_markdown_to_html(self, name, **kwargs):
+        """Converts the Markdown document (located on storage) to HTML and
+        returns resulting file in response content.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str folder: Source document folder.
+        :param str storage: Source document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_convert_markdown_to_html_with_http_info(name, **kwargs)
+        else:
+            (data) = self.__get_convert_markdown_to_html_with_http_info(name, **kwargs)
+            return data
+
+    def __get_convert_markdown_to_html_with_http_info(self, name, **kwargs):
+        """Converts the Markdown document (located on storage) to HTML
+        and returns resulting file in response content.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str folder: Source document folder.
+        :param str storage: Source document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['name', 'folder', 'storage']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_convert_markdown_to_html" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `get_convert_markdown_to_html`")
+
+        collection_formats = {}
+        path_params = {'name': params['name']}
+
+        query_params = []
+        if 'folder' in params:
+            query_params.append(('folder', params['folder']))
+        if 'storage' in params:
+            query_params.append(('storage', params['storage']))
+
+        header_params = {}
+        form_params = []
+        local_var_files = {}
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['multipart/form-data'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        return self.api_client.call_api(
+            '/html/{name}/import/md', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    @alias('postConvertMarkdownInRequestToHtml', 'PostConvertMarkdownInRequestToHtml')
+    def post_convert_markdown_in_request_to_html(self, out_path, file, **kwargs):
+        """Converts the Markdown document (in request content) to HTML
+        and uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.html) (required)
+        :param file file: A file to be converted. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__post_convert_markdown_in_request_to_html_with_http_info(out_path, file, **kwargs)
+        else:
+            (data) = self.__post_convert_markdown_in_request_to_html_with_http_info(out_path, file, **kwargs)
+            return data
+
+    def __post_convert_markdown_in_request_to_html_with_http_info(self, out_path, file, **kwargs):
+        """Converts the Markdown document (in request content) to HTML
+        and uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.html) (required)
+        :param file file: A file to be converted. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['out_path', 'file']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_convert_markdown_in_request_to_html" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'out_path' is set
+        if ('out_path' not in params or
+                params['out_path'] is None):
+            raise ValueError("Missing the required parameter `out_path` "
+                             "when calling `post_convert_markdown_in_request_"
+                             "to_html`")
+
+        # verify the required parameter 'file' is set
+        if ('file' not in params or
+                params['file'] is None):
+            raise ValueError("Missing the required parameter `file` "
+                             "when calling `post_convert_markdown_in_"
+                             "request_to_html`")
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = []
+        if 'out_path' in params:
+            query_params.append(('outPath', params['out_path']))
+
+        header_params = {}
+        form_params = []
+        local_var_files = {'file': params['file']}
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['multipart/form-data'])
+
+        return self.api_client.call_api(
+            '/html/import/md', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    @alias('putConvertMarkdownToHtml', 'PutConvertMarkdownToHtml')
+    def put_convert_markdown_to_html(self, name, out_path, **kwargs):
+        """Converts the Markdown document (located on storage) to HTML
+        and uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.html) (required)
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__put_convert_markdown_to_html_with_http_info(name, out_path, **kwargs)
+        else:
+            (data) = self.__put_convert_markdown_to_html_with_http_info(name, out_path, **kwargs)
+            return data
+
+    def __put_convert_markdown_to_html_with_http_info(self, name, out_path, **kwargs):
+        """Converts the Markdown document (located on storage) to HTML
+        and uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.html) (required)
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['name', 'out_path', 'folder', 'storage']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_convert_markdown_to_html" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required "
+                             "parameter `name` when calling "
+                             "`put_convert_markdown_to_html`")
+
+        # verify the required parameter 'out_path' is set
+        if ('out_path' not in params or
+                params['out_path'] is None):
+            raise ValueError("Missing the required parameter `out_path` "
+                             "when calling `put_convert_markdown_to_html`")
+
+        collection_formats = {}
+        path_params = {'name': params['name']}
+
+        query_params = []
+        if 'out_path' in params:
+            query_params.append(('outPath', params['out_path']))
+        if 'folder' in params:
+            query_params.append(('folder', params['folder']))
+        if 'storage' in params:
+            query_params.append(('storage', params['storage']))
+
+        header_params = {}
+        form_params = []
+        local_var_files = {}
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        return self.api_client.call_api(
+            '/html/{name}/import/md', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    ##########################################################
+    #                 Document API
+    ##########################################################
+
+    @alias('getDocumentByUrl', 'GetDocumentByUrl')
     def get_document_by_url(self, source_url, **kwargs):
         """Return all HTML page with linked resources packaged as a ZIP archive by the source page URL.
 
@@ -2030,13 +2312,13 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
             raise ValueError("Missing the required parameter `source_url` when calling `get_document_by_url`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -2044,11 +2326,10 @@ class HtmlApi(object):
             query_params.append(('sourceUrl', params['source_url']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/zip'])
@@ -2056,9 +2337,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/download', 'GET',
@@ -2069,13 +2347,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getDocumentFragmentByXPath', 'GetDocumentFragmentByXPath')
     def get_document_fragment_by_x_path(self, name, x_path, out_format, **kwargs):
         """Return list of HTML fragments matching the specified XPath query.
 
@@ -2127,22 +2405,26 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `get_document_fragment_by_x_path`")
+
         # verify the required parameter 'x_path' is set
         if ('x_path' not in params or
                 params['x_path'] is None):
             raise ValueError("Missing the required parameter `x_path` when calling `get_document_fragment_by_x_path`")
+
         # verify the required parameter 'out_format' is set
         if ('out_format' not in params or
                 params['out_format'] is None):
-            raise ValueError("Missing the required parameter `out_format` when calling `get_document_fragment_by_x_path`")
+            raise ValueError(
+                "Missing the required parameter `out_format` when calling `get_document_fragment_by_x_path`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
         if 'out_format' in params:
@@ -2157,11 +2439,10 @@ class HtmlApi(object):
             query_params.append(('folder', params['folder']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -2169,9 +2450,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/fragments/{outFormat}', 'GET',
@@ -2182,13 +2460,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getDocumentFragmentByXPathByUrl', 'GetDocumentFragmentByXPathByUrl')
     def get_document_fragment_by_x_path_by_url(self, source_url, x_path, out_format, **kwargs):
         """Return list of HTML fragments matching the specified XPath query by the source page URL.
 
@@ -2203,9 +2481,11 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_document_fragment_by_x_path_by_url_with_http_info(source_url, x_path, out_format, **kwargs)
+            return self.__get_document_fragment_by_x_path_by_url_with_http_info(source_url, x_path, out_format,
+                                                                                **kwargs)
         else:
-            (data) = self.__get_document_fragment_by_x_path_by_url_with_http_info(source_url, x_path, out_format, **kwargs)
+            (data) = self.__get_document_fragment_by_x_path_by_url_with_http_info(source_url, x_path, out_format,
+                                                                                  **kwargs)
             return data
 
     def __get_document_fragment_by_x_path_by_url_with_http_info(self, source_url, x_path, out_format, **kwargs):
@@ -2236,22 +2516,28 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
-            raise ValueError("Missing the required parameter `source_url` when calling `get_document_fragment_by_x_path_by_url`")
+            raise ValueError(
+                "Missing the required parameter `source_url` when calling `get_document_fragment_by_x_path_by_url`")
+
         # verify the required parameter 'x_path' is set
         if ('x_path' not in params or
                 params['x_path'] is None):
-            raise ValueError("Missing the required parameter `x_path` when calling `get_document_fragment_by_x_path_by_url`")
+            raise ValueError(
+                "Missing the required parameter `x_path` when calling `get_document_fragment_by_x_path_by_url`")
+
         # verify the required parameter 'out_format' is set
         if ('out_format' not in params or
                 params['out_format'] is None):
-            raise ValueError("Missing the required parameter `out_format` when calling `get_document_fragment_by_x_path_by_url`")
+            raise ValueError(
+                "Missing the required parameter `out_format` when calling `get_document_fragment_by_x_path_by_url`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'out_format' in params:
             path_params['outFormat'] = params['out_format']
 
@@ -2262,11 +2548,10 @@ class HtmlApi(object):
             query_params.append(('xPath', params['x_path']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/zip'])
@@ -2274,9 +2559,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/fragments/{outFormat}', 'GET',
@@ -2287,13 +2569,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getDocumentFragmentByCssSelector', 'GetDocumentFragmentByCssSelector')
     def get_document_fragments_by_css_selector(self, name, selector, out_format, **kwargs):
         """Return list of HTML fragments matching the specified CSS selector.
 
@@ -2345,24 +2627,31 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `get_document_fragments_by_css_selector`")
+            raise ValueError(
+                "Missing the required parameter `name` when calling `get_document_fragments_by_css_selector`")
+
         # verify the required parameter 'selector' is set
         if ('selector' not in params or
                 params['selector'] is None):
-            raise ValueError("Missing the required parameter `selector` when calling `get_document_fragments_by_css_selector`")
+            raise ValueError(
+                "Missing the required parameter `selector` when calling `get_document_fragments_by_css_selector`")
+
         # verify the required parameter 'out_format' is set
         if ('out_format' not in params or
                 params['out_format'] is None):
-            raise ValueError("Missing the required parameter `out_format` when calling `get_document_fragments_by_css_selector`")
+            raise ValueError(
+                "Missing the required parameter `out_format` when calling `get_document_fragments_by_css_selector`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
+
         if 'out_format' in params:
             path_params['outFormat'] = params['out_format']
 
@@ -2375,11 +2664,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -2387,9 +2675,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/fragments/css/{outFormat}', 'GET',
@@ -2400,13 +2685,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getDocumentFragmentByCssSelectorByUrl', 'GetDocumentFragmentByCssSelectorByUrl')
     def get_document_fragments_by_css_selector_by_url(self, source_url, selector, out_format, **kwargs):
         """Return list of HTML fragments matching the specified CSS selector by the source page URL.
 
@@ -2421,12 +2706,15 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__get_document_fragments_by_css_selector_by_url_with_http_info(source_url, selector, out_format, **kwargs)
+            return self.__get_document_fragments_by_css_selector_by_url_with_http_info(source_url, selector, out_format,
+                                                                                       **kwargs)
         else:
-            (data) = self.__get_document_fragments_by_css_selector_by_url_with_http_info(source_url, selector, out_format, **kwargs)
+            (data) = self.__get_document_fragments_by_css_selector_by_url_with_http_info(source_url, selector,
+                                                                                         out_format, **kwargs)
             return data
 
-    def __get_document_fragments_by_css_selector_by_url_with_http_info(self, source_url, selector, out_format, **kwargs):
+    def __get_document_fragments_by_css_selector_by_url_with_http_info(self, source_url, selector, out_format,
+                                                                       **kwargs):
         """Return list of HTML fragments matching the specified CSS selector by the source page URL.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2454,22 +2742,28 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
-            raise ValueError("Missing the required parameter `source_url` when calling `get_document_fragments_by_css_selector_by_url`")
+            raise ValueError(
+                "Missing the required parameter `source_url` when calling `get_document_fragments_by_css_selector_by_url`")
+
         # verify the required parameter 'selector' is set
         if ('selector' not in params or
                 params['selector'] is None):
-            raise ValueError("Missing the required parameter `selector` when calling `get_document_fragments_by_css_selector_by_url`")
+            raise ValueError(
+                "Missing the required parameter `selector` when calling `get_document_fragments_by_css_selector_by_url`")
+
         # verify the required parameter 'out_format' is set
         if ('out_format' not in params or
                 params['out_format'] is None):
-            raise ValueError("Missing the required parameter `out_format` when calling `get_document_fragments_by_css_selector_by_url`")
+            raise ValueError(
+                "Missing the required parameter `out_format` when calling `get_document_fragments_by_css_selector_by_url`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'out_format' in params:
             path_params['outFormat'] = params['out_format']
 
@@ -2480,11 +2774,10 @@ class HtmlApi(object):
             query_params.append(('selector', params['selector']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -2492,9 +2785,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/fragments/css/{outFormat}', 'GET',
@@ -2505,13 +2795,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getDocumentImages', 'GetDocumentImages')
     def get_document_images(self, name, **kwargs):
         """Return all HTML document images packaged as a ZIP archive.
 
@@ -2559,14 +2849,15 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `get_document_images`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
 
@@ -2577,11 +2868,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/zip'])
@@ -2589,9 +2879,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/images/all', 'GET',
@@ -2602,13 +2889,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getDocumentImagesByUrl', 'GetDocumentImagesByUrl')
     def get_document_images_by_url(self, source_url, **kwargs):
         """Return all HTML page images packaged as a ZIP archive by the source page URL.
 
@@ -2658,7 +2945,6 @@ class HtmlApi(object):
             raise ValueError("Missing the required parameter `source_url` when calling `get_document_images_by_url`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -2666,11 +2952,10 @@ class HtmlApi(object):
             query_params.append(('sourceUrl', params['source_url']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/zip'])
@@ -2678,9 +2963,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/images/all', 'GET',
@@ -2691,17 +2973,17 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-##########################################################
-#                     OCR API
-##########################################################
+    ##########################################################
+    #                     OCR API
+    ##########################################################
 
+    @alias('getRecognizeAndImportToHtml', 'GetRecognizeAndImportToHtml')
     def get_recognize_and_import_to_html(self, name, **kwargs):
         """Recognize text from the image file in the storage and import it to HTML format.
         Acceptable image formats is jpg, gif, png, bmp, tiff.
@@ -2753,14 +3035,15 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `get_recognize_and_import_to_html`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
 
@@ -2773,11 +3056,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -2785,9 +3067,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/ocr/import', 'GET',
@@ -2798,13 +3077,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getRecognizeAndTranslateToHtml', 'GetRecognizeAndTranslateToHtml')
     def get_recognize_and_translate_to_html(self, name, src_lang, res_lang, **kwargs):
         """Recognize text from the image file in the storage, import it to HTML format and translate to specified language.
         Acceptable image formats is jpg, gif, png, bmp, tiff.
@@ -2858,22 +3137,27 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `get_recognize_and_translate_to_html`")
+
         # verify the required parameter 'src_lang' is set
         if ('src_lang' not in params or
                 params['src_lang'] is None):
-            raise ValueError("Missing the required parameter `src_lang` when calling `get_recognize_and_translate_to_html`")
+            raise ValueError(
+                "Missing the required parameter `src_lang` when calling `get_recognize_and_translate_to_html`")
+
         # verify the required parameter 'res_lang' is set
         if ('res_lang' not in params or
                 params['res_lang'] is None):
-            raise ValueError("Missing the required parameter `res_lang` when calling `get_recognize_and_translate_to_html`")
+            raise ValueError(
+                "Missing the required parameter `res_lang` when calling `get_recognize_and_translate_to_html`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
         if 'src_lang' in params:
@@ -2888,11 +3172,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -2900,9 +3183,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/ocr/translate/{srcLang}/{resLang}', 'GET',
@@ -2913,17 +3193,17 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-##########################################################
-#                 Translation API
-##########################################################
+    ##########################################################
+    #                 Translation API
+    ##########################################################
 
+    @alias('getTranslateDocument', 'GetTranslateDocument')
     def get_translate_document(self, name, src_lang, res_lang, **kwargs):
         """Translate the HTML document specified by the name from default or specified storage.
         Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.
@@ -2977,22 +3257,25 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `get_translate_document`")
+
         # verify the required parameter 'src_lang' is set
         if ('src_lang' not in params or
                 params['src_lang'] is None):
             raise ValueError("Missing the required parameter `src_lang` when calling `get_translate_document`")
+
         # verify the required parameter 'res_lang' is set
         if ('res_lang' not in params or
                 params['res_lang'] is None):
             raise ValueError("Missing the required parameter `res_lang` when calling `get_translate_document`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
         if 'src_lang' in params:
@@ -3007,11 +3290,10 @@ class HtmlApi(object):
             query_params.append(('folder', params['folder']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -3019,9 +3301,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/translate/{srcLang}/{resLang}', 'GET',
@@ -3032,13 +3311,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getTranslateDocumentByUrl', 'GetTranslateDocumentByUrl')
     def get_translate_document_by_url(self, source_url, src_lang, res_lang, **kwargs):
         """Translate the HTML document from Web specified by its URL.
         Allowed values for language pairs is en-de, en-fr, en-ru, de-en, ru-en, en-zh, zh-en.
@@ -3088,22 +3367,25 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
             raise ValueError("Missing the required parameter `source_url` when calling `get_translate_document_by_url`")
+
         # verify the required parameter 'src_lang' is set
         if ('src_lang' not in params or
                 params['src_lang'] is None):
             raise ValueError("Missing the required parameter `src_lang` when calling `get_translate_document_by_url`")
+
         # verify the required parameter 'res_lang' is set
         if ('res_lang' not in params or
                 params['res_lang'] is None):
             raise ValueError("Missing the required parameter `res_lang` when calling `get_translate_document_by_url`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'src_lang' in params:
             path_params['srcLang'] = params['src_lang']
         if 'res_lang' in params:
@@ -3114,11 +3396,10 @@ class HtmlApi(object):
             query_params.append(('sourceUrl', params['source_url']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -3126,9 +3407,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/translate/{srcLang}/{resLang}', 'GET',
@@ -3139,17 +3417,17 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-##########################################################
-#                  Summarization API
-##########################################################
+    ##########################################################
+    #                  Summarization API
+    ##########################################################
 
+    @alias('getDetectHtmlKeywords', 'GetDetectHtmlKeywords')
     def get_detect_html_keywords(self, name, **kwargs):
         """Get the HTML document keywords using the keyword detection service.
 
@@ -3197,14 +3475,15 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `get_detect_html_keywords`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'name' in params:
             path_params['name'] = params['name']
 
@@ -3215,11 +3494,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])
@@ -3227,9 +3505,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{name}/summ/keywords', 'GET',
@@ -3240,13 +3515,13 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    @alias('getDetectHtmlKeywordsByUrl', 'GetDetectHtmlKeywordsByUrl')
     def get_detect_html_keywords_by_url(self, source_url, **kwargs):
         """Get the keywords from HTML document from Web specified by its URL using the keyword detection service
 
@@ -3290,13 +3565,14 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'source_url' is set
         if ('source_url' not in params or
                 params['source_url'] is None):
-            raise ValueError("Missing the required parameter `source_url` when calling `get_detect_html_keywords_by_url`")
+            raise ValueError(
+                "Missing the required parameter `source_url` when calling `get_detect_html_keywords_by_url`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -3304,11 +3580,10 @@ class HtmlApi(object):
             query_params.append(('sourceUrl', params['source_url']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])
@@ -3316,9 +3591,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/summ/keywords', 'GET',
@@ -3329,17 +3601,17 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-##########################################################
-#                  TemplateMerge API
-##########################################################
+    ##########################################################
+    #                  TemplateMerge API
+    ##########################################################
 
+    @alias('getMergeHtmlTemplate', 'GetMergeHtmlTemplate')
     def get_merge_html_template(self, template_name, data_path, **kwargs):
         """Populate HTML document template with data located as a file in the storage.
 
@@ -3391,10 +3663,12 @@ class HtmlApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'template_name' is set
         if ('template_name' not in params or
                 params['template_name'] is None):
             raise ValueError("Missing the required parameter `template_name` when calling `get_merge_html_template`")
+
         # verify the required parameter 'data_path' is set
         if ('data_path' not in params or
                 params['data_path'] is None):
@@ -3417,11 +3691,10 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
-
         body_params = None
+
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['multipart/form-data'])
@@ -3429,9 +3702,6 @@ class HtmlApi(object):
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
-
-        # Authentication setting
-        auth_settings = []
 
         return self.api_client.call_api(
             '/html/{templateName}/merge', 'GET',
@@ -3442,14 +3712,14 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_merge_html_template(self, template_name, out_path, file, **kwargs):
+    @alias('postMergeHtmlTemplate', 'PostMergeHtmlTemplate')
+    def post_merge_html_template(self, template_name, out_path, file, **kwargs):
         """Populate HTML document template with data from the request body. Result document will be saved to storage.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3466,12 +3736,12 @@ class HtmlApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.__put_merge_html_template_with_http_info(template_name, out_path, file, **kwargs)
+            return self.__post_merge_html_template_with_http_info(template_name, out_path, file, **kwargs)
         else:
-            (data) = self.__put_merge_html_template_with_http_info(template_name, out_path, file, **kwargs)
+            (data) = self.__post_merge_html_template_with_http_info(template_name, out_path, file, **kwargs)
             return data
 
-    def __put_merge_html_template_with_http_info(self, template_name, out_path, file, **kwargs):
+    def __post_merge_html_template_with_http_info(self, template_name, out_path, file, **kwargs):
         """Populate HTML document template with data from the request body. Result document will be saved to storage.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3498,26 +3768,29 @@ class HtmlApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method put_merge_html_template" % key
+                    " to method post_merge_html_template" % key
                 )
             params[key] = val
         del params['kwargs']
+
         # verify the required parameter 'template_name' is set
         if ('template_name' not in params or
                 params['template_name'] is None):
-            raise ValueError("Missing the required parameter `template_name` when calling `put_merge_html_template`")
+            raise ValueError("Missing the required parameter `template_name` when calling `post_merge_html_template`")
+
         # verify the required parameter 'out_path' is set
         if ('out_path' not in params or
                 params['out_path'] is None):
-            raise ValueError("Missing the required parameter `out_path` when calling `put_merge_html_template`")
+            raise ValueError("Missing the required parameter `out_path` when calling `post_merge_html_template`")
+
         # verify the required parameter 'file' is set
         if ('file' not in params or
                 params['file'] is None):
-            raise ValueError("Missing the required parameter `file` when calling `put_merge_html_template`")
+            raise ValueError("Missing the required parameter `file` when calling `post_merge_html_template`")
 
         collection_formats = {}
-
         path_params = {}
+
         if 'template_name' in params:
             path_params['templateName'] = params['template_name']
 
@@ -3532,13 +3805,12 @@ class HtmlApi(object):
             query_params.append(('storage', params['storage']))
 
         header_params = {}
-
         form_params = []
         local_var_files = {}
+        body_params = None
 
-        f = open(file,"rb")
-        body_params = f.read()
-        f.close()
+        if 'file' in params:
+            local_var_files['file'] = params['file']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
@@ -3546,13 +3818,10 @@ class HtmlApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/octet-stream'])
-
-        # Authentication setting
-        auth_settings = []
+            ['multipart/form-data'])
 
         return self.api_client.call_api(
-            '/html/{templateName}/merge', 'PUT',
+            '/html/{templateName}/merge', 'POST',
             path_params,
             query_params,
             header_params,
@@ -3560,7 +3829,6 @@ class HtmlApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),

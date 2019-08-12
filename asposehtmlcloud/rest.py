@@ -2,7 +2,7 @@
 """Copyright
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="rest.py">
-   Copyright (c) 2018 Aspose.HTML for Cloud
+   Copyright (c) 2019 Aspose.HTML for Cloud
  </copyright>
  <summary>
 

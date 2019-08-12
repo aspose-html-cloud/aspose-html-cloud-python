@@ -3,7 +3,7 @@
 """
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="test_helper.py">
-   Copyright (c) 2018 Aspose.HTML for Cloud
+   Copyright (c) 2019 Aspose.HTML for Cloud
  </copyright>
  <summary>
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,35 +31,49 @@ from __future__ import absolute_import
 import os
 from shutil import copy2
 from asposehtmlcloud.configuration import Configuration
-from storageapi.client import ApiClient as Client
-from storageapi.storage_api import StorageApi
+from asposehtmlcloud.api_client import ApiClient as Client
+from asposehtmlcloud.api.html_api import HtmlApi
+from asposehtmlcloud.api.storage_api import StorageApi
 
 
 class TestHelper(object):
 
-    # Load config from external file
     configuration = Configuration(
-        apiKey="60487a72d6325241191177e37ae52146",
-#        apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-        appSid="80e32ca5-a828-46a4-9d54-7199dfd3764a",
-#        appSid="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-#        basePath="http://api-qa.aspose.cloud/v1.1",
-        basePath="http://sikorsky-js3.dynabic.com:9083/v1.1",
-#        authPath="http://api-qa.aspose.cloud/oauth2/token",
-        authPath="http://sikorsky-js3.dynabic.com:9083/oauth2/token",
+        apiKey="html.cloud",
+        appSid="html.cloud",
+        basePath="http://localhost:5000/v3.0",
+#        basePath="http://api-qa.aspose.cloud/v3.0",
+        authPath="https://api-qa.aspose.cloud/connect/token",
         debug=True)
 
     client = Client(configuration)
+    html = HtmlApi(client)
     storage = StorageApi(client)
+
     test_src = os.path.dirname(__file__) + '/../testdata/'
     test_dst = os.path.dirname(__file__) + '/../testresult/'
     folder = 'HtmlTestDoc'
 
     @classmethod
-    def upload_file(cls, file_name, upload_folder=None):
-        folder = cls.folder if upload_folder is None else upload_folder
+    def get_folder(cls):
+        return cls.folder
 
-        response = cls.storage.PutCreate(folder + "/" + file_name, cls.test_src + file_name)
+    @classmethod
+    def get_local_folder(cls):
+        return cls.test_src
+
+    @classmethod
+    def get_local_dest_folder(cls):
+        return cls.test_dst
+
+    @classmethod
+    def upload_file(cls, file_name):
+        res = cls.storage.upload_file(cls.folder + "/" + file_name, cls.test_src + file_name)
+        return res
+
+    @classmethod
+    def download_file(cls, path):
+        response = cls.storage.download_file(path)
         return response
 
     @classmethod
@@ -71,10 +85,3 @@ class TestHelper(object):
         if os.path.isfile(src_file):
             copy2(src_file, dst_file)
             os.remove(src_file)
-
-    @classmethod
-    def download_file(cls, file_name, download_folder=None, save_folder=None):
-
-        folder = cls.folder if download_folder is None else download_folder
-
-        return cls.storage.GetDownload(folder + "/" + file_name, versionId="", storage="")

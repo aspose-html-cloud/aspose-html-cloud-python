@@ -2,7 +2,7 @@
 """Copyright
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="configuration.py">
-   Copyright (c) 2018 Aspose.HTML for Cloud
+   Copyright (c) 2019 Aspose.HTML for Cloud
  </copyright>
  <summary>
 
@@ -63,48 +63,21 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                  authPath = "https://api.aspose.cloud/oauth2/token", debug=False):
 
         """Constructor"""
-        # Get configuration from external file
-        if apiKey == None or appSid == None :
+        # Authentication Settings
+        self.api_key = apiKey
+        self.app_sid = appSid
 
-            # Load config from external file
-            with open(os.path.dirname(__file__) + '/../setting/config.json', 'r') as f:
-                self.config = json.load(f)
+        # Default Base url
+        self.host = basePath
+        self.auth_host = authPath
 
-            # Authentication Settings
-            self.api_key = self.config['apiKey']
-            self.app_sid = self.config['appSID']
+        # Default client
+        self.default_user_agent = "Aspose_SDK"
 
-            # Default Base url
-            self.host = self.config['basePath']
-            self.auth_host = self.config['authPath']
-            self.test_result = os.path.dirname(__file__) + '/..' + self.config['testResult']
-            self.test_data = os.path.dirname(__file__) + '/..' + self.config['testData']
-            self.remote_folder = self.config['remoteFolder']
-
-            # Default client
-            self.default_user_agent = self.config['defaultUserAgent']
-
-            # Debug file location
-            log_file = os.pardir + '/' + self.config['debugFile']
-            # Debug switch
-            dbg = self.config['debug']
-        # Configuration in parameters
-        else:
-            # Authentication Settings
-            self.api_key = apiKey
-            self.app_sid = appSid
-
-            # Default Base url
-            self.host = basePath
-            self.auth_host = authPath
-
-            # Default client
-            self.default_user_agent = "Aspose_SDK"
-
-            # Debug file location
-            log_file = os.pardir + '/debug.log'
-            # Debug switch
-            dbg = debug
+        # Debug file location
+        log_file = os.pardir + '/debug.log'
+        # Debug switch
+        dbg = debug
 
         # Temp file folder for downloading files
         self.temp_folder_path = gettempdir()
@@ -158,11 +131,9 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def get_token(self):
         # call from __init__ - CERT not ready
         http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED', ca_certs=certifi.where())
-        r = http.request("POST",self.auth_host,
-                         headers={"ContentType": "application/x-www-form-urlencoded;charset=UTF-8",
-                                  "Accept":"application/json"},
-                         body="client_id="+self.app_sid+"&client_secret="
-                              + self.api_key +"&grant_type=client_credentials")
+        headers = {"ContentType": "application/x-www-form-urlencoded", "Accept": "application/json;charset=UTF-8"}
+        fields = {'client_id': self.app_sid, 'client_secret': self.api_key, 'grant_type': 'client_credentials'}
+        r = http.request('POST', self.auth_host, headers=headers, fields=fields)
         return json.loads(r.data)['access_token']
 
     @property
@@ -282,37 +253,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
             basic_auth=self.username + ':' + self.password
         ).get('authorization')
 
-    def auth_settings(self):
-        """Gets Auth Settings dict for api client.
-
-        :return: The Auth Settings information dict.
-        """
-        return {
-            'appsid':
-                {
-                    'type': 'api_key',
-                    'in': 'query',
-                    'key': 'appsid',
-                    'value': self.get_api_key_with_prefix('appsid')
-                },
-
-            'oauth':
-                {
-                    'type': 'oauth2',
-                    'in': 'header',
-                    'key': 'Authorization',
-                    'value': 'Bearer ' + self.access_token
-                },
-            'signature':
-                {
-                    'type': 'api_key',
-                    'in': 'query',
-                    'key': 'signature',
-                    'value': self.get_api_key_with_prefix('signature')
-                },
-
-        }
-
     def to_debug_report(self):
         """Gets the essential information for debugging.
 
@@ -324,4 +264,3 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                "Version of the API: 18.04\n"\
                "SDK Package Version: 1.0.1".\
                format(env=sys.platform, pyversion=sys.version)
-

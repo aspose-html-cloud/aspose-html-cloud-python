@@ -2,7 +2,7 @@
 """Copyright
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="api_client.py">
-   Copyright (c) 2018 Aspose.HTML for Cloud
+   Copyright (c) 2019 Aspose.HTML for Cloud
  </copyright>
  <summary>
 
@@ -40,10 +40,9 @@ import tempfile
 # python 2 and python 3 compatibility library
 import six
 from six.moves.urllib.parse import quote
-
+import asposehtmlcloud.models
 from asposehtmlcloud.configuration import Configuration
 from asposehtmlcloud.configuration import TypeWithDefault # create singleton
-
 from asposehtmlcloud import rest
 
 
@@ -52,16 +51,14 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
 
     :param configuration: .Configuration object for this client
     :param header_name: a header to pass when making calls to the API.
-    :param header_value: a header value to pass when making calls to
-        the API.
-    :param cookie: a cookie to include in the header when making calls
-        to the API
+    :param header_value: a header value to pass when making calls to the API.
+    :param cookie: a cookie to include in the header when making calls to the API
     """
 
     PRIMITIVE_TYPES = (float, bool, bytes, six.text_type) + six.integer_types
     NATIVE_TYPES_MAPPING = {
         'int': int,
-        'long': int if six.PY3 else long,  # noqa: F821
+        'long': int if six.PY3 else long,
         'float': float,
         'str': str,
         'bool': bool,
@@ -107,10 +104,8 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
         self.default_headers[header_name] = header_value
 
     def __call_api(
-            self, resource_path, method, path_params=None,
-            query_params=None, header_params=None, body=None, post_params=None,
-            files=None, response_type=None, auth_settings=None,
-            _return_http_data_only=None, collection_formats=None,
+            self, resource_path, method, path_params=None, query_params=None, header_params=None, body=None,
+            post_params=None, files=None, response_type=None, _return_http_data_only=None, collection_formats=None,
             _preload_content=True, _request_timeout=None):
 
         config = self.configuration
@@ -122,36 +117,31 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-            header_params = dict(self.parameters_to_tuples(header_params,
-                                                           collection_formats))
+            header_params = dict(self.parameters_to_tuples(header_params, collection_formats))
 
         # path parameters
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
-            path_params = self.parameters_to_tuples(path_params,
-                                                    collection_formats)
+            path_params = self.parameters_to_tuples(path_params, collection_formats)
             for k, v in path_params:
                 # specified safe chars, encode everything
                 resource_path = resource_path.replace(
                     '{%s}' % k,
                     quote(str(v), safe=config.safe_chars_for_path_param)
                 )
+        # ToDo: in path %2F -> '/' Kestrel bug
+        resource_path = resource_path.replace('%2F','/')
 
         # query parameters
         if query_params:
             query_params = self.sanitize_for_serialization(query_params)
-            query_params = self.parameters_to_tuples(query_params,
-                                                     collection_formats)
+            query_params = self.parameters_to_tuples(query_params, collection_formats)
 
         # post parameters
         if post_params or files:
             post_params = self.prepare_post_parameters(post_params, files)
             post_params = self.sanitize_for_serialization(post_params)
-            post_params = self.parameters_to_tuples(post_params,
-                                                    collection_formats)
-
-        # auth setting
-        self.update_params_for_auth(header_params, query_params, auth_settings)
+            post_params = self.parameters_to_tuples(post_params, collection_formats)
 
         # body
         if body:
@@ -161,11 +151,8 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
         url = self.configuration.host + resource_path
 
         # perform request and return response
-        response_data = self.request(
-            method, url, query_params=query_params, headers=header_params,
-            post_params=post_params, body=body,
-            _preload_content=_preload_content,
-            _request_timeout=_request_timeout)
+        response_data = self.request( method, url, query_params=query_params, headers=header_params,
+            post_params=post_params, body=body, _preload_content=_preload_content, _request_timeout=_request_timeout)
 
         self.last_response = response_data
 
@@ -180,8 +167,7 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
         if _return_http_data_only:
             return (return_data)
         else:
-            return (return_data, response_data.status,
-                    response_data.getheaders())
+            return (return_data, response_data.status, response_data.getheaders())
 
     def sanitize_for_serialization(self, obj):
         """Builds a JSON POST object.
@@ -212,12 +198,12 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
             obj_dict = obj
         else:
             # Convert model obj to dict except
-            # attributes `swagger_types`, `attribute_map`
+            # attributes `model_types`, `attribute_map`
             # and attributes which value is not None.
             # Convert attribute name to json key in
             # model definition for request.
             obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
-                        for attr, _ in six.iteritems(obj.swagger_types)
+                        for attr, _ in six.iteritems(obj.model_types)
                         if getattr(obj, attr) is not None}
 
         return {key: self.sanitize_for_serialization(val)
@@ -269,8 +255,8 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
             # convert str to class
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
-            #else:
-            #    klass = getattr(asposehtmlcloud.Model, klass)
+            else:
+                klass = getattr(asposehtmlcloud.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)
@@ -280,13 +266,11 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
             return self.__deserialize_date(data)
         elif klass == datetime.datetime:
             return self.__deserialize_datatime(data)
-        #else:
-        #    return self.__deserialize_model(data, klass)
+        else:
+            return self.__deserialize_model(data, klass)
 
-    def call_api(self, resource_path, method,
-                 path_params=None, query_params=None, header_params=None,
-                 body=None, post_params=None, files=None,
-                 response_type=None, auth_settings=None, async_req=None,
+    def call_api(self, resource_path, method, path_params=None, query_params=None, header_params=None,
+                 body=None, post_params=None, files=None, response_type=None, async_req=None,
                  _return_http_data_only=None, collection_formats=None,
                  _preload_content=True, _request_timeout=None):
         """Makes the HTTP request (synchronous) and returns deserialized data.
@@ -297,54 +281,29 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
         :param method: Method to call.
         :param path_params: Path parameters in the url.
         :param query_params: Query parameters in the url.
-        :param header_params: Header parameters to be
-            placed in the request header.
+        :param header_params: Header parameters to be placed in the request header.
         :param body: Request body.
-        :param post_params dict: Request post form parameters,
-            for `application/x-www-form-urlencoded`, `multipart/form-data`.
-        :param auth_settings list: Auth Settings names for the request.
+        :param dict post_params: Request post form parameters, for `application/x-www-form-urlencoded`, `multipart/form-data`.
         :param response: Response data type.
-        :param files dict: key -> filename, value -> filepath,
-            for `multipart/form-data`.
-        :param async_req bool: execute request asynchronously
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param collection_formats: dict of collection formats for path, query,
-            header, and post parameters.
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return:
-            If async_req parameter is True,
-            the request will be called asynchronously.
-            The method will return the request thread.
-            If parameter async_req is False or missing,
-            then the method will return the response directly.
+        :param dict files: key -> filename, value -> filepath, for `multipart/form-data`.
+        :param bool async_req: execute request asynchronously
+        :param _return_http_data_only: response data without head status code and headers
+        :param collection_formats: dict of collection formats for path, query, header, and post parameters.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will be returned without reading/decoding response data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one number provided, it will be total request timeout. It can also be a pair (tuple) of (connection, read) timeouts.
+        :return: If async_req parameter is True, the request will be called asynchronously. The method will return the request thread. If parameter async_req is False or missing, then the method will return the response directly.
         """
         if not async_req:
-            return self.__call_api(resource_path, method,
-                                   path_params, query_params, header_params,
-                                   body, post_params, files,
-                                   response_type, auth_settings,
-                                   _return_http_data_only, collection_formats,
+            return self.__call_api(resource_path, method, path_params, query_params, header_params,
+                                   body, post_params, files, response_type, _return_http_data_only, collection_formats,
                                    _preload_content, _request_timeout)
         else:
-            thread = self.pool.apply_async(self.__call_api, (resource_path,
-                                           method, path_params, query_params,
-                                           header_params, body,
-                                           post_params, files,
-                                           response_type, auth_settings,
-                                           _return_http_data_only,
-                                           collection_formats,
-                                           _preload_content, _request_timeout))
+            thread = self.pool.apply_async(self.__call_api, (resource_path, method, path_params, query_params,
+                                           header_params, body, post_params, files, response_type, _return_http_data_only,
+                                           collection_formats, _preload_content, _request_timeout))
         return thread
 
-    def request(self, method, url, query_params=None, headers=None,
-                post_params=None, body=None, _preload_content=True,
+    def request(self, method, url, query_params=None, headers=None, post_params=None, body=None, _preload_content=True,
                 _request_timeout=None):
         """Makes the HTTP request using RESTClient."""
         if method == "GET":
@@ -456,7 +415,7 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
                         filename = os.path.basename(f.name)
                         filedata = f.read()
                         mimetype = (mimetypes.guess_type(filename)[0] or
-                                    'application/octet-stream')
+                                    'multipart/form-data')
                         params.append(
                             tuple([k, tuple([filename, filedata, mimetype])]))
 
@@ -493,30 +452,6 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
             return 'application/json'
         else:
             return content_types[0]
-
-    def update_params_for_auth(self, headers, querys, auth_settings):
-        """Updates header and query params based on authentication setting.
-
-        :param headers: Header parameters dict to be updated.
-        :param querys: Query parameters tuple list to be updated.
-        :param auth_settings: Authentication setting identifiers list.
-        """
-        if not auth_settings:
-            return
-
-        for auth in auth_settings:
-            auth_setting = self.configuration.auth_settings().get(auth)
-            if auth_setting:
-                if not auth_setting['value']:
-                    continue
-                elif auth_setting['in'] == 'header':
-                    headers[auth_setting['key']] = auth_setting['value']
-                elif auth_setting['in'] == 'query':
-                    querys.append((auth_setting['key'], auth_setting['value']))
-                else:
-                    raise ValueError(
-                        'Authentication token must be in `query` or `header`'
-                    )
 
     def __deserialize_file(self, response):
         """Deserializes body to file
@@ -611,13 +546,12 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
         :return: model object.
         """
 
-        if not klass.swagger_types and not hasattr(klass,
-                                                   'get_real_child_model'):
+        if not klass.model_types and not hasattr(klass, 'get_real_child_model'):
             return data
 
         kwargs = {}
-        if klass.swagger_types is not None:
-            for attr, attr_type in six.iteritems(klass.swagger_types):
+        if klass.model_types is not None:
+            for attr, attr_type in six.iteritems(klass.model_types):
                 if (data is not None and
                         klass.attribute_map[attr] in data and
                         isinstance(data, (list, dict))):

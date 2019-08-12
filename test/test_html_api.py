@@ -3,7 +3,7 @@
 """
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="test_html_api.py">
-   Copyright (c) 2018 Aspose.HTML for Cloud
+   Copyright (c) 2019 Aspose.HTML for Cloud
  </copyright>
  <summary>
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,10 +28,7 @@
 """
 
 from __future__ import absolute_import
-
 import unittest
-
-from asposehtmlcloud.api_client import ApiClient as Client
 from asposehtmlcloud.api.html_api import HtmlApi
 from asposehtmlcloud.configuration import Configuration
 from asposehtmlcloud.rest import ApiException
@@ -42,12 +39,7 @@ class TestHtmlApi(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        configuration = Configuration(apiKey="60487a72d6325241191177e37ae52146",
-                                      appSid="80e32ca5-a828-46a4-9d54-7199dfd3764a",
-                                      basePath="https://api-qa.aspose.cloud/v1.1",
-                                      authPath="https://api-qa.aspose.cloud/oauth2/token",
-                                      debug=True)
-        cls.api = HtmlApi(configuration)
+        cls.api = TestHelper.html
 
 ###############################################################
 #                    Conversion test
@@ -73,13 +65,13 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         name = "test1.html"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Convert document to image
             res = self.api.get_convert_document_to_image(
@@ -115,13 +107,13 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         name = "georgia.epub"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Convert document to image
             res = self.api.get_convert_document_to_image(
@@ -157,13 +149,13 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         name = "Map-World.svg"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Convert document to image
             res = self.api.get_convert_document_to_image(
@@ -199,7 +191,6 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
         try:
@@ -236,13 +227,13 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         name = "test1.html"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Convert document to pdf
             res = self.api.get_convert_document_to_pdf(
@@ -276,13 +267,13 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         name = "georgia.epub"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Convert document to pdf
             res = self.api.get_convert_document_to_pdf(
@@ -316,13 +307,13 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         name = "Map-World.svg"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Convert document to pdf
             res = self.api.get_convert_document_to_pdf(
@@ -356,7 +347,6 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
         try:
@@ -394,13 +384,13 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         name = "test1.html"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Convert document to xps
             res = self.api.get_convert_document_to_xps(
@@ -434,13 +424,13 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         name = "georgia.epub"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Convert document to xps
             res = self.api.get_convert_document_to_xps(
@@ -474,13 +464,13 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         name = "Map-World.svg"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Convert document to xps
             res = self.api.get_convert_document_to_xps(
@@ -514,16 +504,13 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
         try:
-
             # Convert url to xps
             res = self.api.get_convert_document_to_xps_by_url(
                 source_url, width=800, height=1000, left_margin=50, right_margin=100, top_margin=150,
-                bottom_margin=200,
-                folder=TestHelper.folder, storage=""
+                bottom_margin=200, folder=TestHelper.folder, storage=""
             )
             self.assertTrue(isinstance(res, str), "Error convert url to xps")
 
@@ -534,8 +521,8 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_html_in_request_to_image(self):
-        """Test case for put_convert_document_in_request_to_image from html format
+    def test_post_convert_html_in_request_to_image(self):
+        """Test case for post_convert_document_in_request_to_image from html format
 
         :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
@@ -552,32 +539,66 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "putHtmlToImageInReq.png"
+        name = "postHtmlToImageInReq.png"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "test1.html"
 
         try:
             # Convert document to image
-            self.api.put_convert_document_in_request_to_image(
+            self.api.post_convert_document_in_request_to_image(
                 out_path=test_out_path, out_format="png", file=test_file, width=800, height=1000, left_margin=50,
                 right_margin=100, top_margin=150, bottom_margin=200, resolution=300)
 
             # Download result
-            res = TestHelper.download_file(name)
+            res = TestHelper.download_file(test_out_path)
+            save_file = TestHelper.test_dst + name
+            TestHelper.move_file(res, save_file)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_post_convert_epub_in_request_to_image(self):
+        """Test case for post_convert_document_in_request_to_image from epub format
+
+        :param async_req bool
+        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
+        :param str out_format: (required)
+        :param file file: A file to be converted. (required)
+        :param int width: Resulting document page width in points (1/96 inch).
+        :param int height: Resulting document page height in points (1/96 inch).
+        :param int left_margin: Left resulting document page margin in points (1/96 inch).
+        :param int right_margin: Right resulting document page margin in points (1/96 inch).
+        :param int top_margin: Top resulting document page margin in points (1/96 inch).
+        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
+        :param int resolution: Resolution of resulting image. Default is 96 dpi.
+        :return: File.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        name = "postEpubToImageInReq.zip"
+        result_file_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "georgia.epub"
+
+        try:
+            # Convert document to image
+            self.api.post_convert_document_in_request_to_image(
+                out_path=result_file_path, out_format="jpeg", file=test_file, width=800, height=1000, left_margin=50,
+                right_margin=100, top_margin=150, bottom_margin=200, resolution=300)
+
+            # Download result
+            res = TestHelper.download_file(result_file_path)
 
             save_file = TestHelper.test_dst + name
-
-            # Save to test folder
-            with open(save_file, "wb") as file:
-                file.write(res.InputStream)
+            TestHelper.move_file(res, save_file)
 
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_epub_in_request_to_image(self):
-        """Test case for put_convert_document_in_request_to_image from epub format
+    def test_post_convert_svg_in_request_to_image(self):
+        """Test case for post_convert_document_in_request_to_image from svg format
 
         :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
@@ -594,74 +615,27 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "putEpubToImageInReq.jpg"
-        test_out_path = "HtmlTestDoc/" + name
-        test_file = TestHelper.test_src + "georgia.epub"
-
-        try:
-            # Convert document to image
-            self.api.put_convert_document_in_request_to_image(
-                out_path=test_out_path, out_format="jpeg", file=test_file, width=800, height=1000, left_margin=50,
-                right_margin=100, top_margin=150, bottom_margin=200, resolution=300)
-
-            # Download result
-            res = TestHelper.download_file(name)
-
-            save_file = TestHelper.test_dst + name
-
-            # Save to test folder
-            with open(save_file, "wb") as file:
-                file.write(res.InputStream)
-
-        except ApiException as ex:
-            print("Exception")
-            print("Info: " + str(ex))
-            raise ex
-
-    def test_put_convert_svg_in_request_to_image(self):
-        """Test case for put_convert_document_in_request_to_image from svg format
-
-        :param async_req bool
-        :param str out_path: Full resulting filename (ex. /folder1/folder2/result.jpg) (required)
-        :param str out_format: (required)
-        :param file file: A file to be converted. (required)
-        :param int width: Resulting document page width in points (1/96 inch).
-        :param int height: Resulting document page height in points (1/96 inch).
-        :param int left_margin: Left resulting document page margin in points (1/96 inch).
-        :param int right_margin: Right resulting document page margin in points (1/96 inch).
-        :param int top_margin: Top resulting document page margin in points (1/96 inch).
-        :param int bottom_margin: Bottom resulting document page margin in points (1/96 inch).
-        :param int resolution: Resolution of resulting image. Default is 96 dpi.
-        :return: file
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        name = "putSvgToImageInReq.jpg"
+        name = "postSvgToImageInReq.jpg"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "Map-World.svg"
 
         try:
             # Convert document to image
-            self.api.put_convert_document_in_request_to_image(
+            self.api.post_convert_document_in_request_to_image(
                 out_path=test_out_path, out_format="jpeg", file=test_file, width=800, height=1000, left_margin=50,
                 right_margin=100, top_margin=150, bottom_margin=200, resolution=300)
 
             # Download result
-            res = TestHelper.download_file(name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + name
-
-            # Save to test folder
-            with open(save_file, "wb") as file:
-                file.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_html_in_request_to_pdf(self):
-        """Test case for put_convert_document_in_request_to_pdf from html format
+    def test_post_convert_html_in_request_to_pdf(self):
+        """Test case for post_convert_document_in_request_to_pdf from html format
 
         :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
@@ -676,32 +650,26 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "putHtmlToPdfInReq.pdf"
+        name = "postHtmlToPdfInReq.pdf"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "test1.html"
         try:
-
             # Upload and convert document to pdf
-            self.api.put_convert_document_in_request_to_pdf(
+            self.api.post_convert_document_in_request_to_pdf(
                 out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200)
 
             # Download result
-            res = TestHelper.download_file(name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + name
-
-            # Save to test folder
-            with open(save_file, "wb") as file:
-                file.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_epub_in_request_to_pdf(self):
-        """Test case for put_convert_document_in_request_to_pdf from epub format
+    def test_post_convert_epub_in_request_to_pdf(self):
+        """Test case for post_convert_document_in_request_to_pdf from epub format
 
         :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
@@ -716,32 +684,26 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "putEpubToPdfInReq.pdf"
+        name = "postEpubToPdfInReq.pdf"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "georgia.epub"
         try:
-
             # Upload and convert document to pdf
-            self.api.put_convert_document_in_request_to_pdf(
+            self.api.post_convert_document_in_request_to_pdf(
                 out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200)
 
             # Download result
-            res = TestHelper.download_file(name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + name
-
-            # Save to test folder
-            with open(save_file, "wb") as file:
-                file.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_svg_in_request_to_pdf(self):
-        """Test case for put_convert_document_in_request_to_pdf from svg format
+    def test_post_convert_svg_in_request_to_pdf(self):
+        """Test case for post_convert_document_in_request_to_pdf from svg format
 
         :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.pdf) (required)
@@ -756,32 +718,26 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "putSvgToPdfInReq.pdf"
+        name = "postSvgToPdfInReq.pdf"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "Map-World.svg"
         try:
-
             # Upload and convert document to pdf
-            self.api.put_convert_document_in_request_to_pdf(
+            self.api.post_convert_document_in_request_to_pdf(
                 out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200)
 
             # Download result
-            res = TestHelper.download_file(name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + name
-
-            # Save to test folder
-            with open(save_file, "wb") as file:
-                file.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_html_in_request_to_xps(self):
-        """Test case for put_convert_document_in_request_to_xps from html format
+    def test_post_convert_html_in_request_to_xps(self):
+        """Test case for post_convert_document_in_request_to_xps from html format
 
         :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
@@ -796,32 +752,26 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "putHtmlToXpsInReq.xps"
+        name = "postHtmlToXpsInReq.xps"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "test1.html"
         try:
-
             # Upload and convert document to xps
-            self.api.put_convert_document_in_request_to_xps(
+            self.api.post_convert_document_in_request_to_xps(
                 out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200)
 
             # Download result
-            res = TestHelper.download_file(name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + name
-
-            # Save to test folder
-            with open(save_file, "wb") as file:
-                file.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_epub_in_request_to_xps(self):
-        """Test case for put_convert_document_in_request_to_xps from epub format
+    def test_post_convert_epub_in_request_to_xps(self):
+        """Test case for post_convert_document_in_request_to_xps from epub format
 
         :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
@@ -836,32 +786,26 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "putEpubToXpsInReq.xps"
+        name = "postEpubToXpsInReq.xps"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "georgia.epub"
         try:
-
             # Upload and convert document to xps
-            self.api.put_convert_document_in_request_to_xps(
+            self.api.post_convert_document_in_request_to_xps(
                 out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200)
 
             # Download result
-            res = TestHelper.download_file(name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + name
-
-            # Save to test folder
-            with open(save_file, "wb") as file:
-                file.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_svg_in_request_to_xps(self):
-        """Test case for put_convert_document_in_request_to_xps from svg format
+    def test_post_convert_svg_in_request_to_xps(self):
+        """Test case for post_convert_document_in_request_to_xps from svg format
 
         :param async_req bool
         :param str out_path: Full resulting filename (ex. /folder1/folder2/result.xps) (required)
@@ -876,25 +820,19 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "putSvgToXpsInReq.xps"
+        name = "postSvgToXpsInReq.xps"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "Map-World.svg"
         try:
-
             # Upload and convert document to xps
-            self.api.put_convert_document_in_request_to_xps(
+            self.api.post_convert_document_in_request_to_xps(
                 out_path=test_out_path, file=test_file, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200)
 
             # Download result
-            res = TestHelper.download_file(name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + name
-
-            # Save to test folder
-            with open(save_file, "wb") as file:
-                file.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
@@ -927,21 +865,15 @@ class TestHtmlApi(unittest.TestCase):
         test_out_path = test_folder + "/" + result_name
 
         try:
-
             # Convert document to image in storage
             self.api.put_convert_document_to_image(
                 name, out_path=test_out_path, out_format="tiff", width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200, resolution=300, folder=test_folder, storage="")
 
             # Download result
-            res = TestHelper.download_file(result_name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + result_name
-
-            # Save to test folder
-            with open(save_file, "wb") as f:
-                f.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
@@ -969,26 +901,20 @@ class TestHtmlApi(unittest.TestCase):
         """
         # Already in storage
         name = "georgia.epub"
-        result_name = "putEpubToImg.tiff"
+        result_name = "putEpubToTiff.zip"
         test_folder = "HtmlTestDoc"
         test_out_path = test_folder + "/" + result_name
 
         try:
-
             # Convert document to image in storage
             self.api.put_convert_document_to_image(
                 name, out_path=test_out_path, out_format="tiff", width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200, resolution=300, folder=test_folder, storage="")
 
             # Download result
-            res = TestHelper.download_file(result_name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + result_name
-
-            # Save to test folder
-            with open(save_file, "wb") as f:
-                f.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
@@ -1021,21 +947,15 @@ class TestHtmlApi(unittest.TestCase):
         test_out_path = test_folder + "/" + result_name
 
         try:
-
             # Convert document to image in storage
             self.api.put_convert_document_to_image(
                 name, out_path=test_out_path, out_format="tiff", width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200, resolution=300, folder=test_folder, storage="")
 
             # Download result
-            res = TestHelper.download_file(result_name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + result_name
-
-            # Save to test folder
-            with open(save_file, "wb") as f:
-                f.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
@@ -1066,21 +986,15 @@ class TestHtmlApi(unittest.TestCase):
         test_out_path = test_folder + "/" + result_name
 
         try:
-
             # Convert document to pdf in storage
             self.api.put_convert_document_to_pdf(
                 name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200, folder=test_folder, storage="")
 
             # Download result
-            res = TestHelper.download_file(result_name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + result_name
-
-            # Save to test folder
-            with open(save_file, "wb") as f:
-                f.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
@@ -1111,21 +1025,15 @@ class TestHtmlApi(unittest.TestCase):
         test_out_path = test_folder + "/" + result_name
 
         try:
-
             # Convert document to pdf in storage
             self.api.put_convert_document_to_pdf(
                 name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200, folder=test_folder, storage="")
 
             # Download result
-            res = TestHelper.download_file(result_name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + result_name
-
-            # Save to test folder
-            with open(save_file, "wb") as f:
-                f.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
@@ -1156,21 +1064,15 @@ class TestHtmlApi(unittest.TestCase):
         test_out_path = test_folder + "/" + result_name
 
         try:
-
             # Convert document to pdf in storage
             self.api.put_convert_document_to_pdf(
                 name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200, folder=test_folder, storage="")
 
             # Download result
-            res = TestHelper.download_file(result_name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + result_name
-
-            # Save to test folder
-            with open(save_file, "wb") as f:
-                f.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
@@ -1201,21 +1103,15 @@ class TestHtmlApi(unittest.TestCase):
         test_out_path = test_folder + "/" + result_name
 
         try:
-
             # Convert document to pdf in storage
             self.api.put_convert_document_to_xps(
                 name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200, folder=test_folder, storage="")
 
             # Download result
-            res = TestHelper.download_file(result_name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + result_name
-
-            # Save to test folder
-            with open(save_file, "wb") as f:
-                f.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
@@ -1246,21 +1142,15 @@ class TestHtmlApi(unittest.TestCase):
         test_out_path = test_folder + "/" + result_name
 
         try:
-
             # Convert document to pdf in storage
             self.api.put_convert_document_to_xps(
                 name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200, folder=test_folder, storage="")
 
             # Download result
-            res = TestHelper.download_file(result_name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + result_name
-
-            # Save to test folder
-            with open(save_file, "wb") as f:
-                f.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
@@ -1291,21 +1181,15 @@ class TestHtmlApi(unittest.TestCase):
         test_out_path = test_folder + "/" + result_name
 
         try:
-
             # Convert document to pdf in storage
             self.api.put_convert_document_to_xps(
                 name, out_path=test_out_path, width=800, height=1000, left_margin=50, right_margin=100,
                 top_margin=150, bottom_margin=200, folder=test_folder, storage="")
 
             # Download result
-            res = TestHelper.download_file(result_name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + result_name
-
-            # Save to test folder
-            with open(save_file, "wb") as f:
-                f.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
@@ -1357,7 +1241,8 @@ class TestHtmlApi(unittest.TestCase):
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Convert document to markdown
             res = self.api.get_convert_document_to_markdown(name,
@@ -1373,8 +1258,8 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_convert_html_in_request_to_markdown(self):
-        """Test case for put_convert_document_in_request_to_markdown
+    def test_post_convert_html_in_request_to_markdown(self):
+        """Test case for post_convert_document_in_request_to_markdown
 
         Converts the HTML document (in request content) to Markdown and uploads resulting file to storage by specified path.
 
@@ -1387,24 +1272,19 @@ class TestHtmlApi(unittest.TestCase):
         :param str use_git: Use Git Markdown flavor to save ("true" or "false").
         :return: File. If the method is called asynchronously, returns the request thread.
         """
-        name = "putConvertToMarkdownInReqPy.md"
+        name = "postConvertToMarkdownInReqPy.md"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "test_md.html"
         try:
 
             # Upload and convert document to markdown
-            self.api.put_convert_document_in_request_to_markdown(
+            self.api.post_convert_document_in_request_to_markdown(
                 out_path=test_out_path, file=test_file, use_git="true")
 
             # Download result
-            res = TestHelper.download_file(name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + name
-
-            # Save to test folder
-            with open(save_file, "wb") as file:
-                file.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
@@ -1433,29 +1313,130 @@ class TestHtmlApi(unittest.TestCase):
         test_out_path = test_folder + "/" + result_name
 
         try:
-
             # Convert document to markdown in storage
             self.api.put_convert_document_to_markdown(
                 name, out_path=test_out_path, use_git="false", folder=test_folder, storage="")
 
             # Download result
-            res = TestHelper.download_file(result_name)
-
+            res = TestHelper.download_file(test_out_path)
             save_file = TestHelper.test_dst + result_name
-
-            # Save to test folder
-            with open(save_file, "wb") as f:
-                f.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
             raise ex
 
+    ###############################################################
+    #                    Import test
+    ###############################################################
 
-###############################################################
-#                    Document test
-###############################################################
+    def test_get_convert_markdown_to_html(self):
+        """Test case for get_convert_markdown_to_html
+
+        Converts the HTML Markdown (located on storage) to HTML and
+        returns resulting file in response content.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str folder: Source document folder.
+        :param str storage: Source document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        name = "testpage1.md"
+        try:
+            # Upload file to storage
+            res = TestHelper.upload_file(name)
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
+
+            # Convert markdown to html
+            res = self.api.get_convert_markdown_to_html(name,
+                                                        folder=TestHelper.folder,
+                                                        storage="")
+            self.assertTrue(isinstance(res, str), "Error convert markdown to html")
+
+            # Move to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_post_convert_markdown_in_request_to_html(self):
+        """Test case for post_convert_markdown_in_request_to_html
+
+        Converts the Markdown document (in request content) to HTML and
+        uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.html) (required)
+        :param file file: A file to be converted. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        name = "postMarkdownToHtmlInReqPy.html"
+        test_out_path = "HtmlTestDoc/" + name
+        test_file = TestHelper.test_src + "testpage1.md"
+        try:
+
+            # Upload and convert document to markdown
+            self.api.post_convert_markdown_in_request_to_html(
+                out_path=test_out_path, file=test_file)
+
+            # Download result
+            res = TestHelper.download_file(test_out_path)
+            save_file = TestHelper.test_dst + name
+            TestHelper.move_file(res, save_file)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_put_convert_markdown_to_html(self):
+        """Test case for put_convert_markdown_to_html
+
+        Converts the Markdown document (located on storage) to HTML
+        and uploads resulting file to storage by specified path.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str name: Document name. (required)
+        :param str out_path: Full resulting file path in the storage (ex. /folder1/folder2/result.html) (required)
+        :param str folder: The source document folder.
+        :param str storage: The source and resulting document storage.
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        # Already in storage
+        name = "testpage1.md"
+        result_name = "putMarkdownToHtmlPy.html"
+        test_folder = "HtmlTestDoc"
+        test_out_path = test_folder + "/" + result_name
+
+        try:
+            # Convert document to markdown in storage
+            self.api.put_convert_markdown_to_html(
+                name, out_path=test_out_path, folder=test_folder, storage="")
+
+            # Download result
+            res = TestHelper.download_file(test_out_path)
+            save_file = TestHelper.test_dst + result_name
+            TestHelper.move_file(res, save_file)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    ###############################################################
+    #                    Document test
+    ###############################################################
 
     def test_get_document_by_url(self):
         """Test case for get_document_by_url
@@ -1495,7 +1476,6 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         name = "test2.html.zip"
         x_path = ".//p"
@@ -1503,11 +1483,12 @@ class TestHtmlApi(unittest.TestCase):
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Get fragment document from remote storage
             res = self.api.get_document_fragment_by_x_path(name=name, x_path=x_path, out_format=out_format,
-                                                                    storage="", folder=TestHelper.folder)
+                                                           storage="", folder=TestHelper.folder)
             self.assertTrue(isinstance(res, str), "Error get fragment document from remote storage")
 
             # Move to test folder
@@ -1535,7 +1516,6 @@ class TestHtmlApi(unittest.TestCase):
         x_path = ".//p"
         out_format = "plain"
         try:
-
             # Get fragment document from remote storage by url
             res = self.api.get_document_fragment_by_x_path_by_url(source_url=source_url, x_path=x_path, out_format=out_format)
             self.assertTrue(isinstance(res, str), "Error get fragment document from remote storage by url")
@@ -1569,11 +1549,12 @@ class TestHtmlApi(unittest.TestCase):
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Get fragment document from remote storage by css
             res = self.api.get_document_fragments_by_css_selector(name=name, selector=selector, out_format=out_format,
-                                                           storage="", folder=TestHelper.folder)
+                                                                  storage="", folder=TestHelper.folder)
             self.assertTrue(isinstance(res, str), "Error get fragment document from remote storage")
 
             # Move to test folder
@@ -1601,7 +1582,6 @@ class TestHtmlApi(unittest.TestCase):
         selector = 'a[href$=".asp"]' # Get all asp links
         out_format = "plain"
         try:
-
             # Get fragment matching the specified CSS selector by url
             res = self.api.get_document_fragments_by_css_selector_by_url(source_url=source_url, selector=selector, out_format=out_format)
             self.assertTrue(isinstance(res, str), "Error get fragment matching the specified CSS selector by url")
@@ -1625,13 +1605,13 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         name = "test3.html.zip"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Get images from document on remote storage
             res = self.api.get_document_images(name=name, storage="", folder=TestHelper.folder)
@@ -1656,11 +1636,9 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         source_url = "https://www.google.com/"
         try:
-
             # Get images from document by url
             res = self.api.get_document_images_by_url(source_url=source_url)
             self.assertTrue(isinstance(res, str), "Error get images from url")
@@ -1672,9 +1650,9 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-###############################################################
-#                       OCR test
-###############################################################
+    ###############################################################
+    #                       OCR test
+    ###############################################################
 
     def test_get_recognize_and_import_to_html(self):
         """Test case for get_recognize_and_import_to_html
@@ -1689,14 +1667,14 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         file_name = "test_ocr.png"
         lang = "en"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(file_name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Recognize image
             res = self.api.get_recognize_and_import_to_html(
@@ -1724,7 +1702,6 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         file_name = "test_ocr.jpg"
         src_lang = "en"
@@ -1732,7 +1709,8 @@ class TestHtmlApi(unittest.TestCase):
         try:
             # Upload file to storage
             res = TestHelper.upload_file(file_name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Recognize and translate image
             res = self.api.get_recognize_and_translate_to_html(file_name, src_lang, res_lang, folder=TestHelper.folder)
@@ -1745,9 +1723,9 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-###############################################################
-#                  Translation test
-###############################################################
+    ###############################################################
+    #                  Translation test
+    ###############################################################
 
     def test_get_translate_document(self):
         """Test case for get_translate_document
@@ -1763,7 +1741,6 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         file_name = "test_en.html"
         src_lang = "en"
@@ -1771,11 +1748,12 @@ class TestHtmlApi(unittest.TestCase):
         try:
             # Upload file to storage
             res = TestHelper.upload_file(file_name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Translate document
             res = self.api.get_translate_document(file_name, src_lang, res_lang,
-                                                              folder=TestHelper.folder)
+                                                  folder=TestHelper.folder)
             self.assertTrue(isinstance(res, str), "Error translate html document")
 
             # Move to test folder
@@ -1797,7 +1775,6 @@ class TestHtmlApi(unittest.TestCase):
         return: file
                  If the method is called asynchronously,
                  returns the request thread.
-
         """
         source_url = "https://www.le.ac.uk/oerresources/bdra/html/page_02.htm"
         src_lang = "en"
@@ -1814,9 +1791,9 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-###############################################################
-#                  Summarization test
-###############################################################
+    ###############################################################
+    #                  Summarization test
+    ###############################################################
 
     def test_get_detect_html_keywords(self):
         """Get the HTML document keywords using the keyword detection service.
@@ -1832,12 +1809,12 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
         file_name = "test_en.html"
         try:
             # Upload file to storage
             res = TestHelper.upload_file(file_name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Get keywords from document
             res = self.api.get_detect_html_keywords(file_name, folder=TestHelper.folder)
@@ -1875,10 +1852,9 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-###############################################################
-#               TemplateMerge test
-###############################################################
-    #    @unittest.skip("skipping")
+    ###############################################################
+    #               TemplateMerge test
+    ###############################################################
 
     def test_get_merge_html_template(self):
         """Test case for put_convert_document_in_request_to_image
@@ -1895,7 +1871,6 @@ class TestHtmlApi(unittest.TestCase):
         :return: File. If the method is called asynchronously, returns the request thread.
         """
 
-
         template_name = "HtmlTemplate.html"
         template_data = "XmlSourceData.xml"
         result_name = "GetTemplateMergePython.html"
@@ -1906,10 +1881,12 @@ class TestHtmlApi(unittest.TestCase):
 
         try:
             res = TestHelper.upload_file(template_name)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             res = TestHelper.upload_file(template_data)
-            self.assertEqual(res.Code, 200, "Error upload file to server")
+            self.assertTrue(len(res.uploaded) == 1)
+            self.assertTrue(len(res.errors) == 0)
 
             # Get result file from storage
             res = self.api.get_merge_html_template(template_name=template_name,data_path=data_path,options=options,
@@ -1924,8 +1901,8 @@ class TestHtmlApi(unittest.TestCase):
             print("Info: " + str(ex))
             raise ex
 
-    def test_put_merge_html_template(self):
-        """Test case for put_convert_document_in_request_to_image
+    def test_post_merge_html_template(self):
+        """Test case for post_convert_document_in_request_to_image
 
          This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1941,7 +1918,7 @@ class TestHtmlApi(unittest.TestCase):
        """
         template_name = "HtmlTemplate.html"
         template_data = "XmlSourceData.xml"
-        result_name = "PutMergeHtmlTemplatePython.html"
+        result_name = "PostMergeHtmlTemplatePython.html"
         options = ""
         folder = "HtmlTestDoc"
         storage = ""
@@ -1950,18 +1927,12 @@ class TestHtmlApi(unittest.TestCase):
 
         try:
             # Convert document to image
-            self.api.put_merge_html_template(template_name=template_name, out_path=out_path, file=data_file,
+            self.api.post_merge_html_template(template_name=template_name, out_path=out_path, file=data_file,
                                              options=options, folder=folder, storage=storage)
-
             # Download result
-            res = TestHelper.download_file(result_name)
-
+            res = TestHelper.download_file(out_path)
             save_file = TestHelper.test_dst + result_name
-
-            # Save to test folder
-            with open(save_file, "wb") as file:
-                file.write(res.InputStream)
-
+            TestHelper.move_file(res, save_file)
         except ApiException as ex:
             print("Exception")
             print("Info: " + str(ex))
