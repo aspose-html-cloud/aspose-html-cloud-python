@@ -71,27 +71,6 @@ Method | HTTP request | Description
 **get_document_images** | **GET** html/{name}/images/all | Return all HTML document images packaged as a ZIP archive.
 **get_document_images_by_url** | **GET** html/images/all | Return all HTML page images packaged as a ZIP archive by the source page URL.
 
-## OcrApi
-
-Method | HTTP request | Description
-------------- | ------------- | -------------
-**get_recognize_and_import_to_html** | **GET** html/{name}/ocr/import | Recognize text from the image file in the storage and import it to HTML format.
-**get_recognize_and_translate_to_html** | **GET** html/{name}/ocr/translate/{srcLang}/{resLang} | Recognize text from the image file in the storage, import it to HTML format and translate to specified language.
-
-## TranslationApi
-
-Method | HTTP request | Description
-------------- | ------------- | -------------
-**get_translate_document** | **GET** html/{name}/translate/{srcLang}/{resLang} | Translate the HTML document specified by the name from default or specified storage. 
-**get_translate_document_by_url** | **GET** html/translate/{srcLang}/{resLang} | Translate the HTML document from Web specified by its URL.
-
-## SummarizationApi
-
-Method | HTTP request | Description
-------------- | ------------- | -------------
-**get_detect_html_keywords** | **GET** html/{name}/summ/keywords | Get the HTML document keywords using the keyword detection service.
-**get_detect_html_keywords_by_url** | **GET** html/summ/keywords | Get the keywords from HTML document from Web specified by its URL using the keyword detection service
-
 ## TemplateMergeApi    
 
 Method | HTTP request | Description

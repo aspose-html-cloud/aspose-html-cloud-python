@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 NAME = "asposehtmlcloud"
-VERSION = "19.5.0"
+VERSION = "19.6.1"
 # To install the library, run the following
 #
 # python setup.py install
@@ -47,7 +47,8 @@ setup(
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
-    long_description="""\
+    long_description="""
     Aspose.HTML for Cloud API Reference
+	This repository contains Aspose.HTML Cloud SDK for Python source code. This SDK allows you to work with Aspose.HTML Cloud REST APIs in your Python applications quickly and easily.
     """
 )

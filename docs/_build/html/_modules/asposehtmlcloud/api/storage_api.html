@@ -1,0 +1,1441 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>asposehtmlcloud.api.storage_api &#8212; asposehtmlcloud beta documentation</title>
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">asposehtmlcloud beta documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for asposehtmlcloud.api.storage_api</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
+<span class="c1"># python 2 and python 3 compatibility library</span>
+<span class="kn">import</span> <span class="nn">six</span>
+<span class="kn">from</span> <span class="nn">asposehtmlcloud.alias</span> <span class="k">import</span> <span class="n">aliased</span>
+<span class="kn">from</span> <span class="nn">asposehtmlcloud.alias</span> <span class="k">import</span> <span class="n">alias</span>
+<span class="kn">from</span> <span class="nn">asposehtmlcloud.api_client</span> <span class="k">import</span> <span class="n">ApiClient</span>
+
+
+<div class="viewcode-block" id="StorageApi"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi">[docs]</a><span class="nd">@aliased</span>
+<span class="k">class</span> <span class="nc">StorageApi</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">config</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">api_client</span> <span class="o">=</span> <span class="n">ApiClient</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">api_client</span> <span class="o">=</span> <span class="n">ApiClient</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span> <span class="o">=</span> <span class="n">api_client</span>
+
+    <span class="c1"># **************************************************</span>
+    <span class="c1">#                  Storage Api</span>
+    <span class="c1"># **************************************************</span>
+
+<div class="viewcode-block" id="StorageApi.get_disc_usage"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.get_disc_usage">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;getDiscUsage&#39;</span><span class="p">,</span> <span class="s1">&#39;GetDiscUsage&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_disc_usage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get disc usage</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :return: DiscUsage. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_disc_usage_with_http_info</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_disc_usage_with_http_info</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__get_disc_usage_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get disc usage</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :return: DiscUsage. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method get_disc_usage&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;storageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/disc&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="s1">&#39;DiscUsage&#39;</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StorageApi.get_file_versions"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.get_file_versions">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;getFileVersions&#39;</span><span class="p">,</span> <span class="s1">&#39;GetFileVersions&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_file_versions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get file versions</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: File path e.g. &#39;/file.ext&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :return: FileVersions. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_file_versions_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_file_versions_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__get_file_versions_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get file versions</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: File path e.g. &#39;/file.ext&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :return: FileVersions. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;storage_name&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method get_file_versions&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `path` when calling `get_file_versions`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;storageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/version/</span><span class="si">{path}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="s1">&#39;FileVersions&#39;</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StorageApi.object_exists"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.object_exists">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;objectExists&#39;</span><span class="p">,</span> <span class="s1">&#39;ObjectExists&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">object_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if file or folder exists</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :param str version_id: File version ID</span>
+<span class="sd">        :return: ObjectExist. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__object_exists_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__object_exists_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__object_exists_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if file or folder exists</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :param str version_id: File version ID</span>
+<span class="sd">        :return: ObjectExist. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;storage_name&#39;</span><span class="p">,</span> <span class="s1">&#39;version_id&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method object_exists&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `path` when calling `object_exists`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;storageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;version_id&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;versionId&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;version_id&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/exist/</span><span class="si">{path}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="s1">&#39;ObjectExist&#39;</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StorageApi.storage_exists"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.storage_exists">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;storageExists&#39;</span><span class="p">,</span> <span class="s1">&#39;StorageExists&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">storage_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storage_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if storage exists</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str storage_name: Storage name (required)</span>
+<span class="sd">        :return: StorageExist. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__storage_exists_with_http_info</span><span class="p">(</span><span class="n">storage_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__storage_exists_with_http_info</span><span class="p">(</span><span class="n">storage_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__storage_exists_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storage_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if storage exists</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str storage_name: Storage name (required)</span>
+<span class="sd">        :return: StorageExist. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method storage_exists&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;storage_name&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;storage_name&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `storage_name` when calling `storage_exists`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;storageName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/</span><span class="si">{storageName}</span><span class="s1">/exist&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="s1">&#39;StorageExist&#39;</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+    <span class="c1"># **************************************************</span>
+    <span class="c1">#                  File Api</span>
+    <span class="c1"># **************************************************</span>
+<div class="viewcode-block" id="StorageApi.copy_file"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.copy_file">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;copyFile&#39;</span><span class="p">,</span> <span class="s1">&#39;CopyFile&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">copy_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Copy file</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str src_path: Source file path e.g. &#39;/folder/file.ext&#39; (required)</span>
+<span class="sd">        :param str dest_path: Destination file path (required)</span>
+<span class="sd">        :param str src_storage_name: Source storage name</span>
+<span class="sd">        :param str dest_storage_name: Destination storage name</span>
+<span class="sd">        :param str version_id: File version ID to copy</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__copy_file_with_http_info</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__copy_file_with_http_info</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__copy_file_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Copy file</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str src_path: Source file path e.g. &#39;/folder/file.ext&#39; (required)</span>
+<span class="sd">        :param str dest_path: Destination file path (required)</span>
+<span class="sd">        :param str src_storage_name: Source storage name</span>
+<span class="sd">        :param str dest_storage_name: Destination storage name</span>
+<span class="sd">        :param str version_id: File version ID to copy</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">,</span> <span class="s1">&#39;dest_path&#39;</span><span class="p">,</span> <span class="s1">&#39;src_storage_name&#39;</span><span class="p">,</span> <span class="s1">&#39;dest_storage_name&#39;</span><span class="p">,</span> <span class="s1">&#39;version_id&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method copy_file&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;src_path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;src_path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `src_path` when calling `copy_file`&quot;</span><span class="p">)</span>
+        <span class="c1"># verify the required parameter &#39;dest_path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;dest_path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `dest_path` when calling `copy_file`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;src_path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;srcPath&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;dest_path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;destPath&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_path&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;src_storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;srcStorageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_storage_name&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;dest_storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;destStorageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_storage_name&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;version_id&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;versionId&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;version_id&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/file/copy/</span><span class="si">{srcPath}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;PUT&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StorageApi.delete_file"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.delete_file">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;deleteFile&#39;</span><span class="p">,</span> <span class="s1">&#39;DeleteFile&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">delete_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Delete file</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: File path e.g. &#39;/folder/file.ext&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :param str version_id: File version ID to delete</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__delete_file_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__delete_file_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__delete_file_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Delete file</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: File path e.g. &#39;/folder/file.ext&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :param str version_id: File version ID to delete</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;storage_name&#39;</span><span class="p">,</span> <span class="s1">&#39;version_id&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method delete_file&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `path` when calling `delete_file`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;storageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;version_id&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;versionId&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;version_id&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/file/</span><span class="si">{path}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StorageApi.download_file"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.download_file">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;downloadFile&#39;</span><span class="p">,</span> <span class="s1">&#39;DownloadFile&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Download file</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: File path e.g. &#39;/folder/file.ext&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :param str version_id: File version ID to download</span>
+<span class="sd">        :return: file. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__download_file_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__download_file_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__download_file_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Download file</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: File path e.g. &#39;/folder/file.ext&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :param str version_id: File version ID to download</span>
+<span class="sd">        :return: file. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;storage_name&#39;</span><span class="p">,</span> <span class="s1">&#39;version_id&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method download_file&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `path` when calling `download_file`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;storageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;version_id&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;versionId&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;version_id&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;multipart/form-data&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/file/</span><span class="si">{path}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="s1">&#39;file&#39;</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StorageApi.move_file"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.move_file">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;moveFile&#39;</span><span class="p">,</span> <span class="s1">&#39;MoveFile&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">move_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Move file</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str src_path: Source file path e.g. &#39;/src.ext&#39; (required)</span>
+<span class="sd">        :param str dest_path: Destination file path e.g. &#39;/dest.ext&#39; (required)</span>
+<span class="sd">        :param str src_storage_name: Source storage name</span>
+<span class="sd">        :param str dest_storage_name: Destination storage name</span>
+<span class="sd">        :param str version_id: File version ID to move</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__move_file_with_http_info</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__move_file_with_http_info</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__move_file_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Move file</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str src_path: Source file path e.g. &#39;/src.ext&#39; (required)</span>
+<span class="sd">        :param str dest_path: Destination file path e.g. &#39;/dest.ext&#39; (required)</span>
+<span class="sd">        :param str src_storage_name: Source storage name</span>
+<span class="sd">        :param str dest_storage_name: Destination storage name</span>
+<span class="sd">        :param str version_id: File version ID to move</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">,</span> <span class="s1">&#39;dest_path&#39;</span><span class="p">,</span> <span class="s1">&#39;src_storage_name&#39;</span><span class="p">,</span> <span class="s1">&#39;dest_storage_name&#39;</span><span class="p">,</span> <span class="s1">&#39;version_id&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method move_file&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;src_path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;src_path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `src_path` when calling `move_file`&quot;</span><span class="p">)</span>
+        <span class="c1"># verify the required parameter &#39;dest_path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;dest_path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `dest_path` when calling `move_file`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;src_path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;srcPath&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;dest_path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;destPath&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_path&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;src_storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;srcStorageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_storage_name&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;dest_storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;destStorageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_storage_name&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;version_id&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;versionId&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;version_id&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/file/move/</span><span class="si">{srcPath}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;PUT&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StorageApi.upload_file"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.upload_file">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;uploadFile&#39;</span><span class="p">,</span> <span class="s1">&#39;UploadFile&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">upload_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Upload file</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext If the content is multipart and path does not contains the file name it tries to get them from filename parameter from Content-Disposition header. (required)</span>
+<span class="sd">        :param file file: File to upload (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :return: FilesUploadResult. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upload_file_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upload_file_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__upload_file_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Upload file</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header. (required)</span>
+<span class="sd">        :param file file: File to upload (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :return: FilesUploadResult. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;storage_name&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method upload_file&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `path` when calling `upload_file`&quot;</span><span class="p">)</span>
+        <span class="c1"># verify the required parameter &#39;file&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;file&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `file` when calling `upload_file`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;storageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;file&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">local_var_files</span><span class="p">[</span><span class="s1">&#39;File&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">]</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;multipart/form-data&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/file/</span><span class="si">{path}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;PUT&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="s1">&#39;FilesUploadResult&#39;</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+    <span class="c1"># **************************************************</span>
+    <span class="c1">#                  Folder Api</span>
+    <span class="c1"># **************************************************</span>
+
+<div class="viewcode-block" id="StorageApi.copy_folder"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.copy_folder">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;copyFolder&#39;</span><span class="p">,</span> <span class="s1">&#39;CopyFolder&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">copy_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># noqa: E501</span>
+        <span class="sd">&quot;&quot;&quot;Copy folder</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str src_path: Source folder path e.g. &#39;/src&#39; (required)</span>
+<span class="sd">        :param str dest_path: Destination folder path e.g. &#39;/dst&#39; (required)</span>
+<span class="sd">        :param str src_storage_name: Source storage name</span>
+<span class="sd">        :param str dest_storage_name: Destination storage name</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__copy_folder_with_http_info</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__copy_folder_with_http_info</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__copy_folder_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Copy folder</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str src_path: Source folder path e.g. &#39;/src&#39; (required)</span>
+<span class="sd">        :param str dest_path: Destination folder path e.g. &#39;/dst&#39; (required)</span>
+<span class="sd">        :param str src_storage_name: Source storage name</span>
+<span class="sd">        :param str dest_storage_name: Destination storage name</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">,</span> <span class="s1">&#39;dest_path&#39;</span><span class="p">,</span> <span class="s1">&#39;src_storage_name&#39;</span><span class="p">,</span> <span class="s1">&#39;dest_storage_name&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method copy_folder&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;src_path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;src_path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `src_path` when calling `copy_folder`&quot;</span><span class="p">)</span>
+        <span class="c1"># verify the required parameter &#39;dest_path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;dest_path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `dest_path` when calling `copy_folder`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;src_path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;srcPath&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;dest_path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;destPath&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_path&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;src_storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;srcStorageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_storage_name&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;dest_storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;destStorageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_storage_name&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/folder/copy/</span><span class="si">{srcPath}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;PUT&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StorageApi.create_folder"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.create_folder">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;createFolder&#39;</span><span class="p">,</span> <span class="s1">&#39;CreateFolder&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">create_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create the folder</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: Folder path to create e.g. &#39;folder_1/folder_2/&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__create_folder_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__create_folder_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__create_folder_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create the folder</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: Folder path to create e.g. &#39;folder_1/folder_2/&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;storage_name&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method create_folder&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `path` when calling `create_folder`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;storageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/folder/</span><span class="si">{path}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;PUT&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StorageApi.delete_folder"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.delete_folder">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;deleteFolder&#39;</span><span class="p">,</span> <span class="s1">&#39;DeleteFolder&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">delete_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Delete folder</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: Folder path e.g. &#39;/folder&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :param bool recursive: Enable to delete folders, subfolders and files</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__delete_folder_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__delete_folder_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__delete_folder_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Delete folder</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param async_req bool</span>
+<span class="sd">        :param str path: Folder path e.g. &#39;/folder&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :param bool recursive: Enable to delete folders, subfolders and files</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;storage_name&#39;</span><span class="p">,</span> <span class="s1">&#39;recursive&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method delete_folder&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `path` when calling `delete_folder`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;storageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;recursive&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;recursive&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;recursive&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/folder/</span><span class="si">{path}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StorageApi.get_files_list"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.get_files_list">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;getFileList&#39;</span><span class="p">,</span> <span class="s1">&#39;GetFileList&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_files_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get all files and folders within a folder</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: Folder path e.g. &#39;/folder&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :return: FilesList. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_files_list_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_files_list_with_http_info</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__get_files_list_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get all files and folders within a folder</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str path: Folder path e.g. &#39;/folder&#39; (required)</span>
+<span class="sd">        :param str storage_name: Storage name</span>
+<span class="sd">        :return: FilesList. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;storage_name&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method get_files_list&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `path` when calling `get_files_list`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;storageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;storage_name&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/folder/</span><span class="si">{path}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="s1">&#39;FilesList&#39;</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StorageApi.move_folder"><a class="viewcode-back" href="../../../asposehtmlcloud.api.html#asposehtmlcloud.api.storage_api.StorageApi.move_folder">[docs]</a>    <span class="nd">@alias</span><span class="p">(</span><span class="s1">&#39;moveFolder&#39;</span><span class="p">,</span> <span class="s1">&#39;MoveFolder&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">move_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Move folder</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str src_path: Folder path to move e.g. &#39;/folder&#39; (required)</span>
+<span class="sd">        :param str dest_path: Destination folder path to move to e.g &#39;/dst&#39; (required)</span>
+<span class="sd">        :param str src_storage_name: Source storage name</span>
+<span class="sd">        :param str dest_storage_name: Destination storage name</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__move_folder_with_http_info</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__move_folder_with_http_info</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">__move_folder_with_http_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src_path</span><span class="p">,</span> <span class="n">dest_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Move folder</span>
+
+<span class="sd">        This method makes a synchronous HTTP request by default. To make an</span>
+<span class="sd">        asynchronous HTTP request, please pass async_req=True</span>
+
+<span class="sd">        :param bool async_req: Asynchronous request</span>
+<span class="sd">        :param str src_path: Folder path to move e.g. &#39;/folder&#39; (required)</span>
+<span class="sd">        :param str dest_path: Destination folder path to move to e.g &#39;/dst&#39; (required)</span>
+<span class="sd">        :param str src_storage_name: Source storage name</span>
+<span class="sd">        :param str dest_storage_name: Destination storage name</span>
+<span class="sd">        :return: None. If the method is called asynchronously, returns the request thread.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">all_params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">,</span> <span class="s1">&#39;dest_path&#39;</span><span class="p">,</span> <span class="s1">&#39;src_storage_name&#39;</span><span class="p">,</span> <span class="s1">&#39;dest_storage_name&#39;</span><span class="p">]</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">)</span>
+        <span class="n">all_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;Got an unexpected keyword argument &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+                    <span class="s2">&quot; to method move_folder&quot;</span> <span class="o">%</span> <span class="n">key</span>
+                <span class="p">)</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="k">del</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span>
+        <span class="c1"># verify the required parameter &#39;src_path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;src_path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `src_path` when calling `move_folder`&quot;</span><span class="p">)</span>
+        <span class="c1"># verify the required parameter &#39;dest_path&#39; is set</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;dest_path&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">params</span> <span class="ow">or</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_path&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Missing the required parameter `dest_path` when calling `move_folder`&quot;</span><span class="p">)</span>
+
+        <span class="n">collection_formats</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">path_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s1">&#39;src_path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;srcPath&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">]</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="s1">&#39;dest_path&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;destPath&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_path&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;src_storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;srcStorageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;src_storage_name&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="s1">&#39;dest_storage_name&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">query_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;destStorageName&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;dest_storage_name&#39;</span><span class="p">]))</span>
+
+        <span class="n">header_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">form_params</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">local_var_files</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">body_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># HTTP header `Accept`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_accept</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="c1"># HTTP header `Content-Type`</span>
+        <span class="n">header_params</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">select_header_content_type</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;application/json&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">call_api</span><span class="p">(</span>
+            <span class="s1">&#39;/html/storage/folder/move/</span><span class="si">{srcPath}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;PUT&#39;</span><span class="p">,</span>
+            <span class="n">path_params</span><span class="p">,</span>
+            <span class="n">query_params</span><span class="p">,</span>
+            <span class="n">header_params</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body_params</span><span class="p">,</span>
+            <span class="n">post_params</span><span class="o">=</span><span class="n">form_params</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">local_var_files</span><span class="p">,</span>
+            <span class="n">response_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">async_req</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;async_req&#39;</span><span class="p">),</span>
+            <span class="n">_return_http_data_only</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_return_http_data_only&#39;</span><span class="p">),</span>
+            <span class="n">_preload_content</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_preload_content&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">_request_timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_request_timeout&#39;</span><span class="p">),</span>
+            <span class="n">collection_formats</span><span class="o">=</span><span class="n">collection_formats</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">asposehtmlcloud beta documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Aspose.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
