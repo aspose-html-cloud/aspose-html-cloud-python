@@ -539,7 +539,7 @@ class TestHtmlApi(unittest.TestCase):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        name = "postHtmlToImageInReq.png"
+        name = "postHtmlToImageInReq.zip"
         test_out_path = "HtmlTestDoc/" + name
         test_file = TestHelper.test_src + "test1.html"
 
@@ -860,7 +860,7 @@ class TestHtmlApi(unittest.TestCase):
         """
         # Already in storage
         name = "test1.html"
-        result_name = "putHtmlToImg.tiff"
+        result_name = "putHtmlToImg.zip"
         test_folder = "HtmlTestDoc"
         test_out_path = test_folder + "/" + result_name
 
