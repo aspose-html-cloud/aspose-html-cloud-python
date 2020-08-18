@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 NAME = "asposehtmlcloud"
-VERSION = "19.6.1"
+VERSION = "20.8.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -13,42 +13,52 @@ VERSION = "19.6.1"
 
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10",  "certifi", "pyopenssl", "urllib3[secure]", "python-dateutil", "requests[security]"]
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+	
 setup(
     name=NAME,
     version=VERSION,
-    description='Aspose.HTML for Cloud API Reference',
+    description='Aspose.HTML for Cloud Python SDK',
     author='Aspose',
     author_email='alexander.makogon@aspose.com',
-    url="https://products.aspose.cloud/html",
+    url="https://github.com/aspose-html-cloud/aspose-html-cloud-python",
     license='MIT',
     classifiers=[  # Optional
         # How mature is this project? Common values are
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 4 - Beta',
-
-        # Indicate who your project is intended for
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Libraries :: Python Modules',
-
-        # Pick your license as you wish
         'License :: OSI Approved :: MIT License',
-
-        # Specify the Python versions you support here. In particular, ensure
-        # that you indicate whether you support Python 2, Python 3 or both.
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
     ],
-    keywords=["Aspose.HTML for Cloud API Reference", "Aspose", "Html cloud"],
+    keywords=[
+	    "html2pdf",
+		"epub2pdf",
+		"md2html",
+		"html2md",
+		"html2img",
+		"svg2img",
+		"svg2pdf",
+		"svg2xps",
+		"html2xps",
+		"epub2xps",
+		"downloader",
+		"seo",
+		"validation",
+		"convert"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
-    long_description="""
-    Aspose.HTML for Cloud API Reference
-	This repository contains Aspose.HTML Cloud SDK for Python source code. This SDK allows you to work with Aspose.HTML Cloud REST APIs in your Python applications quickly and easily.
-    """
+    long_description=long_description,
+	long_description_content_type="text/markdown"
 )

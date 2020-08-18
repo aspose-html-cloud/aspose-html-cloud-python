@@ -1,28 +1,28 @@
 # coding: utf-8
 """Copyright
 --------------------------------------------------------------------------------------------------------------------
- <copyright company="Aspose" file="html_api.py">
-   Copyright (c) 2019 Aspose.HTML for Cloud
- </copyright>
- <summary>
+<copyright company="Aspose" file="html_api.py">
+Copyright (c) 2020 Aspose.HTML for Cloud
+</copyright>
 
-  Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
+<summary>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
- The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 </summary>
 --------------------------------------------------------------------------------------------------------------------
 """
@@ -2966,6 +2966,178 @@ class HtmlApi(object):
 
         return self.api_client.call_api(
             '/html/images/all', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    ##########################################################
+    #                       SEO API
+    ##########################################################
+
+    @alias('getSeoWarning', 'GetSeoWarning')
+    def get_seo_warning(self, addr, **kwargs):
+        """Page analysis and return of SEO warnings in json format.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str addr: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_seo_warning_with_http_info(addr, **kwargs)
+        else:
+            (data) = self.__get_seo_warning_with_http_info(addr, **kwargs)
+            return data
+
+    def __get_seo_warning_with_http_info(self, addr, **kwargs):
+        """Page analysis and return of SEO warnings in json format.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str addr: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['addr']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_seo_warning" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'addr' is set
+        if ('addr' not in params or
+                params['addr'] is None):
+            raise ValueError("Missing the required parameter `addr` when calling `get_seo_warning`")
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = []
+        if 'addr' in params:
+            query_params.append(('addr', params['addr']))
+
+        header_params = {}
+        form_params = []
+        local_var_files = {}
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        return self.api_client.call_api(
+            '/html/seo', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    @alias('getHtmlWarning', 'GetHtmlWarning')
+    def get_html_warning(self, url, **kwargs):
+        """Checks the markup validity of Web documents in HTML, XHTML, etc., and return result in json format.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str url: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.__get_html_warning_with_http_info(url, **kwargs)
+        else:
+            (data) = self.__get_html_warning_with_http_info(url, **kwargs)
+            return data
+
+    def __get_html_warning_with_http_info(self, url, **kwargs):
+        """Checks the markup validity of Web documents in HTML, XHTML, etc., and return result in json format.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        :param bool async_req: Asynchronous request
+        :param str url: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+
+        all_params = ['url']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_html_warning" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'url' is set
+        if ('url' not in params or
+                params['url'] is None):
+            raise ValueError("Missing the required parameter `url` when calling `get_html_warning`")
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = []
+        if 'url' in params:
+            query_params.append(('url', params['url']))
+
+        header_params = {}
+        form_params = []
+        local_var_files = {}
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        return self.api_client.call_api(
+            '/html/validator', 'GET',
             path_params,
             query_params,
             header_params,

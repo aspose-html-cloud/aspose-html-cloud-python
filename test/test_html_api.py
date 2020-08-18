@@ -3,7 +3,7 @@
 """
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="test_html_api.py">
-   Copyright (c) 2019 Aspose.HTML for Cloud
+   Copyright (c) 2020 Aspose.HTML for Cloud
  </copyright>
  <summary>
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,8 +29,6 @@
 
 from __future__ import absolute_import
 import unittest
-from asposehtmlcloud.api.html_api import HtmlApi
-from asposehtmlcloud.configuration import Configuration
 from asposehtmlcloud.rest import ApiException
 from test.test_helper import TestHelper
 
@@ -1651,7 +1649,55 @@ class TestHtmlApi(unittest.TestCase):
             raise ex
 
     ###############################################################
-    #               TemplateMerge test
+    #                           SEO test
+    ###############################################################
+
+    def test_get_seo_warning(self):
+        """Test case for get_seo_warnings
+
+        Page analysis and return of SEO warnings in json format.
+
+        :param bool async_req: Asynchronous request
+        :param str addr: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        addr = "https://edition.cnn.com/"
+        try:
+            # Get seo warning by url
+            res = self.api.get_seo_warning(addr=addr)
+            self.assertTrue(isinstance(res, str), "Error get seo warnings from url")
+
+            # Save to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst)
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    def test_get_html_warning(self):
+        """Test case for get_html_warnings
+
+        Checks the markup validity of Web documents in HTML, XHTML, etc., and return result in json format.
+
+        :param bool async_req: Asynchronous request
+        :param str url: Source page URL. (required)
+        :return: File. If the method is called asynchronously, returns the request thread.
+        """
+        url = "https://edition.cnn.com/"
+        try:
+            # Get html warning by url
+            res = self.api.get_html_warning(url=url)
+            self.assertTrue(isinstance(res, str), "Error get html warnings from url")
+
+            # Save to test folder
+            TestHelper.move_file(str(res), TestHelper.test_dst + "HtmlWarning.json")
+        except ApiException as ex:
+            print("Exception")
+            print("Info: " + str(ex))
+            raise ex
+
+    ###############################################################
+    #                      TemplateMerge test
     ###############################################################
 
     def test_get_merge_html_template(self):

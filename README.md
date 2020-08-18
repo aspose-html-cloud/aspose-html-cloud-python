@@ -19,7 +19,7 @@ From the command line:
 	python setup.py install
 ```
 
-#### From maven
+#### pip
 ```code
 pip install asposehtmlcloud
 ```
@@ -71,13 +71,19 @@ Method | HTTP request | Description
 **get_document_images** | **GET** html/{name}/images/all | Return all HTML document images packaged as a ZIP archive.
 **get_document_images_by_url** | **GET** html/images/all | Return all HTML page images packaged as a ZIP archive by the source page URL.
 
+## SeoApi
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+**get_seo_warning** | **GET** /html/seo | Page analysis and return SEO warnings in json format.
+**get_html_warning** | **GET** /html/validator | Checks the markup validity of Web documents in HTML, XHTML, etc.and return in json format.
+
 ## TemplateMergeApi    
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 **get_merge_html_template** | **GET** /html/{templateName}/merge | Populate HTML document template with data located as a file in the storage.
 **post_merge_html_template** | **POST** /html/{templateName}/merge | Populate HTML document template with data from the request body. Result document will be saved to storage.
-
 
 # Documentation for Storage API Endpoints
 
@@ -102,12 +108,18 @@ Method | HTTP request | Description
 **storage_exists** | **GET** /html/storage/{storageName}/exist | Check if storage exists
 
 The examples below show how your application have to initiate and convert url to image using Aspose.HTML Cloud library:
+
 ```python
 import os
 from asposehtmlcloud.configuration import Configuration
 from asposehtmlcloud.api.html_api import HtmlApi
 from asposehtmlcloud.rest import ApiException
 from shutil import copy2
+
+# Get keys from aspose site.
+# There is free quota available. 
+# For more details, see https://purchase.aspose.cloud/pricing
+
 configuration = Configuration(apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
                               appSid="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
                               basePath="https://api.aspose.cloud/v3.0",
@@ -137,13 +149,12 @@ except ApiException as ex:
 # ...
 ```
 
-[Tests](./test/) contain various examples of using the Aspose.HTML SDK.
+[Tests](https://github.com/aspose-html-cloud/aspose-html-cloud-python/tree/master/test) contain various examples of using the Aspose.HTML SDK.
 
-[Docs](./docs/_build/html/) Full documentation for Aspose.HTML SDK in html format.
+[Docs](https://github.com/aspose-html-cloud/aspose-html-cloud-python/tree/master/docs/_build/html) Full documentation for Aspose.HTML SDK in html format.
 
 ## Dependencies
-- [See requirements.txt](./requirements.txt)
-
+- [See requirements.txt](https://github.com/aspose-html-cloud/aspose-html-cloud-python/blob/master/requirements.txt)
 
 ## Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.aspose.cloud/html).

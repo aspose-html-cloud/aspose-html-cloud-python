@@ -3,7 +3,7 @@
 """
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="test_storage_api.py">
-   Copyright (c) 2019 Aspose.HTML for Cloud
+   Copyright (c) 2020 Aspose.HTML for Cloud
  </copyright>
  <summary>
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,6 +29,7 @@
 
 from __future__ import absolute_import
 import os
+import six
 import unittest
 import datetime
 from test.test_helper import TestHelper
@@ -55,8 +56,8 @@ class TestStorageApi(unittest.TestCase):
         self.assertTrue('total_size' in res)
         self.assertTrue('used_size' in res)
 
-        self.assertTrue(isinstance(res['total_size'], long))
-        self.assertTrue(isinstance(res['used_size'], long))
+        self.assertTrue(isinstance(res['total_size'], int if six.PY3 else long))
+        self.assertTrue(isinstance(res['used_size'], int if six.PY3 else long))
         print(res)
 
     def test_object_exists(self):
@@ -181,7 +182,7 @@ class TestStorageApi(unittest.TestCase):
 
         Download a specific file
         """
-        file_name = "test_en.html"
+        file_name = "test_upload_file.jpg"
         size = TestHelper.get_file_size(file_name)
 
         # put file to storage
@@ -190,7 +191,7 @@ class TestStorageApi(unittest.TestCase):
         self.assertTrue(len(res.errors) == 0)
 
         download_file = TestHelper.get_folder() + "/" + file_name
-        save_file = TestHelper.get_local_dest_folder() + "test_downloaded_file.html"
+        save_file = TestHelper.get_local_dest_folder() + "test_upload_file.jpg"
 
         src = self.api.download_file(download_file)
 

@@ -3,7 +3,7 @@
 """
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="test_helper.py">
-   Copyright (c) 2019 Aspose.HTML for Cloud
+   Copyright (c) 2020 Aspose.HTML for Cloud
  </copyright>
  <summary>
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,11 +39,10 @@ from asposehtmlcloud.api.storage_api import StorageApi
 class TestHelper(object):
 
     configuration = Configuration(
-        apiKey="html.cloud",
-        appSid="html.cloud",
-        basePath="http://localhost:5000/v3.0",
-#        basePath="http://api-qa.aspose.cloud/v3.0",
-        authPath="https://api-qa.aspose.cloud/connect/token",
+        apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        appSid="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+        basePath="https://api.aspose.cloud/v3.0",
+        authPath="https://api.aspose.cloud/connect/token",
         debug=True)
 
     client = Client(configuration)

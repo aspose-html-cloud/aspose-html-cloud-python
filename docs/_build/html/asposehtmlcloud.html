@@ -1,20 +1,19 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>asposehtmlcloud package &#8212; asposehtmlcloud beta documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>asposehtmlcloud package &#8212; asposehtmlcloud rc documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,7 +35,8 @@
         <li class="right" >
           <a href="index.html" title="Welcome to Aspose.HTML.Cloud.SDK.Python’s documentation!"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">asposehtmlcloud beta documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">asposehtmlcloud rc documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">asposehtmlcloud package</a></li> 
       </ul>
     </div>  
 
@@ -82,9 +82,9 @@
 </div>
 <div class="section" id="module-asposehtmlcloud.alias">
 <span id="asposehtmlcloud-alias-module"></span><h2>asposehtmlcloud.alias module<a class="headerlink" href="#module-asposehtmlcloud.alias" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="asposehtmlcloud.alias.alias">
-<em class="property">class </em><code class="descclassname">asposehtmlcloud.alias.</code><code class="descname">alias</code><span class="sig-paren">(</span><em>*aliases</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/alias.html#alias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.alias.alias" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">asposehtmlcloud.alias.</code><code class="sig-name descname">alias</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">aliases</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/alias.html#alias"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.alias.alias" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Alias class that can be used as a decorator for making methods callable
 through other names (or “aliases”).
@@ -92,14 +92,15 @@ Note: This decorator must be used inside an &#64;aliased -decorated class.
 For example, if you want to make the method shout() be also callable as
 yell() and scream(), you can use alias like this:</p>
 <blockquote>
-<div>&#64;alias(‘yell’, ‘scream’)
+<div><p>&#64;alias(‘yell’, ‘scream’)
 def shout(message):
-# ….</div></blockquote>
+# ….</p>
+</div></blockquote>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="asposehtmlcloud.alias.aliased">
-<code class="descclassname">asposehtmlcloud.alias.</code><code class="descname">aliased</code><span class="sig-paren">(</span><em>aliased_class</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/alias.html#aliased"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.alias.aliased" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">asposehtmlcloud.alias.</code><code class="sig-name descname">aliased</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">aliased_class</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/alias.html#aliased"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.alias.aliased" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator function that <em>must</em> be used in combination with &#64;alias
 decorator. This class will make the magic happen!
 &#64;aliased classes will have their aliased method (via &#64;alias) actually
@@ -108,15 +109,15 @@ This method simply iterates over the member attributes of ‘aliased_class’
 seeking for those which have an ‘_aliases’ attribute and then defines new
 members in the class using those aliases as mere pointer functions to the
 original ones.</p>
-<dl class="docutils">
-<dt>Usage:</dt>
-<dd><p class="first">&#64;aliased
+<dl>
+<dt>Usage:</dt><dd><p>&#64;aliased
 class MyClass(object):</p>
 <blockquote>
-<div>&#64;alias(‘coolMethod’, ‘myKinkyMethod’)
+<div><p>&#64;alias(‘coolMethod’, ‘myKinkyMethod’)
 def boring_method():
-# …</div></blockquote>
-<p class="last">i = MyClass()
+# …</p>
+</div></blockquote>
+<p>i = MyClass()
 i.coolMethod() # equivalent to i.myKinkyMethod() and i.boring_method()</p>
 </dd>
 </dl>
@@ -125,199 +126,173 @@ i.coolMethod() # equivalent to i.myKinkyMethod() and i.boring_method()</p>
 </div>
 <div class="section" id="module-asposehtmlcloud.api_client">
 <span id="asposehtmlcloud-api-client-module"></span><h2>asposehtmlcloud.api_client module<a class="headerlink" href="#module-asposehtmlcloud.api_client" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="asposehtmlcloud.api_client.ApiClient">
-<em class="property">class </em><code class="descclassname">asposehtmlcloud.api_client.</code><code class="descname">ApiClient</code><span class="sig-paren">(</span><em>configuration=None</em>, <em>header_name=None</em>, <em>header_value=None</em>, <em>cookie=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">asposehtmlcloud.api_client.</code><code class="sig-name descname">ApiClient</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Generic API client for client library builds.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>configuration</strong> – .Configuration object for this client</li>
-<li><strong>header_name</strong> – a header to pass when making calls to the API.</li>
-<li><strong>header_value</strong> – a header value to pass when making calls to the API.</li>
-<li><strong>cookie</strong> – a cookie to include in the header when making calls to the API</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>configuration</strong> – .Configuration object for this client</p></li>
+<li><p><strong>header_name</strong> – a header to pass when making calls to the API.</p></li>
+<li><p><strong>header_value</strong> – a header value to pass when making calls to the API.</p></li>
+<li><p><strong>cookie</strong> – a cookie to include in the header when making calls to the API</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="attribute">
+</dd>
+</dl>
+<dl class="py attribute">
 <dt id="asposehtmlcloud.api_client.ApiClient.NATIVE_TYPES_MAPPING">
-<code class="descname">NATIVE_TYPES_MAPPING</code><em class="property"> = {'bool': &lt;type 'bool'&gt;, 'date': &lt;type 'datetime.date'&gt;, 'datetime': &lt;type 'datetime.datetime'&gt;, 'float': &lt;type 'float'&gt;, 'int': &lt;type 'int'&gt;, 'long': &lt;type 'long'&gt;, 'object': &lt;type 'object'&gt;, 'str': &lt;type 'str'&gt;}</em><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.NATIVE_TYPES_MAPPING" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">NATIVE_TYPES_MAPPING</code><em class="property"> = {'bool': &lt;class 'bool'&gt;, 'date': &lt;class 'datetime.date'&gt;, 'datetime': &lt;class 'datetime.datetime'&gt;, 'float': &lt;class 'float'&gt;, 'int': &lt;class 'int'&gt;, 'long': &lt;class 'int'&gt;, 'object': &lt;class 'object'&gt;, 'str': &lt;class 'str'&gt;}</em><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.NATIVE_TYPES_MAPPING" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="asposehtmlcloud.api_client.ApiClient.PRIMITIVE_TYPES">
-<code class="descname">PRIMITIVE_TYPES</code><em class="property"> = (&lt;type 'float'&gt;, &lt;type 'bool'&gt;, &lt;type 'str'&gt;, &lt;type 'unicode'&gt;, &lt;type 'int'&gt;, &lt;type 'long'&gt;)</em><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.PRIMITIVE_TYPES" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">PRIMITIVE_TYPES</code><em class="property"> = (&lt;class 'float'&gt;, &lt;class 'bool'&gt;, &lt;class 'bytes'&gt;, &lt;class 'str'&gt;, &lt;class 'int'&gt;)</em><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.PRIMITIVE_TYPES" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.api_client.ApiClient.call_api">
-<code class="descname">call_api</code><span class="sig-paren">(</span><em>resource_path</em>, <em>method</em>, <em>path_params=None</em>, <em>query_params=None</em>, <em>header_params=None</em>, <em>body=None</em>, <em>post_params=None</em>, <em>files=None</em>, <em>response_type=None</em>, <em>async_req=None</em>, <em>_return_http_data_only=None</em>, <em>collection_formats=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.call_api"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.call_api" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">call_api</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resource_path</span></em>, <em class="sig-param"><span class="n">method</span></em>, <em class="sig-param"><span class="n">path_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">query_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">header_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">body</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">post_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">response_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">async_req</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_return_http_data_only</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">collection_formats</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_preload_content</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">_request_timeout</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.call_api"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.call_api" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes the HTTP request (synchronous) and returns deserialized data.</p>
 <p>To make an async_req request, set the async_req parameter.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>resource_path</strong> – Path to method endpoint.</li>
-<li><strong>method</strong> – Method to call.</li>
-<li><strong>path_params</strong> – Path parameters in the url.</li>
-<li><strong>query_params</strong> – Query parameters in the url.</li>
-<li><strong>header_params</strong> – Header parameters to be placed in the request header.</li>
-<li><strong>body</strong> – Request body.</li>
-<li><strong>post_params</strong> (<em>dict</em>) – Request post form parameters, for <cite>application/x-www-form-urlencoded</cite>, <cite>multipart/form-data</cite>.</li>
-<li><strong>response</strong> – Response data type.</li>
-<li><strong>files</strong> (<em>dict</em>) – key -&gt; filename, value -&gt; filepath, for <cite>multipart/form-data</cite>.</li>
-<li><strong>async_req</strong> (<em>bool</em>) – execute request asynchronously</li>
-<li><strong>_return_http_data_only</strong> – response data without head status code and headers</li>
-<li><strong>collection_formats</strong> – dict of collection formats for path, query, header, and post parameters.</li>
-<li><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will be returned without reading/decoding response data. Default is True.</li>
-<li><strong>_request_timeout</strong> – timeout setting for this request. If one number provided, it will be total request timeout. It can also be a pair (tuple) of (connection, read) timeouts.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource_path</strong> – Path to method endpoint.</p></li>
+<li><p><strong>method</strong> – Method to call.</p></li>
+<li><p><strong>path_params</strong> – Path parameters in the url.</p></li>
+<li><p><strong>query_params</strong> – Query parameters in the url.</p></li>
+<li><p><strong>header_params</strong> – Header parameters to be placed in the request header.</p></li>
+<li><p><strong>body</strong> – Request body.</p></li>
+<li><p><strong>post_params</strong> (<em>dict</em>) – Request post form parameters, for <cite>application/x-www-form-urlencoded</cite>, <cite>multipart/form-data</cite>.</p></li>
+<li><p><strong>response</strong> – Response data type.</p></li>
+<li><p><strong>files</strong> (<em>dict</em>) – key -&gt; filename, value -&gt; filepath, for <cite>multipart/form-data</cite>.</p></li>
+<li><p><strong>async_req</strong> (<em>bool</em>) – execute request asynchronously</p></li>
+<li><p><strong>_return_http_data_only</strong> – response data without head status code and headers</p></li>
+<li><p><strong>collection_formats</strong> – dict of collection formats for path, query, header, and post parameters.</p></li>
+<li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will be returned without reading/decoding response data. Default is True.</p></li>
+<li><p><strong>_request_timeout</strong> – timeout setting for this request. If one number provided, it will be total request timeout. It can also be a pair (tuple) of (connection, read) timeouts.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">If async_req parameter is True, the request will be called asynchronously. The method will return the request thread. If parameter async_req is False or missing, then the method will return the response directly.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>If async_req parameter is True, the request will be called asynchronously. The method will return the request thread. If parameter async_req is False or missing, then the method will return the response directly.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.api_client.ApiClient.deserialize">
-<code class="descname">deserialize</code><span class="sig-paren">(</span><em>response</em>, <em>response_type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.deserialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.deserialize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">deserialize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span></em>, <em class="sig-param"><span class="n">response_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.deserialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.deserialize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deserializes response into an object.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>response</strong> – RESTResponse object to be deserialized.</li>
-<li><strong>response_type</strong> – class literal for deserialized object, or string of class name.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>response</strong> – RESTResponse object to be deserialized.</p></li>
+<li><p><strong>response_type</strong> – class literal for deserialized object, or string of class name.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">deserialized object.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>deserialized object.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.api_client.ApiClient.parameters_to_tuples">
-<code class="descname">parameters_to_tuples</code><span class="sig-paren">(</span><em>params</em>, <em>collection_formats</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.parameters_to_tuples"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.parameters_to_tuples" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">parameters_to_tuples</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">collection_formats</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.parameters_to_tuples"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.parameters_to_tuples" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters as list of tuples, formatting collections.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>params</strong> – Parameters as dict or list of two-tuples</li>
-<li><strong>collection_formats</strong> (<em>dict</em>) – Parameter collection formats</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> – Parameters as dict or list of two-tuples</p></li>
+<li><p><strong>collection_formats</strong> (<em>dict</em>) – Parameter collection formats</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Parameters as list of tuples, collections formatted</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Parameters as list of tuples, collections formatted</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.api_client.ApiClient.prepare_post_parameters">
-<code class="descname">prepare_post_parameters</code><span class="sig-paren">(</span><em>post_params=None</em>, <em>files=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.prepare_post_parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.prepare_post_parameters" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">prepare_post_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">post_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">files</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.prepare_post_parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.prepare_post_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Builds form parameters.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>post_params</strong> – Normal form parameters.</li>
-<li><strong>files</strong> – File parameters.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>post_params</strong> – Normal form parameters.</p></li>
+<li><p><strong>files</strong> – File parameters.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Form parameters with files.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Form parameters with files.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.api_client.ApiClient.request">
-<code class="descname">request</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>query_params=None</em>, <em>headers=None</em>, <em>post_params=None</em>, <em>body=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.request" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">request</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em>, <em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">query_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">post_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">body</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_preload_content</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">_request_timeout</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes the HTTP request using RESTClient.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.api_client.ApiClient.sanitize_for_serialization">
-<code class="descname">sanitize_for_serialization</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.sanitize_for_serialization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.sanitize_for_serialization" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sanitize_for_serialization</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.sanitize_for_serialization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.sanitize_for_serialization" title="Permalink to this definition">¶</a></dt>
 <dd><p>Builds a JSON POST object.</p>
 <p>If obj is None, return None.
 If obj is str, int, long, float, bool, return directly.
 If obj is datetime.datetime, datetime.date convert to string in iso8601 format.
 If obj is list, sanitize each element in the list.
 If obj is dict, return the dict.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> – The data to serialize.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The serialized form of data.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> – The data to serialize.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The serialized form of data.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.api_client.ApiClient.select_header_accept">
-<code class="descname">select_header_accept</code><span class="sig-paren">(</span><em>accepts</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.select_header_accept"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.select_header_accept" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">select_header_accept</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">accepts</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.select_header_accept"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.select_header_accept" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns <cite>Accept</cite> based on an array of accepts provided.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>accepts</strong> – List of headers.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Accept (e.g. application/json).</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>accepts</strong> – List of headers.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Accept (e.g. application/json).</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.api_client.ApiClient.select_header_content_type">
-<code class="descname">select_header_content_type</code><span class="sig-paren">(</span><em>content_types</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.select_header_content_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.select_header_content_type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">select_header_content_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">content_types</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.select_header_content_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.select_header_content_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns <cite>Content-Type</cite> based on an array of content_types provided.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>content_types</strong> – List of content-types.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Content-Type (e.g. application/json).</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>content_types</strong> – List of content-types.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Content-Type (e.g. application/json).</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.api_client.ApiClient.set_default_header">
-<code class="descname">set_default_header</code><span class="sig-paren">(</span><em>header_name</em>, <em>header_value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.set_default_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.set_default_header" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_default_header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">header_name</span></em>, <em class="sig-param"><span class="n">header_value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/api_client.html#ApiClient.set_default_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.set_default_header" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="asposehtmlcloud.api_client.ApiClient.user_agent">
-<code class="descname">user_agent</code><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.user_agent" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">user_agent</code><a class="headerlink" href="#asposehtmlcloud.api_client.ApiClient.user_agent" title="Permalink to this definition">¶</a></dt>
 <dd><p>User agent for this API client</p>
 </dd></dl>
 
@@ -326,119 +301,105 @@ If obj is dict, return the dict.</p>
 </div>
 <div class="section" id="module-asposehtmlcloud.configuration">
 <span id="asposehtmlcloud-configuration-module"></span><h2>asposehtmlcloud.configuration module<a class="headerlink" href="#module-asposehtmlcloud.configuration" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="asposehtmlcloud.configuration.Configuration">
-<em class="property">class </em><code class="descclassname">asposehtmlcloud.configuration.</code><code class="descname">Configuration</code><span class="sig-paren">(</span><em>apiKey=None</em>, <em>appSid=None</em>, <em>basePath='https://api.aspose.cloud/v1.1'</em>, <em>authPath='https://api.aspose.cloud/oauth2/token'</em>, <em>debug=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#Configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">asposehtmlcloud.configuration.</code><code class="sig-name descname">Configuration</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#Configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="attribute">
+<dl class="py method">
 <dt id="asposehtmlcloud.configuration.Configuration.debug">
-<code class="descname">debug</code><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.debug" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">debug</code><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.debug" title="Permalink to this definition">¶</a></dt>
 <dd><p>Debug status</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> – The debug status, True or False.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – The debug status, True or False.</p>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.configuration.Configuration.get_api_key_with_prefix">
-<code class="descname">get_api_key_with_prefix</code><span class="sig-paren">(</span><em>identifier</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#Configuration.get_api_key_with_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.get_api_key_with_prefix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_api_key_with_prefix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">identifier</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#Configuration.get_api_key_with_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.get_api_key_with_prefix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets API key (with prefix if set).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>identifier</strong> – The identifier of apiKey.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The token for api key authentication.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – The identifier of apiKey.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The token for api key authentication.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.configuration.Configuration.get_basic_auth_token">
-<code class="descname">get_basic_auth_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#Configuration.get_basic_auth_token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.get_basic_auth_token" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_basic_auth_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#Configuration.get_basic_auth_token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.get_basic_auth_token" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets HTTP basic authentication header (string).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The token for basic HTTP authentication.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The token for basic HTTP authentication.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.configuration.Configuration.get_token">
-<code class="descname">get_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#Configuration.get_token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.get_token" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#Configuration.get_token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.get_token" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="asposehtmlcloud.configuration.Configuration.logger_file">
-<code class="descname">logger_file</code><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.logger_file" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">logger_file</code><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.logger_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>The logger file.</p>
 <p>If the logger_file is None, then add stream handler and remove file
 handler. Otherwise, add file handler and remove stream handler.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> – The logger_file path.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – The logger_file path.</p>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="asposehtmlcloud.configuration.Configuration.logger_format">
-<code class="descname">logger_format</code><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.logger_format" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">logger_format</code><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.logger_format" title="Permalink to this definition">¶</a></dt>
 <dd><p>The logger format.</p>
 <p>The logger_formatter will be updated when sets logger_format.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> – The format string.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – The format string.</p>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.configuration.Configuration.to_debug_report">
-<code class="descname">to_debug_report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#Configuration.to_debug_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.to_debug_report" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_debug_report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#Configuration.to_debug_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.Configuration.to_debug_report" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the essential information for debugging.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The report for debugging.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The report for debugging.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="asposehtmlcloud.configuration.TypeWithDefault">
-<em class="property">class </em><code class="descclassname">asposehtmlcloud.configuration.</code><code class="descname">TypeWithDefault</code><span class="sig-paren">(</span><em>name</em>, <em>bases</em>, <em>dct</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#TypeWithDefault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.TypeWithDefault" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">asposehtmlcloud.configuration.</code><code class="sig-name descname">TypeWithDefault</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">bases</span></em>, <em class="sig-param"><span class="n">dct</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#TypeWithDefault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.TypeWithDefault" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.configuration.TypeWithDefault.set_default">
-<code class="descname">set_default</code><span class="sig-paren">(</span><em>default</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#TypeWithDefault.set_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.TypeWithDefault.set_default" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_default</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/configuration.html#TypeWithDefault.set_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.configuration.TypeWithDefault.set_default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -446,97 +407,93 @@ handler. Otherwise, add file handler and remove stream handler.</p>
 </div>
 <div class="section" id="module-asposehtmlcloud.rest">
 <span id="asposehtmlcloud-rest-module"></span><h2>asposehtmlcloud.rest module<a class="headerlink" href="#module-asposehtmlcloud.rest" title="Permalink to this headline">¶</a></h2>
-<dl class="exception">
+<dl class="py exception">
 <dt id="asposehtmlcloud.rest.ApiException">
-<em class="property">exception </em><code class="descclassname">asposehtmlcloud.rest.</code><code class="descname">ApiException</code><span class="sig-paren">(</span><em>status=None</em>, <em>reason=None</em>, <em>http_resp=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#ApiException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.ApiException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.Exception</span></code></p>
+<em class="property">exception </em><code class="sig-prename descclassname">asposehtmlcloud.rest.</code><code class="sig-name descname">ApiException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">status</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reason</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">http_resp</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#ApiException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.ApiException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="asposehtmlcloud.rest.RESTClientObject">
-<em class="property">class </em><code class="descclassname">asposehtmlcloud.rest.</code><code class="descname">RESTClientObject</code><span class="sig-paren">(</span><em>configuration</em>, <em>pools_size=4</em>, <em>maxsize=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">asposehtmlcloud.rest.</code><code class="sig-name descname">RESTClientObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">configuration</span></em>, <em class="sig-param"><span class="n">pools_size</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">maxsize</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.rest.RESTClientObject.DELETE">
-<code class="descname">DELETE</code><span class="sig-paren">(</span><em>url</em>, <em>headers=None</em>, <em>query_params=None</em>, <em>body=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.DELETE"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.DELETE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">DELETE</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">query_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">body</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_preload_content</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">_request_timeout</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.DELETE"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.DELETE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.rest.RESTClientObject.GET">
-<code class="descname">GET</code><span class="sig-paren">(</span><em>url</em>, <em>headers=None</em>, <em>query_params=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.GET"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.GET" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">GET</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">query_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_preload_content</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">_request_timeout</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.GET"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.GET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.rest.RESTClientObject.HEAD">
-<code class="descname">HEAD</code><span class="sig-paren">(</span><em>url</em>, <em>headers=None</em>, <em>query_params=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.HEAD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.HEAD" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">HEAD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">query_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_preload_content</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">_request_timeout</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.HEAD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.HEAD" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.rest.RESTClientObject.OPTIONS">
-<code class="descname">OPTIONS</code><span class="sig-paren">(</span><em>url</em>, <em>headers=None</em>, <em>query_params=None</em>, <em>post_params=None</em>, <em>body=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.OPTIONS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.OPTIONS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">OPTIONS</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">query_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">post_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">body</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_preload_content</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">_request_timeout</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.OPTIONS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.OPTIONS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.rest.RESTClientObject.PATCH">
-<code class="descname">PATCH</code><span class="sig-paren">(</span><em>url</em>, <em>headers=None</em>, <em>query_params=None</em>, <em>post_params=None</em>, <em>body=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.PATCH"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.PATCH" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">PATCH</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">query_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">post_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">body</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_preload_content</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">_request_timeout</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.PATCH"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.PATCH" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.rest.RESTClientObject.POST">
-<code class="descname">POST</code><span class="sig-paren">(</span><em>url</em>, <em>headers=None</em>, <em>query_params=None</em>, <em>post_params=None</em>, <em>body=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.POST"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.POST" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">POST</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">query_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">post_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">body</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_preload_content</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">_request_timeout</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.POST"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.POST" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.rest.RESTClientObject.PUT">
-<code class="descname">PUT</code><span class="sig-paren">(</span><em>url</em>, <em>headers=None</em>, <em>query_params=None</em>, <em>post_params=None</em>, <em>body=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.PUT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.PUT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">PUT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">query_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">post_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">body</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_preload_content</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">_request_timeout</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.PUT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.PUT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.rest.RESTClientObject.request">
-<code class="descname">request</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>query_params=None</em>, <em>headers=None</em>, <em>body=None</em>, <em>post_params=None</em>, <em>_preload_content=True</em>, <em>_request_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.request" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">request</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em>, <em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">query_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">headers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">body</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">post_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_preload_content</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">_request_timeout</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTClientObject.request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTClientObject.request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform requests.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>method</strong> – http request method</li>
-<li><strong>url</strong> – http request url</li>
-<li><strong>query_params</strong> – query parameters in the url</li>
-<li><strong>headers</strong> – http request headers</li>
-<li><strong>body</strong> – request json body, for <cite>application/json</cite></li>
-<li><strong>post_params</strong> – request post parameters,
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> – http request method</p></li>
+<li><p><strong>url</strong> – http request url</p></li>
+<li><p><strong>query_params</strong> – query parameters in the url</p></li>
+<li><p><strong>headers</strong> – http request headers</p></li>
+<li><p><strong>body</strong> – request json body, for <cite>application/json</cite></p></li>
+<li><p><strong>post_params</strong> – request post parameters,
 <cite>application/x-www-form-urlencoded</cite>
-and <cite>multipart/form-data</cite></li>
-<li><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
+and <cite>multipart/form-data</cite></p></li>
+<li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
 be returned without reading/decoding response
-data. Default is True.</li>
-<li><strong>_request_timeout</strong> – timeout setting for this request. If one
+data. Default is True.</p></li>
+<li><p><strong>_request_timeout</strong> – timeout setting for this request. If one
 number provided, it will be total request
 timeout. It can also be a pair (tuple) of
-(connection, read) timeouts.</li>
+(connection, read) timeouts.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="asposehtmlcloud.rest.RESTResponse">
-<em class="property">class </em><code class="descclassname">asposehtmlcloud.rest.</code><code class="descname">RESTResponse</code><span class="sig-paren">(</span><em>resp</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">asposehtmlcloud.rest.</code><code class="sig-name descname">RESTResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resp</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">io.IOBase</span></code></p>
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.rest.RESTResponse.getheader">
-<code class="descname">getheader</code><span class="sig-paren">(</span><em>name</em>, <em>default=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTResponse.getheader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTResponse.getheader" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getheader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTResponse.getheader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTResponse.getheader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a given response header.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="asposehtmlcloud.rest.RESTResponse.getheaders">
-<code class="descname">getheaders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTResponse.getheaders"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTResponse.getheaders" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getheaders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/asposehtmlcloud/rest.html#RESTResponse.getheaders"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#asposehtmlcloud.rest.RESTResponse.getheaders" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a dictionary of the response headers.</p>
 </dd></dl>
 
@@ -549,6 +506,7 @@ timeout. It can also be a pair (tuple) of
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -582,17 +540,15 @@ timeout. It can also be a pair (tuple) of
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -612,12 +568,13 @@ timeout. It can also be a pair (tuple) of
         <li class="right" >
           <a href="index.html" title="Welcome to Aspose.HTML.Cloud.SDK.Python’s documentation!"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">asposehtmlcloud beta documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">asposehtmlcloud rc documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">asposehtmlcloud package</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Aspose.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+        &#169; Copyright 2020, Aspose.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>
