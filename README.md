@@ -24,6 +24,50 @@ From the command line:
 pip install asposehtmlcloud
 ```
 
+## Example
+
+The examples below show how your application have to initiate and convert url to image using Aspose.HTML Cloud library:
+
+```python
+import os
+from asposehtmlcloud.configuration import Configuration
+from asposehtmlcloud.api.html_api import HtmlApi
+from asposehtmlcloud.rest import ApiException
+from shutil import copy2
+
+# Get keys from aspose site.
+# There is free quota available. 
+# For more details, see https://purchase.aspose.cloud/pricing
+
+configuration = Configuration(apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                              appSid="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+                              basePath="https://api.aspose.cloud/v3.0",
+                              authPath="https://api.aspose.cloud/connect/token",
+                              debug=True)
+api = HtmlApi(configuration)
+
+source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
+try:
+
+    # Convert url to image
+    res = api.get_convert_document_to_image_by_url(
+        source_url, out_format="jpeg", width=800, height=1000, left_margin=50, right_margin=100,
+        top_margin=150, bottom_margin=200, resolution=300, folder="MY_REMOTE_FOLDER", storage=""
+    )
+
+    src = str(res)
+    # Move to test folder
+    if os.path.isfile(src):
+        copy2(src, '/home/user/testfolder/')
+        os.remove(src)
+except ApiException as ex:
+    print("Exception")
+    print("Info: " + str(ex))
+    raise ex
+
+# ...
+```
+
 # Documentation for Html API Endpoints
 
 All URIs are relative to *https://api.aspose.cloud/v3.0*
@@ -91,7 +135,6 @@ Method | HTTP request | Description
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-
 **copy_file** | **PUT** /html/storage/file/copy/{srcPath} | Copy file
 **delete_file** | **DELETE** /html/storage/file/{path} | Delete file
 **download_file** | **GET** /html/storage/file/{path} | Download file
@@ -107,47 +150,6 @@ Method | HTTP request | Description
 **object_exists** | **GET** /html/storage/exist/{path} | Check if file or folder exists
 **storage_exists** | **GET** /html/storage/{storageName}/exist | Check if storage exists
 
-The examples below show how your application have to initiate and convert url to image using Aspose.HTML Cloud library:
-
-```python
-import os
-from asposehtmlcloud.configuration import Configuration
-from asposehtmlcloud.api.html_api import HtmlApi
-from asposehtmlcloud.rest import ApiException
-from shutil import copy2
-
-# Get keys from aspose site.
-# There is free quota available. 
-# For more details, see https://purchase.aspose.cloud/pricing
-
-configuration = Configuration(apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-                              appSid="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-                              basePath="https://api.aspose.cloud/v3.0",
-                              authPath="https://api.aspose.cloud/connect/token",
-                              debug=True)
-api = HtmlApi(configuration)
-
-source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
-try:
-
-    # Convert url to image
-    res = api.get_convert_document_to_image_by_url(
-        source_url, out_format="jpeg", width=800, height=1000, left_margin=50, right_margin=100,
-        top_margin=150, bottom_margin=200, resolution=300, folder="MY_REMOTE_FOLDER", storage=""
-    )
-
-    src = str(res)
-    # Move to test folder
-    if os.path.isfile(src):
-        copy2(src, '/home/user/testfolder/')
-        os.remove(src)
-except ApiException as ex:
-    print("Exception")
-    print("Info: " + str(ex))
-    raise ex
-
-# ...
-```
 
 [Tests](https://github.com/aspose-html-cloud/aspose-html-cloud-python/tree/master/test) contain various examples of using the Aspose.HTML SDK.
 
