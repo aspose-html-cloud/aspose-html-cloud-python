@@ -1,7 +1,37 @@
-# Aspose.HTML Cloud SDK for Python
-This repository contains Aspose.HTML Cloud SDK for Python source code. This SDK allows you to work with Aspose.HTML Cloud REST APIs in your Python applications quickly and easily.
+![](https://img.shields.io/badge/api-v3.0-lightgrey) ![PyPI](https://img.shields.io/pypi/v/asposehtmlcloud) ![PyPI - Format](https://img.shields.io/pypi/format/asposehtmlcloud) ![PyPI - Downloads](https://img.shields.io/pypi/dm/asposehtmlcloud) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/asposehtmlcloud) [![GitHub license](https://img.shields.io/github/license/aspose-html-cloud/aspose-html-cloud-python)](https://github.com/aspose-html-cloud/aspose-html-cloud-python/blob/master/LICENSE) ![GitHub last commit](https://img.shields.io/github/last-commit/Aspose-html-Cloud/aspose-html-cloud-python)
 
-See [API Reference](https://apireference.aspose.cloud/html/) for full API specification.
+# HTML Rendering & Conversion Python Cloud REST API
+Aspose.HTML Cloud for Python is a programming SDK that allows software developers to manipulate and convert HTML documents from within their own applications. A Wrapper of RESTful APIs, Aspose.HTML Cloud for Python speeds up HTML programming and conversion.
+This cloud SDK assists to develop cloud-based [HTML page rendering, processing, translation & conversion](https://products.aspose.cloud/html/python) apps in Python languages via REST API.
+
+## HTML Processing Features
+- Fetch the HTML page along with its resources as a ZIP archive by providing the page URL.
+- Based on page URL, retrieve all images of an HTML page as a ZIP package.
+- Load data from a local file to populate the HTML document template.
+- Use the request body to populate the HTML document template.
+- Convert HTML page to numerous other file formats.
+
+## Read & Write HTML Formats
+HTML, XHTML, zipped HTML, zipped XHTML, MHTML, HTML containing SVG markup, Markdown, JSON
+
+## Save HTML As
+*Fixed Layout*: PDF, XPS
+*Images*: TIFF, JPEG, PNG, BMP, GIF
+*Other*: TXT, ZIP (images)
+
+## Read HTML Formats
+*eBook*: EPUB
+*Other*: XML, SVG
+
+## Enhancements Version 20.11
+
+- New generation of Aspose.HTML Cloud SDK for .NET (C#) is provided.
+- This version of SDK has been redesigned from scratch being based on the new Aspose.HTML Cloud REST API (v3.0).
+- Currently, it provides only the conversion feature. Other features that are still available in the versions up to v.20.08 are planned to be implemented in this SDK later.
+- Conversion interface provides a more flexible conversion parameters setup.
+- Redesigned storage access is provided using SDK entry point HtmlApi.Storage.
+- Availability of synchronous and asynchronous file upload and download methods.
+- Asynchronous download provides the ability to get progress data for the longer downloads.
 ## How to use the SDK?
 The complete source code is available in this repository folder, you can either directly use it in your project via pip package manager.
 
@@ -12,7 +42,7 @@ To use Aspose HTML for Cloud Python SDK you need to register an account with [As
 ### Installation
 
 
-#### Install Aspose.HTML Cloud 
+#### Install Aspose.HTML Cloud
 
 From the command line:
 ```code
@@ -36,7 +66,7 @@ from asposehtmlcloud.rest import ApiException
 from shutil import copy2
 
 # Get keys from aspose site.
-# There is free quota available. 
+# There is free quota available.
 # For more details, see https://purchase.aspose.cloud/pricing
 
 configuration = Configuration(apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
@@ -72,7 +102,7 @@ except ApiException as ex:
 
 All URIs are relative to *https://api.aspose.cloud/v3.0*
 
-## ConversionApi 
+## ConversionApi
 
 - For conversion to images allowed formats is jpeg, png, bmp, tiff, gif. Input formats are html, epub, svg.
 
@@ -158,5 +188,11 @@ Method | HTTP request | Description
 ## Dependencies
 - [See requirements.txt](https://github.com/aspose-html-cloud/aspose-html-cloud-python/blob/master/requirements.txt)
 
-## Contact Us
-Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.aspose.cloud/html).
+## Aspose.HTML Cloud SDKs in Popular Languages
+
+| .NET | Java | PHP | Python | Ruby | Node.js | Android | Swift|C++|Go|
+|---|---|---|---|---|---|---|--|--|--|
+| [GitHub](https://github.com/aspose-html-cloud/aspose-html-cloud-dotnet) | [GitHub](https://github.com/aspose-html-cloud/aspose-html-cloud-java) | [GitHub](https://github.com/aspose-html-cloud/aspose-html-cloud-php) | [GitHub](https://github.com/aspose-html-cloud/aspose-html-cloud-python) | [GitHub](https://github.com/aspose-html-cloud/aspose-html-cloud-ruby)  | [GitHub](https://github.com/aspose-html-cloud/aspose-html-cloud-nodejs) | [GitHub](https://github.com/aspose-html-cloud/aspose-html-cloud-android) | [GitHub](https://github.com/aspose-html-cloud/aspose-html-cloud-swift)|[GitHub](https://github.com/aspose-html-cloud/aspose-html-cloud-cpp) |[GitHub](https://github.com/aspose-html-cloud/aspose-html-cloud-go) |
+| [NuGet](https://www.nuget.org/packages/Aspose.html-Cloud/) | [Maven](https://repository.aspose.cloud/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-html-cloud) | [Composer](https://packagist.org/packages/aspose/aspose-html-cloud-php) | [PIP](https://pypi.org/project/asposehtmlcloud/) | [GEM](https://rubygems.org/gems/aspose_html_cloud)  | [NPM](https://www.npmjs.com/package/@asposecloud/aspose-html-cloud) | [Maven](https://repository.aspose.cloud/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-html-cloud) | [Cocoapods](https://cocoapods.org/pods/AsposeHtmlCloud)|[NuGet](https://www.nuget.org/packages/Aspose.Html-Cloud.Cpp/) | [Go.Dev](#) |
+
+[Product Page](https://products.aspose.cloud/html/python) | [Documentation](https://docs.aspose.cloud/display/htmlcloud/Home) | [API Reference](https://apireference.aspose.cloud/html/) | [Code Samples](https://github.com/aspose-html-cloud/aspose-html-cloud-python) | [Blog](https://blog.aspose.cloud/category/html/) | [Free Support](https://forum.aspose.cloud/c/html) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
