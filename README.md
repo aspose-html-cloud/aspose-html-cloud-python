@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/api-v3.0-lightgrey) ![PyPI](https://img.shields.io/pypi/v/asposehtmlcloud) ![PyPI - Format](https://img.shields.io/pypi/format/asposehtmlcloud) ![PyPI - Downloads](https://img.shields.io/pypi/dm/asposehtmlcloud) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/asposehtmlcloud) [![GitHub license](https://img.shields.io/github/license/aspose-html-cloud/aspose-html-cloud-python)](https://github.com/aspose-html-cloud/aspose-html-cloud-python/blob/master/LICENSE) ![GitHub last commit](https://img.shields.io/github/last-commit/Aspose-html-Cloud/aspose-html-cloud-python)
+![](https://img.shields.io/badge/api-v3.0-lightgrey) ![PyPI](https://img.shields.io/pypi/v/asposehtmlcloud) ![PyPI - Format](https://img.shields.io/pypi/format/asposehtmlcloud) ![PyPI - Downloads](https://img.shields.io/pypi/dm/asposehtmlcloud) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/asposehtmlcloud) [![GitHub license](https://img.shields.io/github/license/aspose-html-cloud/aspose-html-cloud-python)](https://github.com/aspose-html-cloud/aspose-html-cloud-python/blob/master/LICENSE.txt) ![GitHub last commit](https://img.shields.io/github/last-commit/Aspose-html-Cloud/aspose-html-cloud-python)
 
 # HTML Rendering & Conversion Python Cloud REST API
 Aspose.HTML Cloud for Python is a programming SDK that allows software developers to manipulate and convert HTML documents from within their own applications. A Wrapper of RESTful APIs, Aspose.HTML Cloud for Python speeds up HTML programming and conversion.
@@ -54,48 +54,24 @@ From the command line:
 pip install asposehtmlcloud
 ```
 
-## Example
-
-The examples below show how your application have to initiate and convert url to image using Aspose.HTML Cloud library:
+## Convert HTML to Image from Url in Python
 
 ```python
-import os
-from asposehtmlcloud.configuration import Configuration
-from asposehtmlcloud.api.html_api import HtmlApi
-from asposehtmlcloud.rest import ApiException
-from shutil import copy2
+	# Get your ClientId and ClientSecret from https://dashboard.aspose.cloud (free registration required).
 
-# Get keys from aspose site.
-# There is free quota available.
-# For more details, see https://purchase.aspose.cloud/pricing
+	configuration = Configuration(
+		apiKey = "MY_CLIENT_SECRET", 
+		appSid = "MY_CLIENT_ID", 
+		basePath = "https://api.aspose.cloud/v3.0", 
+		authPath = "https://api.aspose.cloud/connect/token",
+		debug = True)
+		
+	api = HtmlApi(configuration)
 
-configuration = Configuration(apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-                              appSid="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-                              basePath="https://api.aspose.cloud/v3.0",
-                              authPath="https://api.aspose.cloud/connect/token",
-                              debug=True)
-api = HtmlApi(configuration)
-
-source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
-try:
-
-    # Convert url to image
-    res = api.get_convert_document_to_image_by_url(
-        source_url, out_format="jpeg", width=800, height=1000, left_margin=50, right_margin=100,
-        top_margin=150, bottom_margin=200, resolution=300, folder="MY_REMOTE_FOLDER", storage=""
-    )
-
-    src = str(res)
-    # Move to test folder
-    if os.path.isfile(src):
-        copy2(src, '/home/user/testfolder/')
-        os.remove(src)
-except ApiException as ex:
-    print("Exception")
-    print("Info: " + str(ex))
-    raise ex
-
-# ...
+	source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
+	res = api.get_convert_document_to_image_by_url(
+			source_url, out_format="jpeg", width=800, height=1000, left_margin=50, right_margin=100,
+			top_margin=150, bottom_margin=200, resolution=300, folder="MY_REMOTE_FOLDER", storage="My_Storage_Name")
 ```
 
 # Documentation for Html API Endpoints
