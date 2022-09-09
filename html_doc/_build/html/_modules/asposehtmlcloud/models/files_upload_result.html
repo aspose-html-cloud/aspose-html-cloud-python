@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>asposehtmlcloud.models.files_upload_result &#8212; asposehtmlcloud rc documentation</title>
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">asposehtmlcloud rc documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">asposehtmlcloud.models.files_upload_result</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for asposehtmlcloud.models.files_upload_result</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+
+<span class="kn">from</span> <span class="nn">asposehtmlcloud.models</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+
+<div class="viewcode-block" id="FilesUploadResult"><a class="viewcode-back" href="../../../asposehtmlcloud.models.html#asposehtmlcloud.models.files_upload_result.FilesUploadResult">[docs]</a><span class="k">class</span> <span class="nc">FilesUploadResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attributes:</span>
+<span class="sd">      model_types (dict):   The key is attribute name</span>
+<span class="sd">                            and the value is attribute type.</span>
+<span class="sd">      attribute_map (dict): The key is attribute name</span>
+<span class="sd">                            and the value is json key in definition.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">model_types</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;uploaded&#39;</span><span class="p">:</span> <span class="s1">&#39;list[str]&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;errors&#39;</span><span class="p">:</span> <span class="s1">&#39;list[Error]&#39;</span>
+    <span class="p">}</span>
+
+    <span class="n">attribute_map</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;uploaded&#39;</span><span class="p">:</span> <span class="s1">&#39;uploaded&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;errors&#39;</span><span class="p">:</span> <span class="s1">&#39;errors&#39;</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uploaded</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_uploaded</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_errors</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">uploaded</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">uploaded</span> <span class="o">=</span> <span class="n">uploaded</span>
+        <span class="k">if</span> <span class="n">errors</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">errors</span> <span class="o">=</span> <span class="n">errors</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">uploaded</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets the uploaded of this FilesUploadResult.</span>
+
+<span class="sd">        List of uploaded file names</span>
+
+<span class="sd">        :return: The uploaded of this FilesUploadResult.</span>
+<span class="sd">        :rtype: list[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_uploaded</span>
+
+    <span class="nd">@uploaded</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">uploaded</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uploaded</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets the uploaded of this FilesUploadResult.</span>
+
+<span class="sd">        List of uploaded file names</span>
+
+<span class="sd">        :param uploaded: The uploaded of this FilesUploadResult.</span>
+<span class="sd">        :type: list[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_uploaded</span> <span class="o">=</span> <span class="n">uploaded</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">errors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets the errors of this FilesUploadResult.</span>
+
+<span class="sd">        List of errors.</span>
+
+<span class="sd">        :return: The errors of this FilesUploadResult.</span>
+<span class="sd">        :rtype: list[Error]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_errors</span>
+
+    <span class="nd">@errors</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">errors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">errors</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets the errors of this FilesUploadResult.</span>
+
+<span class="sd">        List of errors.</span>
+
+<span class="sd">        :param errors: The errors of this FilesUploadResult.</span>
+<span class="sd">        :type: list[Error]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_errors</span> <span class="o">=</span> <span class="n">errors</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">asposehtmlcloud rc documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">asposehtmlcloud.models.files_upload_result</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Aspose.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>asposehtmlcloud.models.disc_usage &#8212; asposehtmlcloud rc documentation</title>
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">asposehtmlcloud rc documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">asposehtmlcloud.models.disc_usage</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for asposehtmlcloud.models.disc_usage</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">asposehtmlcloud.models</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+
+<div class="viewcode-block" id="DiscUsage"><a class="viewcode-back" href="../../../asposehtmlcloud.models.html#asposehtmlcloud.models.disc_usage.DiscUsage">[docs]</a><span class="k">class</span> <span class="nc">DiscUsage</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attributes:</span>
+<span class="sd">      model_types (dict):   The key is attribute name</span>
+<span class="sd">                            and the value is attribute type.</span>
+<span class="sd">      attribute_map (dict): The key is attribute name</span>
+<span class="sd">                            and the value is json key in definition.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">model_types</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;used_size&#39;</span><span class="p">:</span> <span class="s1">&#39;long&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;total_size&#39;</span><span class="p">:</span> <span class="s1">&#39;long&#39;</span>
+    <span class="p">}</span>
+
+    <span class="n">attribute_map</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;used_size&#39;</span><span class="p">:</span> <span class="s1">&#39;usedSize&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;total_size&#39;</span><span class="p">:</span> <span class="s1">&#39;totalSize&#39;</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">used_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">total_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_used_size</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_total_size</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">used_size</span> <span class="o">=</span> <span class="n">used_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_size</span> <span class="o">=</span> <span class="n">total_size</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">used_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets the used_size of this DiscUsage.</span>
+
+<span class="sd">        Application used disc space.</span>
+
+<span class="sd">        :return: The used_size of this DiscUsage.</span>
+<span class="sd">        :rtype: long</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_used_size</span>
+
+    <span class="nd">@used_size</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">used_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">used_size</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets the used_size of this DiscUsage.</span>
+
+<span class="sd">        Application used disc space.</span>
+
+<span class="sd">        :param used_size: The used_size of this DiscUsage.</span>
+<span class="sd">        :type: long</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">used_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid value for `used_size`, must not be `None`&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_used_size</span> <span class="o">=</span> <span class="n">used_size</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">total_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets the total_size of this DiscUsage.</span>
+
+<span class="sd">        Total disc space.</span>
+
+<span class="sd">        :return: The total_size of this DiscUsage.</span>
+<span class="sd">        :rtype: long</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_size</span>
+
+    <span class="nd">@total_size</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">total_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">total_size</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets the total_size of this DiscUsage.</span>
+
+<span class="sd">        Total disc space.</span>
+
+<span class="sd">        :param total_size: The total_size of this DiscUsage.</span>
+<span class="sd">        :type: long</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">total_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid value for `total_size`, must not be `None`&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_total_size</span> <span class="o">=</span> <span class="n">total_size</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">asposehtmlcloud rc documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">asposehtmlcloud.models.disc_usage</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Aspose.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

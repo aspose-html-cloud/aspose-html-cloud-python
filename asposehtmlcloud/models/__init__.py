@@ -3,7 +3,7 @@
 """
 --------------------------------------------------------------------------------------------------------------------
 <copyright company="Aspose" file="__init__.py">
-Copyright (c) 2020 Aspose.HTML for Cloud
+Copyright (c) 2022 Aspose.HTML for Cloud
 </copyright>
 
 <summary>
@@ -38,3 +38,4 @@ from asposehtmlcloud.models.files_upload_result import FilesUploadResult
 from asposehtmlcloud.models.object_exist import ObjectExist
 from asposehtmlcloud.models.storage_exist import StorageExist
 from asposehtmlcloud.models.storage_file import StorageFile
+from asposehtmlcloud.models.conversion_result import ConversionResult

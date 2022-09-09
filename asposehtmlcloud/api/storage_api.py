@@ -2,7 +2,7 @@
 """
 --------------------------------------------------------------------------------------------------------------------
 <copyright company="Aspose" file="storage_api.py">
-Copyright (c) 2020 Aspose.HTML for Cloud
+Copyright (c) 2022 Aspose.HTML for Cloud
 </copyright>
 
 <summary>
@@ -117,7 +117,7 @@ class StorageApi(object):
             ['application/json'])
 
         return self.api_client.call_api(
-            '/html/storage/disc', 'GET',
+            '/html/storage/disc/usage', 'GET',
             path_params,
             query_params,
             header_params,
@@ -125,96 +125,6 @@ class StorageApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='DiscUsage',
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    @alias('getFileVersions', 'GetFileVersions')
-    def get_file_versions(self, path, **kwargs):
-        """Get file versions
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        :param bool async_req: Asynchronous request
-        :param str path: File path e.g. '/file.ext' (required)
-        :param str storage_name: Storage name
-        :return: FileVersions. If the method is called asynchronously, returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__get_file_versions_with_http_info(path, **kwargs)
-        else:
-            (data) = self.__get_file_versions_with_http_info(path, **kwargs)
-            return data
-
-    def __get_file_versions_with_http_info(self, path, **kwargs):
-        """Get file versions
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        :param bool async_req: Asynchronous request
-        :param str path: File path e.g. '/file.ext' (required)
-        :param str storage_name: Storage name
-        :return: FileVersions. If the method is called asynchronously, returns the request thread.
-        """
-
-        all_params = ['path', 'storage_name']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_file_versions" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'path' is set
-        if ('path' not in params or
-                params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `get_file_versions`")
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'path' in params:
-            path_params['path'] = params['path']
-
-        query_params = []
-        if 'storage_name' in params:
-            query_params.append(('storageName', params['storage_name']))
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
-
-        return self.api_client.call_api(
-            '/html/storage/version/{path}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='FileVersions',
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
@@ -275,12 +185,11 @@ class StorageApi(object):
             raise ValueError("Missing the required parameter `path` when calling `object_exists`")
 
         collection_formats = {}
-
         path_params = {}
-        if 'path' in params:
-            path_params['path'] = params['path']
-
         query_params = []
+
+        if 'path' in params:
+            query_params.append(('path', params['path']))
         if 'storage_name' in params:
             query_params.append(('storageName', params['storage_name']))
         if 'version_id' in params:
@@ -301,7 +210,7 @@ class StorageApi(object):
             ['application/json'])
 
         return self.api_client.call_api(
-            '/html/storage/exist/{path}', 'GET',
+            '/html/storage/exist', 'GET',
             path_params,
             query_params,
             header_params,
@@ -367,10 +276,11 @@ class StorageApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'storage_name' in params:
-            path_params['storageName'] = params['storage_name']
 
         query_params = []
+
+        if 'storage_name' in params:
+            query_params.append(('storageName', params['storage_name']))
 
         header_params = {}
 
@@ -387,7 +297,7 @@ class StorageApi(object):
             ['application/json'])
 
         return self.api_client.call_api(
-            '/html/storage/{storageName}/exist', 'GET',
+            '/html/storage/exist/storage', 'GET',
             path_params,
             query_params,
             header_params,
@@ -404,111 +314,6 @@ class StorageApi(object):
     # **************************************************
     #                  File Api
     # **************************************************
-    @alias('copyFile', 'CopyFile')
-    def copy_file(self, src_path, dest_path, **kwargs):
-        """Copy file
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        :param bool async_req: Asynchronous request
-        :param str src_path: Source file path e.g. '/folder/file.ext' (required)
-        :param str dest_path: Destination file path (required)
-        :param str src_storage_name: Source storage name
-        :param str dest_storage_name: Destination storage name
-        :param str version_id: File version ID to copy
-        :return: None. If the method is called asynchronously, returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__copy_file_with_http_info(src_path, dest_path, **kwargs)
-        else:
-            (data) = self.__copy_file_with_http_info(src_path, dest_path, **kwargs)
-            return data
-
-    def __copy_file_with_http_info(self, src_path, dest_path, **kwargs):
-        """Copy file
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        :param bool async_req: Asynchronous request
-        :param str src_path: Source file path e.g. '/folder/file.ext' (required)
-        :param str dest_path: Destination file path (required)
-        :param str src_storage_name: Source storage name
-        :param str dest_storage_name: Destination storage name
-        :param str version_id: File version ID to copy
-        :return: None. If the method is called asynchronously, returns the request thread.
-        """
-
-        all_params = ['src_path', 'dest_path', 'src_storage_name', 'dest_storage_name', 'version_id']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method copy_file" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'src_path' is set
-        if ('src_path' not in params or
-                params['src_path'] is None):
-            raise ValueError("Missing the required parameter `src_path` when calling `copy_file`")
-        # verify the required parameter 'dest_path' is set
-        if ('dest_path' not in params or
-                params['dest_path'] is None):
-            raise ValueError("Missing the required parameter `dest_path` when calling `copy_file`")
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'src_path' in params:
-            path_params['srcPath'] = params['src_path']
-
-        query_params = []
-        if 'dest_path' in params:
-            query_params.append(('destPath', params['dest_path']))
-        if 'src_storage_name' in params:
-            query_params.append(('srcStorageName', params['src_storage_name']))
-        if 'dest_storage_name' in params:
-            query_params.append(('destStorageName', params['dest_storage_name']))
-        if 'version_id' in params:
-            query_params.append(('versionId', params['version_id']))
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
-
-        return self.api_client.call_api(
-            '/html/storage/file/copy/{srcPath}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
 
     @alias('deleteFile', 'DeleteFile')
     def delete_file(self, path, **kwargs):
@@ -566,10 +371,10 @@ class StorageApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'path' in params:
-            path_params['path'] = params['path']
 
         query_params = []
+        if 'path' in params:
+            query_params.append(('path', params['path']))
         if 'storage_name' in params:
             query_params.append(('storageName', params['storage_name']))
         if 'version_id' in params:
@@ -590,7 +395,7 @@ class StorageApi(object):
             ['application/json'])
 
         return self.api_client.call_api(
-            '/html/storage/file/{path}', 'DELETE',
+            '/html/file', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -658,12 +463,11 @@ class StorageApi(object):
             raise ValueError("Missing the required parameter `path` when calling `download_file`")
 
         collection_formats = {}
-
         path_params = {}
-        if 'path' in params:
-            path_params['path'] = params['path']
-
         query_params = []
+
+        if 'path' in params:
+            query_params.append(('path', params['path']))
         if 'storage_name' in params:
             query_params.append(('storageName', params['storage_name']))
         if 'version_id' in params:
@@ -684,7 +488,7 @@ class StorageApi(object):
             ['application/json'])
 
         return self.api_client.call_api(
-            '/html/storage/file/{path}', 'GET',
+            '/html/file', 'GET',
             path_params,
             query_params,
             header_params,
@@ -692,112 +496,6 @@ class StorageApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='file',
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    @alias('moveFile', 'MoveFile')
-    def move_file(self, src_path, dest_path, **kwargs):
-        """Move file
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        :param bool async_req: Asynchronous request
-        :param str src_path: Source file path e.g. '/src.ext' (required)
-        :param str dest_path: Destination file path e.g. '/dest.ext' (required)
-        :param str src_storage_name: Source storage name
-        :param str dest_storage_name: Destination storage name
-        :param str version_id: File version ID to move
-        :return: None. If the method is called asynchronously, returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__move_file_with_http_info(src_path, dest_path, **kwargs)
-        else:
-            (data) = self.__move_file_with_http_info(src_path, dest_path, **kwargs)
-            return data
-
-    def __move_file_with_http_info(self, src_path, dest_path, **kwargs):
-        """Move file
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        :param bool async_req: Asynchronous request
-        :param str src_path: Source file path e.g. '/src.ext' (required)
-        :param str dest_path: Destination file path e.g. '/dest.ext' (required)
-        :param str src_storage_name: Source storage name
-        :param str dest_storage_name: Destination storage name
-        :param str version_id: File version ID to move
-        :return: None. If the method is called asynchronously, returns the request thread.
-        """
-
-        all_params = ['src_path', 'dest_path', 'src_storage_name', 'dest_storage_name', 'version_id']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method move_file" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'src_path' is set
-        if ('src_path' not in params or
-                params['src_path'] is None):
-            raise ValueError("Missing the required parameter `src_path` when calling `move_file`")
-        # verify the required parameter 'dest_path' is set
-        if ('dest_path' not in params or
-                params['dest_path'] is None):
-            raise ValueError("Missing the required parameter `dest_path` when calling `move_file`")
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'src_path' in params:
-            path_params['srcPath'] = params['src_path']
-
-        query_params = []
-        if 'dest_path' in params:
-            query_params.append(('destPath', params['dest_path']))
-        if 'src_storage_name' in params:
-            query_params.append(('srcStorageName', params['src_storage_name']))
-        if 'dest_storage_name' in params:
-            query_params.append(('destStorageName', params['dest_storage_name']))
-        if 'version_id' in params:
-            query_params.append(('versionId', params['version_id']))
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
-
-        return self.api_client.call_api(
-            '/html/storage/file/move/{srcPath}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
@@ -812,7 +510,7 @@ class StorageApi(object):
         asynchronous HTTP request, please pass async_req=True
 
         :param bool async_req: Asynchronous request
-        :param str path: Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext If the content is multipart and path does not contains the file name it tries to get them from filename parameter from Content-Disposition header. (required)
+        :param str path: Path where to upload excluding filename and extension e.g. / or Folder1 (required)
         :param file file: File to upload (required)
         :param str storage_name: Storage name
         :return: FilesUploadResult. If the method is called asynchronously, returns the request thread.
@@ -864,10 +562,9 @@ class StorageApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'path' in params:
-            path_params['path'] = params['path']
-
         query_params = []
+        if 'path' in params:
+            query_params.append(('path', params['path']))
         if 'storage_name' in params:
             query_params.append(('storageName', params['storage_name']))
 
@@ -888,7 +585,7 @@ class StorageApi(object):
             ['multipart/form-data'])
 
         return self.api_client.call_api(
-            '/html/storage/file/{path}', 'PUT',
+            '/html/file/', 'POST',
             path_params,
             query_params,
             header_params,
@@ -905,108 +602,6 @@ class StorageApi(object):
     # **************************************************
     #                  Folder Api
     # **************************************************
-
-    @alias('copyFolder', 'CopyFolder')
-    def copy_folder(self, src_path, dest_path, **kwargs):  # noqa: E501
-        """Copy folder
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        :param bool async_req: Asynchronous request
-        :param str src_path: Source folder path e.g. '/src' (required)
-        :param str dest_path: Destination folder path e.g. '/dst' (required)
-        :param str src_storage_name: Source storage name
-        :param str dest_storage_name: Destination storage name
-        :return: None. If the method is called asynchronously, returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__copy_folder_with_http_info(src_path, dest_path, **kwargs)
-        else:
-            (data) = self.__copy_folder_with_http_info(src_path, dest_path, **kwargs)
-            return data
-
-    def __copy_folder_with_http_info(self, src_path, dest_path, **kwargs):
-        """Copy folder
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        :param bool async_req: Asynchronous request
-        :param str src_path: Source folder path e.g. '/src' (required)
-        :param str dest_path: Destination folder path e.g. '/dst' (required)
-        :param str src_storage_name: Source storage name
-        :param str dest_storage_name: Destination storage name
-        :return: None. If the method is called asynchronously, returns the request thread.
-        """
-
-        all_params = ['src_path', 'dest_path', 'src_storage_name', 'dest_storage_name']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method copy_folder" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'src_path' is set
-        if ('src_path' not in params or
-                params['src_path'] is None):
-            raise ValueError("Missing the required parameter `src_path` when calling `copy_folder`")
-        # verify the required parameter 'dest_path' is set
-        if ('dest_path' not in params or
-                params['dest_path'] is None):
-            raise ValueError("Missing the required parameter `dest_path` when calling `copy_folder`")
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'src_path' in params:
-            path_params['srcPath'] = params['src_path']
-
-        query_params = []
-        if 'dest_path' in params:
-            query_params.append(('destPath', params['dest_path']))
-        if 'src_storage_name' in params:
-            query_params.append(('srcStorageName', params['src_storage_name']))
-        if 'dest_storage_name' in params:
-            query_params.append(('destStorageName', params['dest_storage_name']))
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
-
-        return self.api_client.call_api(
-            '/html/storage/folder/copy/{srcPath}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
 
     @alias('createFolder', 'CreateFolder')
     def create_folder(self, path, **kwargs):
@@ -1062,10 +657,9 @@ class StorageApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'path' in params:
-            path_params['path'] = params['path']
-
         query_params = []
+        if 'path' in params:
+            query_params.append(('path', params['path']))
         if 'storage_name' in params:
             query_params.append(('storageName', params['storage_name']))
 
@@ -1084,7 +678,7 @@ class StorageApi(object):
             ['application/json'])
 
         return self.api_client.call_api(
-            '/html/storage/folder/{path}', 'PUT',
+            '/html/folder', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1154,10 +748,9 @@ class StorageApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'path' in params:
-            path_params['path'] = params['path']
-
         query_params = []
+        if 'path' in params:
+            query_params.append(('path', params['path']))
         if 'storage_name' in params:
             query_params.append(('storageName', params['storage_name']))
         if 'recursive' in params:
@@ -1178,7 +771,7 @@ class StorageApi(object):
             ['application/json'])
 
         return self.api_client.call_api(
-            '/html/storage/folder/{path}', 'DELETE',
+            '/html/folder', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1246,10 +839,10 @@ class StorageApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'path' in params:
-            path_params['path'] = params['path']
 
         query_params = []
+        if 'path' in params:
+            query_params.append(('path', params['path']))
         if 'storage_name' in params:
             query_params.append(('storageName', params['storage_name']))
 
@@ -1268,7 +861,7 @@ class StorageApi(object):
             ['application/json'])
 
         return self.api_client.call_api(
-            '/html/storage/folder/{path}', 'GET',
+            '/html/folder', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1276,108 +869,6 @@ class StorageApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='FilesList',
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    @alias('moveFolder', 'MoveFolder')
-    def move_folder(self, src_path, dest_path, **kwargs):
-        """Move folder
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        :param bool async_req: Asynchronous request
-        :param str src_path: Folder path to move e.g. '/folder' (required)
-        :param str dest_path: Destination folder path to move to e.g '/dst' (required)
-        :param str src_storage_name: Source storage name
-        :param str dest_storage_name: Destination storage name
-        :return: None. If the method is called asynchronously, returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.__move_folder_with_http_info(src_path, dest_path, **kwargs)
-        else:
-            (data) = self.__move_folder_with_http_info(src_path, dest_path, **kwargs)
-            return data
-
-    def __move_folder_with_http_info(self, src_path, dest_path, **kwargs):
-        """Move folder
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        :param bool async_req: Asynchronous request
-        :param str src_path: Folder path to move e.g. '/folder' (required)
-        :param str dest_path: Destination folder path to move to e.g '/dst' (required)
-        :param str src_storage_name: Source storage name
-        :param str dest_storage_name: Destination storage name
-        :return: None. If the method is called asynchronously, returns the request thread.
-        """
-
-        all_params = ['src_path', 'dest_path', 'src_storage_name', 'dest_storage_name']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method move_folder" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'src_path' is set
-        if ('src_path' not in params or
-                params['src_path'] is None):
-            raise ValueError("Missing the required parameter `src_path` when calling `move_folder`")
-        # verify the required parameter 'dest_path' is set
-        if ('dest_path' not in params or
-                params['dest_path'] is None):
-            raise ValueError("Missing the required parameter `dest_path` when calling `move_folder`")
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'src_path' in params:
-            path_params['srcPath'] = params['src_path']
-
-        query_params = []
-        if 'dest_path' in params:
-            query_params.append(('destPath', params['dest_path']))
-        if 'src_storage_name' in params:
-            query_params.append(('srcStorageName', params['src_storage_name']))
-        if 'dest_storage_name' in params:
-            query_params.append(('destStorageName', params['dest_storage_name']))
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
-
-        return self.api_client.call_api(
-            '/html/storage/folder/move/{srcPath}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),

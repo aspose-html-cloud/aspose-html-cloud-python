@@ -3,7 +3,7 @@
 """
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="test_helper.py">
-   Copyright (c) 2020 Aspose.HTML for Cloud
+   Copyright (c) 2022 Aspose.HTML for Cloud
  </copyright>
  <summary>
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,10 +39,10 @@ from asposehtmlcloud.api.storage_api import StorageApi
 class TestHelper(object):
 
     configuration = Configuration(
-        apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-        appSid="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-        basePath="https://api.aspose.cloud/v3.0",
+        basePath="https://api.aspose.cloud/v4.0",
         authPath="https://api.aspose.cloud/connect/token",
+        apiKey="c8dda7d6445d82635b8797d1c8edd153",
+        appSid="2225baa2-097b-4731-9831-d0d56c28230f",
         debug=True)
 
     client = Client(configuration)
@@ -67,7 +67,7 @@ class TestHelper(object):
 
     @classmethod
     def upload_file(cls, file_name):
-        res = cls.storage.upload_file(cls.folder + "/" + file_name, cls.test_src + file_name)
+        res = cls.storage.upload_file(cls.folder, cls.test_src + file_name)
         return res
 
     @classmethod

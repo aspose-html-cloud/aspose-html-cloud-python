@@ -3,7 +3,7 @@
 """
 --------------------------------------------------------------------------------------------------------------------
  <copyright company="Aspose" file="test_storage_api.py">
-   Copyright (c) 2020 Aspose.HTML for Cloud
+   Copyright (c) 2022 Aspose.HTML for Cloud
  </copyright>
  <summary>
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,6 +32,8 @@ import os
 import six
 import unittest
 import datetime
+
+from asposehtmlcloud.rest import ApiException
 from test.test_helper import TestHelper
 
 
@@ -104,36 +106,6 @@ class TestStorageApi(unittest.TestCase):
         self.assertFalse(res['exists'])
         print(res)
 
-    def test_get_file_versions(self):
-        """Test case for get_file_versions
-
-        Get the file's versions list
-        """
-        # Prepare
-        file_name = "test1.html"
-        src = TestHelper.get_local_folder() + file_name
-        dst = TestHelper.get_folder() + "/" + file_name
-
-        res = self.api.upload_file(dst, src)
-        self.assertTrue(len(res.uploaded) == 1)
-        self.assertTrue(len(res.errors) == 0)
-
-        res = self.api.upload_file(dst, src)
-        self.assertTrue(len(res.uploaded) == 1)
-        self.assertTrue(len(res.errors) == 0)
-
-        res = self.api.upload_file(dst, src)
-        self.assertTrue(len(res.uploaded) == 1)
-        self.assertTrue(len(res.errors) == 0)
-
-        res = self.api.get_file_versions(dst)
-        self.assertTrue(isinstance(res.value, list))
-
-        dictionary = res.to_dict()
-        self.assertTrue(isinstance(dictionary, dict))
-
-        print (res)
-
     # **************************************************
     #                  Test file Api
     # **************************************************
@@ -145,14 +117,14 @@ class TestStorageApi(unittest.TestCase):
         """
         file_name = "test_upload_file.jpg"
         src = TestHelper.get_local_folder() + file_name
-        dst = TestHelper.get_folder() + "/" + file_name
+        folder = TestHelper.get_folder()
 
-        result = self.api.upload_file(dst, src)
+        result = self.api.upload_file(folder, src)
         self.assertTrue(len(result.uploaded) == 1)
         self.assertTrue(len(result.errors) == 0)
 
         # check file exists
-        res = self.api.object_exists(dst)
+        res = self.api.object_exists(result.uploaded[0])
         res = res.to_dict()
 
         self.assertTrue(res['exists'])
@@ -168,14 +140,14 @@ class TestStorageApi(unittest.TestCase):
         # upload file to storage
         file_name = "test_for_delete.html"
         src = TestHelper.get_local_folder() + file_name
-        dst = TestHelper.get_folder() + "/" + file_name
+        folder = 'TestDelete'
 
-        res = self.api.upload_file(dst, src)
+        res = self.api.upload_file(folder, src)
         self.assertTrue(len(res.uploaded) == 1)
         self.assertTrue(len(res.errors) == 0)
 
         # delete file in the storage
-        self.api.delete_file(dst)
+        self.api.delete_file(folder + '/' + file_name)
 
     def test_download_file(self):
         """Test case for download_file
@@ -199,72 +171,12 @@ class TestStorageApi(unittest.TestCase):
 
         self.assertTrue(os.path.getsize(save_file) == size)
 
-    def test_copy_file(self):
-        """Test case for copy_file
+    def test_download_non_existin_file(self):
+        """Test case for download_file
 
-        Move a specific file
+        Download a specific file
         """
-        file_name = "test_for_copy.html"
-        src = TestHelper.get_local_folder() + file_name
-        remote_src = TestHelper.get_folder() + "/" + file_name
-
-        # Put to the storage
-        res = self.api.upload_file(remote_src, src)
-        self.assertTrue(len(res.uploaded) == 1)
-        self.assertTrue(len(res.errors) == 0)
-
-        remote_dst = TestHelper.get_folder() + "/" + "test_file_copy.html"
-
-        # Copy in the storage
-        self.api.copy_file(remote_src, remote_dst)
-
-        # Test dst file exist
-        res = self.api.object_exists(remote_dst)
-        self.assertTrue(res.exists)
-        self.assertFalse(res.is_folder)
-        print (res)
-
-        # clear src and dst files
-        self.api.delete_file(remote_src)
-        self.api.delete_file(remote_dst)
-
-    def test_move_file(self):
-        """Test case for move_file
-
-        Move a specific file
-        """
-        file_name = "test_for_move.html"
-        src = TestHelper.get_local_folder() + file_name
-        remote_src = TestHelper.get_folder() + "/" + file_name
-
-        # Put to the storage
-        res = self.api.upload_file(remote_src, src)
-        self.assertTrue(len(res.uploaded) == 1)
-        self.assertTrue(len(res.errors) == 0)
-
-        remote_dst = TestHelper.get_folder() + "/" + "test_file_moved.html"
-
-        # Move in the storage
-        self.api.move_file(remote_src, remote_dst)
-
-        # Test dst file exist
-        res = self.api.object_exists(remote_dst)
-        self.assertTrue(res.exists)
-        self.assertFalse(res.is_folder)
-        print (res)
-
-        # Test src file not exist
-        res = self.api.object_exists(remote_src)
-        self.assertFalse(res.exists)
-        self.assertFalse(res.is_folder)
-        print (res)
-
-        # clear dst files
-        self.api.delete_file(remote_dst)
-
-    # **************************************************
-    #                  Test folder Api
-    # **************************************************
+        self.assertRaises(ApiException, self.api.download_file, "non_existing_file.txt")
 
     def test_create_folder(self):
         """Test case for create_folder
@@ -329,90 +241,6 @@ class TestStorageApi(unittest.TestCase):
         self.assertTrue(isinstance(one_file.size, int))
         self.assertTrue(isinstance(one_file.path, str))
         print (res)
-
-    def test_copy_folder(self):
-        """Test case for copy_folder
-
-        Copy a specific folder
-        """
-        src_folder = "test_copy_folder"
-
-        # Prepare test, create folder
-        self.api.create_folder(src_folder)
-
-        # Checking if the folder has been created
-        res = self.api.object_exists(src_folder)
-        self.assertTrue(res.exists)
-        self.assertTrue(res.is_folder)
-
-        dst_folder = 'test_copied_folder'
-
-        # Copy folder
-        self.api.copy_folder(src_folder, dst_folder)
-
-        # Checking is copied folder exist
-        res = self.api.object_exists(dst_folder)
-        self.assertTrue(res.exists)
-        self.assertTrue(res.is_folder)
-
-        # Checking is old folder exists
-        res = self.api.object_exists(src_folder)
-        self.assertTrue(res.exists)
-        self.assertTrue(res.is_folder)
-
-        # Delete src folder (cleanup)
-        self.api.delete_folder(src_folder)
-
-        # Checking is src folder not exists
-        res = self.api.object_exists(src_folder)
-        self.assertFalse(res.exists)
-        self.assertFalse(res.is_folder)
-
-        # Delete dst folder (cleanup)
-        self.api.delete_folder(dst_folder)
-
-        # Checking is dst folder not exists
-        res = self.api.object_exists(dst_folder)
-        self.assertFalse(res.exists)
-        self.assertFalse(res.is_folder)
-
-    def test_move_folder(self):
-        """Test case for move_folder
-
-        Move a specific folder
-        """
-        old_folder = "test_move_folder"
-
-        # Prepare test, create folder
-        self.api.create_folder(old_folder)
-
-        # Checking if the folder has been created
-        res = self.api.object_exists(old_folder)
-        self.assertTrue(res.exists)
-        self.assertTrue(res.is_folder)
-
-        new_folder = 'test_moved_folder'
-
-        # Move folder
-        self.api.move_folder(old_folder, new_folder)
-
-        # Checking is moved folder exist
-        res = self.api.object_exists(new_folder)
-        self.assertTrue(res.exists)
-        self.assertTrue(res.is_folder)
-
-        # Checking is old folder not exists
-        res = self.api.object_exists(old_folder)
-        self.assertFalse(res.exists)
-        self.assertFalse(res.is_folder)
-
-        # Delete new folder (cleanup)
-        self.api.delete_folder(new_folder)
-
-        # Checking is new folder not exists
-        res = self.api.object_exists(new_folder)
-        self.assertFalse(res.exists)
-        self.assertFalse(res.is_folder)
 
 
 if __name__ == '__main__':

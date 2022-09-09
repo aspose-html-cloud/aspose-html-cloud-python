@@ -2,7 +2,7 @@
 """Copyright
 --------------------------------------------------------------------------------------------------------------------
 <copyright company="Aspose" file="api_client.py">
-Copyright (c) 2020 Aspose.HTML for Cloud
+Copyright (c) 2022 Aspose.HTML for Cloud
 </copyright>
 
 <summary>
@@ -85,7 +85,7 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
 
         #Set identity SDK
         self.default_headers['x-aspose-client'] = "aspose.html-cloud python sdk"
-        self.default_headers['x-aspose-client-version'] = "20.8.1"
+        self.default_headers['x-aspose-client-version'] = "22.9.1"
 
         self.cookie = cookie
         # Set default User-Agent.
@@ -288,7 +288,7 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
         :param header_params: Header parameters to be placed in the request header.
         :param body: Request body.
         :param dict post_params: Request post form parameters, for `application/x-www-form-urlencoded`, `multipart/form-data`.
-        :param response: Response data type.
+        :param response_type: Response data type.
         :param dict files: key -> filename, value -> filepath, for `multipart/form-data`.
         :param bool async_req: execute request asynchronously
         :param _return_http_data_only: response data without head status code and headers
@@ -377,6 +377,8 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
         new_params = []
         if collection_formats is None:
             collection_formats = {}
+        if params == [None]:
+            return []
         for k, v in six.iteritems(params) if isinstance(params, dict) else params:
             if k in collection_formats:
                 collection_format = collection_formats[k]
@@ -474,7 +476,12 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
         if content_disposition:
             filename = re.search(r'filename=[\'"]?([^\'"\s]+)[\'"]?',
                                  content_disposition).group(1)
+            folder, filename = os.path.split(filename)
+            if filename.endswith(';'):
+                filename = filename[:-1]
             path = os.path.join(os.path.dirname(path), filename)
+
+
 
         with open(path, "wb") as f:
             f.write(response.data)

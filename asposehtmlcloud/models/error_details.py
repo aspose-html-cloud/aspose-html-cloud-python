@@ -3,7 +3,7 @@
 """
 --------------------------------------------------------------------------------------------------------------------
 <copyright company="Aspose" file="error_details.py">
-Copyright (c) 2020 Aspose.HTML for Cloud
+Copyright (c) 2022 Aspose.HTML for Cloud
 </copyright>
 
 <summary>
