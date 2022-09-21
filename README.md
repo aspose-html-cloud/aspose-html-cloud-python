@@ -51,7 +51,7 @@ storage_api = StorageApi(client)
 source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
 try:
     res = html_api.convert_url_to_local(input_file=source_url, output_file="result.pdf")
-    if not os.path.exists(res.files[0]):
+    if not os.path.exists(res.file):
         print('conversion failed')
 except ApiException as ex:
     print("Exception")
