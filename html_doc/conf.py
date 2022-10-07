@@ -24,7 +24,7 @@ copyright = u'2020, Aspose'
 author = u'Aspose'
 
 # The short X.Y version
-version = u'22.9.1'
+version = u'22.10.1'
 # The full version, including alpha/beta/rc tags
 release = u'rc'
 
