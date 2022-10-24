@@ -5,6 +5,8 @@ General conversion function
 Possible conversions: 
 - HTML -> PDF, XPS, DOCX, MD, MHTML, JPEG, BMP, PNG, TIFF, GIF
 - EPUB -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
+- MD -> PDF, XPS, DOCX, HTML, MHTML, JPEG, BMP, PNG, TIFF, GIF
+- MHTML -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
 
 ### Parameters
 | Parameter         | Type                                      | Description                                 |

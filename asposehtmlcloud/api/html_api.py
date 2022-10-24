@@ -68,7 +68,7 @@ class HtmlApi(object):
         :param str input_file: Full path to the input file for conversion(html, epub formats). (required)
         :param str output_file: Resulting full path to the result file. (required)
         :param object options: Options for conversion. (optional)
-        :param int options.width: Resulting image width. (optional)
+        :param int options.width: Resulting width. For images in pixels(optional)
         :param int options.height: Resulting image height. (optional)
         :param int options.options.leftmargin: Left resulting image margin. (optional)
         :param int options.rightmargin: Right resulting image margin. (optional)

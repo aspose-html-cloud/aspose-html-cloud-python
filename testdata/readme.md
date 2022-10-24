@@ -26,13 +26,6 @@ pip install asposehtmlcloud
 
 The examples below show how your application have to initiate and convert url to image using Aspose.HTML Cloud library:
 
-Possible conversions: 
-- HTML -> PDF, XPS, DOCX, MD, MHTML, JPEG, BMP, PNG, TIFF, GIF
-- EPUB -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
-- MD -> PDF, XPS, DOCX, HTML, MHTML, JPEG, BMP, PNG, TIFF, GIF
-- MHTML -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
-
-
 ```python
 import os
 from asposehtmlcloud.configuration import Configuration
@@ -40,6 +33,7 @@ from asposehtmlcloud.api.html_api import HtmlApi
 from asposehtmlcloud.api.storage_api import StorageApi
 from asposehtmlcloud.api_client import ApiClient as Client
 from asposehtmlcloud.rest import ApiException
+from shutil import copy2
 
 # Get keys from aspose site.
 # There is free quota available. 
@@ -58,7 +52,7 @@ storage_api = StorageApi(client)
 source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
 try:
     res = html_api.convert_url_to_local(input_file=source_url, output_file="result.pdf")
-    if not os.path.exists(res.file):
+    if not os.path.exists(res.files[0]):
         print('conversion failed')
 except ApiException as ex:
     print("Exception")
@@ -102,12 +96,12 @@ All URIs are relative to *https://api.aspose.cloud/v4.0*
 | **[storage_exists](doc/StorageExists.md)**      | **GET** /html/storage/exist/storage | Check if storage exists                   |
 
 
-[Tests](test/) contain various examples of using the Aspose.HTML SDK.
+[Tests](https://github.com/aspose-html-cloud/aspose-html-cloud-python/tree/master/test) contain various examples of using the Aspose.HTML SDK.
 
-[Docs](html_doc/) Full documentation for Aspose.HTML SDK in html format.
+[Docs](https://github.com/aspose-html-cloud/aspose-html-cloud-python/tree/master/docs/_build/html) Full documentation for Aspose.HTML SDK in html format.
 
 ## Dependencies
-- [See requirements.txt](requirements.txt)
+- [See requirements.txt](https://github.com/aspose-html-cloud/aspose-html-cloud-python/blob/master/requirements.txt)
 
 ## Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.aspose.cloud/html).

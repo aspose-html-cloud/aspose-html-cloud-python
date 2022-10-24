@@ -85,7 +85,7 @@ class ApiClient(six.with_metaclass(TypeWithDefault, object)):
 
         #Set identity SDK
         self.default_headers['x-aspose-client'] = "aspose.html-cloud python sdk"
-        self.default_headers['x-aspose-client-version'] = "22.10.1"
+        self.default_headers['x-aspose-client-version'] = "22.10.2"
 
         self.cookie = cookie
         # Set default User-Agent.

@@ -9,5 +9,5 @@
 | **status**       | str         | Conversion status ("pending", "running", "completed", "faulted", "canceled") |
 | **description**  | str         | Description of error                                                         |
 | **links**        | list\[str\] | Reserved                                                                     |
-| **file**         | str         | Result file. Zip if multifile result                                         |
+| **file**         | str         | Result file. Zip if multi-file result                                        |
 
