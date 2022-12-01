@@ -31,13 +31,13 @@ Possible conversions:
 - EPUB -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
 - MD -> PDF, XPS, DOCX, HTML, MHTML, JPEG, BMP, PNG, TIFF, GIF
 - MHTML -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
-
+- SVG -> PDF, XPS, JPEG, BMP, PNG, TIFF, GIF
+- JPEG, BMP, PNG, TIFF, GIF -> SVG
 
 ```python
 import os
 from asposehtmlcloud.configuration import Configuration
 from asposehtmlcloud.api.html_api import HtmlApi
-from asposehtmlcloud.api.storage_api import StorageApi
 from asposehtmlcloud.api_client import ApiClient as Client
 from asposehtmlcloud.rest import ApiException
 
@@ -53,7 +53,6 @@ configuration = Configuration(apiKey="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
 
 client = Client(configuration)
 html_api = HtmlApi(client)
-storage_api = StorageApi(client)
 
 source_url = "https://stallman.org/articles/anonymous-payments-thru-phones.html"
 try:
@@ -73,17 +72,30 @@ All URIs are relative to *https://api.aspose.cloud/v4.0*
 
 ## ConversionApi 
 
-- For conversion to images allowed formats is jpeg, png, bmp, tiff, gif. Input formats are html, epub, svg.
+- See possible conversions.
 
-| Method                                                           | Description                                                              |
-|------------------------------------------------------------------|--------------------------------------------------------------------------|
-| **[convert_local_to_local](doc/ConvertLocalToLocal.md)**         | Convert the HTML or EPUB document from local disk to a local disk.       |
-| **[convert_local_to_storage](doc/ConvertLocalToStorage.md)**     | Convert the HTML or EPUB document from local disk to user's storage.     |
-| **[convert_storage_to_local](doc/ConvertStorageToLocal.md)**     | Convert the HTML or EPUB document from user's storage to local disk.     |
-| **[convert_storage_to_storage](doc/ConvertStorageToStorage.md)** | Convert the HTML or EPUB document from user's storage to user's storage. |
-| **[convert_url_to_local](doc/ConvertUrlToLocal.md)**             | Convert the HTML document by URL to local disk.                          |
-| **[convert_url_to_storage](doc/ConvertUrlToStorage.md)**         | Convert the HTML document by URL to user's storage.                      |
-| **[convert](doc/Convert.md)**                                    | Convert the HTML, EPUB or URL to the specified format.                   |
+| Method                                                               | Description                                             |
+|----------------------------------------------------------------------|---------------------------------------------------------|
+| **[vectorize_local_to_local](doc/VectorizeLocalToLocal.md)**         | Vectorize images from local disk to a local disk.       |
+| **[vectorize_local_to_storage](doc/VectorizeLocalToStorage.md)**     | Vectorize images from local disk to user's storage.     |
+| **[vectorize_storage_to_local](doc/VectorizeStorageToLocal.md)**     | Vectorize images from user's storage to local disk.     |
+| **[vectorize_storage_to_storage](doc/VectorizeStorageToStorage.md)** | Vectorize images from user's storage to user's storage. |
+| **[vectorize](doc/Vectorize.md)**                                    | Vectorize images to the svg format.                     |
+
+
+## VectorizeApi 
+
+- For vectorization images to svg format.
+
+| Method                                                           | Description                                               |
+|------------------------------------------------------------------|-----------------------------------------------------------|
+| **[convert_local_to_local](doc/ConvertLocalToLocal.md)**         | Convert a document from local disk to a local disk.       |
+| **[convert_local_to_storage](doc/ConvertLocalToStorage.md)**     | Convert a document from local disk to user's storage.     |
+| **[convert_storage_to_local](doc/ConvertStorageToLocal.md)**     | Convert a document from user's storage to local disk.     |
+| **[convert_storage_to_storage](doc/ConvertStorageToStorage.md)** | Convert a document from user's storage to user's storage. |
+| **[convert_url_to_local](doc/ConvertUrlToLocal.md)**             | Convert the HTML document by URL to local disk.           |
+| **[convert_url_to_storage](doc/ConvertUrlToStorage.md)**         | Convert the HTML document by URL to user's storage.       |
+| **[convert](doc/Convert.md)**                                    | Convert a document to the specified format.               |
 
 # Documentation for Storage API Endpoints
 

@@ -1,26 +1,21 @@
-## convert_local_to_storage
+## vectorize_storage_to_storage
 
-Convert the file that is placed in the local directory to a file in the storage.
+Vectorize the image file that is placed in the storage to a svg file in the storage.
 
-Possible conversions: 
-- HTML -> PDF, XPS, DOCX, MD, MHTML, JPEG, BMP, PNG, TIFF, GIF
-- EPUB -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
-- MD -> PDF, XPS, DOCX, HTML, MHTML, JPEG, BMP, PNG, TIFF, GIF
-- MHTML -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
-- SVG -> PDF, XPS, JPEG, BMP, PNG, TIFF, GIF
+Possible vectorization: 
 - JPEG, BMP, PNG, TIFF, GIF -> SVG
 
 ### Parameters
-| Parameter        | Type                                      | Description                             |
-|------------------|-------------------------------------------|-----------------------------------------|
-| **input_file**   | str                                       | Full path to input file for conversion  |
-| **output_file**  | str                                       | Full path to output file with extension |
-| **storage_name** | str                                       | User's storage name. None if default    |
-| **options**      | [ConversionOptions](ConversionOptions.md) | Conversion options (optional)           |
+| Parameter        | Type                                      | Description                                     |
+|------------------|-------------------------------------------|-------------------------------------------------|
+| **input_file**   | str                                       | Full path to input image file for vectorization |
+| **output_file**  | str                                       | Full path to output svg file with extension     |
+| **storage_name** | str                                       | User's storage name. None if default            |
+| **options**      | [VectorizeOptions](VectorizeOptions.md)   | Vectorize options (optional)                    |
 
 ### 
 
-### Convert html file to pdf
+### Vectorize png file in the storage to svg and save result to the storage
 ```python
 from asposehtmlcloud.configuration import Configuration
 from asposehtmlcloud.api.html_api import HtmlApi
@@ -36,7 +31,8 @@ client = Client(configuration)
 html_api = HtmlApi(client)
 
 try:
-    res = html_api.convert_local_to_storage(input_file="test.html", output_file="test.jpg", storage_name=None)
+    res = html_api.vectorize_storage_to_storage(input_file="test.png", output_file="test.svg",
+                                                         storage_name=None)
 except ApiException as ex:
     print("Exception")
     print("Info: " + str(ex))
@@ -44,7 +40,7 @@ except ApiException as ex:
 
 ```
 
-### Convert local html file to jpeg with options and save result to the storage.
+### Vectorize local png file to svg with options and save result to the storage.
 ```python
 from asposehtmlcloud.configuration import Configuration
 from asposehtmlcloud.api.html_api import HtmlApi
@@ -60,17 +56,15 @@ client = Client(configuration)
 html_api = HtmlApi(client)
 
 options = {
-    'width': 600,
-    'height': 900,
-    'topmargin': 20,
-    'bottommargin': 20,
-    'leftmargin': 20,
-    'rightmargin': 20
+	'error_threshold': 1,
+	'max_iterations': 50,
+	'colors_limit': 30,
+	'line_width': 1,
 }
 
 try:
-    res = html_api.convert_local_to_storage(input_file="test.html", output_file="test.jpeg",
-                                                       storage_name=None, options=options)
+    res = html_api.vectorize_storage_to_storage(input_file="test.png", output_file="test.svg",
+                                                         storage_name=None, options=options)
 except ApiException as ex:
     print("Exception")
     print("Info: " + str(ex))

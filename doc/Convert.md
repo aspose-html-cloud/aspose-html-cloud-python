@@ -7,6 +7,9 @@ Possible conversions:
 - EPUB -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
 - MD -> PDF, XPS, DOCX, HTML, MHTML, JPEG, BMP, PNG, TIFF, GIF
 - MHTML -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
+- SVG -> PDF, XPS, JPEG, BMP, PNG, TIFF, GIF
+- JPEG, BMP, PNG, TIFF, GIF -> SVG
+
 
 ### Parameters
 | Parameter         | Type                                      | Description                                 |
@@ -37,8 +40,8 @@ client = Client(configuration)
 html_api = HtmlApi(client)
 
 try:
-    res = html_api.convertApi.convert(input_file="c://test.html", output_file="c://test.pdf", src_in_local=True,
-                                      dest_in_local=True, is_url=False, storage_name=None)
+    res = html_api.convert(input_file="c://test.html", output_file="c://test.pdf", src_in_local=True,
+                                      dest_in_local=True, is_url=False, options=None, storage_name=None)
 except ApiException as ex:
     print("Exception")
     print("Info: " + str(ex))
@@ -72,8 +75,8 @@ options = {
 
 try:
     input_url = 'https://stallman.org/articles/anonymous-payments-thru-phones.html'
-    res = html_api.convertApi.convert(input_file=input_url, output_file="test.jpeg", src_in_local=False,
-                                      dest_in_local=False, is_url=True, storage_name=None)
+    res = html_api.convert(input_file=input_url, output_file="test.jpeg", src_in_local=False,
+                                      dest_in_local=False, is_url=True, options=options, storage_name=None)
 except ApiException as ex:
     print("Exception")
     print("Info: " + str(ex))

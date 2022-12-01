@@ -7,6 +7,8 @@ Possible conversions:
 - EPUB -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
 - MD -> PDF, XPS, DOCX, HTML, MHTML, JPEG, BMP, PNG, TIFF, GIF
 - MHTML -> PDF, XPS, DOCX, JPEG, BMP, PNG, TIFF, GIF
+- SVG -> PDF, XPS, JPEG, BMP, PNG, TIFF, GIF
+- JPEG, BMP, PNG, TIFF, GIF -> SVG
 
 ### Parameters
 | Parameter        | Type                                      | Description                             |
@@ -34,7 +36,7 @@ client = Client(configuration)
 html_api = HtmlApi(client)
 
 try:
-    res = html_api.convertApi.convert_storage_to_local(input_file="test.html", output_file="test.jpg", storage_name=None)
+    res = html_api.convert_storage_to_local(input_file="test.html", output_file="test.jpg", storage_name=None)
 except ApiException as ex:
     print("Exception")
     print("Info: " + str(ex))
@@ -67,7 +69,7 @@ options = {
 }
 
 try:
-    res = html_api.convertApi.convert_storage_to_local(input_file="test.html", output_file="test.jpeg",
+    res = html_api.convert_storage_to_local(input_file="test.html", output_file="test.jpeg",
                                                        storage_name=None, options=options)
 except ApiException as ex:
     print("Exception")

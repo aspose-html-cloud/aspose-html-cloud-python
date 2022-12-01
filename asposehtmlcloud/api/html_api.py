@@ -62,20 +62,12 @@ class HtmlApi(object):
 
     @alias('convertLocalToLocal', 'ConvertLocalToLocal')
     def convert_local_to_local(self, input_file, output_file, options=None):
-        """Convert the HTML, EPUB documents from the local file by its name to the specified formats.
+        """Convert a documents from the local file by its name to the specified formats.
         The result will be saved to the local path.
 
-        :param str input_file: Full path to the input file for conversion(html, epub formats). (required)
+        :param str input_file: Full path to the input file for conversion. (required)
         :param str output_file: Resulting full path to the result file. (required)
         :param object options: Options for conversion. (optional)
-        :param int options.width: Resulting width. For images in pixels(optional)
-        :param int options.height: Resulting image height. (optional)
-        :param int options.options.leftmargin: Left resulting image margin. (optional)
-        :param int options.rightmargin: Right resulting image margin. (optional)
-        :param int options.topmargin: Top resulting image margin. (optional)
-        :param int options.bottommargin: Bottom resulting image margin. (optional)
-        :param int options.resolution: Resolution of resulting image. (optional)
-        :param int options.jpegquality: Compression of the result image. (optional)
         :return: ConversionResult. If the method is called asynchronously, returns the request thread.
         """
         return self.convert(
@@ -90,21 +82,13 @@ class HtmlApi(object):
 
     @alias('convertLocalToStorage', 'ConvertLocalToStorage')
     def convert_local_to_storage(self, input_file, output_file, storage_name, options=None):
-        """Convert the HTML, EPUB documents from the local file by its name to the specified formats.
+        """Convert a documents from the local file by its name to the specified formats.
         The result will be saved to the storage.
 
         :param str input_file: Full path to the input file for conversion(html, epub formats). (required)
         :param str output_file: Resulting full path to the result file. (required)
         :param str storage_name: Name of the storage. None if it has default name.
         :param object options: Options for conversion. (optional)
-        :param int options.width: Resulting image width. (optional)
-        :param int options.height: Resulting image height. (optional)
-        :param int options.options.leftmargin: Left resulting image margin. (optional)
-        :param int options.rightmargin: Right resulting image margin. (optional)
-        :param int options.topmargin: Top resulting image margin. (optional)
-        :param int options.bottommargin: Bottom resulting image margin. (optional)
-        :param int options.resolution: Resolution of resulting image. (optional)
-        :param int options.jpegquality: Compression of the result image. (optional)
         :return: ConversionResult. If the method is called asynchronously, returns the request thread.
         """
         return self.convert(
@@ -119,21 +103,13 @@ class HtmlApi(object):
 
     @alias('convertStorageToLocal', 'ConvertStorageToLocal')
     def convert_storage_to_local(self, input_file, output_file, storage_name, options=None):
-        """Convert the HTML, EPUB documents from the storage file by its name to the specified formats.
+        """Convert a documents from the storage file by its name to the specified formats.
         The result will be saved to the local path.
 
         :param str input_file: Full path to the input file for conversion(html, epub formats). (required)
         :param str output_file: Resulting full path to the result file. (required)
         :param str storage_name: Name of the storage. None if it has default name.
         :param object options: Options for conversion. (optional)
-        :param int options.width: Resulting image width. (optional)
-        :param int options.height: Resulting image height. (optional)
-        :param int options.options.leftmargin: Left resulting image margin. (optional)
-        :param int options.rightmargin: Right resulting image margin. (optional)
-        :param int options.topmargin: Top resulting image margin. (optional)
-        :param int options.bottommargin: Bottom resulting image margin. (optional)
-        :param int options.resolution: Resolution of resulting image. (optional)
-        :param int options.jpegquality: Compression of the result image. (optional)
         :return: ConversionResult. If the method is called asynchronously, returns the request thread.
         """
         return self.convert(
@@ -148,21 +124,13 @@ class HtmlApi(object):
 
     @alias('convertStorageToStorage', 'ConvertStorageToStorage')
     def convert_storage_to_storage(self, input_file, output_file, storage_name, options=None):
-        """Convert the HTML, EPUB documents from the storage file by its name to the specified formats.
+        """Convert a documents from the storage file by its name to the specified formats.
         The result will be saved to the storage.
 
         :param str input_file: Full path to the input file for conversion(html, epub formats). (required)
         :param str output_file: Resulting full path to the result file. (required)
         :param object options: Options for conversion. (optional)
         :param str storage_name: Name of the storage. None if it has default name.
-        :param int options.width: Resulting image width. (optional)
-        :param int options.height: Resulting image height. (optional)
-        :param int options.options.leftmargin: Left resulting image margin. (optional)
-        :param int options.rightmargin: Right resulting image margin. (optional)
-        :param int options.topmargin: Top resulting image margin. (optional)
-        :param int options.bottommargin: Bottom resulting image margin. (optional)
-        :param int options.resolution: Resolution of resulting image. (optional)
-        :param int options.jpegquality: Compression of the result image. (optional)
         :return: ConversionResult. If the method is called asynchronously, returns the request thread.
         """
         return self.convert(
@@ -175,22 +143,15 @@ class HtmlApi(object):
             storage_name=storage_name
         )
 
+
     @alias('convertUrlToLocal', 'ConvertUrlToLocal')
     def convert_url_to_local(self, input_file, output_file, options=None):
         """Convert the HTML documents from the URL to the specified formats.
         The result will be saved to the local path.
 
-        :param str input_file: Full path to the input file for conversion(html, epub formats). (required)
+        :param str input_file: Input URL for conversion(html, epub formats). (required)
         :param str output_file: Resulting full path to the result file. (required)
         :param object options: Options for conversion. (optional)
-        :param int options.width: Resulting image width. (optional)
-        :param int options.height: Resulting image height. (optional)
-        :param int options.options.leftmargin: Left resulting image margin. (optional)
-        :param int options.rightmargin: Right resulting image margin. (optional)
-        :param int options.topmargin: Top resulting image margin. (optional)
-        :param int options.bottommargin: Bottom resulting image margin. (optional)
-        :param int options.resolution: Resolution of resulting image. (optional)
-        :param int options.jpegquality: Compression of the result image. (optional)
         :return: ConversionResult. If the method is called asynchronously, returns the request thread.
         """
         return self.convert(
@@ -208,18 +169,10 @@ class HtmlApi(object):
         """Convert the HTML documents from the URL to the specified formats.
         The result will be saved to the storage.
 
-        :param str input_file: Full path to the input file for conversion(html, epub formats). (required)
+        :param str input_file: Input URL for conversion. (required)
         :param str output_file: Resulting full path to the result file. (required)
         :param str storage_name: Name of the storage. (optional)
         :param object options: Options for conversion. (optional)
-        :param int options.width: Resulting image width. (optional)
-        :param int options.height: Resulting image height. (optional)
-        :param int options.options.leftmargin: Left resulting image margin. (optional)
-        :param int options.rightmargin: Right resulting image margin. (optional)
-        :param int options.topmargin: Top resulting image margin. (optional)
-        :param int options.bottommargin: Bottom resulting image margin. (optional)
-        :param int options.resolution: Resolution of resulting image. (optional)
-        :param int options.jpegquality: Compression of the result image. (optional)
         :return: ConversionResult. If the method is called asynchronously, returns the request thread.
         """
         return self.convert(
@@ -232,10 +185,131 @@ class HtmlApi(object):
             storage_name=storage_name
         )
 
+    @alias('vectorizeLocalToLocal', 'VectorizeLocalToLocal')
+    def vectorize_local_to_local(self, input_file, output_file, options=None):
+        """Vectorize an image from the local file by its name to the SVG formats.
+        The result will be saved to the local path.
+
+        :param str input_file: Full path to the input file for vectorization(png, gif, bmp, jpeg, tiff formats). (required)
+        :param str output_file: Resulting full path to the result svg file. (required)
+        :param object options: Options for vectorization. (optional)
+        :param float options.error_threshold: This parameter defines maximum deviation of points to fitted curve. By default it is 30. (optional)
+        :param int options.max_iterations: This parameter defines number of iteration for least-squares approximation method. By default it is 30. (optional)
+        :param int options.options.colors_limit: The maximum number of colors used to quantize an image. Default value is 25. (optional)
+        :param float options.line_width: The value of this parameter is affected by the graphics scale. Default value is 1. (optional)
+        :return: ConversionResult. If the method is called asynchronously, returns the request thread.
+        """
+        return self.vectorize(
+            input_file,
+            output_file,
+            src_in_local=True,
+            dest_in_local=True,
+            options=options,
+            storage_name=None
+        )
+
+    @alias('vectorizeLocalToStorage', 'VectorizeLocalToStorage')
+    def vectorize_local_to_storage(self, input_file, output_file, storage_name, options=None):
+        """Vectorize an image from the local file by its name to the specified formats.
+        The result will be saved to the storage.
+
+        :param str input_file: Full path to the input file for vectorization(png, gif, bmp, jpeg, tiff formats). (required)
+        :param str output_file: Resulting full path to the result svg file. (required)
+        :param str storage_name: Name of the storage. None if it has default name.
+        :param object options: Options for vectorization. (optional)
+        :param float options.error_threshold: This parameter defines maximum deviation of points to fitted curve. By default it is 30. (optional)
+        :param int options.max_iterations: This parameter defines number of iteration for least-squares approximation method. By default it is 30. (optional)
+        :param int options.options.colors_limit: The maximum number of colors used to quantize an image. Default value is 25. (optional)
+        :param float options.line_width: The value of this parameter is affected by the graphics scale. Default value is 1. (optional)
+        :return: ConversionResult. If the method is called asynchronously, returns the request thread.
+        """
+        return self.vectorize(
+            input_file,
+            output_file,
+            src_in_local=True,
+            dest_in_local=False,
+            options=options,
+            storage_name=storage_name
+        )
+
+    @alias('vectorizeStorageToLocal', 'VectorizeStorageToLocal')
+    def vectorize_storage_to_local(self, input_file, output_file, storage_name, options=None):
+        """Vectorize an image from the storage file by its name to the specified formats.
+        The result will be saved to the local path.
+
+        :param str input_file: Full path to the input file for vectorization(png, gif, bmp, jpeg, tiff formats). (required)
+        :param str output_file: Resulting full path to the result svg file. (required)
+        :param str storage_name: Name of the storage. None if it has default name.
+        :param object options: Options for vectorization. (optional)
+        :param float options.error_threshold: This parameter defines maximum deviation of points to fitted curve. By default it is 30. (optional)
+        :param int options.max_iterations: This parameter defines number of iteration for least-squares approximation method. By default it is 30. (optional)
+        :param int options.options.colors_limit: The maximum number of colors used to quantize an image. Default value is 25. (optional)
+        :param float options.line_width: The value of this parameter is affected by the graphics scale. Default value is 1. (optional)
+        :return: ConversionResult. If the method is called asynchronously, returns the request thread.
+        """
+        return self.vectorize(
+            input_file,
+            output_file,
+            src_in_local=False,
+            dest_in_local=True,
+            options=options,
+            storage_name=storage_name
+        )
+
+    @alias('vectorizeStorageToStorage', 'VectorizeStorageToStorage')
+    def vectorize_storage_to_storage(self, input_file, output_file, storage_name, options=None):
+        """Vectorize an image from the storage file by its name to the svg format.
+        The result will be saved to the storage.
+
+        :param str input_file: Full path to the input file for vectorization(png, gif, bmp, jpeg, tiff formats). (required)
+        :param str output_file: Resulting full path to the result svg file. (required)
+        :param object options: Options for vectorization. (optional)
+        :param str storage_name: Name of the storage. None if it has default name.
+        :param float options.error_threshold: This parameter defines maximum deviation of points to fitted curve. By default it is 30. (optional)
+        :param int options.max_iterations: This parameter defines number of iteration for least-squares approximation method. By default it is 30. (optional)
+        :param int options.options.colors_limit: The maximum number of colors used to quantize an image. Default value is 25. (optional)
+        :param float options.line_width: The value of this parameter is affected by the graphics scale. Default value is 1. (optional)
+        :return: ConversionResult. If the method is called asynchronously, returns the request thread.
+        """
+        return self.vectorize(
+            input_file,
+            output_file,
+            src_in_local=False,
+            dest_in_local=False,
+            options=options,
+            storage_name=storage_name
+        )
+
+    @alias('Vectorize')
+    def vectorize(self, src, dest, src_in_local, dest_in_local, options=None, storage_name=None):
+        """Vectorize an image to the svg format.
+
+        :param str input_file: Full path to the input file for vectorization(png, gif, bmp, jpeg, tiff formats). (required)
+        :param str output_file: Resulting full path to the result svg file. (required)
+        :param bool src_in_local: Boolean parameter. True if the source file in a local directory. (required)
+        :param bool dest_in_local: Boolean parameter. True if the result needs to save to a local directory. (required)
+        :param object options: Options for vectorization. (optional)
+        :param float options.error_threshold: This parameter defines maximum deviation of points to fitted curve. By default it is 30. (optional)
+        :param int options.max_iterations: This parameter defines number of iteration for least-squares approximation method. By default it is 30. (optional)
+        :param int options.options.colors_limit: The maximum number of colors used to quantize an image. Default value is 25. (optional)
+        :param float options.line_width: The value of this parameter is affected by the graphics scale. Default value is 1. (optional)
+        :param str storage_name: Name of the storage. (optional)
+        :return: ConversionResult. If the method is called asynchronously, returns the request thread.
+        """
+        input_format = self.__get_input_format(src)
+
+        if input_format not in ['jpeg', 'tiff', 'bmp', 'png', 'gif']:
+            raise RuntimeError('Input format must be an image (jpeg, tiff, bmp, png, gif)')
+
+        output_format = os.path.splitext(dest)[1][1:].strip().lower()
+        if output_format != 'svg':
+            raise RuntimeError("Output format must be SVG")
+
+        return self.convert(src, dest, src_in_local, dest_in_local, False, options, storage_name)
+
     @alias('Convert')
     def convert(self, src, dest, src_in_local, dest_in_local, is_url, options=None, storage_name=None):
-        """Convert the HTML documents from the URL to the specified formats.
-        The result will be saved to the storage.
+        """Convert a document to the specified formats.
 
         :param str src: Full path to the input file or URL for conversion(html, epub formats). (required)
         :param str dest: Resulting full path to the result file. (required)
@@ -379,7 +453,7 @@ class HtmlApi(object):
 
     @classmethod
     def __get_input_format(cls, path):
-        formats = ['HTML', 'HTM', 'MHT', 'MHTML', 'XML', 'XHTML', 'EPUB', 'SVG', 'MD']
+        formats = ['HTML', 'HTM', 'MHT', 'MHTML', 'XML', 'XHTML', 'EPUB', 'SVG', 'MD', 'PNG', 'JPG', 'JPEG', 'GIF', 'TIF', 'TIFF', 'BMP']
         ext = os.path.splitext(path)[1][1:].strip().upper()
 
         if ext in formats:
@@ -389,6 +463,11 @@ class HtmlApi(object):
                 ext == 'XML' or ext == 'XHTML': 'xhtml',
                 ext == 'EPUB': 'epub',
                 ext == 'SVG': 'svg',
-                ext == 'MD': 'md'
+                ext == 'MD': 'md',
+                ext == 'PNG': 'png',
+                ext == 'JPG' or ext == 'JPEG': 'jpeg',
+                ext == 'TIF' or ext == 'TIFF': 'tiff',
+                ext == 'GIF': 'gif',
+                ext == 'BMP': 'bmp'
             }[True]
         return None
