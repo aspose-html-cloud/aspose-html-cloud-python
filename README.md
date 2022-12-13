@@ -73,20 +73,6 @@ All URIs are relative to *https://api.aspose.cloud/v4.0*
 ## ConversionApi 
 
 - See possible conversions.
-
-| Method                                                               | Description                                             |
-|----------------------------------------------------------------------|---------------------------------------------------------|
-| **[vectorize_local_to_local](doc/VectorizeLocalToLocal.md)**         | Vectorize images from local disk to a local disk.       |
-| **[vectorize_local_to_storage](doc/VectorizeLocalToStorage.md)**     | Vectorize images from local disk to user's storage.     |
-| **[vectorize_storage_to_local](doc/VectorizeStorageToLocal.md)**     | Vectorize images from user's storage to local disk.     |
-| **[vectorize_storage_to_storage](doc/VectorizeStorageToStorage.md)** | Vectorize images from user's storage to user's storage. |
-| **[vectorize](doc/Vectorize.md)**                                    | Vectorize images to the svg format.                     |
-
-
-## VectorizeApi 
-
-- For vectorization images to svg format.
-
 | Method                                                           | Description                                               |
 |------------------------------------------------------------------|-----------------------------------------------------------|
 | **[convert_local_to_local](doc/ConvertLocalToLocal.md)**         | Convert a document from local disk to a local disk.       |
@@ -96,6 +82,19 @@ All URIs are relative to *https://api.aspose.cloud/v4.0*
 | **[convert_url_to_local](doc/ConvertUrlToLocal.md)**             | Convert the HTML document by URL to local disk.           |
 | **[convert_url_to_storage](doc/ConvertUrlToStorage.md)**         | Convert the HTML document by URL to user's storage.       |
 | **[convert](doc/Convert.md)**                                    | Convert a document to the specified format.               |
+
+
+## VectorizeApi 
+
+- For vectorization images to svg format.
+| Method                                                               | Description                                             |
+|----------------------------------------------------------------------|---------------------------------------------------------|
+| **[vectorize_local_to_local](doc/VectorizeLocalToLocal.md)**         | Vectorize images from local disk to a local disk.       |
+| **[vectorize_local_to_storage](doc/VectorizeLocalToStorage.md)**     | Vectorize images from local disk to user's storage.     |
+| **[vectorize_storage_to_local](doc/VectorizeStorageToLocal.md)**     | Vectorize images from user's storage to local disk.     |
+| **[vectorize_storage_to_storage](doc/VectorizeStorageToStorage.md)** | Vectorize images from user's storage to user's storage. |
+| **[vectorize](doc/Vectorize.md)**                                    | Vectorize images to the svg format.                     |
+
 
 # Documentation for Storage API Endpoints
 
