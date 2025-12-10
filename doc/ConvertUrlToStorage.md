@@ -3,7 +3,7 @@
 Convert a website to a file in the storage.
 
 Possible conversions: 
-- URL -> PDF, XPS, DOCX, MD, MHTML, JPEG, BMP, PNG, TIFF, GIF
+- URL -> PDF, XPS, DOCX, MD, MHTML, JPEG, BMP, PNG, TIFF, GIF, WEBP
 
 ### Parameters
 | Parameter        | Type                                      | Description                             |

@@ -3,7 +3,7 @@
 Convert a website to the local file.
 
 Possible conversions: 
-- URL -> PDF, XPS, DOCX, MD, MHTML, JPEG, BMP, PNG, TIFF, GIF
+- URL -> PDF, XPS, DOCX, MD, MHTML, JPEG, BMP, PNG, TIFF, GIF, WEBP
 
 
 ### Parameters
